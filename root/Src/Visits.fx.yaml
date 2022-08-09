@@ -222,7 +222,7 @@
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
             BorderThickness: =2
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 191, 0, 1)
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
             DisabledColor: =RGBA(166, 166, 166, 1)
             FocusedBorderThickness: =4
@@ -240,7 +240,7 @@
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
             BorderThickness: =2
-            Color: =RGBA(255, 191, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
             DisabledColor: =RGBA(166, 166, 166, 1)
             FocusedBorderThickness: =4
@@ -288,7 +288,7 @@
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
             BorderThickness: =2
-            Color: =RGBA(217, 217, 217, 1)
+            Color: =RGBA(255, 255, 255, 1)
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
             DisabledColor: =RGBA(166, 166, 166, 1)
             FocusedBorderThickness: =4
@@ -297,16 +297,15 @@
             OnSelect: =Select(Parent)
             Text: ="Type"
             Width: =72
-            X: =40
+            X: =54
             Y: =89
             ZIndex: =5
 
         Label19_34 As label:
-            Align: =Align.Right
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
             BorderThickness: =2
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 191, 0, 1)
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
             DisabledColor: =RGBA(166, 166, 166, 1)
             FocusedBorderThickness: =4
@@ -315,30 +314,12 @@
             Height: =25
             OnSelect: =Select(Parent)
             Text: =ThisItem.'Visit Type'
-            Width: =200
-            X: =73
+            Width: =170
+            X: =192
             Y: =89
             ZIndex: =6
 
         Label19_37 As label:
-            BorderColor: =RGBA(0, 0, 0, 0)
-            BorderStyle: =BorderStyle.None
-            BorderThickness: =2
-            Color: =RGBA(217, 217, 217, 1)
-            DisabledBorderColor: =RGBA(0, 0, 0, 0)
-            DisabledColor: =RGBA(166, 166, 166, 1)
-            FocusedBorderThickness: =4
-            Font: =Font.Lato
-            Height: =25
-            OnSelect: =Select(Parent)
-            Text: ="Visit ID"
-            Width: =147
-            X: =40
-            Y: =124
-            ZIndex: =7
-
-        Label19_38 As label:
-            Align: =Align.Right
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
             BorderThickness: =2
@@ -347,20 +328,37 @@
             DisabledColor: =RGBA(166, 166, 166, 1)
             FocusedBorderThickness: =4
             Font: =Font.Lato
+            Height: =25
+            OnSelect: =Select(Parent)
+            Text: ="Visit ID"
+            Width: =147
+            X: =54
+            Y: =124
+            ZIndex: =7
+
+        Label19_38 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
             FontWeight: =FontWeight.Bold
             Height: =25
             OnSelect: =Select(Parent)
             Text: =ThisItem.'Visit ID'
-            Width: =200
-            X: =73
-            Y: =128
+            Width: =170
+            X: =192
+            Y: =124
             ZIndex: =8
 
         Label19_43 As label:
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
             BorderThickness: =2
-            Color: =RGBA(217, 217, 217, 1)
+            Color: =RGBA(255, 255, 255, 1)
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
             DisabledColor: =RGBA(166, 166, 166, 1)
             FocusedBorderThickness: =4
@@ -370,7 +368,7 @@
             Size: =12
             Text: ="Last Order Date"
             Width: =157
-            X: =293
+            X: =342
             Y: =87
             ZIndex: =9
 
@@ -378,7 +376,7 @@
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
             BorderThickness: =2
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 191, 0, 1)
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
             DisabledColor: =RGBA(166, 166, 166, 1)
             FocusedBorderThickness: =4
@@ -388,16 +386,16 @@
             OnSelect: =Select(Parent)
             Size: =12
             Text: =Text(First(Sort(Filter(SalesOrders, 'Order From'.Account = ThisItem.Customer.Account && !('Order Date' = ThisItem.'Visit Date')), 'Order Date', Descending)).'Order Date', "dd mmm yyyy")
-            Width: =157
-            X: =439
-            Y: =89
+            Width: =130
+            X: =481
+            Y: =87
             ZIndex: =10
 
         Label19_44 As label:
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
             BorderThickness: =2
-            Color: =RGBA(217, 217, 217, 1)
+            Color: =RGBA(255, 255, 255, 1)
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
             DisabledColor: =RGBA(166, 166, 166, 1)
             FocusedBorderThickness: =4
@@ -407,15 +405,15 @@
             Size: =12
             Text: ="Last Order Value"
             Width: =157
-            X: =304
-            Y: =130
+            X: =342
+            Y: =124
             ZIndex: =11
 
         Label19_42 As label:
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
             BorderThickness: =2
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 191, 0, 1)
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
             DisabledColor: =RGBA(166, 166, 166, 1)
             FocusedBorderThickness: =4
@@ -427,9 +425,9 @@
             Text: |-
                 =//Concatenate("₹", RandBetween(11000, 36000))
                 "₹ " & First(Sort(Filter(SalesOrders, 'Order From'.Account = ThisItem.Customer.Account && !('Order Date' = ThisItem.'Visit Date')), 'Order Date', Descending)).'Bill Amoount (Base)'
-            Width: =157
-            X: =439
-            Y: =120
+            Width: =130
+            X: =481
+            Y: =124
             ZIndex: =12
 
         Rectangle9_1 As rectangle:
@@ -452,7 +450,7 @@
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
             BorderThickness: =2
-            Color: =RGBA(217, 217, 217, 1)
+            Color: =RGBA(255, 255, 255, 1)
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
             DisabledColor: =RGBA(166, 166, 166, 1)
             FocusedBorderThickness: =4
@@ -461,16 +459,15 @@
             OnSelect: =Select(Parent)
             Text: ="Account Type"
             Width: =147
-            X: =40
-            Y: =160
+            X: =54
+            Y: =153
             ZIndex: =16
 
         Label19_40 As label:
-            Align: =Align.Right
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
             BorderThickness: =2
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 191, 0, 1)
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
             DisabledColor: =RGBA(166, 166, 166, 1)
             FocusedBorderThickness: =4
@@ -479,9 +476,9 @@
             Height: =25
             OnSelect: =Select(Parent)
             Text: =ThisItem.Customer.'Account Type'
-            Width: =200
-            X: =73
-            Y: =160
+            Width: =170
+            X: =192
+            Y: =153
             ZIndex: =17
 
         Button8 As button:
