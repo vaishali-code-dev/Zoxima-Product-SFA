@@ -2923,7 +2923,7 @@
         Height: =730
         Visible: =If(customerinfo.Selected.Title="Orders",true)
         Width: =Parent.Width
-        Y: =318
+        Y: =310
         ZIndex: =21
 
         DataCard3_4 As dataCard:
