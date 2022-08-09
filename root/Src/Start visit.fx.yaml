@@ -294,15 +294,32 @@
                                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                                 HoverColor: =RGBA(31, 31, 31, 1)
                                 HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
-                                OnSelect: =Set(varCam, true)
+                                OnSelect: |-
+                                    =If(
+                                        IsBlank(First(ImageCol).Url),
+                                        Set(
+                                            varCam,
+                                            true
+                                        ),
+                                        Set(
+                                            imageocrResponse,
+                                            ImagetoTextOriginal.Run(
+                                                Substitute(
+                                                    First(ImageCol).Url,
+                                                    "data:image/png;base64,",
+                                                    ""
+                                                )
+                                            ).output
+                                        )
+                                    )
                                 PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
                                 PressedColor: =RGBA(31, 31, 31, 1)
                                 PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
                                 Size: =18
-                                Text: ="Take Photo"
+                                Text: =If(IsBlank(First(ImageCol).Url), "Take Photo", "Upload Photo")
                                 Width: =205
-                                X: =60
-                                Y: =432
+                                X: =57
+                                Y: =453
                                 ZIndex: =8
 
                             Group12 As group:
@@ -461,41 +478,6 @@
                                     Y: =326
                                     ZIndex: =6
 
-                            Button11_5 As button:
-                                BorderColor: =RGBA(0, 0, 0, 0)
-                                Color: =RGBA(31, 31, 31, 1)
-                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                DisabledFill: =RGBA(244, 244, 244, 1)
-                                Fill: =RGBA(255, 200, 61, 1)
-                                FocusedBorderColor: =ColorFade(Self.Fill, 75%)
-                                Font: =Font.'Segoe UI'
-                                FontWeight: =FontWeight.Semibold
-                                Height: =48
-                                HoverBorderColor: =RGBA(0, 0, 0, 0)
-                                HoverColor: =RGBA(31, 31, 31, 1)
-                                HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
-                                OnSelect: |-
-                                    =Set(
-                                        imageocrResponse,
-                                       ImagetoTextOriginal.Run(
-                                            Substitute(
-                                                First(ImageCol).Url,
-                                                "data:image/png;base64,",
-                                                ""
-                                            )
-                                        ).output
-                                    )
-                                PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
-                                PressedColor: =RGBA(31, 31, 31, 1)
-                                PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
-                                Size: =18
-                                Text: ="Upload Photo"
-                                Width: =205
-                                X: =62
-                                Y: =501
-                                ZIndex: =9
-
                             Image6 As image:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
@@ -511,7 +493,7 @@
                                 PressedFill: =RGBA(0, 0, 0, 0)
                                 Width: =177
                                 X: =330
-                                Y: =421
+                                Y: =397
                                 ZIndex: =10
 
                         Button29_2 As button:
@@ -593,7 +575,7 @@
                             Text: ="SAVE"
                             Width: =125
                             X: =381
-                            Y: =24
+                            Y: =16
                             ZIndex: =2
 
                     Circle6 As circle:
@@ -1070,9 +1052,9 @@
                 Color: =RGBA(31, 31, 31, 1)
                 DisabledBorderColor: =RGBA(211, 212, 214, 1)
                 DisabledColor: =RGBA(166, 166, 166, 1)
-                DisabledFill: =RGBA(88, 103, 130, 1)
+                DisabledFill: =RGBA(53, 53, 53, 1)
                 DisplayMode: =DisplayMode.Disabled
-                Fill: =RGBA(88, 103, 130, 1)
+                Fill: =RGBA(53, 53, 53, 1)
                 FocusedBorderColor: =ColorFade(Self.Fill, 75%)
                 Font: =Font.Lato
                 FontWeight: =FontWeight.Semibold
