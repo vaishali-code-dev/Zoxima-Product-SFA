@@ -2968,7 +2968,7 @@
                         DisplayMode: =DisplayMode.View
                         Height: =384
                         HtmlText: |-
-                            ="<div style='border-radius:15px 15px 15px 15px; background-color:#586782; width:580px; height:370px'></div>"
+                            ="<div style='border-radius:15px 15px 15px 15px; background-color:#353535; width:580px; height:370px'></div>"
                         OnSelect: =Select(Parent)
                         Width: =594
                         X: =15
@@ -4008,7 +4008,7 @@
         Height: =730
         Visible: =If(customerinfo.Selected.Title="Invoices",true)
         Width: =Parent.Width
-        Y: =326
+        Y: =310
         ZIndex: =22
 
         DataCard3_5 As dataCard:
@@ -4031,14 +4031,14 @@
 
                 Gallery7_35 As gallery.galleryVertical:
                     BorderColor: =RGBA(109, 109, 109, 1)
-                    Height: =655
+                    Height: =634
                     Items: =Filter(Invoices, 'Bill To Party'.Account = data2.Account)
                     Layout: =Layout.Vertical
                     OnSelect: |-
                         =Navigate('Invoice Info', ScreenTransition.Fade, {invoiceItem: ThisItem})
                     ShowScrollbar: =false
                     TemplateSize: =289
-                    Y: =108
+                    Y: =87
                     ZIndex: =1
 
                     Button11_18 As button:
@@ -4075,14 +4075,15 @@
                     HtmlText1_218 As htmlViewer:
                         Color: =RGBA(242, 242, 242, 1)
                         DisplayMode: =DisplayMode.View
+                        Font: =Font.'Segoe UI'
                         Height: =289
                         HtmlText: |-
-                            ="<div style='border-radius:15px 15px 15px 15px; background-color:#586782; width:580px; height:270px'></div>"
+                            ="<div style='border-radius:15px 15px 15px 15px; background-color:#353535; width:600px; height:270px'></div>"
                         OnSelect: |-
                             =Navigate('Invoice Lines');
                             Set(InvoiceInfo,ThisItem)
-                        Width: =594
-                        X: =11
+                        Width: =619
+                        X: =8
                         ZIndex: =2
 
                     Label17_14 As label:
@@ -4468,8 +4469,7 @@
                         Size: =14
                         Text: =""
                         Width: =188
-                        X: =11
-                        Y: =8
+                        X: =16
                         ZIndex: =2
 
                     Label22_80 As label:
@@ -4486,8 +4486,8 @@
                         Size: =15
                         Text: ="Last Quarter"
                         Width: =170
-                        X: =20
-                        Y: =16
+                        X: =25
+                        Y: =6
                         ZIndex: =3
 
                     Label22_83 As label:
@@ -4529,8 +4529,8 @@
                                 )
                             )
                         Width: =170
-                        X: =20
-                        Y: =54
+                        X: =25
+                        Y: =44
                         ZIndex: =4
 
                 Group31_40 As group:
@@ -4567,8 +4567,7 @@
                         Size: =14
                         Text: =""
                         Width: =188
-                        X: =216
-                        Y: =8
+                        X: =226
                         ZIndex: =6
 
                     Label22_81 As label:
@@ -4585,8 +4584,8 @@
                         Size: =15
                         Text: ="Last 30 Days"
                         Width: =170
-                        X: =225
-                        Y: =16
+                        X: =235
+                        Y: =6
                         ZIndex: =7
 
                     Label22_84 As label:
@@ -4628,8 +4627,8 @@
                                 )
                             )
                         Width: =170
-                        X: =225
-                        Y: =54
+                        X: =235
+                        Y: =44
                         ZIndex: =8
 
                 Group31_41 As group:
@@ -4666,8 +4665,7 @@
                         Size: =14
                         Text: =""
                         Width: =188
-                        X: =424
-                        Y: =8
+                        X: =434
                         ZIndex: =10
 
                     Label22_82 As label:
@@ -4684,8 +4682,8 @@
                         Size: =15
                         Text: ="Last 7 Days"
                         Width: =170
-                        X: =433
-                        Y: =16
+                        X: =443
+                        Y: =6
                         ZIndex: =11
 
                     Label22_85 As label:
@@ -4727,8 +4725,8 @@
                                 )
                             )
                         Width: =170
-                        X: =433
-                        Y: =54
+                        X: =443
+                        Y: =44
                         ZIndex: =12
 
     Ticket As fluidGrid.fluidGridWithBlankCard:
@@ -4765,16 +4763,16 @@
                     OnSelect: |-
                         =Navigate('Tickets Info', ScreenTransition.Fade, {complaintsInfo: ThisItem})
                     ShowScrollbar: =false
-                    TemplateSize: =298
+                    TemplateSize: =279
                     Y: =65
                     ZIndex: =1
 
                     HtmlText1_234 As htmlViewer:
                         Color: =RGBA(242, 242, 242, 1)
                         DisplayMode: =DisplayMode.View
-                        Height: =289
+                        Height: =285
                         HtmlText: |-
-                            ="<div style='border-radius:15px 15px 15px 15px; background-color:#586782;width:580px; height:270px'></div>"
+                            ="<div style='border-radius:15px 15px 15px 15px; background-color:#353535;width:580px; height:270px'></div>"
                         OnSelect: =Select(Parent)
                         Width: =594
                         X: =15
@@ -5020,7 +5018,6 @@
                     TemplateSize: =192
                     Width: =622
                     X: =4
-                    Y: =1
                     ZIndex: =2
 
                     Button4_85 As button:
@@ -5056,7 +5053,7 @@
         Height: =730
         Visible: =If(customerinfo.Selected.Title="Current Stock",true)
         Width: =Parent.Width
-        Y: =326
+        Y: =310
         ZIndex: =24
 
         DataCard3_7 As dataCard:
@@ -5084,7 +5081,6 @@
                     Layout: =Layout.Vertical
                     ShowScrollbar: =false
                     TemplateSize: =219
-                    Y: =10
                     ZIndex: =1
 
                     Button11_25 As button:
@@ -5123,7 +5119,7 @@
                         DisplayMode: =DisplayMode.View
                         Height: =217
                         HtmlText: |-
-                            ="<div style='border-radius:15px 15px 15px 15px; background-color:#586782; width:580px; height:200px'></div>"
+                            ="<div style='border-radius:15px 15px 15px 15px; background-color:#353535; width:580px; height:200px'></div>"
                         OnSelect: |-
                             =Navigate('Invoice Lines');
                             Set(InvoiceInfo,ThisItem)
@@ -5319,7 +5315,7 @@
         Height: =730
         Visible: =If(customerinfo.Selected.Title="Team",true)
         Width: =Parent.Width
-        Y: =307
+        Y: =310
         ZIndex: =25
 
         DataCard3_8 As dataCard:
@@ -5335,30 +5331,28 @@
             ZIndex: =1
 
             "'Customer Team_7' As groupContainer.manualLayoutContainer":
-                Height: =820
+                Height: =827
                 Visible: =If(customerinfo.Selected.Title="Team",true)
                 Width: =640
-                Y: =7
                 ZIndex: =13
 
                 Gallery7_61 As gallery.galleryVertical:
                     BorderColor: =RGBA(109, 109, 109, 1)
-                    Height: =782
+                    Height: =792
                     Items: =Filter(Contacts, 'Attached Dealer'.Account = data2.Account)
                     Layout: =Layout.Vertical
                     OnSelect: |-
                         =Navigate('Team Info', ScreenTransition.Fade, {teamInfo: ThisItem})
                     ShowScrollbar: =false
-                    TemplateSize: =182
-                    Y: =10
+                    TemplateSize: =166
                     ZIndex: =1
 
                     HtmlText1_271 As htmlViewer:
                         Color: =RGBA(242, 242, 242, 1)
                         DisplayMode: =DisplayMode.View
-                        Height: =182
+                        Height: =174
                         HtmlText: |-
-                            ="<div style='border-radius:15px 15px 15px 15px; background-color:#586782; width:610px; height:160px'></div>"
+                            ="<div style='border-radius:15px 15px 15px 15px; background-color:#353535; width:610px; height:160px'></div>"
                         OnSelect: =Select(Parent)
                         Width: =630
                         ZIndex: =1
@@ -5371,12 +5365,11 @@
                         DisabledBorderColor: =RGBA(0, 0, 0, 0)
                         DisabledColor: =RGBA(166, 166, 166, 1)
                         FocusedBorderThickness: =4
-                        Font: =Font.Lato
                         FontWeight: =FontWeight.Semibold
                         Height: =51
                         OnSelect: |-
                             =Navigate('Team Info', ScreenTransition.Fade, {teamInfo: ThisItem})
-                        Size: =20
+                        Size: =18
                         Text: =ThisItem.'First Name' &  " " & ThisItem.'Last Name'
                         Width: =289
                         X: =30
@@ -5498,7 +5491,7 @@
         Height: =754
         Visible: =If(customerinfo.Selected.Title="Visits",true)
         Width: =Parent.Width
-        Y: =318
+        Y: =310
         ZIndex: =26
 
         DataCard3_9 As dataCard:
@@ -5521,14 +5514,14 @@
 
                 Gallery7_66 As gallery.galleryVertical:
                     BorderColor: =RGBA(109, 109, 109, 1)
-                    Height: =620
+                    Height: =633
                     Items: =Filter(Visits_1, Customer.Account = data2.Account)
                     Layout: =Layout.Vertical
                     OnSelect: |
                         =Navigate('Visits Info', ScreenTransition.Fade, {clickedVisit: ThisItem});
                     ShowScrollbar: =false
                     TemplateSize: =164
-                    Y: =106
+                    Y: =95
                     ZIndex: =1
 
                     HtmlText1_281 As htmlViewer:
@@ -5536,7 +5529,7 @@
                         DisplayMode: =DisplayMode.View
                         Height: =164
                         HtmlText: |-
-                            ="<div style='border-radius:15px 15px 15px 15px; background-color:#586782; width:610px; height:150px'></div>"
+                            ="<div style='border-radius:15px 15px 15px 15px; background-color:#353535; width:610px; height:150px'></div>"
                         OnSelect: =Select(Parent)
                         Width: =630
                         ZIndex: =1
@@ -5549,7 +5542,6 @@
                         DisabledBorderColor: =RGBA(0, 0, 0, 0)
                         DisabledColor: =RGBA(166, 166, 166, 1)
                         FocusedBorderThickness: =4
-                        Font: =Font.Lato
                         FontWeight: =FontWeight.Semibold
                         Height: =51
                         OnSelect: |
@@ -5573,11 +5565,11 @@
                                 {clickedVisit: ThisItem}
                             );
                             Reset(Gallery6)
-                        Size: =20
+                        Size: =18
                         Text: =Text(ThisItem.'Visit Date', "dd mmm yyyy")
                         Width: =289
                         X: =36
-                        Y: =30
+                        Y: =15
                         ZIndex: =2
 
                     Group18_29 As group:
@@ -5595,7 +5587,7 @@
                             OnSelect: =Select(Parent)
                             Width: =164
                             X: =37
-                            Y: =82
+                            Y: =67
                             ZIndex: =3
 
                         Label2_364 As label:
@@ -5613,7 +5605,7 @@
                             Text: ="Visit ID"
                             Width: =116
                             X: =58
-                            Y: =93
+                            Y: =78
                             ZIndex: =4
 
                         Label2_366 As label:
@@ -5632,7 +5624,7 @@
                             Text: =ThisItem.'Visit ID'
                             Width: =136
                             X: =48
-                            Y: =123
+                            Y: =108
                             ZIndex: =9
 
                     Group19_20 As group:
@@ -5650,7 +5642,7 @@
                             OnSelect: =Select(Parent)
                             Width: =164
                             X: =228
-                            Y: =82
+                            Y: =67
                             ZIndex: =5
 
                         Label2_365 As label:
@@ -5668,7 +5660,7 @@
                             Text: ="Type"
                             Width: =116
                             X: =249
-                            Y: =93
+                            Y: =78
                             ZIndex: =6
 
                         Label2_367 As label:
@@ -5687,7 +5679,7 @@
                             Text: =ThisItem.'Visit Type'
                             Width: =140
                             X: =239
-                            Y: =123
+                            Y: =108
                             ZIndex: =10
 
                     Group20_21 As group:
@@ -5705,7 +5697,7 @@
                             OnSelect: =Select(Parent)
                             Width: =164
                             X: =417
-                            Y: =81
+                            Y: =66
                             ZIndex: =7
 
                         Label2_363 As label:
@@ -5723,7 +5715,7 @@
                             Text: ="Visit Status"
                             Width: =116
                             X: =438
-                            Y: =92
+                            Y: =77
                             ZIndex: =8
 
                         Label2_368 As label:
@@ -5742,7 +5734,7 @@
                             Text: =ThisItem.status
                             Width: =140
                             X: =428
-                            Y: =123
+                            Y: =108
                             ZIndex: =11
 
                 Group31_78 As group:
@@ -5780,7 +5772,7 @@
                         Text: =""
                         Width: =188
                         X: =11
-                        Y: =8
+                        Y: =6
                         ZIndex: =2
 
                     Label22_158 As label:
@@ -5798,7 +5790,7 @@
                         Text: ="Last Quarter"
                         Width: =170
                         X: =20
-                        Y: =16
+                        Y: =10
                         ZIndex: =3
 
                     Label22_161 As label:
@@ -5819,7 +5811,7 @@
                             )
                         Width: =170
                         X: =20
-                        Y: =54
+                        Y: =48
                         ZIndex: =4
 
                 Group31_79 As group:
@@ -5857,7 +5849,7 @@
                         Text: =""
                         Width: =188
                         X: =216
-                        Y: =8
+                        Y: =6
                         ZIndex: =6
 
                     Label22_159 As label:
@@ -5875,7 +5867,7 @@
                         Text: ="Last 30 Days"
                         Width: =170
                         X: =225
-                        Y: =16
+                        Y: =10
                         ZIndex: =7
 
                     Label22_162 As label:
@@ -5908,7 +5900,7 @@
                             )
                         Width: =170
                         X: =225
-                        Y: =54
+                        Y: =48
                         ZIndex: =8
 
                 Group31_80 As group:
@@ -5946,7 +5938,7 @@
                         Text: =""
                         Width: =188
                         X: =424
-                        Y: =8
+                        Y: =6
                         ZIndex: =10
 
                     Label22_160 As label:
@@ -5964,7 +5956,7 @@
                         Text: ="Last 7 Days"
                         Width: =170
                         X: =433
-                        Y: =16
+                        Y: =10
                         ZIndex: =11
 
                     Label22_163 As label:
@@ -5997,7 +5989,7 @@
                             )
                         Width: =170
                         X: =433
-                        Y: =54
+                        Y: =48
                         ZIndex: =12
 
     MarketingMaterial As fluidGrid.fluidGridWithBlankCard:
@@ -6005,7 +5997,7 @@
         Height: =730
         Visible: =If(customerinfo.Selected.Title="Marketing Material",true)
         Width: =Parent.Width
-        Y: =318
+        Y: =310
         ZIndex: =27
 
         DataCard3_10 As dataCard:
@@ -6043,7 +6035,7 @@
                         DisplayMode: =DisplayMode.View
                         Height: =164
                         HtmlText: |-
-                            ="<div style='border-radius:15px 15px 15px 15px; background-color:#586782; width:610px; height:150px'></div>"
+                            ="<div style='border-radius:15px 15px 15px 15px; background-color:#353535; width:610px; height:150px'></div>"
                         OnSelect: =Select(Parent)
                         Width: =630
                         ZIndex: =1
@@ -6056,12 +6048,11 @@
                         DisabledBorderColor: =RGBA(0, 0, 0, 0)
                         DisabledColor: =RGBA(166, 166, 166, 1)
                         FocusedBorderThickness: =4
-                        Font: =Font.Lato
                         FontWeight: =FontWeight.Semibold
                         Height: =51
                         OnSelect: |-
                             =Navigate('Marketing Product Info', ScreenTransition.Fade, {marketingInfo: ThisItem})
-                        Size: =20
+                        Size: =18
                         Text: =Concatenate("MR" , ThisItem.'Market Material ID')
                         Width: =289
                         X: =36
@@ -6082,7 +6073,7 @@
                                 ="<div style='border-radius:10px 10px 10px 10px; background-color:#67CC6B; opacity:0.1; border:2px solid #D3D4D6; width:150px; height:35px'></div>"
                             OnSelect: =Select(Parent)
                             Width: =164
-                            X: =37
+                            X: =85
                             Y: =69
                             ZIndex: =3
 
@@ -6100,7 +6091,7 @@
                             Height: =23
                             Text: ="Date"
                             Width: =116
-                            X: =58
+                            X: =106
                             Y: =80
                             ZIndex: =4
 
@@ -6119,7 +6110,7 @@
                             Size: =15
                             Text: =Text(ThisItem.'Requested Date', "dd mmm yyyy")
                             Width: =136
-                            X: =48
+                            X: =96
                             Y: =110
                             ZIndex: =9
 
@@ -6137,7 +6128,7 @@
                                 ="<div style='border-radius:10px 10px 10px 10px; background-color:#67CC6B; opacity:0.1; border:2px solid #D3D4D6; width:150px; height:35px'></div>"
                             OnSelect: =Select(Parent)
                             Width: =164
-                            X: =320
+                            X: =329
                             Y: =69
                             ZIndex: =5
 
@@ -6155,7 +6146,7 @@
                             Height: =23
                             Text: ="Type"
                             Width: =116
-                            X: =341
+                            X: =350
                             Y: =80
                             ZIndex: =6
 
@@ -6174,7 +6165,7 @@
                             Size: =15
                             Text: =ThisItem.'Material Type'
                             Width: =140
-                            X: =331
+                            X: =340
                             Y: =110
                             ZIndex: =10
 
@@ -6221,7 +6212,7 @@
                         DisplayMode: =DisplayMode.View
                         Height: =175
                         HtmlText: |-
-                            ="<div style='border-radius:15px 15px 15px 15px; background-color:#586782;width:580px; height:150px'></div>"
+                            ="<div style='border-radius:15px 15px 15px 15px; background-color:#353535;width:580px; height:150px'></div>"
                         OnSelect: |-
                             =Navigate('Invoice Lines');
                             Set(InvoiceInfo,ThisItem)
