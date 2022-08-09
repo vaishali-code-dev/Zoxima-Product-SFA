@@ -1,5 +1,5 @@
 "Visits As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
-    Fill: =RGBA(59, 59, 59, 1)
+    Fill: =RGBA(31, 31, 31, 1)
     LoadingSpinnerColor: =RGBA(255, 200, 61, 1)
     OnHidden: =Set(VarDialogOpen, false);
     OnVisible: |-
@@ -208,13 +208,14 @@
                 =If(ThisItem.status= 'status (Visits_1)'.Started && IsToday(ThisItem.'Visit Date'), ColorValue("#A00002"), RGBA(230, 230, 230, 0.3))
             BorderThickness: =If(ThisItem.status= 'status (Visits_1)'.Started && IsToday(ThisItem.'Visit Date'), 3, 1)
             DisabledFill: =RGBA(166, 166, 166, 1)
-            Fill: =RGBA(88, 103, 130, 1)
+            Fill: =RGBA(53, 53, 53, 1)
             FocusedBorderThickness: =4
             Height: =262
             HoverFill: =
             OnSelect: =Select(Parent)
             PressedFill: =RGBA(0, 0, 0, 0)
-            Width: =630
+            Width: =607
+            X: =8
             ZIndex: =1
 
         name As label:
@@ -296,7 +297,7 @@
             OnSelect: =Select(Parent)
             Text: ="Type"
             Width: =72
-            X: =58
+            X: =40
             Y: =89
             ZIndex: =5
 
@@ -315,7 +316,7 @@
             OnSelect: =Select(Parent)
             Text: =ThisItem.'Visit Type'
             Width: =200
-            X: =109
+            X: =73
             Y: =89
             ZIndex: =6
 
@@ -332,7 +333,7 @@
             OnSelect: =Select(Parent)
             Text: ="Visit ID"
             Width: =147
-            X: =58
+            X: =40
             Y: =124
             ZIndex: =7
 
@@ -351,7 +352,7 @@
             OnSelect: =Select(Parent)
             Text: =ThisItem.'Visit ID'
             Width: =200
-            X: =109
+            X: =73
             Y: =128
             ZIndex: =8
 
@@ -369,8 +370,8 @@
             Size: =12
             Text: ="Last Order Date"
             Width: =157
-            X: =389
-            Y: =97
+            X: =293
+            Y: =87
             ZIndex: =9
 
         Label19_41 As label:
@@ -388,8 +389,8 @@
             Size: =12
             Text: =Text(First(Sort(Filter(SalesOrders, 'Order From'.Account = ThisItem.Customer.Account && !('Order Date' = ThisItem.'Visit Date')), 'Order Date', Descending)).'Order Date', "dd mmm yyyy")
             Width: =157
-            X: =389
-            Y: =72
+            X: =439
+            Y: =89
             ZIndex: =10
 
         Label19_44 As label:
@@ -406,8 +407,8 @@
             Size: =12
             Text: ="Last Order Value"
             Width: =157
-            X: =389
-            Y: =162
+            X: =304
+            Y: =130
             ZIndex: =11
 
         Label19_42 As label:
@@ -427,8 +428,8 @@
                 =//Concatenate("₹", RandBetween(11000, 36000))
                 "₹ " & First(Sort(Filter(SalesOrders, 'Order From'.Account = ThisItem.Customer.Account && !('Order Date' = ThisItem.'Visit Date')), 'Order Date', Descending)).'Bill Amoount (Base)'
             Width: =157
-            X: =389
-            Y: =137
+            X: =439
+            Y: =120
             ZIndex: =12
 
         Rectangle9_1 As rectangle:
@@ -460,7 +461,7 @@
             OnSelect: =Select(Parent)
             Text: ="Account Type"
             Width: =147
-            X: =58
+            X: =40
             Y: =160
             ZIndex: =16
 
@@ -479,7 +480,7 @@
             OnSelect: =Select(Parent)
             Text: =ThisItem.Customer.'Account Type'
             Width: =200
-            X: =109
+            X: =73
             Y: =160
             ZIndex: =17
 
