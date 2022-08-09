@@ -77,11 +77,12 @@
                     ChevronFill: =RGBA(65, 76, 96, 1)
                     ChevronHoverBackground: =Self.ChevronBackground
                     ChevronHoverFill: =RGBA(184, 0, 0, 1)
-                    Color: =RGBA(9, 33, 98, 1)
+                    Color: =RGBA(255, 255, 255, 1)
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayFields: =["Value"]
+                    Fill: =RGBA(31, 31, 31, 1)
                     Height: =60
                     HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
                     HoverColor: =RGBA(255, 255, 255, 1)
@@ -127,11 +128,12 @@
 
                 "'4' As text":
                     BorderColor: =RGBA(9, 33, 98, 1)
-                    Color: =RGBA(0, 0, 0, 1)
+                    Color: =RGBA(255, 255, 255, 1)
                     Default: =""
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
                     FocusedBorderThickness: =4
                     Height: =60
                     HintText: ="Enter Brand Group"
@@ -182,11 +184,12 @@
                     ChevronFill: =RGBA(65, 76, 96, 1)
                     ChevronHoverBackground: =Self.ChevronBackground
                     ChevronHoverFill: =RGBA(184, 0, 0, 1)
-                    Color: =RGBA(9, 33, 98, 1)
+                    Color: =RGBA(255, 255, 255, 1)
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayFields: =["Value"]
+                    Fill: =RGBA(31, 31, 31, 1)
                     Height: =60
                     HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
                     HoverColor: =RGBA(255, 255, 255, 1)
@@ -318,6 +321,7 @@
                                     ChevronFill: =RGBA(9, 33, 98, 1)
                                     ChevronHoverBackground: =
                                     ChevronHoverFill: =RGBA(218, 218, 218, 1)
+                                    Color: =RGBA(255, 255, 255, 1)
                                     DefaultSelectedItems: |
                                         =If("JK" in imageocrResponse, ["JK"], "Sanghi" in imageocrResponse, ["Sanghi"], "Hathi" in imageocrResponse, ["Hathi"], "Shree" in imageocrResponse, ["Shree"])
                                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
@@ -326,6 +330,7 @@
                                     DisplayFields: =["Value"]
                                     DisplayMode: |
                                         =If("JK" || "Sanghi" || "Hathi" || "Shree" in imageocrResponse, DisplayMode.View, DisplayMode.Edit)
+                                    Fill: =RGBA(31, 31, 31, 1)
                                     Height: =70
                                     HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
                                     HoverColor: =RGBA(255, 255, 255, 1)
@@ -384,11 +389,12 @@
                                 PRoduct As text:
                                     BorderColor: =RGBA(9, 33, 98, 1)
                                     BorderThickness: =2
-                                    Color: =RGBA(0, 0, 0, 1)
+                                    Color: =RGBA(255, 255, 255, 1)
                                     Default: =If("JK" in imageocrResponse, "JK Cement", "", "Sanghi" in imageocrResponse, "Sanghi Cement", "", "Hathi" in imageocrResponse, "Hathi Cement", "", "Shree" in imageocrResponse, "Shree Cement", "")
                                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                     DisabledColor: =RGBA(166, 166, 166, 1)
                                     DisabledFill: =RGBA(244, 244, 244, 1)
+                                    Fill: =RGBA(31, 31, 31, 1)
                                     FocusedBorderThickness: =4
                                     Height: =70
                                     HintText: ="Enter Product Name"
@@ -429,11 +435,12 @@
                                 CompPrice As text:
                                     BorderColor: =RGBA(9, 33, 98, 1)
                                     BorderThickness: =2
-                                    Color: =RGBA(0, 0, 0, 1)
+                                    Color: =RGBA(255, 255, 255, 1)
                                     Default: =If("JK" in imageocrResponse, "1000", "", "Sanghi" in imageocrResponse, "2000", "", "Hathi" in imageocrResponse, "500", "", "Shree" in imageocrResponse, "1500", "")
                                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                     DisabledColor: =RGBA(166, 166, 166, 1)
                                     DisabledFill: =RGBA(244, 244, 244, 1)
+                                    Fill: =RGBA(31, 31, 31, 1)
                                     FocusedBorderThickness: =4
                                     Format: =TextFormat.Number
                                     Height: =70
@@ -653,11 +660,12 @@
                 "'8' As text":
                     BorderColor: =RGBA(9, 33, 98, 1)
                     BorderThickness: =2
-                    Color: =RGBA(0, 0, 0, 1)
+                    Color: =RGBA(255, 255, 255, 1)
                     Default: =
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
                     FocusedBorderThickness: =4
                     Height: =200
                     HintText: ="Enter Remarks"
@@ -731,7 +739,7 @@
                             PressedBorderColor: =RGBA(0, 0, 0, 0)
                             PressedFill: =RGBA(0, 0, 0, 0)
                             Width: =357
-                            X: =130
+                            X: =114
                             ZIndex: =2
 
                         AddMediaButton1 As addMedia:
@@ -755,7 +763,7 @@
                             Size: =18
                             Text: ="Click to add image"
                             Width: =357
-                            X: =90
+                            X: =99
                             ZIndex: =3
 
                 "'11' As groupContainer.manualLayoutContainer":

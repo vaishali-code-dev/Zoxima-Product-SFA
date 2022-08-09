@@ -8,7 +8,7 @@
 
     Gallery3_6 As gallery.galleryVertical:
         BorderColor: =RGBA(109, 109, 109, 1)
-        Height: =886
+        Height: =897
         Items: |-
             =Filter(
                 Filter(
@@ -22,7 +22,7 @@
             =Set(data2, ThisItem);
             Navigate('customer info')
         TemplateSize: =187
-        Y: =155
+        Y: =144
         ZIndex: =1
 
         HtmlText1_92 As htmlViewer:
