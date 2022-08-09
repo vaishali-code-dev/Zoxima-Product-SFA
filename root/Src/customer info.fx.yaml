@@ -1226,7 +1226,7 @@
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayMode: =If(Custinfoedit, DisplayMode.Edit, View)
-                    Fill: =RGBA(99, 105, 139, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.Lato
                     FontWeight: =FontWeight.Semibold
@@ -1752,10 +1752,9 @@
             ZIndex: =1
 
             "'Customer KYC_2' As groupContainer.manualLayoutContainer":
-                Height: =1620
+                Height: =1656
                 Visible: =If(customerinfo.Selected.Title="KYC",true)
                 Width: =640
-                Y: =40
                 ZIndex: =29
 
                 Rectangle5_33 As rectangle:
@@ -1763,14 +1762,15 @@
                     BorderStyle: =BorderStyle.None
                     BorderThickness: =2
                     DisabledFill: =RGBA(166, 166, 166, 1)
-                    Fill: =RGBA(99, 105, 139, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Height: =1514
                     HoverFill: =
                     PressedFill: =
                     Visible: =If(customerinfo.Selected.Title="KYC",true)
                     Width: =581
-                    X: =24
+                    X: =29
+                    Y: =7
                     ZIndex: =1
 
                 Label35_74 As label:
@@ -1889,6 +1889,7 @@
                     Color: =RGBA(255, 191, 0, 1)
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.Lato
                     FontWeight: =FontWeight.Semibold
@@ -2223,6 +2224,7 @@
                     Color: =RGBA(255, 191, 0, 1)
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.Lato
                     FontWeight: =FontWeight.Semibold
@@ -2345,6 +2347,7 @@
                     Color: =RGBA(255, 191, 0, 1)
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.Lato
                     FontWeight: =FontWeight.Bold
@@ -2372,11 +2375,11 @@
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayMode: =If(Custinfoedit, DisplayMode.Edit, View)
-                    Fill: =RGBA(99, 105, 139, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.Lato
                     FontWeight: =FontWeight.Semibold
-                    Height: =60
+                    Height: =52
                     HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
                     HoverColor: =RGBA(255, 191, 0, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
@@ -2391,6 +2394,7 @@
                     Visible: =If(customerinfo.Selected.Title = "KYC", true, false )
                     Width: =339
                     X: =234
+                    Y: =9
                     ZIndex: =54
 
                 Button23_13 As button:
@@ -2501,7 +2505,7 @@
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayMode: =If(Custinfoedit, DisplayMode.Edit, View)
-                    Fill: =RGBA(99, 105, 139, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.Lato
                     FontWeight: =FontWeight.Semibold
@@ -2534,7 +2538,7 @@
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayMode: =If(Custinfoedit, DisplayMode.Edit, View)
-                    Fill: =RGBA(99, 105, 139, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.Lato
                     FontWeight: =FontWeight.Semibold
@@ -2567,7 +2571,7 @@
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayMode: =If(Custinfoedit, DisplayMode.Edit, View)
-                    Fill: =RGBA(99, 105, 139, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.Lato
                     FontWeight: =FontWeight.Semibold
@@ -2600,7 +2604,7 @@
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayMode: =If(Custinfoedit, DisplayMode.Edit, View)
-                    Fill: =RGBA(99, 105, 139, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.Lato
                     FontWeight: =FontWeight.Semibold
@@ -2633,7 +2637,7 @@
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayMode: =If(Custinfoedit, DisplayMode.Edit, View)
-                    Fill: =RGBA(99, 105, 139, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.Lato
                     FontWeight: =FontWeight.Semibold
@@ -2666,7 +2670,7 @@
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayMode: =If(Custinfoedit, DisplayMode.Edit, View)
-                    Fill: =RGBA(99, 105, 139, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.Lato
                     FontWeight: =FontWeight.Semibold
@@ -2701,7 +2705,7 @@
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayMode: =If(Custinfoedit, DisplayMode.Edit, View)
-                    Fill: =RGBA(99, 105, 139, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.Lato
                     FontWeight: =FontWeight.Semibold
@@ -2736,7 +2740,7 @@
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayMode: =If(Custinfoedit, DisplayMode.Edit, View)
-                    Fill: =RGBA(99, 105, 139, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.Lato
                     FontWeight: =FontWeight.Semibold
@@ -2935,14 +2939,14 @@
             ZIndex: =1
 
             "'Customer Orders_3' As groupContainer.manualLayoutContainer":
-                Height: =713
+                Height: =728
                 Visible: =If(customerinfo.Selected.Title="Orders",true)
                 Width: =640
                 ZIndex: =2
 
                 Gallery3_10 As gallery.galleryVertical:
                     BorderColor: =RGBA(109, 109, 109, 1)
-                    Height: =536
+                    Height: =576
                     Items: |-
                         =Sort(
                              Filter(
@@ -2956,7 +2960,7 @@
                     OnSelect: |-
                         =Navigate('Order Info', ScreenTransition.Fade, {order: ThisItem})
                     TemplateSize: =382
-                    Y: =177
+                    Y: =152
                     ZIndex: =2
 
                     HtmlText1_202 As htmlViewer:
@@ -3635,7 +3639,6 @@
                     TemplateSize: =190
                     Width: =622
                     X: =4
-                    Y: =14
                     ZIndex: =3
 
                     Button4_56 As button:
@@ -3720,7 +3723,7 @@
                         Text: =""
                         Width: =188
                         X: =11
-                        Y: =79
+                        Y: =59
                         ZIndex: =6
 
                     Label22_56 As label:
@@ -3738,7 +3741,7 @@
                         Text: ="Last Quarter"
                         Width: =170
                         X: =20
-                        Y: =87
+                        Y: =67
                         ZIndex: =7
 
                     Label22_59 As label:
@@ -3787,7 +3790,7 @@
                             )
                         Width: =170
                         X: =20
-                        Y: =125
+                        Y: =105
                         ZIndex: =8
 
                 Group31_29 As group:
@@ -3825,7 +3828,7 @@
                         Text: =""
                         Width: =188
                         X: =216
-                        Y: =79
+                        Y: =59
                         ZIndex: =9
 
                     Label22_57 As label:
@@ -3843,7 +3846,7 @@
                         Text: ="Last 30 Days"
                         Width: =170
                         X: =225
-                        Y: =87
+                        Y: =67
                         ZIndex: =10
 
                     Label22_60 As label:
@@ -3892,7 +3895,7 @@
                             )
                         Width: =170
                         X: =225
-                        Y: =125
+                        Y: =105
                         ZIndex: =11
 
                 Group31_28 As group:
@@ -3930,7 +3933,7 @@
                         Text: =""
                         Width: =188
                         X: =424
-                        Y: =79
+                        Y: =59
                         ZIndex: =12
 
                     Label22_58 As label:
@@ -3948,7 +3951,7 @@
                         Text: ="Last 7 Days"
                         Width: =170
                         X: =433
-                        Y: =87
+                        Y: =67
                         ZIndex: =13
 
                     Label22_61 As label:
@@ -3997,7 +4000,7 @@
                             )
                         Width: =170
                         X: =433
-                        Y: =125
+                        Y: =105
                         ZIndex: =14
 
     Invoice As fluidGrid.fluidGridWithBlankCard:
