@@ -241,7 +241,7 @@
 
                     Gallery16_3 As gallery.galleryVertical:
                         BorderColor: =RGBA(109, 109, 109, 1)
-                        Height: =CountRows(Gallery16_3.AllItems)* Gallery16_3.TemplateHeight
+                        Height: =CountRows(Gallery16_3.AllItems)* Gallery16_3.TemplateHeight+30
                         Items: =CustomBrandVisitInfo
                         Layout: =Layout.Vertical
                         ShowScrollbar: =false
@@ -489,11 +489,16 @@
                                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                                 HoverFill: =RGBA(0, 0, 0, 0)
                                 Image: =First(ImageCol).Url
+                                OnSelect: |-
+                                    =Set(
+                                            varCam,
+                                            true
+                                        )
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedFill: =RGBA(0, 0, 0, 0)
                                 Width: =177
                                 X: =330
-                                Y: =397
+                                Y: =413
                                 ZIndex: =10
 
                         Button29_2 As button:

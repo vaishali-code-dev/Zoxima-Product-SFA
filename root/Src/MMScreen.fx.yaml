@@ -35,17 +35,18 @@ MMScreen As screen:
 
             ComboBox4_3 As combobox:
                 BorderColor: =RGBA(109, 109, 109, 1)
-                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronBackground: =RGBA(53, 53, 53, 1)
                 ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
                 ChevronDisabledFill: =RGBA(166, 166, 166, 1)
-                ChevronFill: =RGBA(82, 79, 79, 1)
+                ChevronFill: =RGBA(255, 191, 0, 1)
                 ChevronHoverBackground: =RGBA(79, 79, 79, 1)
                 ChevronHoverFill: =RGBA(218, 218, 218, 1)
-                Color: =RGBA(54, 53, 53, 1)
+                Color: =RGBA(255, 255, 255, 1)
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
                 DisplayFields: =["Value"]
+                Fill: =RGBA(53, 53, 53, 1)
                 Font: =Font.'Segoe UI'
                 Height: =71
                 HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
@@ -102,11 +103,12 @@ MMScreen As screen:
             TextInput6_6 As text:
                 BorderColor: =RGBA(109, 109, 109, 1)
                 BorderThickness: =2
-                Color: =RGBA(28, 28, 28, 1)
+                Color: =RGBA(255, 255, 255, 1)
                 Default: =""
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
+                Fill: =RGBA(53, 53, 53, 1)
                 FocusedBorderThickness: =4
                 Font: =Font.'Segoe UI'
                 Format: =TextFormat.Number
@@ -131,10 +133,11 @@ MMScreen As screen:
             DatePicker3_4 As datepicker:
                 BorderColor: =RGBA(109, 109, 109, 1)
                 CalendarHeaderFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
-                Color: =RGBA(28, 28, 28, 1)
+                Color: =RGBA(255, 255, 255, 1)
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
+                Fill: =RGBA(53, 53, 53, 1)
                 Font: =Font.'Segoe UI'
                 Height: =71
                 HoverDateFill: =RGBA(144, 144, 144, 1)
@@ -232,7 +235,7 @@ MMScreen As screen:
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
-                Fill: =RGBA(31, 31, 31, 1)
+                Fill: =RGBA(53, 53, 53, 1)
                 FocusedBorderThickness: =4
                 Font: =Font.'Segoe UI'
                 Height: =180

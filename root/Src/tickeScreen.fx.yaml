@@ -51,7 +51,7 @@
                 PressedFill: =RGBA(70, 74, 103, 1)
                 Visible: =If(customerinfo.Selected.Title = "Sites/Leads" ,true,false)
                 Width: =70
-                X: =532
+                X: =516
                 Y: =965
                 ZIndex: =1
 
@@ -75,7 +75,7 @@
                 PressedFill: =RGBA(0, 0, 0, 0)
                 Visible: =If(customerinfo.Selected.Title = "Sites/Leads" ,true,false)
                 Width: =50
-                X: =542
+                X: =526
                 Y: =975
                 ZIndex: =2
 
@@ -99,7 +99,7 @@
                     Size: =19
                     Text: ="Complaint Nature *"
                     Width: =560
-                    X: =40
+                    X: =24
                     Y: =16
                     ZIndex: =3
 
@@ -134,7 +134,7 @@
                     SelectMultiple: =false
                     Size: =19
                     Width: =575
-                    X: =40
+                    X: =24
                     Y: =68
                     ZIndex: =4
 
@@ -151,7 +151,7 @@
                 Size: =19
                 Text: ="Customer *"
                 Width: =560
-                X: =40
+                X: =24
                 Y: =376
                 ZIndex: =8
 
@@ -175,7 +175,7 @@
                     Size: =19
                     Text: ="Description *"
                     Width: =575
-                    X: =40
+                    X: =24
                     Y: =118
                     ZIndex: =5
 
@@ -204,7 +204,7 @@
                     RadiusTopRight: =0
                     Size: =19
                     Width: =575
-                    X: =40
+                    X: =24
                     Y: =191
                     ZIndex: =6
 
@@ -221,7 +221,7 @@
                 Size: =19
                 Text: ="Invoice No. *"
                 Width: =575
-                X: =40
+                X: =24
                 Y: =506
                 ZIndex: =12
 
@@ -245,7 +245,7 @@
                     Size: =19
                     Text: ="Account Type *"
                     Width: =560
-                    X: =40
+                    X: =24
                     Y: =261
                     ZIndex: =10
 
@@ -281,7 +281,7 @@
                     SelectMultiple: =false
                     Size: =19
                     Width: =575
-                    X: =40
+                    X: =24
                     Y: =322
                     ZIndex: =11
 
@@ -317,7 +317,7 @@
                 SelectMultiple: =false
                 Size: =19
                 Width: =575
-                X: =40
+                X: =24
                 Y: =569
                 ZIndex: =14
 
@@ -353,7 +353,7 @@
                 SelectionFill: =RGBA(255, 200, 61, 1)
                 Size: =21
                 Width: =575
-                X: =40
+                X: =24
                 Y: =439
                 ZIndex: =15
 
@@ -370,7 +370,7 @@
                 Size: =19
                 Text: ="Add Image *"
                 Width: =560
-                X: =42
+                X: =26
                 Y: =757
                 ZIndex: =18
 
@@ -394,7 +394,7 @@
                     Size: =19
                     Text: ="Department *"
                     Width: =575
-                    X: =40
+                    X: =24
                     Y: =641
                     ZIndex: =16
 
@@ -430,7 +430,7 @@
                     SelectMultiple: =false
                     Size: =19
                     Width: =575
-                    X: =40
+                    X: =24
                     Y: =689
                     ZIndex: =17
 
@@ -455,7 +455,7 @@
                     PressedBorderColor: =RGBA(0, 0, 0, 0)
                     PressedFill: =RGBA(0, 0, 0, 0)
                     Width: =253
-                    X: =196
+                    X: =180
                     Y: =813
                     ZIndex: =21
 
@@ -481,7 +481,7 @@
                     Size: =14
                     Text: ="Add"
                     Width: =157
-                    X: =244
+                    X: =228
                     Y: =864
                     ZIndex: =22
 
@@ -544,7 +544,7 @@
                 Size: =18
                 Text: ="Submit"
                 Width: =192
-                X: =226
+                X: =210
                 Y: =1013
                 ZIndex: =23
 

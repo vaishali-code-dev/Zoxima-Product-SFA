@@ -25,7 +25,7 @@ visitScreen As screen:
                 Color: =RGBA(31, 31, 31, 1)
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(22, 22, 22, 1)
-                DisabledFill: =RGBA(88, 103, 130, 1)
+                DisabledFill: =RGBA(53, 53, 53, 1)
                 DisplayMode: =DisplayMode.Disabled
                 Fill: =RGBA(255, 200, 61, 1)
                 FocusedBorderColor: =ColorFade(Self.Fill, 75%)
@@ -120,7 +120,7 @@ visitScreen As screen:
                     BorderColor: =RGBA(0, 0, 0, 0)
                     BorderStyle: =BorderStyle.None
                     BorderThickness: =2
-                    Color: =RGBA(255, 255, 255, 1)
+                    Color: =RGBA(255, 191, 0, 1)
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     FocusedBorderThickness: =4
@@ -175,7 +175,7 @@ visitScreen As screen:
                     BorderColor: =RGBA(0, 0, 0, 0)
                     BorderStyle: =BorderStyle.None
                     BorderThickness: =2
-                    Color: =RGBA(255, 255, 255, 1)
+                    Color: =RGBA(255, 191, 0, 1)
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     FocusedBorderThickness: =4
@@ -230,7 +230,7 @@ visitScreen As screen:
                     BorderColor: =RGBA(0, 0, 0, 0)
                     BorderStyle: =BorderStyle.None
                     BorderThickness: =2
-                    Color: =RGBA(255, 255, 255, 1)
+                    Color: =RGBA(255, 191, 0, 1)
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     FocusedBorderThickness: =4

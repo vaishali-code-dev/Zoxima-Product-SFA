@@ -53,7 +53,7 @@
             DisplayMode: =DisplayMode.View
             Height: =420
             HtmlText: |-
-                ="<div style='border-radius:15px 15px 15px 15px; background-color:#586782; width:"& App.Width-20 &"; height:405px'></div>"
+                ="<div style='border-radius:15px 15px 15px 15px; background-color:#353535; width:"& App.Width-20 &"; height:405px'></div>"
             OnSelect: |-
                 =Navigate('Order Info', ScreenTransition.Fade, {order: ThisItem})
             Width: =594

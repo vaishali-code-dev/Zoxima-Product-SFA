@@ -38,7 +38,7 @@ DistributorOnboarding As screen:
         Layout: =Layout.Vertical
         ShowNavigation: =true
         ShowScrollbar: =false
-        TemplateSize: =433
+        TemplateSize: =402
         Y: =230
         ZIndex: =1
 
@@ -48,13 +48,13 @@ DistributorOnboarding As screen:
             Color: =RGBA(31, 31, 31, 1)
             DisabledBorderColor: =RGBA(255, 0, 0, 1)
             DisabledColor: =RGBA(255, 255, 255, 1)
-            DisabledFill: =RGBA(88, 103, 130, 1)
+            DisabledFill: =RGBA(53, 53, 53, 1)
             DisplayMode: =DisplayMode.Disabled
             Fill: =RGBA(255, 200, 61, 1)
             FocusedBorderColor: =ColorFade(Self.Fill, 75%)
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Semibold
-            Height: =424
+            Height: =392
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(31, 31, 31, 1)
             HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
@@ -62,10 +62,6 @@ DistributorOnboarding As screen:
             PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
             PressedColor: =RGBA(31, 31, 31, 1)
             PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
-            RadiusBottomLeft: =30
-            RadiusBottomRight: =30
-            RadiusTopLeft: =30
-            RadiusTopRight: =30
             Size: =24
             Text: =""
             Width: =584
@@ -78,7 +74,7 @@ DistributorOnboarding As screen:
             DisabledFill: =RGBA(166, 166, 166, 1)
             Fill: =RGBA(0, 0, 0, 0)
             FocusedBorderThickness: =4
-            Height: =413
+            Height: =368
             HoverFill: =RGBA(0, 0, 0, 0)
             OnSelect: =Select(Parent)
             PressedFill: =RGBA(255, 200, 61, 1)
@@ -90,7 +86,7 @@ DistributorOnboarding As screen:
         Label45 As label:
             BorderColor: =RGBA(237, 102, 102, 1)
             BorderStyle: =BorderStyle.None
-            Color: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 191, 0, 1)
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
             DisabledColor: =RGBA(166, 166, 166, 1)
             FocusedBorderThickness: =4
@@ -186,7 +182,7 @@ DistributorOnboarding As screen:
             Visible: =If(Gallery14.Selected.Title = 'statusmain (Distributor Onboardings)'.Draft, true, false)
             Width: =292
             X: =169
-            Y: =350
+            Y: =326
             ZIndex: =18
 
         Button26 As button:
@@ -223,8 +219,8 @@ DistributorOnboarding As screen:
             Text: ="Approve"
             Visible: =If(Gallery14.Selected.Title = 'statusmain (Distributor Onboardings)'.Pending, true, false)
             Width: =155
-            X: =127
-            Y: =350
+            X: =103
+            Y: =326
             ZIndex: =19
 
         Button26_1 As button:
@@ -254,8 +250,8 @@ DistributorOnboarding As screen:
             Text: ="Reject"
             Visible: =If(Gallery14.Selected.Title = 'statusmain (Distributor Onboardings)'.Pending, true, false)
             Width: =155
-            X: =384
-            Y: =350
+            X: =360
+            Y: =326
             ZIndex: =20
 
         Icon10 As icon.Phone:
@@ -287,6 +283,7 @@ DistributorOnboarding As screen:
             ZIndex: =22
 
             Label46 As label:
+                Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =2
@@ -303,11 +300,12 @@ DistributorOnboarding As screen:
                     //ThisItem.'Record Id';
                     "Record Id"
                 Width: =140
-                X: =86
+                X: =44
                 Y: =95
                 ZIndex: =8
 
             Label46_5 As label:
+                Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =2
@@ -324,8 +322,8 @@ DistributorOnboarding As screen:
                     ThisItem.' Record Id'
                     //"Record Id"
                 Width: =140
-                X: =377
-                Y: =95
+                X: =40
+                Y: =137
                 ZIndex: =13
 
         Group43 As group:
@@ -336,6 +334,7 @@ DistributorOnboarding As screen:
             ZIndex: =22
 
             Label46_1 As label:
+                Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =2
@@ -352,11 +351,12 @@ DistributorOnboarding As screen:
                     //ThisItem.'Record Id';
                     "Name"
                 Width: =140
-                X: =86
-                Y: =143
+                X: =187
+                Y: =95
                 ZIndex: =9
 
             Label46_6 As label:
+                Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =2
@@ -372,8 +372,8 @@ DistributorOnboarding As screen:
                     =//ThisItem.'Distributor Name'
                     ThisItem.'First Name'
                 Width: =140
-                X: =377
-                Y: =143
+                X: =187
+                Y: =141
                 ZIndex: =14
 
         Group44 As group:
@@ -384,6 +384,7 @@ DistributorOnboarding As screen:
             ZIndex: =22
 
             Label46_3 As label:
+                Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =2
@@ -399,12 +400,13 @@ DistributorOnboarding As screen:
                     =//ThisItem.'Distributor Name'
                     //ThisItem.'Record Id';
                     "Year of Establishment"
-                Width: =291
-                X: =86
-                Y: =187
+                Width: =228
+                X: =342
+                Y: =92
                 ZIndex: =11
 
             Label46_7 As label:
+                Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =2
@@ -418,11 +420,11 @@ DistributorOnboarding As screen:
                 Size: =17
                 Text: |-
                     =//ThisItem.'Distributor Name'
-                    ThisItem.'Year of Establishment'
+                    Text(ThisItem.'Year of Establishment', "yyyy")
                     //"Record Id"
                 Width: =162
-                X: =377
-                Y: =185
+                X: =371
+                Y: =132
                 ZIndex: =15
 
         Group45 As group:
@@ -433,6 +435,7 @@ DistributorOnboarding As screen:
             ZIndex: =22
 
             Label46_2 As label:
+                Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =2
@@ -449,11 +452,12 @@ DistributorOnboarding As screen:
                     //ThisItem.'Record Id';
                     "Constitution of Firm"
                 Width: =301
-                X: =86
-                Y: =229
+                X: =273
+                Y: =196
                 ZIndex: =10
 
             Label46_8 As label:
+                Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =2
@@ -470,8 +474,8 @@ DistributorOnboarding As screen:
                     ThisItem.'Constitution of the firm'
                     //"Record Id"
                 Width: =140
-                X: =379
-                Y: =236
+                X: =357
+                Y: =255
                 ZIndex: =16
 
         Group46 As group:
@@ -482,6 +486,7 @@ DistributorOnboarding As screen:
             ZIndex: =22
 
             Label46_4 As label:
+                Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =2
@@ -498,11 +503,12 @@ DistributorOnboarding As screen:
                     //ThisItem.'Record Id';
                     "Gross Trunover"
                 Width: =196
-                X: =86
-                Y: =276
+                X: =64
+                Y: =194
                 ZIndex: =12
 
             Label46_9 As label:
+                Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =2
@@ -519,8 +525,8 @@ DistributorOnboarding As screen:
                     ThisItem.'Gross Turnover (Per Annum)'
                     //"Record Id"
                 Width: =140
-                X: =382
-                Y: =288
+                X: =83
+                Y: =247
                 ZIndex: =17
 
     Gallery14 As gallery.galleryHorizontal:

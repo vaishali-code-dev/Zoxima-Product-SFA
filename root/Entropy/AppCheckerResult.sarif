@@ -74733,6 +74733,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "'Start visit'.Canvas2_1.DataCard2_1.'Visit Info'.'Brand Visit Container_4'.Gallery16_3.'Info 1_17'.Image6.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Start visit'.Canvas2_1.DataCard2_1.'Visit Info'.'Brand Visit Container_4'.Gallery16_3.'Info 1_17'.Image6.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Start visit",
+                "type": "'Start visit'.Canvas2_1.DataCard2_1.'Visit Info'.'Brand Visit Container_4'.Gallery16_3.'Info 1_17'.Image6"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 14
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Start visit'.Canvas2_1.DataCard2_1.'Visit Info'.'Brand Visit Container_4'.Gallery16_3.'Info 1_17'.Image6.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Start visit'.Canvas2_1.DataCard2_1.'Visit Info'.'Brand Visit Container_4'.Gallery16_3.'Info 1_17'.Image6.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Start visit",
+                "type": "'Start visit'.Canvas2_1.DataCard2_1.'Visit Info'.'Brand Visit Container_4'.Gallery16_3.'Info 1_17'.Image6"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 15
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.glbEnvURL"
                 }
               ],

@@ -25,7 +25,7 @@ Profile As screen:
             BorderThickness: =0
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =If(Editprofileinfo, 1992, 1700)
+            Height: =1922
             Width: =Parent.Width
             X: =0
             Y: =0
