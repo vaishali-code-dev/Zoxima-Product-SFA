@@ -1,0 +1,544 @@
+"'Team Info' As screen":
+    Fill: =RGBA(59, 59, 59, 1)
+    LoadingSpinnerColor: =RGBA(255, 200, 61, 1)
+    OnVisible: =Set(varOpen, false)
+
+    "'Header Component_33' As 'Header Component_11'":
+        Height: =108
+        ScreenName: ="Team Info"
+        ZIndex: =2
+
+    Icon14_24 As icon.BackArrow:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =43
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =43
+        X: =18
+        Y: =14
+        ZIndex: =3
+
+    Image1_69 As image:
+        BorderColor: =RGBA(204, 204, 204, 1)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =1
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =45
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: =User().Image
+        ImagePosition: =ImagePosition.Fill
+        OnSelect: =Navigate(Profile)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Width: =45
+        X: =584
+        Y: =13
+        ZIndex: =40
+
+    "'Bottom Navigation_53' As 'Bottom Navigation'":
+        NavItems: |-
+            =Table(
+                {
+                    Title: If(
+                        varAttendance = "end",
+                        "End",
+                        varAttendance = "start",
+                        "Start",
+                        varAttendance = "done",
+                        "Ended"
+                    ),
+                    //Title: Start,
+                    Screen: If(
+                        varAttendance = "start",
+                        StartDay,
+                        varAttendance = "end",
+                        'End day',
+                        varAttendance = "done",
+                        'Day Ended'
+                    ),
+                    Icon: CalendarBlank,
+                    Active: false
+                },
+                {
+                    Title: "Visits",
+                    Screen: Visits,
+                    Icon: Waypoint,
+                    Active: false
+                },
+                {
+                    Title: "Dashboard",
+                    Screen: Home,
+                    Icon: Waffle,
+                    Active: false
+                },
+                {
+                    Title: "Parties",
+                    Screen: 'Customer (Dist)_1',
+                    Icon: People,
+                    Active: false
+                },
+                {
+                    Title: "Menu",
+                    Screen: 'Menu Screen',
+                    Icon: Hamburger,
+                    Active: true
+                }
+            )
+        Y: =1056
+        ZIndex: =66
+
+    Group12_12 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =-81
+        ZIndex: =66
+
+        Rectangle5_18 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(99, 105, 139, 1)
+            FocusedBorderThickness: =4
+            Height: =612
+            HoverFill: =
+            PressedFill: =
+            Width: =638
+            Y: =109
+            ZIndex: =41
+
+        Label5_336 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =17
+            Text: ="Full Name"
+            Width: =252
+            X: =32
+            Y: =122
+            ZIndex: =42
+
+        Label5_337 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =19
+            Text: =Concatenate(teamInfo.'First Name', " ", teamInfo.'Last Name')
+            Width: =368
+            X: =225
+            Y: =122
+            ZIndex: =43
+
+        Rectangle12_106 As rectangle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =1
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Width: =575
+            X: =24
+            Y: =174
+            ZIndex: =44
+
+        Label5_338 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =17
+            Text: ="Email"
+            Width: =252
+            X: =30
+            Y: =188
+            ZIndex: =45
+
+        Label5_339 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =19
+            Text: =teamInfo.Email
+            Width: =368
+            X: =225
+            Y: =188
+            ZIndex: =46
+
+        Rectangle12_107 As rectangle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =1
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Width: =575
+            X: =24
+            Y: =241
+            ZIndex: =47
+
+        Label5_340 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =17
+            Text: ="Mobile"
+            Width: =252
+            X: =31
+            Y: =255
+            ZIndex: =48
+
+        Label5_341 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =57
+            Size: =19
+            Text: =teamInfo.'Mobile Phone'
+            Width: =368
+            X: =225
+            Y: =255
+            ZIndex: =49
+
+        Rectangle12_108 As rectangle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =1
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Width: =575
+            X: =24
+            Y: =307
+            ZIndex: =50
+
+        Label5_342 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =17
+            Text: ="Status"
+            Width: =252
+            X: =30
+            Y: =320
+            ZIndex: =51
+
+        Label5_343 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =19
+            Text: =teamInfo.Status
+            Width: =368
+            X: =225
+            Y: =320
+            ZIndex: =52
+
+        Rectangle12_109 As rectangle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =1
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Width: =575
+            X: =24
+            Y: =372
+            ZIndex: =53
+
+        Label5_344 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =17
+            Text: ="Attached Dealer"
+            Width: =252
+            X: =28
+            Y: =386
+            ZIndex: =54
+
+        Label5_345 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =19
+            Text: =teamInfo.'Attached Dealer'.'Account Name (name)'
+            Width: =368
+            X: =225
+            Y: =386
+            ZIndex: =55
+
+        Rectangle12_110 As rectangle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =1
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Width: =575
+            X: =23
+            Y: =438
+            ZIndex: =56
+
+        Label5_346 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =17
+            Text: ="Attached Retailer"
+            Width: =252
+            X: =29
+            Y: =452
+            ZIndex: =57
+
+        Label5_347 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =19
+            Text: =teamInfo.'Attached Retailer'.'Account Name (name)'
+            Width: =368
+            X: =225
+            Y: =452
+            ZIndex: =58
+
+        Rectangle12_111 As rectangle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =1
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Width: =575
+            X: =24
+            Y: =505
+            ZIndex: =59
+
+        Label5_348 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =17
+            Text: ="Address"
+            Width: =325
+            X: =31
+            Y: =519
+            ZIndex: =60
+
+        Label5_349 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =91
+            Size: =19
+            Text: ="5979 El Pueblo Issaquah, WA 23382 U.S."
+            Width: =362
+            X: =236
+            Y: =517
+            ZIndex: =61
+
+        Rectangle12_112 As rectangle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =1
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Width: =575
+            X: =24
+            Y: =610
+            ZIndex: =62
+
+        Label5_350 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =17
+            Text: ="Description"
+            Width: =252
+            X: =32
+            Y: =624
+            ZIndex: =63
+
+        Label5_351 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =19
+            Text: =teamInfo.Description
+            Width: =368
+            X: =225
+            Y: =624
+            ZIndex: =64
+
+        Rectangle12_113 As rectangle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =1
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Width: =575
+            X: =24
+            Y: =676
+            ZIndex: =65
+

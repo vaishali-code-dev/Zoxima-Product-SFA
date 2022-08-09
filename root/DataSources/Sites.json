@@ -1,0 +1,231 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_siteses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_sites",
+    "MaxGetRowsCount": 500,
+    "Name": "Sites",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_Account": "Account",
+      "cr431_address": "Address",
+      "cr431_Area": "Area",
+      "cr431_category": "Category",
+      "cr431_city": "City",
+      "cr431_cr431_siteproducts_Site_cr431_sites": "Site Products",
+      "cr431_Dealer": "Dealer",
+      "cr431_district": "District",
+      "cr431_email": "Email",
+      "cr431_location": "Location",
+      "cr431_meetingpersonname": "Meeting Person Name",
+      "cr431_mobileno": "Mobile No",
+      "cr431_name": "Site Name ",
+      "cr431_phoneno": "Phone No",
+      "cr431_projecttype": "Project Type",
+      "cr431_remarks": "Remarks",
+      "cr431_Retailer": "Retailer",
+      "cr431_sitearea": "Site Area",
+      "cr431_siteareasqft": "Site Area(sq ft)",
+      "cr431_siteid": "siteid",
+      "cr431_sites_AsyncOperations": "System Jobs",
+      "cr431_sites_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_sites_DuplicateBaseRecord": "Duplicate Records (cr431_sites_DuplicateBaseRecord)",
+      "cr431_sites_DuplicateMatchingRecord": "Duplicate Records (cr431_sites_DuplicateMatchingRecord)",
+      "cr431_sites_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_sites_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_sites_ProcessSession": "Process Sessions",
+      "cr431_sites_SyncErrors": "Sync Errors",
+      "cr431_sitesid": "Sites",
+      "cr431_sitestages": "Site Stages",
+      "cr431_size": "Size",
+      "cr431_sourcetype": "Source ",
+      "cr431_status": "Status (cr431_status)",
+      "cr431_Visit": "Visit",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status (statecode)",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Sites",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Sites (Views)",
+    "Name": "_cr431_sites_views",
+    "RelatedEntityName": "Sites",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "23e364b8-6031-49cc-8374-f88d9cc09efb": "Active Sites",
+      "327bc427-3fe9-4076-af21-59f610634a63": "Sites Associated View",
+      "54d74523-dd57-4378-a08d-1fff66a835ad": "Sites Advanced Find View",
+      "abc2aca9-ee7b-47fd-a516-8305af0b254f": "Sites Lookup View",
+      "d52320f8-6670-45e0-9ca6-5d5bffd58623": "Inactive Sites"
+    }
+  },
+  {
+    "DisplayName": "Category (Sites)",
+    "Name": "cr431_sites_cr431_category",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Builder",
+      "254460001": "Contractor",
+      "254460002": "Dealer"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_category",
+        "OptionSetReferenceEntityName": "Sites"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_category",
+    "RelatedEntityName": "Sites",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Project Type (Sites)",
+    "Name": "cr431_sites_cr431_projecttype",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Hospital",
+      "254460001": "School",
+      "254460002": "Hotel",
+      "254460003": "College",
+      "254460004": "Park"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_projecttype",
+        "OptionSetReferenceEntityName": "Sites"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_projecttype",
+    "RelatedEntityName": "Sites",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Site Stages (Sites)",
+    "Name": "cr431_sites_cr431_sitestages",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Bricking",
+      "254460001": "Plastering",
+      "254460002": "Wiring",
+      "254460003": "Installing"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_sitestages",
+        "OptionSetReferenceEntityName": "Sites"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_sitestages",
+    "RelatedEntityName": "Sites",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Source  (Sites)",
+    "Name": "cr431_sites_cr431_sourcetype",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Email",
+      "254460001": "Marketing",
+      "254460002": "Influencers",
+      "254460003": "Social Media"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_sourcetype",
+        "OptionSetReferenceEntityName": "Sites"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_sourcetype",
+    "RelatedEntityName": "Sites",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Sites)",
+    "Name": "cr431_sites_cr431_status",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Funnel",
+      "254460001": "Lost",
+      "254460002": "Won",
+      "254460003": "Rejected"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_status",
+        "OptionSetReferenceEntityName": "Sites"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_status",
+    "RelatedEntityName": "Sites",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Sites)_1",
+    "Name": "cr431_sites_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Sites"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Sites",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Sites)",
+    "Name": "cr431_sites_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Sites"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Sites",
+    "Type": "OptionSetInfo"
+  }
+]

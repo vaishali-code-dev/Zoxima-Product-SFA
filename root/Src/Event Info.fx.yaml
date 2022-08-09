@@ -1,0 +1,1482 @@
+"'Event Info' As screen":
+    Fill: =RGBA(31, 31, 31, 1)
+    LoadingSpinnerColor: =RGBA(255, 200, 61, 1)
+
+    HtmlText1_134 As htmlViewer:
+        Color: =RGBA(103, 204, 107, 1)
+        Height: =82
+        HtmlText: |-
+            ="<div style='border-radius:0; background-color:#A00002; width:640px; height:70px'></div>"
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =640
+        ZIndex: =3
+
+    Label18_4 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =70
+        Size: =24
+        Text: ="Event"
+        Width: =560
+        X: =80
+        ZIndex: =4
+
+    Icon19_5 As icon.ChevronLeft:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =35
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =35
+        X: =16
+        Y: =17
+        ZIndex: =5
+
+    Image1_44 As image:
+        BorderColor: =RGBA(204, 204, 204, 1)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =1
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =45
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: =User().Image
+        ImagePosition: =ImagePosition.Fill
+        OnSelect: =Navigate(Profile)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Width: =45
+        X: =584
+        Y: =13
+        ZIndex: =6
+
+    "'Dashboard Toptab_3' As gallery.galleryHorizontal":
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Height: =56
+        Items: |-
+            =Table(
+                {
+                    Title: "Event Info"
+                },
+                {
+                    Title: "Event Participants"
+                }
+            )
+        OnSelect: =
+        ShowScrollbar: =false
+        TemplateSize: =226
+        Width: =461
+        X: =90
+        Y: =98
+        ZIndex: =7
+
+        Rectangle3_8 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: |-
+                =If(ThisItem.IsSelected, ColorValue("#A00002"), RGBA(103, 204, 107, 0.1))
+            FocusedBorderThickness: =4
+            Height: =46
+            HoverFill: =RGBA(103, 204, 107, 0.28)
+            OnSelect: =Select(Parent)
+            PressedFill: =RGBA(103, 204, 107, 0.25)
+            Width: =226
+            ZIndex: =1
+
+        Label2_120 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: |-
+                =If(ThisItem.IsSelected, ColorValue("#A00002"), RGBA(103, 204, 107, 0))
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =46
+            OnSelect: =
+            Size: =18
+            Text: =ThisItem.Title
+            Width: =225
+            ZIndex: =3
+
+    Rectangle5_9 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledFill: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(88, 103, 130, 1)
+        FocusedBorderThickness: =4
+        Height: =607
+        HoverFill: =
+        PressedFill: =
+        Visible: =If('Dashboard Toptab_3'.Selected.Title = "Site Info", true, false )
+        Width: =625
+        X: =7
+        Y: =243
+        ZIndex: =8
+
+    Gallery4_8 As gallery.galleryVertical:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Height: =805
+        Items: =Filter('Event Participants', Event.'Event _Id' = EventItem.cr431_event_id)
+        Layout: =Layout.Vertical
+        ShowScrollbar: =false
+        TemplateSize: =135
+        Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Participants", true, false )
+        Y: =235
+        ZIndex: =40
+
+        Rectangle13_3 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(88, 103, 130, 1)
+            FocusedBorderThickness: =4
+            Height: =127
+            HoverFill: =
+            OnSelect: =Select(Parent)
+            PressedFill: =
+            Width: =630
+            Y: =3
+            ZIndex: =1
+
+        Rectangle16_2 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(128, 135, 176, 1)
+            FocusedBorderThickness: =4
+            Height: =55
+            HoverFill: =
+            OnSelect: =Select(Parent)
+            PressedFill: =
+            Width: =630
+            ZIndex: =2
+
+        Group13_21 As group:
+            Height: =5
+            Width: =5
+            X: =4
+            Y: =-179
+            ZIndex: =10
+
+            Label2_121 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(219, 219, 219, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                FontWeight: =FontWeight.Bold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: |-
+                    ="Participant Name:"
+                Width: =258
+                X: =25
+                Y: =3
+                ZIndex: =8
+
+            Label2_124 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                FontWeight: =FontWeight.Bold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =18
+                Text: =ThisItem.Influencer.'Full Name'
+                Width: =378
+                X: =244
+                Y: =3
+                ZIndex: =9
+
+        Group13_20 As group:
+            Height: =5
+            Width: =5
+            X: =-256
+            Y: =-179
+            ZIndex: =12
+
+            Label2_125 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(219, 219, 219, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                FontWeight: =FontWeight.Semibold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Text: ="Email"
+                Width: =100
+                X: =168
+                Y: =68
+                ZIndex: =10
+
+            Label2_162 As label:
+                Align: =Align.Right
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 191, 0, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                FontWeight: =FontWeight.Semibold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =15
+                Text: =ThisItem.Influencer.Email
+                Width: =389
+                X: =121
+                Y: =68
+                ZIndex: =11
+
+    Group11_7 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =40
+
+        Label1_5 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            Height: =70
+            Size: =21
+            Text: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", "Event Information", "Event Participants" )
+            Width: =560
+            X: =18
+            Y: =163
+            ZIndex: =9
+
+        Rectangle7_12 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            FocusedBorderThickness: =4
+            Height: =3
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Width: =160
+            X: =26
+            Y: =222
+            ZIndex: =10
+
+    Group49 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =42
+
+        Rectangle5_10 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(88, 103, 130, 1)
+            FocusedBorderThickness: =4
+            Height: =576
+            HoverFill: =
+            PressedFill: =
+            Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+            Width: =625
+            X: =6
+            Y: =242
+            ZIndex: =2
+
+        Label5_39 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =56
+            Size: =17
+            Text: ="Organizer Name"
+            Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+            Width: =252
+            X: =27
+            Y: =248
+            ZIndex: =11
+
+        Rectangle12_23 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+            Width: =625
+            X: =Rectangle5_9.X
+            Y: =306
+            ZIndex: =13
+
+        Label5_58 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =56
+            Size: =17
+            Text: ="Event Name"
+            Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+            Width: =252
+            X: =25
+            Y: =307
+            ZIndex: =14
+
+        Rectangle12_24 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+            Width: =625
+            X: =Rectangle5_9.X
+            Y: =371
+            ZIndex: =16
+
+        Label5_60 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =56
+            Size: =17
+            Text: ="Event Date"
+            Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+            Width: =252
+            X: =26
+            Y: =372
+            ZIndex: =17
+
+        Rectangle12_25 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+            Width: =625
+            X: =Rectangle5_9.X
+            Y: =436
+            ZIndex: =19
+
+        Label5_168 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =56
+            Size: =17
+            Text: ="Actual Expense"
+            Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+            Width: =252
+            X: =23
+            Y: =436
+            ZIndex: =23
+
+        Rectangle12_27 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+            Width: =625
+            X: =Rectangle5_9.X
+            Y: =500
+            ZIndex: =25
+
+        Label5_170 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =56
+            Size: =17
+            Text: ="Budget"
+            Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+            Width: =252
+            X: =24
+            Y: =501
+            ZIndex: =26
+
+        Rectangle12_28 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+            Width: =625
+            X: =Rectangle5_9.X
+            Y: =565
+            ZIndex: =28
+
+        Label5_172 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =56
+            Size: =17
+            Text: ="Meet Type"
+            Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+            Width: =325
+            X: =26
+            Y: =566
+            ZIndex: =29
+
+        Rectangle12_29 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+            Width: =625
+            X: =Rectangle5_9.X
+            Y: =630
+            ZIndex: =31
+
+        Label5_174 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =56
+            Size: =17
+            Text: ="Expected Participants"
+            Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+            Width: =252
+            X: =27
+            Y: =631
+            ZIndex: =32
+
+        Rectangle12_30 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+            Width: =625
+            X: =Rectangle5_9.X
+            Y: =695
+            ZIndex: =34
+
+        Label5_176 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =56
+            Size: =17
+            Text: ="Target Audience"
+            Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+            Width: =252
+            X: =26
+            Y: =696
+            ZIndex: =35
+
+        Rectangle12_31 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+            Width: =625
+            X: =Rectangle5_9.X
+            Y: =746
+            ZIndex: =37
+
+        Label5_178 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =56
+            Size: =17
+            Text: ="Submit For Approval"
+            Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+            Width: =308
+            X: =26
+            Y: =747
+            ZIndex: =38
+
+    EditBackdrop_2 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledFill: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(212, 210, 210, 0.7)
+        FocusedBorderThickness: =4
+        Height: =1136
+        HoverFill: =
+        PressedFill: =RGBA(255, 200, 61, 1)
+        Visible: =If(Addeventpart, true, false)
+        Width: =640
+        ZIndex: =43
+
+    Form3 As form:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        DataSource: ='Event Participants'
+        DefaultMode: =FormMode.New
+        Height: =377
+        Visible: =If(Addeventpart, true, false)
+        Width: =495
+        X: =80
+        Y: =363
+        ZIndex: =45
+
+        Event_DataCard1 As typedDataCard.comboBoxEditCard:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr431_Event"
+            Default: =ThisItem.Event
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Event Participants'],DataSourceInfo.DisplayName,"cr431_Event")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue27.Selected
+            Width: =495
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey29 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(0, 94, 146, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =48
+                PaddingLeft: =0
+                Size: =18
+                Text: ="Organizer Name"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue27 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                ChevronBackground: =RGBA(31, 31, 31, 1)
+                ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                ChevronFill: =RGBA(218, 218, 218, 1)
+                ChevronHoverBackground: =RGBA(79, 79, 79, 1)
+                ChevronHoverFill: =RGBA(218, 218, 218, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DefaultSelectedItems: |-
+                    =//Choices(@'Event Participants'].cr431_Event)
+                    Filter(Events, Event = EventItem.cr431_eventid)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayFields: =["cr431_name"]
+                DisplayMode: =DisplayMode.View
+                Fill: =RGBA(31, 31, 31, 1)
+                Font: =Font.'Segoe UI'
+                Height: =52
+                HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(79, 79, 79, 1)
+                IsSearchable: =false
+                Items: |-
+                    =//Choices(@'Event Participants'].cr431_Event)
+                    Filter(Events, Event = EventItem.cr431_eventid)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.View, 10, 0)
+                PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                PressedColor: =RGBA(31, 31, 31, 1)
+                PressedFill: =RGBA(255, 200, 61, 1)
+                SearchFields: =["cr431_name"]
+                SearchItems: =[]
+                SelectionColor: =RGBA(31, 31, 31, 1)
+                SelectionFill: =RGBA(255, 200, 61, 1)
+                SelectMultiple: =false
+                Size: =18
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =67
+                ZIndex: =2
+
+            ErrorMessage25 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(255, 51, 51, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue27.Y + DataCardValue27.Height
+                ZIndex: =3
+
+            StarVisible25 As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =DataCardKey29.Height
+                PaddingLeft: =0
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey29.Y
+                ZIndex: =4
+
+        Influencer_DataCard1 As typedDataCard.comboBoxEditCard:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr431_Influencer"
+            Default: =ThisItem.Influencer
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Event Participants'],DataSourceInfo.DisplayName,"cr431_Influencer")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue28.Selected
+            Width: =495
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey30 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(0, 94, 146, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =48
+                PaddingLeft: =0
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue28 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                ChevronBackground: =RGBA(31, 31, 31, 1)
+                ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                ChevronFill: =RGBA(218, 218, 218, 1)
+                ChevronHoverBackground: =RGBA(79, 79, 79, 1)
+                ChevronHoverFill: =RGBA(218, 218, 218, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DefaultSelectedItems: =Parent.Default
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayFields: =["fullname"]
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(31, 31, 31, 1)
+                Font: =Font.'Segoe UI'
+                Height: =51
+                HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(79, 79, 79, 1)
+                Items: =Choices([@'Event Participants'].cr431_Influencer)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                PressedColor: =RGBA(31, 31, 31, 1)
+                PressedFill: =RGBA(255, 200, 61, 1)
+                SearchFields: =["fullname"]
+                SearchItems: =Search(Choices([@'Event Participants'].cr431_Influencer),DataCardValue28.SearchText,"fullname")
+                SelectionColor: =RGBA(31, 31, 31, 1)
+                SelectionFill: =RGBA(255, 200, 61, 1)
+                SelectMultiple: =false
+                Size: =18
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =67
+                ZIndex: =2
+
+            ErrorMessage26 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(255, 51, 51, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue28.Y + DataCardValue28.Height
+                ZIndex: =3
+
+            StarVisible26 As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =DataCardKey30.Height
+                PaddingLeft: =0
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey30.Y
+                ZIndex: =4
+
+    Group18 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =45
+
+        Circle3 As circle:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(255, 200, 61, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            Height: =54
+            HoverFill: =RGBA(255, 200, 61, 1)
+            OnSelect: =Set(Addeventpart, !Addeventpart)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Participants", true, false )
+            Width: =54
+            X: =540
+            Y: =174
+            ZIndex: =41
+
+        Icon9 As icon.Add:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            Color: =RGBA(31, 31, 31, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =37
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Add
+            OnSelect: =Set(Addeventpart, !Addeventpart)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Participants", true, false )
+            Width: =37
+            X: =549
+            Y: =183
+            ZIndex: =42
+
+    Button16 As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(31, 31, 31, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(255, 200, 61, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =50
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(31, 31, 31, 1)
+        HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+        OnSelect: |-
+            =If(
+                CountRows(
+                    Filter(
+                        'Event Participants',
+                        Influencer.Contact = DataCardValue28.Selected.Contact && Event.Event = DataCardValue27.Selected.Event
+                    )
+                ) > 0,
+                Notify("Influencer already Exits"),
+                SubmitForm(Form3);
+                Set(Addeventpart, !Addeventpart)
+            );
+            ResetForm(Form3);
+        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+        PressedColor: =RGBA(31, 31, 31, 1)
+        PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =18
+        Text: ="SAVE"
+        Visible: =If(Addeventpart, true, false)
+        Width: =210
+        X: =222
+        Y: =665
+        ZIndex: =46
+
+    "'Bottom Navigation_72' As 'Bottom Navigation'":
+        NavItems: |-
+            =Table(
+                {
+                    Title: If(
+                        varAttendance = "end",
+                        "End",
+                        varAttendance = "start",
+                        "Start",
+                        varAttendance = "done",
+                        "Ended"
+                    ),
+                    //Title: Start,
+                    Screen: If(
+                        varAttendance = "start",
+                        StartDay,
+                        varAttendance = "end",
+                        'End day',
+                        varAttendance = "done",
+                        'Day Ended'
+                    ),
+                    Icon: CalendarBlank,
+                    Active: false
+                },
+                {
+                    Title: "Visits",
+                    Screen: Visits,
+                    Icon: Waypoint,
+                    Active: false
+                },
+                {
+                    Title: "Dashboard",
+                    Screen: Home,
+                    Icon: Waffle,
+                    Active: false
+                },
+                {
+                    Title: "Parties",
+                    Screen: 'Customer (Dist)_1',
+                    Icon: People,
+                    Active: false
+                },
+                {
+                    Title: "Menu",
+                    Screen: 'Menu Screen',
+                    Icon: Hamburger,
+                    Active: true
+                }
+            )
+        Y: =1052
+        ZIndex: =48
+
+    Button23_3 As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(31, 31, 31, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(255, 200, 61, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =29
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(31, 31, 31, 1)
+        HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+        OnSelect: =Set(eventinfoedit, !eventinfoedit)
+        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+        PressedColor: =RGBA(31, 31, 31, 1)
+        PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        RadiusBottomLeft: =9
+        RadiusBottomRight: =9
+        RadiusTopLeft: =9
+        RadiusTopRight: =9
+        Size: =16
+        Text: ="Edit"
+        Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+        Width: =112
+        X: =512
+        Y: =188
+        ZIndex: =49
+
+    TextInput2 As text:
+        Align: =Align.Right
+        BorderColor: =RGBA(109, 109, 109, 1)
+        BorderThickness: =2
+        Color: =RGBA(255, 191, 0, 1)
+        Default: =EventItem.cr431_name
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =If(eventinfoedit, DisplayMode.Edit, View)
+        Fill: =RGBA(88, 103, 130, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =39
+        HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverColor: =RGBA(255, 191, 0, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        PressedBorderColor: =RGBA(255, 200, 61, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =18
+        Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+        Width: =310
+        X: =302
+        Y: =250
+        ZIndex: =50
+
+    TextInput2_2 As text:
+        Align: =Align.Right
+        BorderColor: =RGBA(109, 109, 109, 1)
+        BorderThickness: =2
+        Color: =RGBA(255, 191, 0, 1)
+        Default: =EventItem.cr431_eventname
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =If(eventinfoedit, DisplayMode.Edit, View)
+        Fill: =RGBA(88, 103, 130, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =39
+        HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverColor: =RGBA(255, 191, 0, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        PressedBorderColor: =RGBA(255, 200, 61, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =18
+        Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+        Width: =310
+        X: =301
+        Y: =318
+        ZIndex: =51
+
+    TextInput2_3 As text:
+        Align: =Align.Right
+        BorderColor: =RGBA(109, 109, 109, 1)
+        BorderThickness: =2
+        Color: =RGBA(255, 191, 0, 1)
+        Default: =Text(EventItem.cr431_eventdate, "dd mmm yyyy")
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =If(eventinfoedit, DisplayMode.Edit, View)
+        Fill: =RGBA(88, 103, 130, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =39
+        HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverColor: =RGBA(255, 191, 0, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        PressedBorderColor: =RGBA(255, 200, 61, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =18
+        Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+        Width: =310
+        X: =301
+        Y: =383
+        ZIndex: =52
+
+    Group20 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =53
+
+        Rectangle20 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =457
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If(Addeventpart, true, false)
+            Width: =543
+            X: =51
+            Y: =304
+            ZIndex: =44
+
+        Icon11 As icon.Cancel:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            Color: =RGBA(148, 10, 10, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =75
+            Height: =54
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Cancel
+            OnSelect: =Set(Addeventpart, !Addeventpart)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Visible: =If(Addeventpart, true, false)
+            Width: =54
+            X: =521
+            Y: =312
+            ZIndex: =47
+
+    TextInput2_5 As text:
+        Align: =Align.Right
+        BorderColor: =RGBA(109, 109, 109, 1)
+        BorderThickness: =2
+        Color: =RGBA(255, 191, 0, 1)
+        Default: =EventItem.new_actualexpense
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =If(eventinfoedit, DisplayMode.Edit, View)
+        Fill: =RGBA(88, 103, 130, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =44
+        HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverColor: =RGBA(255, 191, 0, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        PressedBorderColor: =RGBA(255, 200, 61, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =18
+        Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+        Width: =392
+        X: =222
+        Y: =443
+        ZIndex: =54
+
+    TextInput2_6 As text:
+        Align: =Align.Right
+        BorderColor: =RGBA(109, 109, 109, 1)
+        BorderThickness: =2
+        Color: =RGBA(255, 191, 0, 1)
+        Default: =EventItem.cr431_budget
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =If(eventinfoedit, DisplayMode.Edit, View)
+        Fill: =RGBA(88, 103, 130, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =44
+        HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverColor: =RGBA(255, 191, 0, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        PressedBorderColor: =RGBA(255, 200, 61, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =18
+        Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+        Width: =392
+        X: =222
+        Y: =508
+        ZIndex: =55
+
+    TextInput2_8 As text:
+        Align: =Align.Right
+        BorderColor: =RGBA(109, 109, 109, 1)
+        BorderThickness: =2
+        Color: =RGBA(255, 191, 0, 1)
+        Default: =EventItem.cr431_expectedparticipation
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =If(eventinfoedit, DisplayMode.Edit, View)
+        Fill: =RGBA(88, 103, 130, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =49
+        HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverColor: =RGBA(255, 191, 0, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        PaddingLeft: =10
+        PressedBorderColor: =RGBA(255, 200, 61, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =18
+        Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+        Width: =310
+        X: =302
+        Y: =638
+        ZIndex: =57
+
+    Button23_4 As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(31, 31, 31, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(255, 200, 61, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =45
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(31, 31, 31, 1)
+        HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+        OnSelect: |-
+            =//Set(Custinfoedit, false);
+            Patch(
+                Events,
+                LookUp(
+                    Events,
+                    Event = EventItem.cr431_eventid
+                ),
+                {
+                    Name: TextInput2.Text,
+                    'Event Name': TextInput2_2.Text,
+                    'Event Date': DateValue(TextInput2_3.Text),
+                    'Actual Expense:': TextInput2_5.Text,
+                    'Budget:': Value(TextInput2_6.Text),
+                    'Select meet type:': Dropdown8.Selected.Value,
+                    'Expected Participation:':Value(TextInput2_8.Text),
+                    'Target Audience:':Dropdown8_1.Selected.Value,
+                    'Submit for Approval:':Dropdown8_3.Selected.Value
+                }
+            );
+            Set(
+                eventinfoedit,
+                false
+            )
+        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+        PressedColor: =RGBA(31, 31, 31, 1)
+        PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        RadiusBottomLeft: =7
+        RadiusBottomRight: =7
+        RadiusTopLeft: =7
+        RadiusTopRight: =7
+        Size: =20
+        Text: ="Save"
+        Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info" && eventinfoedit, true, false )
+        Width: =165
+        X: =240
+        Y: =912
+        ZIndex: =60
+
+    Dropdown8 As dropdown:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        BorderStyle: =BorderStyle.None
+        ChevronBackground: =RGBA(88, 103, 130, 1)
+        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+        ChevronFill: =RGBA(255, 191, 0, 1)
+        ChevronHoverBackground: =RGBA(0, 0, 0, 0)
+        ChevronHoverFill: =RGBA(218, 218, 218, 1)
+        Color: =RGBA(255, 191, 0, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =If(eventinfoedit, DisplayMode.Edit, View)
+        Fill: =RGBA(88, 103, 130, 1)
+        Font: =Font.'Segoe UI'
+        Height: =46
+        HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Items: |-
+            =//EventItem.cr431_selectmeettype
+            Choices(Events.'Select meet type:')
+        PaddingBottom: =5
+        PaddingLeft: =130
+        PaddingRight: =5
+        PaddingTop: =5
+        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(255, 200, 61, 1)
+        SelectionColor: =RGBA(31, 31, 31, 1)
+        SelectionFill: =RGBA(255, 200, 61, 1)
+        Size: =18
+        Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+        Width: =309
+        X: =315
+        Y: =576
+        ZIndex: =61
+
+    Dropdown8_1 As dropdown:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        BorderStyle: =BorderStyle.None
+        ChevronBackground: =RGBA(88, 103, 130, 1)
+        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+        ChevronFill: =RGBA(255, 191, 0, 1)
+        ChevronHoverBackground: =RGBA(0, 0, 0, 0)
+        ChevronHoverFill: =RGBA(218, 218, 218, 1)
+        Color: =RGBA(255, 191, 0, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =If(eventinfoedit, DisplayMode.Edit, View)
+        Fill: =RGBA(88, 103, 130, 1)
+        Font: =Font.'Segoe UI'
+        Height: =41
+        HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Items: |-
+            =//EventItem.cr431_selectmeettype
+            Choices(Events.'Target Audience:')
+        PaddingBottom: =5
+        PaddingLeft: =160
+        PaddingRight: =5
+        PaddingTop: =5
+        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(255, 200, 61, 1)
+        SelectionColor: =RGBA(31, 31, 31, 1)
+        SelectionFill: =RGBA(255, 200, 61, 1)
+        Size: =18
+        Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+        Width: =309
+        X: =315
+        Y: =700
+        ZIndex: =64
+
+    Dropdown8_3 As dropdown:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        BorderStyle: =BorderStyle.None
+        ChevronBackground: =RGBA(88, 103, 130, 1)
+        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+        ChevronFill: =RGBA(255, 191, 0, 1)
+        ChevronHoverBackground: =RGBA(0, 0, 0, 0)
+        ChevronHoverFill: =RGBA(218, 218, 218, 1)
+        Color: =RGBA(255, 191, 0, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =If(eventinfoedit, DisplayMode.Edit, View)
+        Fill: =RGBA(88, 103, 130, 1)
+        Font: =Font.'Segoe UI'
+        Height: =41
+        HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Items: |-
+            =//EventItem.cr431_selectmeettype
+            Choices(Events.'Submit for Approval:')
+        PaddingBottom: =5
+        PaddingLeft: =200
+        PaddingRight: =5
+        PaddingTop: =5
+        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(255, 200, 61, 1)
+        SelectionColor: =RGBA(31, 31, 31, 1)
+        SelectionFill: =RGBA(255, 200, 61, 1)
+        Size: =18
+        Visible: =If('Dashboard Toptab_3'.Selected.Title = "Event Info", true, false )
+        Width: =309
+        X: =315
+        Y: =752
+        ZIndex: =65
+

@@ -1,0 +1,1164 @@
+"'Invoice Info' As screen":
+    Fill: =RGBA(59, 59, 59, 1)
+    LoadingSpinnerColor: =RGBA(255, 200, 61, 1)
+    OnVisible: =Set(varOpen, false)
+
+    "'Header Component_29' As 'Header Component_11'":
+        Height: =108
+        ScreenName: ="Invoice Info"
+        ZIndex: =2
+
+    Icon14_20 As icon.BackArrow:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =43
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =43
+        X: =18
+        Y: =14
+        ZIndex: =3
+
+    Image1_66 As image:
+        BorderColor: =RGBA(204, 204, 204, 1)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =1
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =45
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: =User().Image
+        ImagePosition: =ImagePosition.Fill
+        OnSelect: =Navigate(Profile)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Width: =45
+        X: =584
+        Y: =13
+        ZIndex: =40
+
+    "'Dashboard Toptab_4' As gallery.galleryHorizontal":
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Height: =56
+        Items: |-
+            =Table(
+                {
+                    Title: "Invoice Info"
+                },
+                {
+                    Title: "Invoice Lines"
+                }
+            )
+        OnSelect: =
+        ShowScrollbar: =false
+        TemplateSize: =195
+        Width: =405
+        X: =118
+        Y: =97
+        ZIndex: =41
+
+        Rectangle3_9 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: |-
+                =If(ThisItem.IsSelected, ColorValue("#A00002"), RGBA(103, 204, 107, 0.1))
+            FocusedBorderThickness: =4
+            Height: =46
+            HoverFill: =RGBA(103, 204, 107, 0.28)
+            OnSelect: =Select(Parent)
+            PressedFill: =RGBA(103, 204, 107, 0.25)
+            Width: =195
+            ZIndex: =1
+
+        Label2_150 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: |-
+                =If(ThisItem.IsSelected, ColorValue("#A00002"), RGBA(103, 204, 107, 0))
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =46
+            OnSelect: =
+            Size: =18
+            Text: =ThisItem.Title
+            Width: =184
+            ZIndex: =3
+
+    Gallery4_10 As gallery.galleryVertical:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Height: =785
+        Items: =Filter('Invoice Line', 'Invoice Number'.'Invoice ID' = invoiceItem.'Invoice ID')
+        Layout: =Layout.Vertical
+        ShowScrollbar: =false
+        TemplateSize: =If(Self.Layout = Layout.Horizontal, Min(280, Self.Width - 60), Min(280, Self.Height - 60))
+        Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", false, true )
+        Y: =180
+        ZIndex: =76
+
+        Rectangle13_4 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(88, 103, 130, 1)
+            FocusedBorderThickness: =4
+            Height: =270
+            HoverFill: =
+            OnSelect: =Select(Parent)
+            PressedFill: =
+            Width: =630
+            Y: =3
+            ZIndex: =1
+
+        Rectangle16_3 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(128, 135, 176, 1)
+            FocusedBorderThickness: =4
+            Height: =55
+            HoverFill: =
+            OnSelect: |-
+                =Navigate(invoicelineinfo, ScreenTransition.Cover, {Invoicevar: ThisItem})
+            PressedFill: =
+            Width: =630
+            ZIndex: =2
+
+        Rectangle17_1 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =57
+            HoverFill: =
+            OnSelect: =Select(Parent)
+            PressedFill: =
+            Width: =630
+            Y: =215
+            ZIndex: =3
+
+        Group13_17 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =6
+
+            Label2_190 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(243, 132, 133, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                FontWeight: =FontWeight.Bold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: |-
+                    ="Tax Amount:"
+                Width: =180
+                X: =22
+                Y: =219
+                ZIndex: =4
+
+            Label2_191 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(243, 132, 133, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                FontWeight: =FontWeight.Bold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =18
+                Text: =If(IsBlank(ThisItem.'Tax Amount'), "₹ 0", "₹ " & ThisItem.'Tax Amount')
+                Width: =62
+                X: =194
+                Y: =219
+                ZIndex: =5
+
+        Group13_23 As group:
+            Height: =5
+            Width: =5
+            X: =19
+            Y: =-179
+            ZIndex: =8
+
+            Label2_192 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(243, 132, 133, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                FontWeight: =FontWeight.Bold
+                Height: =54
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: |-
+                    ="Bill Amount:"
+                Width: =161
+                X: =315
+                Y: =219
+                ZIndex: =6
+
+            Label2_193 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(243, 132, 133, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                FontWeight: =FontWeight.Bold
+                Height: =53
+                OnSelect: =Select(Parent)
+                Size: =18
+                Text: ="₹ " & ThisItem.'Bill Amoount'
+                Width: =149
+                X: =481
+                Y: =219
+                ZIndex: =7
+
+        Group13_24 As group:
+            Height: =5
+            Width: =5
+            X: =4
+            Y: =-179
+            ZIndex: =10
+
+            Label2_180 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                FontWeight: =FontWeight.Bold
+                Height: =49
+                OnSelect: |-
+                    =Navigate(invoicelineinfo, ScreenTransition.Cover, {Invoicevar: ThisItem})
+                Size: =16
+                Text: |-
+                    ="Invoice Line ID:"
+                Width: =176
+                X: =25
+                Y: =3
+                ZIndex: =8
+
+            Label2_181 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                FontWeight: =FontWeight.Bold
+                Height: =49
+                OnSelect: |-
+                    =Navigate(invoicelineinfo, ScreenTransition.Cover, {Invoicevar: ThisItem})
+                Size: =18
+                Text: =ThisItem.'Invoice Number'.'Invoice ID'
+                Width: =123
+                X: =208
+                Y: =3
+                ZIndex: =9
+
+        Group13_25 As group:
+            Height: =5
+            Width: =5
+            X: =-256
+            Y: =-179
+            ZIndex: =12
+
+            Label2_184 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(219, 219, 219, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: ="Name"
+                Width: =228
+                X: =12
+                Y: =84
+                ZIndex: =10
+
+            Label2_185 As label:
+                Align: =Align.Right
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =18
+                Text: =ThisItem.'Invoice Line ID'
+                Width: =144
+                X: =116
+                Y: =84
+                ZIndex: =11
+
+        Group13_26 As group:
+            Height: =5
+            Width: =5
+            X: =28
+            Y: =-24
+            ZIndex: =14
+
+            Label2_186 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(219, 219, 219, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: |-
+                    ="Qty Ordered:"
+                Width: =157
+                X: =12
+                Y: =133
+                ZIndex: =12
+
+            Label2_187 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =18
+                Text: =ThisItem.'Quantity Ordered'
+                Width: =164
+                X: =164
+                Y: =133
+                ZIndex: =13
+
+        Group13_27 As group:
+            Height: =5
+            Width: =5
+            X: =28
+            Y: =-93
+            ZIndex: =16
+
+            Label2_182 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(219, 219, 219, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: |-
+                    ="Item:"
+                Width: =157
+                X: =309
+                Y: =83
+                ZIndex: =14
+
+            Label2_183 As label:
+                Align: =Align.Right
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =50
+                OnSelect: =Select(Parent)
+                Size: =18
+                Text: =ThisItem.Item.'Product Name'
+                Width: =224
+                X: =393
+                Y: =83
+                ZIndex: =15
+
+        Group13_28 As group:
+            Height: =5
+            Width: =5
+            X: =-269
+            Y: =-43
+            ZIndex: =18
+
+            Label2_188 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(219, 219, 219, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: |-
+                    ="Qty Shipped:"
+                Width: =157
+                X: =309
+                Y: =133
+                ZIndex: =16
+
+            Label2_189 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =18
+                Text: =ThisItem.'Quantity Shipped'
+                Width: =164
+                X: =466
+                Y: =133
+                ZIndex: =17
+
+    "'Bottom Navigation_25' As 'Bottom Navigation'":
+        NavItems: |-
+            =Table(
+                {
+                    Title: If(
+                        varAttendance = "end",
+                        "End",
+                        varAttendance = "start",
+                        "Start",
+                        varAttendance = "done",
+                        "Ended"
+                    ),
+                    //Title: Start,
+                    Screen: If(
+                        varAttendance = "start",
+                        StartDay,
+                        varAttendance = "end",
+                        'End day',
+                        varAttendance = "done",
+                        'Day Ended'
+                    ),
+                    Icon: CalendarBlank,
+                    Active: false
+                },
+                {
+                    Title: "Visits",
+                    Screen: Visits,
+                    Icon: Waypoint,
+                    Active: false
+                },
+                {
+                    Title: "Dashboard",
+                    Screen: Home,
+                    Icon: Waffle,
+                    Active: false
+                },
+                {
+                    Title: "Parties",
+                    Screen: 'Customer (Dist)_1',
+                    Icon: People,
+                    Active: false
+                },
+                {
+                    Title: "Menu",
+                    Screen: 'Menu Screen',
+                    Icon: Hamburger,
+                    Active: true
+                }
+            )
+        Y: =1056
+        ZIndex: =77
+
+    Group12_10 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =-65
+        ZIndex: =77
+
+        Rectangle5_12 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(88, 103, 130, 1)
+            FocusedBorderThickness: =4
+            Height: =783
+            HoverFill: =
+            PressedFill: =
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =638
+            X: =2
+            Y: =178
+            ZIndex: =42
+
+        Label5_182 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =17
+            Text: ="Invoice No."
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =252
+            X: =40
+            Y: =192
+            ZIndex: =43
+
+        Label5_183 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =19
+            Text: =invoiceItem.'Invoice ID'
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =368
+            X: =232
+            Y: =192
+            ZIndex: =44
+
+        Rectangle12_33 As rectangle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =1
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =575
+            X: =37
+            Y: =257
+            ZIndex: =45
+
+        Label5_184 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =17
+            Text: ="Invoice Type"
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =252
+            X: =38
+            Y: =258
+            ZIndex: =46
+
+        Label5_185 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =19
+            Text: =Text(invoiceItem.'Invoice Date', "dd mmm yyyy")
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =368
+            X: =232
+            Y: =258
+            ZIndex: =47
+
+        Rectangle12_34 As rectangle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =1
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =575
+            X: =37
+            Y: =323
+            ZIndex: =48
+
+        Label5_186 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =17
+            Text: ="Invoice Cancelled?"
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =252
+            X: =39
+            Y: =324
+            ZIndex: =49
+
+        Label5_187 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =57
+            Size: =19
+            Text: =If(invoiceItem.'Cancelled Invoice' = 'Cancelled Invoice (Invoices)'.Yes , "Yes", "No")
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =368
+            X: =232
+            Y: =324
+            ZIndex: =50
+
+        Rectangle12_35 As rectangle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =1
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =575
+            X: =37
+            Y: =389
+            ZIndex: =51
+
+        Label5_188 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =17
+            Text: ="Invoice From"
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =252
+            X: =38
+            Y: =389
+            ZIndex: =52
+
+        Label5_189 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =19
+            Text: =invoiceItem.'Sales Order Number'.Customer
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =368
+            X: =232
+            Y: =389
+            ZIndex: =53
+
+        Rectangle12_36 As rectangle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =1
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =575
+            X: =37
+            Y: =454
+            ZIndex: =54
+
+        Label5_190 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =17
+            Text: ="Bill To Party"
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =252
+            X: =36
+            Y: =455
+            ZIndex: =55
+
+        Label5_191 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =19
+            Text: =invoiceItem.'Bill To Party'.'A/c Holder Name'
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =368
+            X: =232
+            Y: =455
+            ZIndex: =56
+
+        Rectangle12_37 As rectangle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =1
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =575
+            X: =36
+            Y: =519
+            ZIndex: =57
+
+        Label5_192 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =17
+            Text: ="Ship To Party"
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =252
+            X: =37
+            Y: =520
+            ZIndex: =58
+
+        Label5_193 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =19
+            Text: =invoiceItem.'Ship To Party'.'A/c Holder Name'
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =368
+            X: =232
+            Y: =520
+            ZIndex: =59
+
+        Rectangle12_38 As rectangle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =1
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =575
+            X: =37
+            Y: =585
+            ZIndex: =60
+
+        Label5_194 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =17
+            Text: ="Bill Amount (Without Tax)"
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =325
+            X: =39
+            Y: =586
+            ZIndex: =61
+
+        Label5_195 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =19
+            Text: ="₹ "&invoiceItem.'Before Tax Amount'
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =368
+            X: =232
+            Y: =586
+            ZIndex: =62
+
+        Rectangle12_39 As rectangle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =1
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =575
+            X: =37
+            Y: =651
+            ZIndex: =63
+
+        Label5_196 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =17
+            Text: ="CGST"
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =252
+            X: =40
+            Y: =652
+            ZIndex: =64
+
+        Label5_197 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =19
+            Text: ="₹ "&invoiceItem.'CGST Amount'
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =368
+            X: =232
+            Y: =652
+            ZIndex: =65
+
+        Rectangle12_40 As rectangle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =1
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =575
+            X: =37
+            Y: =717
+            ZIndex: =66
+
+        Label5_198 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =17
+            Text: ="SGST"
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =252
+            X: =39
+            Y: =718
+            ZIndex: =67
+
+        Label5_199 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =19
+            Text: ="₹ "&invoiceItem.'SGST Amount'
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =368
+            X: =232
+            Y: =718
+            ZIndex: =68
+
+        Rectangle12_41 As rectangle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =1
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =575
+            X: =37
+            Y: =783
+            ZIndex: =69
+
+        Label5_200 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =17
+            Text: ="IGST"
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =252
+            X: =38
+            Y: =784
+            ZIndex: =70
+
+        Label5_201 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =19
+            Text: ="₹ "&invoiceItem.'IGST Amount'
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =368
+            X: =232
+            Y: =784
+            ZIndex: =71
+
+        Rectangle12_42 As rectangle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =1
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =575
+            X: =37
+            Y: =849
+            ZIndex: =72
+
+        Label5_202 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =17
+            Text: ="Bill Amount (With Tax)"
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =344
+            X: =39
+            Y: =850
+            ZIndex: =73
+
+        Label5_203 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =57
+            Size: =19
+            Text: ="₹ "&invoiceItem.'Bill Amoount' + invoiceItem.'SGST Amount' + invoiceItem.'CGST Amount'
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =368
+            X: =232
+            Y: =850
+            ZIndex: =74
+
+        Rectangle12_43 As rectangle:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =1
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_4'.Selected.Title = "Invoice Info", true, false )
+            Width: =575
+            X: =37
+            Y: =914
+            ZIndex: =75
+

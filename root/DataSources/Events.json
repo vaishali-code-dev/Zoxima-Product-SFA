@@ -1,0 +1,187 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_events",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_event",
+    "MaxGetRowsCount": 500,
+    "Name": "Events",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_area1": "Area",
+      "cr431_budget": "Budget:",
+      "cr431_budget_base": "Budget: (Base)",
+      "cr431_companybudget": "Company Budget",
+      "cr431_companybudget_base": "Company Budget (Base)",
+      "cr431_cr431_eventparticipant_Event_cr431_event": "Event Participants",
+      "cr431_event_AsyncOperations": "System Jobs",
+      "cr431_event_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_event_DuplicateBaseRecord": "Duplicate Records (cr431_event_DuplicateBaseRecord)",
+      "cr431_event_DuplicateMatchingRecord": "Duplicate Records (cr431_event_DuplicateMatchingRecord)",
+      "cr431_event_FileAttachments": "FileAttachments",
+      "cr431_event_id": "Event _Id",
+      "cr431_event_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_event_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_event_ProcessSession": "Process Sessions",
+      "cr431_event_SyncErrors": "Sync Errors",
+      "cr431_eventbudget": "Event Budget",
+      "cr431_eventbudget_base": "Event Budget (Base)",
+      "cr431_eventdate": "Event Date",
+      "cr431_eventdescription": "Event Description",
+      "cr431_eventid": "Event",
+      "cr431_eventname": "Event Name",
+      "cr431_EventOwner": "Event Owner",
+      "cr431_eventparticipantcontribution": "Event Participant Contribution",
+      "cr431_eventparticipantcontribution_base": "Event Participant Contribution (Base)",
+      "cr431_eventvenue": "Event Venue",
+      "cr431_expectedparticipation": "Expected Participation:",
+      "cr431_name": "Name",
+      "cr431_selectmeettype": "Select meet type:",
+      "cr431_submitforapproval": "Submit for Approval:",
+      "cr431_takepicture": "Take Picture:",
+      "cr431_targetaudience": "Target Audience:",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "new_actualexpense": "Actual Expense:",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Events",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Events (Views)",
+    "Name": "_cr431_event_views",
+    "RelatedEntityName": "Events",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "35eef2b5-b1a9-45b9-b1af-c32ba401bd97": "Active Events",
+      "b0ea1ee4-0a4a-43d8-bff0-0c8c78557e28": "Event Lookup View",
+      "c131bc82-0737-4d42-ae11-08f4e709ece2": "Event Advanced Find View",
+      "c99a1e2a-4bf4-4645-95a8-c3fb0de262e1": "Event Associated View",
+      "d8be0f58-96fb-4e7f-b285-96639a20faf8": "Inactive Events"
+    }
+  },
+  {
+    "DisplayName": "Select meet type: (Events)",
+    "Name": "cr431_event_cr431_selectmeettype",
+    "OptionSetInfoNameMapping": {
+      "254460000": "nukkad met",
+      "254460001": "electrician meet",
+      "254460002": "retailer meet",
+      "254460003": "commando acitvity",
+      "254460004": "roadshow",
+      "254460005": "umbrella activity"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_selectmeettype",
+        "OptionSetReferenceEntityName": "Events"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_selectmeettype",
+    "RelatedEntityName": "Events",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Submit for Approval: (Events)",
+    "Name": "cr431_event_cr431_submitforapproval",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_submitforapproval",
+        "OptionSetReferenceEntityName": "Events"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr431_submitforapproval",
+    "RelatedEntityName": "Events",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Target Audience: (Events)",
+    "Name": "cr431_event_cr431_targetaudience",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Retailer ",
+      "254460001": "Influencer ",
+      "254460002": "Contractor"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_targetaudience",
+        "OptionSetReferenceEntityName": "Events"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_targetaudience",
+    "RelatedEntityName": "Events",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Events)",
+    "Name": "cr431_event_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Events"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Events",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Events)",
+    "Name": "cr431_event_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Events"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Events",
+    "Type": "OptionSetInfo"
+  }
+]

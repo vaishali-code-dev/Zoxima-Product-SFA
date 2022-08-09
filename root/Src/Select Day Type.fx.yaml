@@ -1,0 +1,378 @@
+"'Select Day Type' As screen":
+    Fill: =RGBA(88, 103, 130, 1)
+    LoadingSpinnerColor: =RGBA(255, 200, 61, 1)
+    OnVisible: =Set(varOpen, false)
+
+    HtmlText1_58 As htmlViewer:
+        Color: =RGBA(103, 204, 107, 1)
+        Height: =354
+        HtmlText: |-
+            ="<div style='border-radius:0; background-color:#414C60; width:640px; height:330px'></div>"
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =640
+        ZIndex: =11
+
+    HtmlText1_65 As htmlViewer:
+        BorderThickness: =1
+        Height: =313
+        HtmlText: |-
+            ="<div style='border-radius:10px; background-color:#FFF; width:500px; height:290px; box-shadow:rgba(0, 0, 0, 0.24) 0px 3px 8px;'></div>"
+        PaddingBottom: =0
+        PaddingLeft: =10
+        PaddingRight: =0
+        PaddingTop: =10
+        Width: =514
+        X: =63
+        Y: =82
+        ZIndex: =12
+
+    Image1_18 As image:
+        BorderColor: =RGBA(204, 204, 204, 1)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =1
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =152
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: =User().Image
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =100
+        RadiusBottomRight: =100
+        RadiusTopLeft: =100
+        RadiusTopRight: =100
+        Width: =152
+        X: =244
+        Y: =202
+        ZIndex: =13
+
+    Label3_50 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(184, 0, 0, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =44
+        Size: =20
+        Text: =User().FullName
+        Width: =313
+        X: =164
+        Y: =144
+        ZIndex: =14
+
+    Label3_51 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(116, 116, 116, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =44
+        Size: =20
+        Text: ="WELCOME"
+        Width: =328
+        X: =156
+        Y: =108
+        ZIndex: =15
+
+    Image1_54 As image:
+        BorderColor: =RGBA(204, 204, 204, 1)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =1
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =50
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: =User().Image
+        ImagePosition: =ImagePosition.Fill
+        OnSelect: =Navigate(Profile)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Width: =50
+        X: =570
+        Y: =14
+        ZIndex: =18
+
+    Image1_19 As image:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =57
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: ='logo zxsfa'
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =131
+        X: =255
+        Y: =11
+        ZIndex: =19
+
+    "'Bottom Navigation_5' As 'Bottom Navigation'":
+        Fill: =RGBA(59, 59, 59, 1)
+        NavItems: |-
+            =Table(
+                {
+                    Title: If(
+                        varAttendance = "end",
+                        "End",
+                        varAttendance = "start",
+                        "Start",
+                        varAttendance = "done",
+                        "Ended"
+                    ),
+                    //Title: Start,
+                    Screen: If(
+                        varAttendance = "start",
+                        StartDay,
+                        varAttendance = "end",
+                        'End day',
+                        varAttendance = "done",
+                        'Day Ended'
+                    ),
+                    Icon: CalendarBlank,
+                    Active: true
+                },
+                {
+                    Title: "Visits",
+                    Screen: Visits,
+                    Icon: Waypoint,
+                    Active: false
+                },
+                {
+                    Title: "Dashboard",
+                    Screen: Home,
+                    Icon: Waffle,
+                    Active: false
+                },
+                {
+                    Title: "Orders",
+                    Screen: 'All Orders',
+                    Icon: ShoppingCart,
+                    Active: false
+                },
+                {
+                    Title: "Menu",
+                    Screen: 'Menu Screen',
+                    Icon: Hamburger,
+                    Active: false
+                }
+            )
+        Y: =1056
+        ZIndex: =21
+
+    Icon14_18 As icon.BackArrow:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Color: =RGBA(237, 237, 237, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =53
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =53
+        X: =24
+        Y: =24
+        ZIndex: =22
+
+    Group22 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =26
+
+        HtmlText2_3 As htmlViewer:
+            Height: =65
+            HtmlText: |-
+                ="<div style='border-radius:10px; background-color:#A00002;  width:250px; height:50px; box-shadow:rgba(0, 0, 0, 0.24) 0px 3px 8px;'></div>"
+            OnSelect: =Navigate('Submit Day', ScreenTransition.Fade)
+            Width: =271
+            X: =185
+            Y: =506
+            ZIndex: =1
+
+        Label3_19 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =41
+            OnSelect: =Navigate('Submit Day', ScreenTransition.Fade)
+            Size: =18
+            Text: ="Market Visit"
+            Width: =221
+            X: =202
+            Y: =517
+            ZIndex: =2
+
+        HtmlText2_4 As htmlViewer:
+            Height: =65
+            HtmlText: |-
+                ="<div style='border-radius:10px; background-color:#A00002; width:250px; height:50px; box-shadow:rgba(0, 0, 0, 0.24) 0px 3px 8px;'></div>"
+            OnSelect: =Navigate('Submit Day', ScreenTransition.Fade)
+            Width: =271
+            X: =185
+            Y: =578
+            ZIndex: =3
+
+        Label3_20 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =41
+            OnSelect: =Navigate('Submit Day', ScreenTransition.Fade)
+            Size: =18
+            Text: ="In Office"
+            Width: =221
+            X: =202
+            Y: =589
+            ZIndex: =4
+
+        HtmlText2_5 As htmlViewer:
+            Height: =65
+            HtmlText: |-
+                ="<div style='border-radius:10px; background-color:#A00002; width:250px; height:50px; box-shadow:rgba(0, 0, 0, 0.24) 0px 3px 8px;'></div>"
+            OnSelect: =Navigate('Submit Day', ScreenTransition.Fade)
+            Width: =271
+            X: =185
+            Y: =650
+            ZIndex: =5
+
+        Label3_21 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =41
+            OnSelect: =Navigate('Submit Day', ScreenTransition.Fade)
+            Size: =18
+            Text: ="Work From Home"
+            Width: =221
+            X: =202
+            Y: =661
+            ZIndex: =6
+
+        HtmlText2_6 As htmlViewer:
+            Height: =65
+            HtmlText: |-
+                ="<div style='border-radius:10px; background-color:#A00002; width:250px; height:50px; box-shadow:rgba(0, 0, 0, 0.24) 0px 3px 8px;'></div>"
+            OnSelect: =Navigate('Submit Day', ScreenTransition.Fade)
+            Width: =271
+            X: =185
+            Y: =722
+            ZIndex: =7
+
+        Label3_22 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =41
+            OnSelect: =Navigate('Submit Day', ScreenTransition.Fade)
+            Size: =18
+            Text: ="Travel"
+            Width: =221
+            X: =202
+            Y: =733
+            ZIndex: =8
+
+        HtmlText2_7 As htmlViewer:
+            Height: =65
+            HtmlText: |-
+                ="<div style='border-radius:10px; background-color:#A00002; width:250px; height:50px; box-shadow:rgba(0, 0, 0, 0.24) 0px 3px 8px;'></div>"
+            OnSelect: =Navigate('Submit Day', ScreenTransition.Fade)
+            Width: =271
+            X: =185
+            Y: =787
+            ZIndex: =9
+
+        Label3_23 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =41
+            OnSelect: =Navigate('Submit Day', ScreenTransition.Fade)
+            Size: =18
+            Text: ="In Factory"
+            Width: =221
+            X: =202
+            Y: =798
+            ZIndex: =10
+
+    Group6 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =28
+
+    Group14 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =28
+

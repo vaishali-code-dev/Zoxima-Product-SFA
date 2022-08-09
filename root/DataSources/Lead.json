@@ -1,0 +1,470 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_leads",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_lead",
+    "MaxGetRowsCount": 500,
+    "Name": "Lead",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_adressdetails": "Adress Details",
+      "cr431_areainsqft": "Area in SQft",
+      "cr431_buildingnameflatnolandmark": "Building Name, Flat no, Landmark",
+      "cr431_conversionverified": "Conversion Verified",
+      "cr431_cr431_imageurl_cr431_Lead_cr431_lea": "Image Url",
+      "cr431_cr431_lead_cr431_visit_Lead": "Visits",
+      "cr431_DMIArchitectName": "DMI Architect Name",
+      "cr431_dmiarchitectnumber": "DMI Architect Number",
+      "cr431_dmicontractornumber": "DMI Contractor Number",
+      "cr431_dropreason": "Drop Reason",
+      "cr431_emdchangedcount": "EMD Changed Count",
+      "cr431_expectedmaturitydate": "Expected Maturity Date",
+      "cr431_fakelead": "Fake Lead",
+      "cr431_GeographicalTown": "Geographical Town",
+      "cr431_isverifiedbycc": "Is Verified By CC",
+      "cr431_lead_AsyncOperations": "System Jobs",
+      "cr431_lead_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_lead_DuplicateBaseRecord": "Duplicate Records (cr431_lead_DuplicateBaseRecord)",
+      "cr431_lead_DuplicateMatchingRecord": "Duplicate Records (cr431_lead_DuplicateMatchingRecord)",
+      "cr431_lead_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_lead_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_lead_ProcessSession": "Process Sessions",
+      "cr431_lead_SyncErrors": "Sync Errors",
+      "cr431_Leadassignment": "Lead assignment",
+      "cr431_LeadCreatedBy": "Lead Created By",
+      "cr431_leadid": "Lead",
+      "cr431_LeadOwner": "Lead Owner",
+      "cr431_leadsite": "LeadSite",
+      "cr431_leadsiteleadsitevisitinformation": "(LeadSite) Lead/ Site Visit/ Information",
+      "cr431_leadsourcetype": "Lead Source Type",
+      "cr431_name": "Name",
+      "cr431_noofbedrooms": "No. Of Bed Rooms",
+      "cr431_ownername": "Owner Name",
+      "cr431_ownernumber": "Owner Number",
+      "cr431_pincodeaspergps": "Pincode As per GPS",
+      "cr431_productraterssqft": "Product rate (Rs / sqft)",
+      "cr431_remarksonlyforothers": "Remarks (Only for others)",
+      "cr431_siteaddressaspergps": "Site Address as per GPS",
+      "cr431_sitefir": "Site FIR",
+      "cr431_sitefriendcategory": "Site friend category",
+      "cr431_sitefriendname": "Site Friend Name",
+      "cr431_sitefriendnumber": "Site Friend Number",
+      "cr431_siteimage1": "Site Image 1",
+      "cr431_siteimage2": "Site Image 2",
+      "cr431_sitequality": "Site Quality",
+      "cr431_sitetype": "Site Type",
+      "cr431_sourceoflead": "Source of Lead",
+      "cr431_sourceotherdetails": "Source Other Details",
+      "cr431_stage": "Stage",
+      "cr431_state": "State",
+      "cr431_SupplierDealer": "Supplier Dealer",
+      "cr431_Task_Lead_cr431_lead": "Tasks",
+      "cr431_Townname": "Town name",
+      "cr431_type": "Type",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Lead",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Lead (Views)",
+    "Name": "_cr431_lead_views",
+    "RelatedEntityName": "Lead",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "077f2199-8c1d-4135-922b-367bcb9372b6": "Active Lead",
+      "84ed3fea-42fe-4cc8-b219-434c92fcd67b": "Lead Advanced Find View",
+      "ac42d88c-01aa-4008-9fe4-d2cc2e8ad8e0": "Inactive Lead",
+      "ec556762-ccf8-43b0-a14f-0244fbe250df": "Lead Lookup View",
+      "fceb424e-84da-4a99-a1dd-4d35d3b90472": "Lead Associated View"
+    }
+  },
+  {
+    "DisplayName": "Conversion Verified (Lead)",
+    "Name": "cr431_lead_cr431_conversionverified",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_conversionverified",
+        "OptionSetReferenceEntityName": "Lead"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr431_conversionverified",
+    "RelatedEntityName": "Lead",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Drop Reason (Lead)",
+    "Name": "cr431_lead_cr431_dropreason",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Not Worthy Site",
+      "254460001": "Lost On Arrival- Normal",
+      "254460002": "Lost On Arrival- Premium/Semi Premium",
+      "254460003": "Lost On arrival Century",
+      "254460004": "Large Commercial Project"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_dropreason",
+        "OptionSetReferenceEntityName": "Lead"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_dropreason",
+    "RelatedEntityName": "Lead",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Fake Lead (Lead)",
+    "Name": "cr431_lead_cr431_fakelead",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_fakelead",
+        "OptionSetReferenceEntityName": "Lead"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr431_fakelead",
+    "RelatedEntityName": "Lead",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Is Verified By CC (Lead)",
+    "Name": "cr431_lead_cr431_isverifiedbycc",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_isverifiedbycc",
+        "OptionSetReferenceEntityName": "Lead"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr431_isverifiedbycc",
+    "RelatedEntityName": "Lead",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "LeadSite (Lead)",
+    "Name": "cr431_lead_cr431_leadsite",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Lead",
+      "254460001": "Site Visit",
+      "254460002": "Information"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_leadsite",
+        "OptionSetReferenceEntityName": "Lead"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_leadsite",
+    "RelatedEntityName": "Lead",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "(LeadSite) Lead/ Site Visit/ Information (Lead)",
+    "Name": "cr431_lead_cr431_leadsiteleadsitevisitinformation",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Lead",
+      "254460001": "Site Visit",
+      "254460002": "Information"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_leadsiteleadsitevisitinformation",
+        "OptionSetReferenceEntityName": "Lead"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_leadsiteleadsitevisitinformation",
+    "RelatedEntityName": "Lead",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Lead Source Type (Lead)",
+    "Name": "cr431_lead_cr431_leadsourcetype",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Scouting Lead",
+      "254460001": "Reference Lead"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_leadsourcetype",
+        "OptionSetReferenceEntityName": "Lead"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_leadsourcetype",
+    "RelatedEntityName": "Lead",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "No. Of Bed Rooms (Lead)",
+    "Name": "cr431_lead_cr431_noofbedrooms",
+    "OptionSetInfoNameMapping": {
+      "254460000": "2 Bedroom",
+      "254460001": "3 Bedroom",
+      "254460002": "4 and above Bedroom"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_noofbedrooms",
+        "OptionSetReferenceEntityName": "Lead"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_noofbedrooms",
+    "RelatedEntityName": "Lead",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Site FIR (Lead)",
+    "Name": "cr431_lead_cr431_sitefir",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Lead",
+      "254460001": "Lost but future Scope",
+      "254460002": "Drop",
+      "254460003": "Cold Lead"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_sitefir",
+        "OptionSetReferenceEntityName": "Lead"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_sitefir",
+    "RelatedEntityName": "Lead",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Site friend category (Lead)",
+    "Name": "cr431_lead_cr431_sitefriendcategory",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Civil",
+      "254460001": "Marble",
+      "254460002": "POP",
+      "254460003": "Elctrical",
+      "254460004": "Plumbing",
+      "254460005": "False ceiling contractor",
+      "254460006": "Watchman",
+      "254460007": "Tea stall",
+      "254460008": "Pan wallah (within 50m)",
+      "254460009": "Others"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_sitefriendcategory",
+        "OptionSetReferenceEntityName": "Lead"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_sitefriendcategory",
+    "RelatedEntityName": "Lead",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Site Quality (Lead)",
+    "Name": "cr431_lead_cr431_sitequality",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Premium",
+      "254460001": "Semi Premium",
+      "254460002": "Normal",
+      "254460003": "Not Century Worthy"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_sitequality",
+        "OptionSetReferenceEntityName": "Lead"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_sitequality",
+    "RelatedEntityName": "Lead",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Site Type (Lead)",
+    "Name": "cr431_lead_cr431_sitetype",
+    "OptionSetInfoNameMapping": {
+      "254460000": "IH",
+      "254460001": "Flat",
+      "254460002": "Commercial",
+      "254460003": "Showroom",
+      "254460004": "Small Office",
+      "254460005": "Commercial Large Project"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_sitetype",
+        "OptionSetReferenceEntityName": "Lead"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_sitetype",
+    "RelatedEntityName": "Lead",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Source of Lead (Lead)",
+    "Name": "cr431_lead_cr431_sourceoflead",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Dealer   Contractor   ID",
+      "254460001": "Architect   Marketing   Deco   Others"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_sourceoflead",
+        "OptionSetReferenceEntityName": "Lead"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_sourceoflead",
+    "RelatedEntityName": "Lead",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Stage (Lead)",
+    "Name": "cr431_lead_cr431_stage",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Hot Hot",
+      "254460001": "Hot",
+      "254460002": "Warm",
+      "254460003": "Cold",
+      "254460004": "Lost",
+      "254460005": "Won and Ongoing",
+      "254460006": "Won and completed",
+      "254460007": "Inactive  Information",
+      "254460008": "Pending for phone no"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_stage",
+        "OptionSetReferenceEntityName": "Lead"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_stage",
+    "RelatedEntityName": "Lead",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Type (Lead)",
+    "Name": "cr431_lead_cr431_type",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Residential",
+      "254460001": "Commercial"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_type",
+        "OptionSetReferenceEntityName": "Lead"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_type",
+    "RelatedEntityName": "Lead",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Lead)",
+    "Name": "cr431_lead_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Lead"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Lead",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Lead)",
+    "Name": "cr431_lead_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Lead"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Lead",
+    "Type": "OptionSetInfo"
+  }
+]

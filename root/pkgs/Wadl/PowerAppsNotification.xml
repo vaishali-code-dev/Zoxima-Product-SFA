@@ -1,0 +1,45 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://india-001.azure-apim.net/apim/powerappsnotification" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="PowerAppsNotification" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Power Apps Notification">Send push notifications to apps created with Power Apps. Trigger them from Flows or other apps.</doc>
+  <grammars>
+    <jsonTypes targetNamespace="https://india-001.azure-apim.net/apim/powerappsnotification" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="NotificationPayLoad_recipients_def_items_def" />
+      <array type="string" name="NotificationPayLoad_recipients_def" />
+      <string name="NotificationPayLoad_message_def" />
+      <boolean name="NotificationPayLoad_openApp_def" />
+      <string name="NotificationPayLoad_params_def_mapValues_def" />
+      <mapObject name="NotificationPayLoad_params_def">
+        <values type="string" />
+      </mapObject>
+      <object name="NotificationPayLoad">
+        <property name="recipients" typeRef="NotificationPayLoad_recipients_def" />
+        <property name="message" type="string" />
+        <property name="openApp" type="boolean" />
+        <property name="params" typeRef="NotificationPayLoad_params_def" />
+      </object>
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://india-001.azure-apim.net/apim/powerappsnotification">
+    <resource path="/{connectionId}/providers/Microsoft.PowerApps/scopes/connector/sendPushNotification">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="SendPushNotification" actionName="SendPushNotification" siena:isDeprecated="false">
+        <doc title="Send push notification&#xA;Send a push notification to the app specified in the Push Notification connection setup." />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="recipients" path="/recipients" type="service:NotificationPayLoad_recipients_def" />
+            <param style="plain" name="message" path="/message" type="xs:string" />
+            <param style="plain" name="openApp" path="/openApp" type="xs:boolean" />
+            <param style="plain" name="params" path="/params" type="service:NotificationPayLoad_params_def" />
+          </representation>
+        </request>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_powerappsnotification" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

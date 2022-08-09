@@ -1,0 +1,200 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_sales_orders",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_sales_order",
+    "MaxGetRowsCount": 500,
+    "Name": "SalesOrders",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_amountafterdiscount": "Amount After Discount",
+      "cr431_amountafterdiscount_base": "Amount After Discount (Base)",
+      "cr431_baseamount": "Base Amount",
+      "cr431_baseamount_base": "Base Amount (Base)",
+      "cr431_beforetaxamount": "Before Tax Amount",
+      "cr431_beforetaxamount_base": "Before Tax Amount (Base)",
+      "cr431_billamoount": "To Order Amount",
+      "cr431_billamoount_base": "Bill Amoount (Base)",
+      "cr431_billingaddress": "Billing Address",
+      "cr431_BillToParty": "Bill To Party",
+      "cr431_cgstamount": "CGST Amount",
+      "cr431_cgstamount_base": "CGST Amount (Base)",
+      "cr431_cr431_invoice_SalesOrderNumber_cr431_sale": "Invoices",
+      "cr431_cr431_orderline_SalesOrderNo_cr431_sales_": "Order Line",
+      "cr431_customer": "Customer",
+      "cr431_dealer": "Dealer",
+      "cr431_DealerIndent": "Dealer Indent",
+      "cr431_discount": "Discount",
+      "cr431_igstamount": "IGST Amount",
+      "cr431_igstamount_base": "IGST Amount (Base)",
+      "cr431_name": "Order ID",
+      "cr431_orderdate": "Order Date",
+      "cr431_OrderFrom": "Order From",
+      "cr431_orderstatus": "Order Status",
+      "cr431_orderstatuslevel": "Order Status Level",
+      "cr431_orderstatusrail": "Order Status Rail",
+      "cr431_OrderTo": "Order To",
+      "cr431_ordertype": "Order Type",
+      "cr431_quantity": "Quantity",
+      "cr431_remarks": "Remarks",
+      "cr431_sales_order_AsyncOperations": "System Jobs",
+      "cr431_sales_order_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_sales_order_DuplicateBaseRecord": "Duplicate Records (cr431_sales_order_DuplicateBaseRecord)",
+      "cr431_sales_order_DuplicateMatchingRecord": "Duplicate Records (cr431_sales_order_DuplicateMatchingRecord)",
+      "cr431_sales_order_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_sales_order_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_sales_order_ProcessSession": "Process Sessions",
+      "cr431_sales_order_SyncErrors": "Sync Errors",
+      "cr431_sales_orderid": "Sales Order",
+      "cr431_sgstamount": "SGST Amount",
+      "cr431_sgstamount_base": "SGST Amount (Base)",
+      "cr431_shippingaddress": "Shipping Address",
+      "cr431_ShipToParty": "Ship To Party",
+      "cr431_tcs": "TCS",
+      "cr431_tcs_base": "TCS (Base)",
+      "cr431_visits": "Visits",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "SalesOrders",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "SalesOrders (Views)",
+    "Name": "_cr431_sales_order_views",
+    "RelatedEntityName": "SalesOrders",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "5f0748e6-f6d7-4674-847b-7ba9341f437e": "Sales Order Lookup View",
+      "be193aea-5833-4c93-a4ec-8b4ede444e2c": "Active Sales Orders",
+      "c0ce9db4-6b4c-4879-8526-2b9940f867b2": "Sales Order Associated View",
+      "ca4e90a3-9666-4968-a1de-102c179b52e0": "Sales Order Advanced Find View",
+      "fc3319b5-cc3b-4331-8b28-5796c4a4bde8": "Inactive Sales Orders"
+    }
+  },
+  {
+    "DisplayName": "Order Status Choice",
+    "Name": "cr431_orderstatuschoice",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Approved by Distributor",
+      "254460001": "Pending for approval by Company",
+      "254460002": "Vehicle Loading",
+      "254460003": "Dispatched",
+      "254460004": "Delivered"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_orderstatusrail",
+        "OptionSetReferenceEntityName": "SalesOrders"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_orderstatusrail",
+    "RelatedEntityName": "SalesOrders",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Order Type1",
+    "Name": "cr431_ordertype",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Primary Order",
+      "254460001": "Secondary Order"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_ordertype",
+        "OptionSetReferenceEntityName": "SalesOrders"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_ordertype",
+    "RelatedEntityName": "SalesOrders",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Order Status (SalesOrders)",
+    "Name": "cr431_sales_order_cr431_orderstatus",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Open",
+      "254460001": "Accepted",
+      "254460002": "Shipped",
+      "254460003": "Partially Shipped"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_orderstatus",
+        "OptionSetReferenceEntityName": "SalesOrders"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_orderstatus",
+    "RelatedEntityName": "SalesOrders",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (SalesOrders)",
+    "Name": "cr431_sales_order_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "SalesOrders"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "SalesOrders",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (SalesOrders)",
+    "Name": "cr431_sales_order_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "SalesOrders"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "SalesOrders",
+    "Type": "OptionSetInfo"
+  }
+]

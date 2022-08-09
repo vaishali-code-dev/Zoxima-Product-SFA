@@ -1,0 +1,548 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "emails",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "email",
+    "MaxGetRowsCount": 500,
+    "Name": "Email Messages",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_acceptingentityid_value": "Accepting Entity",
+      "_emailsender_value": "Sender",
+      "_ownerid_value": "Owner",
+      "_regardingobjectid_value": "Regarding",
+      "{Attachments}": "Attachments ({Attachments})",
+      "activityadditionalparams": "Additional Parameters",
+      "activityid": "Email Message",
+      "activitytypecode": "Activity Type",
+      "actualdurationminutes": "Duration",
+      "actualend": "Actual End",
+      "actualstart": "Actual Start",
+      "attachmentcount": "Attachment Count",
+      "attachmentopencount": "Attachment Open Count",
+      "baseconversationindexhash": "Conversation Index (Hash)",
+      "category": "Category",
+      "compressed": "Compression",
+      "conversationindex": "Conversation Index",
+      "conversationtrackingid": "Conversation Tracking Id",
+      "CorrelatedActivityId_Email": "Correlated Activity Id",
+      "correlationmethod": "Correlation Method",
+      "createdby_email": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby_email": "Created By (Delegate)",
+      "delayedemailsendtime": "Send Later",
+      "deliveryattempts": "No. of Delivery Attempts",
+      "deliveryprioritycode": "Delivery Priority",
+      "deliveryreceiptrequested": "Delivery Receipt Requested",
+      "description": "Description",
+      "descriptionblobid": "Description File Id",
+      "directioncode": "Direction",
+      "email_actioncard": "Action Cards",
+      "email_activity_mime_attachment": "Attachments (email_activity_mime_attachment)",
+      "Email_Annotation": "Notes",
+      "Email_AsyncOperations": "System Jobs",
+      "Email_BulkDeleteFailures": "Bulk Delete Failures",
+      "email_connections1": "Connections (email_connections1)",
+      "email_connections2": "Connections (email_connections2)",
+      "Email_DuplicateBaseRecord": "Duplicate Records (Email_DuplicateBaseRecord)",
+      "Email_DuplicateMatchingRecord": "Duplicate Records (Email_DuplicateMatchingRecord)",
+      "email_email_CorrelatedActivityId": "Email Messages (email_email_CorrelatedActivityId)",
+      "email_email_parentactivityid": "Email Messages (email_email_parentactivityid)",
+      "email_FileAttachments": "FileAttachments",
+      "email_principalobjectattributeaccess": "Field Sharing",
+      "Email_ProcessSessions": "Process Sessions",
+      "Email_QueueItem": "Queue Items",
+      "Email_SyncErrors": "Sync Errors",
+      "emailreminderexpirytime": "Email Reminder Expiry Time",
+      "emailreminderstatus": "Email Reminder Status",
+      "emailremindertext": "Email Reminder Text",
+      "emailremindertype": "Email Reminder Type",
+      "emailtrackingid": "Email Tracking Id",
+      "exchangerate": "Exchange Rate",
+      "followemailuserpreference": "Following",
+      "importsequencenumber": "Import Sequence Number",
+      "inreplyto": "In Reply To Message",
+      "isbilled": "Is Billed",
+      "isemailfollowed": "Followed",
+      "isemailreminderset": "Reminder Set",
+      "isregularactivity": "Is Regular Activity",
+      "isunsafe": "IsUnsafe",
+      "isworkflowcreated": "Is Workflow Created",
+      "lastonholdtime": "Last On Hold Time",
+      "lastopenedtime": "Last Opened Time",
+      "linksclickedcount": "Links Clicked Count",
+      "messageid": "Message ID",
+      "mimetype": "Mime Type",
+      "modifiedby_email": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby_email": "Modified By (Delegate)",
+      "notifications": "Notifications",
+      "onholdtime": "On Hold Time (Minutes)",
+      "opencount": "Open Count",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit_email": "Owning Business Unit",
+      "owningteam_email": "Owning Team",
+      "owninguser_email": "Owning User",
+      "parentactivityid": "Parent Activity Id",
+      "postponeemailprocessinguntil": "Delay email processing until",
+      "prioritycode": "Priority",
+      "processid": "Process",
+      "readreceiptrequested": "Read Receipt Requested",
+      "ReceivingMailboxId_Email": "Receiving Mailbox",
+      "reminderactioncardid": "Reminder Action Card Id.",
+      "replycount": "Reply Count",
+      "reservedforinternaluse": "Reserved for internal use",
+      "scheduleddurationminutes": "Scheduled Duration",
+      "scheduledend": "Due Date",
+      "scheduledstart": "Start Date",
+      "sender": "From",
+      "sendermailboxid_email": "Sender's Mailbox",
+      "sendersaccount": "Senders Account",
+      "senton": "Date Sent",
+      "sortdate": "Sort Date",
+      "stageid": "(Deprecated) Process Stage",
+      "statecode": "Activity Status",
+      "statuscode": "Status Reason",
+      "subcategory": "Sub-Category",
+      "subject": "Subject",
+      "submittedby": "Submitted By",
+      "templateid": "ID for template used.",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "torecipients": "To Recipients",
+      "trackingtoken": "Tracking Token",
+      "transactioncurrencyid_email": "Currency",
+      "traversedpath": "(Deprecated) Traversed Path",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Email Messages",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Email Messages (Views)",
+    "Name": "_email_views",
+    "RelatedEntityName": "Email Messages",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "174153cb-cc83-4313-a725-6de91759819c": "My Pending Emails",
+      "34d4a34a-48e1-46fd-a1ef-d98565932981": "My Sent Emails",
+      "6e8b4b8c-30f7-44ef-a958-be72baabc349": "My Draft Emails",
+      "6fef1242-d3e2-4358-912d-27c268abd323": "All Followed Emails",
+      "7aff64b0-5b8c-4ad7-89f8-976777eee178": "My Received Emails",
+      "cc98cb1f-6552-4fd8-9e2f-39a1cad2f710": "All Emails",
+      "f26e11d0-0ef8-4dff-a7e2-1f5e091fedb0": "Email Associated View",
+      "f5645881-ded8-4078-bd03-3cadefa1a555": "Email Lookup View",
+      "fbb9eb64-31d8-4d03-b580-0f22d5a72482": "My Received Emails with Unresolved Senders",
+      "fd1c0fa8-b84d-448d-a44d-5f504ebe7316": "Email Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Activity Type",
+    "Name": "activitypointer_activitytypecode",
+    "OptionSetInfoNameMapping": {
+      "10092": "Teams chat",
+      "10234": "Donation",
+      "4201": "Appointment",
+      "4202": "Email",
+      "4204": "Fax",
+      "4207": "Letter",
+      "4210": "Phone Call",
+      "4212": "Task",
+      "4251": "Recurring Appointment"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "activitytypecode",
+        "OptionSetReferenceEntityName": "Email Messages"
+      }
+    },
+    "OptionSetTypeKey": "EntityNameType",
+    "RelatedColumnInvariantName": "activitytypecode",
+    "RelatedEntityName": "Email Messages",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Delivery Priority",
+    "Name": "activitypointer_deliveryprioritycode",
+    "OptionSetInfoNameMapping": {
+      "0": "Low",
+      "1": "Normal",
+      "2": "High"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "deliveryprioritycode",
+        "OptionSetReferenceEntityName": "Email Messages"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "deliveryprioritycode",
+    "RelatedEntityName": "Email Messages",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Email following",
+    "Name": "activitypointer_isemailfollowed",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "isemailfollowed",
+        "OptionSetReferenceEntityName": "Email Messages"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "isemailfollowed",
+    "RelatedEntityName": "Email Messages",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Is Regular Activity",
+    "Name": "activitypointer_isregularactivity",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "isregularactivity",
+        "OptionSetReferenceEntityName": "Email Messages"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "isregularactivity",
+    "RelatedEntityName": "Email Messages",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Compression (Email Messages)",
+    "Name": "email_compressed",
+    "OptionSetInfoNameMapping": {
+      "0": "Not compressed",
+      "1": "Compressed"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "compressed",
+        "OptionSetReferenceEntityName": "Email Messages"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "compressed",
+    "RelatedEntityName": "Email Messages",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Correlation Method (Email Messages)",
+    "Name": "email_correlationmethod",
+    "OptionSetInfoNameMapping": {
+      "0": "None",
+      "1": "Skipped",
+      "2": "XHeader",
+      "3": "InReplyTo",
+      "4": "TrackingToken",
+      "5": "ConversationIndex",
+      "6": "SmartMatching",
+      "7": "CustomCorrelation"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "correlationmethod",
+        "OptionSetReferenceEntityName": "Email Messages"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "correlationmethod",
+    "RelatedEntityName": "Email Messages",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Delivery Receipt Requested (Email Messages)",
+    "Name": "email_deliveryreceiptrequested",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "deliveryreceiptrequested",
+        "OptionSetReferenceEntityName": "Email Messages"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "deliveryreceiptrequested",
+    "RelatedEntityName": "Email Messages",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Direction (Email Messages)",
+    "Name": "email_directioncode",
+    "OptionSetInfoNameMapping": {
+      "0": "Incoming",
+      "1": "Outgoing"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "directioncode",
+        "OptionSetReferenceEntityName": "Email Messages"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "directioncode",
+    "RelatedEntityName": "Email Messages",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Following (Email Messages)",
+    "Name": "email_followuserpreference",
+    "OptionSetInfoNameMapping": {
+      "0": "False",
+      "1": "True"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "followemailuserpreference",
+        "OptionSetReferenceEntityName": "Email Messages"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "followemailuserpreference",
+    "RelatedEntityName": "Email Messages",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Is Billed (Email Messages)",
+    "Name": "email_isbilled",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "isbilled",
+        "OptionSetReferenceEntityName": "Email Messages"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "isbilled",
+    "RelatedEntityName": "Email Messages",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Email Remainder set",
+    "Name": "email_isemailreminderset",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "isemailreminderset",
+        "OptionSetReferenceEntityName": "Email Messages"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "isemailreminderset",
+    "RelatedEntityName": "Email Messages",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Is Workflow Created (Email Messages)",
+    "Name": "email_isworkflowcreated",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "isworkflowcreated",
+        "OptionSetReferenceEntityName": "Email Messages"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "isworkflowcreated",
+    "RelatedEntityName": "Email Messages",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Notifications (Email Messages)",
+    "Name": "email_notifications",
+    "OptionSetInfoNameMapping": {
+      "0": "None",
+      "1": "The message was saved as a Microsoft Dynamics 365 email record, but not all the attachments could be saved with it. An attachment cannot be saved if it is blocked or if its file type is invalid.",
+      "2": "Truncated body."
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "notifications",
+        "OptionSetReferenceEntityName": "Email Messages"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "notifications",
+    "RelatedEntityName": "Email Messages",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Priority (Email Messages)",
+    "Name": "email_prioritycode",
+    "OptionSetInfoNameMapping": {
+      "0": "Low",
+      "1": "Normal",
+      "2": "High"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "prioritycode",
+        "OptionSetReferenceEntityName": "Email Messages"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "prioritycode",
+    "RelatedEntityName": "Email Messages",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Read Receipt Requested (Email Messages)",
+    "Name": "email_readreceiptrequested",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "readreceiptrequested",
+        "OptionSetReferenceEntityName": "Email Messages"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "readreceiptrequested",
+    "RelatedEntityName": "Email Messages",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Email Reminder Status (Email Messages)",
+    "Name": "email_reminderstatus",
+    "OptionSetInfoNameMapping": {
+      "0": "NotSet",
+      "1": "ReminderSet",
+      "2": "ReminderExpired",
+      "3": "ReminderInvalid"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "emailreminderstatus",
+        "OptionSetReferenceEntityName": "Email Messages"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "emailreminderstatus",
+    "RelatedEntityName": "Email Messages",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Email Reminder Type (Email Messages)",
+    "Name": "email_remindertype",
+    "OptionSetInfoNameMapping": {
+      "0": "If I do not receive a reply by",
+      "1": "If the email is not opened by",
+      "2": "Remind me anyways at"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "emailremindertype",
+        "OptionSetReferenceEntityName": "Email Messages"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "emailremindertype",
+    "RelatedEntityName": "Email Messages",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Activity Status (Email Messages)",
+    "Name": "email_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Open",
+      "1": "Completed",
+      "2": "Canceled"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Email Messages"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Email Messages",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Email Messages)",
+    "Name": "email_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Draft",
+      "2": "Completed",
+      "3": "Sent",
+      "4": "Received",
+      "5": "Canceled",
+      "6": "Pending Send",
+      "7": "Sending",
+      "8": "Failed"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Email Messages"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Email Messages",
+    "Type": "OptionSetInfo"
+  }
+]

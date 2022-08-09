@@ -1,0 +1,99 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_eventparticipants",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_eventparticipant",
+    "MaxGetRowsCount": 500,
+    "Name": "Event Participants",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_Event": "Event",
+      "cr431_eventparticipant_AsyncOperations": "System Jobs",
+      "cr431_eventparticipant_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_eventparticipant_DuplicateBaseRecord": "Duplicate Records (cr431_eventparticipant_DuplicateBaseRecord)",
+      "cr431_eventparticipant_DuplicateMatchingRecord": "Duplicate Records (cr431_eventparticipant_DuplicateMatchingRecord)",
+      "cr431_eventparticipant_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_eventparticipant_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_eventparticipant_ProcessSession": "Process Sessions",
+      "cr431_eventparticipant_SyncErrors": "Sync Errors",
+      "cr431_eventparticipantid": "Event Participant",
+      "cr431_Influencer": "Influencer",
+      "cr431_name": "Event Participant ID",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Event Participants",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Event Participants (Views)",
+    "Name": "_cr431_eventparticipant_views",
+    "RelatedEntityName": "Event Participants",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0f572a15-a4f6-42d0-8204-19438a2f8f38": "Active Event Participants",
+      "2336d165-9f34-49ec-b908-a66674b1afa7": "Inactive Event Participants",
+      "38fab718-9aa0-4162-bf54-ece17d34507a": "Event Participant Advanced Find View",
+      "3cea511c-b853-4c13-a5e8-922c89948326": "Event Participant Associated View",
+      "aa740d17-b85d-490b-bd0b-1108ff976c59": "Event Participant Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (Event Participants)",
+    "Name": "cr431_eventparticipant_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Event Participants"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Event Participants",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Event Participants)",
+    "Name": "cr431_eventparticipant_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Event Participants"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Event Participants",
+    "Type": "OptionSetInfo"
+  }
+]

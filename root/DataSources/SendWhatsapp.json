@@ -1,0 +1,8 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_whatsapp-5ff7e120497f2f7876-5f3dc547195d1299c5",
+    "Name": "SendWhatsapp",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo"
+  }
+]

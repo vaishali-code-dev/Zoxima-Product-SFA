@@ -1,0 +1,3344 @@
+Distributorkycform As screen:
+    Fill: =RGBA(59, 59, 59, 1)
+    LoadingSpinnerColor: =RGBA(255, 200, 61, 1)
+
+    Canvas7 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =908
+        Width: =Parent.Width
+        Y: =132
+        ZIndex: =1
+
+        DataCard5 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =3089
+            Visible: =true
+            Width: =Parent.Width
+            WidthFit: =true
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            CommunicationContainer As groupContainer.manualLayoutContainer:
+                Height: =3074
+                Visible: =If(Gallery15.Selected.Title = "Communication", true, false)
+                Width: =581
+                X: =20
+                Y: =8
+                ZIndex: =1
+
+                Label52 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="Name of the Firm"
+                    Width: =500
+                    X: =20
+                    Y: =20
+                    ZIndex: =1
+
+                TextInput3_2 As text:
+                    BorderColor: =If(IsBlank(Parent), Parent.BorderColor, Color.Red)
+                    BorderThickness: =0
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'Name of the Firm'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter Firm Name"
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(165, 165, 165, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    OnSelect: =Set(ClearFieldsForDO, false);
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =500
+                    X: =20
+                    Y: =75
+                    ZIndex: =2
+
+                Label52_21 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =55
+                    Size: =19
+                    Text: ="Constitution of the Firm"
+                    Width: =500
+                    X: =20
+                    Y: =146
+                    ZIndex: =3
+
+                Label52_16 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =70
+                    Size: =19
+                    Text: ="Name"
+                    Width: =500
+                    X: =20
+                    Y: =312
+                    ZIndex: =5
+
+                TextInput3_23 As text:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'First Name'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter Name"
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnChange: =Set(ClearFieldsForDO,false);
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =500
+                    X: =20
+                    Y: =382
+                    ZIndex: =6
+
+                Label52_3 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =55
+                    Size: =19
+                    Text: ="Date of Birth"
+                    Width: =185
+                    X: =20
+                    Y: =440
+                    ZIndex: =7
+
+                Label52_17 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =59
+                    Size: =19
+                    Text: ="Year of Establishment"
+                    Width: =285
+                    X: =290
+                    Y: =436
+                    ZIndex: =8
+
+                Label52_18 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =55
+                    Size: =19
+                    Text: ="Mobile No."
+                    Width: =185
+                    X: =20
+                    Y: =573
+                    ZIndex: =9
+
+                TextInput3_26 As text:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'Mobile No.'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter Mobile"
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =19
+                    Width: =235
+                    X: =20
+                    Y: =628
+                    ZIndex: =10
+
+                Label52_19 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =55
+                    Size: =19
+                    Text: ="Telephone No."
+                    Width: =291
+                    X: =290
+                    Y: =573
+                    ZIndex: =11
+
+                TextInput3_29 As text:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'Telephone No.'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter Telephone No."
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =19
+                    Width: =263
+                    X: =300
+                    Y: =628
+                    ZIndex: =12
+
+                DatePicker2 As datepicker:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    CalendarHeaderFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    Color: =RGBA(255, 255, 255, 1)
+                    DefaultDate: =datadis1.'Date of Birth'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HoverDateFill: =RGBA(144, 144, 144, 1)
+                    IconBackground: =RGBA(255, 200, 61, 1)
+                    IconFill: =RGBA(31, 31, 31, 1)
+                    InputTextPlaceholder: |-
+                        =//If(IsBlank(Self.SelectedDate), Text(Date(2001,12,31), Self.Format, Self.Language))
+                        "Select Date"
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PaddingTop: =5
+                    Reset: =ClearFieldsForDO
+                    SelectedDateFill: =RGBA(255, 200, 61, 1)
+                    Size: =18
+                    Width: =235
+                    X: =20
+                    Y: =495
+                    ZIndex: =13
+
+                DatePicker2_1 As datepicker:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    CalendarHeaderFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    Color: =RGBA(255, 255, 255, 1)
+                    DefaultDate: =datadis1.'Year of Establishment'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HoverDateFill: =RGBA(144, 144, 144, 1)
+                    IconBackground: =RGBA(255, 200, 61, 1)
+                    IconFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PaddingTop: =5
+                    Reset: =ClearFieldsForDO
+                    SelectedDateFill: =RGBA(255, 200, 61, 1)
+                    Size: =17
+                    Width: =260
+                    X: =300
+                    Y: =495
+                    ZIndex: =14
+
+                Label52_48 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =56
+                    Size: =19
+                    Text: ="Fax No."
+                    Width: =250
+                    X: =20
+                    Y: =690
+                    ZIndex: =15
+
+                TextInput3_62 As text:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'Fax No.'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter Fax No."
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =250
+                    X: =20
+                    Y: =755
+                    ZIndex: =16
+
+                Label52_49 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =56
+                    Size: =19
+                    Text: ="Alt Mobile No."
+                    Width: =250
+                    X: =294
+                    Y: =690
+                    ZIndex: =17
+
+                TextInput3_63 As text:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'Alt Mobile No.'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter Mobile No."
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =19
+                    Width: =250
+                    X: =304
+                    Y: =755
+                    ZIndex: =18
+
+                Label52_50 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Bold
+                    Height: =56
+                    Size: =21
+                    Text: ="Address for Correspondace/billing "
+                    Width: =560
+                    X: =16
+                    Y: =874
+                    ZIndex: =19
+
+                Label52_51 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =56
+                    Size: =19
+                    Text: ="Address 1"
+                    Width: =560
+                    X: =15
+                    Y: =937
+                    ZIndex: =20
+
+                TextInput3_3 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'Address 1'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter Address"
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =19
+                    Width: =515
+                    X: =21
+                    Y: =997
+                    ZIndex: =21
+
+                Label52_52 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =56
+                    Size: =19
+                    Text: ="Address 2"
+                    Width: =250
+                    X: =21
+                    Y: =1062
+                    ZIndex: =22
+
+                TextInput3_64 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'Address 2'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: =" Enter Address"
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PaddingLeft: =0
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =250
+                    X: =20
+                    Y: =1118
+                    ZIndex: =23
+
+                Label52_53 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =56
+                    Size: =19
+                    Text: ="Post Code"
+                    Width: =250
+                    X: =305
+                    Y: =1062
+                    ZIndex: =24
+
+                TextInput3_65 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: |-
+                        =datadis1.'Post Code'
+                        //Filter('Sales Territory', Pare
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter Post Code"
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnChange: |
+                        =/*ClearCollect(
+                            MyZone,
+                            Filter(
+                                'Sales Territory',
+                                'Created By'.'Primary Email'  = User().Email && 'Parent Pincode'.'Territory Name' = TextInput3_65.Text
+                            )
+                        );*/
+                        
+                        Clear(Zones);
+                        Clear(States);
+                        Clear(SubStates);
+                        Clear(Districts);
+                        Clear(Cities);
+                        
+                        Collect(Zones,{});
+                        Collect(States,{});
+                        Collect(SubStates,{});
+                        Collect(Districts,{});
+                        Collect(Cities,{});
+                        
+                        
+                        ForAll(
+                            Filter('Sales Territories', 'Territory Code' = TextInput3_65.Text),
+                            Collect(Zones, 'Parent Zone')
+                        );
+                        ForAll(
+                            Filter('Sales Territories', 'Territory Code' = TextInput3_65.Text),
+                            Collect(States, 'Parent State')
+                        );
+                        ForAll(
+                             Filter('Sales Territories', 'Territory Code' = TextInput3_65.Text),
+                            Collect(SubStates, 'Parent Substate')
+                        );
+                        ForAll(
+                             Filter('Sales Territories', 'Territory Code' = TextInput3_65.Text),
+                            Collect(Districts, 'Parent District')
+                        );
+                        ForAll(
+                             Filter('Sales Territories', 'Territory Name (cr431_territoryname)' = TextInput3_65.Text),
+                            Collect(Cities, 'Parent City')
+                        );
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =234
+                    X: =305
+                    Y: =1118
+                    ZIndex: =25
+
+                Label52_54 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =56
+                    Size: =19
+                    Text: ="Sub-State"
+                    Width: =250
+                    X: =21
+                    Y: =1301
+                    ZIndex: =26
+
+                Label52_55 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =56
+                    Size: =19
+                    Text: ="State"
+                    Width: =250
+                    X: =303
+                    Y: =1186
+                    ZIndex: =28
+
+                Label52_56 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =56
+                    Size: =19
+                    Text: ="Zone"
+                    Width: =250
+                    X: =26
+                    Y: =1186
+                    ZIndex: =30
+
+                Label52_57 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =56
+                    Size: =19
+                    Text: ="District"
+                    Width: =250
+                    X: =305
+                    Y: =1301
+                    ZIndex: =34
+
+                Label52_58 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =56
+                    Size: =19
+                    Text: ="City"
+                    Width: =250
+                    X: =20
+                    Y: =1433
+                    ZIndex: =36
+
+                Label52_59 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =56
+                    Size: =19
+                    Text: ="Area"
+                    Width: =250
+                    X: =313
+                    Y: =1433
+                    ZIndex: =38
+
+                Checkbox2_1 As checkbox:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    CheckboxBackgroundFill: =RGBA(31, 31, 31, 1)
+                    CheckboxSize: =40
+                    CheckmarkFill: =RGBA(255, 255, 255, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =74
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    OnCheck: |-
+                        =ClearCollect(
+                            MyAddress,
+                            {
+                                address1: datadis1.'Address 1'})
+                               /* address2: datadis.'Billing Address 2',
+                                postcode: datadis.'Billing Post Code',
+                                zone: Zones,
+                                state: States,
+                                substate: Sub States,   
+                                district: Districts,
+                                city: Cities,
+                                area: datadis.Area
+                            }
+                        )*/
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Reset: =ClearFieldsForDO
+                    Size: =16
+                    Text: ="Same as above"
+                    Width: =404
+                    X: =15
+                    Y: =1638
+                    ZIndex: =40
+
+                Label52_60 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Bold
+                    Height: =56
+                    Size: =21
+                    Text: ="Warehouse/Delivery Address"
+                    Width: =560
+                    X: =20
+                    Y: =1594
+                    ZIndex: =41
+
+                Label52_61 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =56
+                    Size: =19
+                    Text: ="Address 1"
+                    Width: =560
+                    X: =21
+                    Y: =1712
+                    ZIndex: =42
+
+                Label52_79 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =56
+                    Size: =19
+                    Text: ="Address 2"
+                    Width: =250
+                    X: =21
+                    Y: =1839
+                    ZIndex: =44
+
+                TextInput3_66 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =If(Checkbox2_1.Value, TextInput3_64.Text)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =45
+                    HintText: =" Enter Address"
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    PaddingLeft: =0
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =18
+                    Width: =250
+                    X: =24
+                    Y: =1900
+                    ZIndex: =45
+
+                Label52_80 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =56
+                    Size: =19
+                    Text: ="Post Code"
+                    Width: =250
+                    X: =310
+                    Y: =1844
+                    ZIndex: =46
+
+                TextInput3_67 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =If(Checkbox2_1.Value, TextInput3_65.Text)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter Post Code"
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =18
+                    Width: =250
+                    X: =310
+                    Y: =1895
+                    ZIndex: =47
+
+                Label52_81 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =56
+                    Size: =19
+                    Text: ="Sub-State"
+                    Width: =250
+                    X: =26
+                    Y: =2073
+                    ZIndex: =48
+
+                Label52_82 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="State"
+                    Width: =250
+                    X: =313
+                    Y: =1963
+                    ZIndex: =49
+
+                Label52_83 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="Zone"
+                    Width: =250
+                    X: =26
+                    Y: =1964
+                    ZIndex: =50
+
+                Label52_84 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="District"
+                    Width: =250
+                    X: =310
+                    Y: =2079
+                    ZIndex: =54
+
+                Label52_85 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="City"
+                    Width: =250
+                    X: =26
+                    Y: =2193
+                    ZIndex: =56
+
+                Label52_86 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="Area"
+                    Width: =250
+                    X: =310
+                    Y: =2193
+                    ZIndex: =58
+
+                TextInput3_4 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =If(Checkbox2_1.Value, TextInput3_3.Text)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayMode: =If(IsBlank(MyAddress.address1), DisplayMode.Edit, DisplayMode.View)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter Address"
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =19
+                    Width: =515
+                    X: =24
+                    Y: =1778
+                    ZIndex: =60
+
+                TextInput3_92 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: |-
+                        =//First(Distinct('Sales Territory', 'Parent Zone'))
+                        //First(Distinct('Sales Territory', 'Zones'))
+                        //First(Zones).zx_territoryname
+                        Last(
+                            FirstN(
+                                Zones,
+                                2
+                            )
+                        ).cr431_territorycode
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: =" "
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PaddingLeft: =0
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =250
+                    X: =20
+                    Y: =1241
+                    ZIndex: =61
+
+                TextInput3_93 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =Last(FirstN(States,2)).cr431_territoryname
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: =""
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PaddingLeft: =0
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =250
+                    X: =300
+                    Y: =1239
+                    ZIndex: =62
+
+                TextInput3_94 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =Last(FirstN(SubStates,2)).cr431_territoryname
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: =""
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PaddingLeft: =0
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =250
+                    X: =22
+                    Y: =1356
+                    ZIndex: =63
+
+                TextInput3_95 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =Last(FirstN(Districts,2)).cr431_territoryname
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: =""
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PaddingLeft: =0
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =250
+                    X: =300
+                    Y: =1359
+                    ZIndex: =64
+
+                Dropdown3 As dropdown:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    ChevronBackground: =RGBA(31, 31, 31, 1)
+                    ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                    ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                    ChevronFill: =RGBA(218, 218, 218, 1)
+                    ChevronHoverBackground: =RGBA(79, 79, 79, 1)
+                    ChevronHoverFill: =RGBA(218, 218, 218, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(79, 79, 79, 1)
+                    Items: |
+                        =Cities
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PaddingBottom: =5
+                    PaddingLeft: =12
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    PressedColor: =RGBA(31, 31, 31, 1)
+                    PressedFill: =RGBA(255, 200, 61, 1)
+                    Reset: =ClearFieldsForDO
+                    SelectionColor: =RGBA(31, 31, 31, 1)
+                    SelectionFill: =RGBA(255, 200, 61, 1)
+                    Size: =18
+                    Width: =215
+                    X: =26
+                    Y: =1489
+                    ZIndex: =65
+
+                Dropdown3_1 As dropdown:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    ChevronBackground: =RGBA(31, 31, 31, 1)
+                    ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                    ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                    ChevronFill: =RGBA(218, 218, 218, 1)
+                    ChevronHoverBackground: =RGBA(79, 79, 79, 1)
+                    ChevronHoverFill: =RGBA(218, 218, 218, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =""
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(79, 79, 79, 1)
+                    Items: |-
+                        =Filter(
+                            'Sales Territories',
+                            'Sales Territories (Views)'.'L6 Area',
+                            'Parent City'.'Sales Territory' = Dropdown3.Selected.cr431_salesterritoryid
+                        )
+                        /*Filter(
+                                'Sales Territory',
+                           'Sales Territory (Views)'.'L7 Area',
+                            'Parent City'.'Sales Territory (zx_salesterritoryid)' ='Residence City'. Selected.zx_salesterritoryid
+                        )
+                        */
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PaddingBottom: =5
+                    PaddingLeft: =12
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    PressedColor: =RGBA(31, 31, 31, 1)
+                    PressedFill: =RGBA(255, 200, 61, 1)
+                    Reset: =ClearFieldsForDO
+                    SelectionColor: =RGBA(31, 31, 31, 1)
+                    SelectionFill: =RGBA(255, 200, 61, 1)
+                    Size: =21
+                    Width: =215
+                    X: =310
+                    Y: =1489
+                    ZIndex: =66
+
+                TextInput3_96 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: |-
+                        =//First(Distinct('Sales Territory', 'Parent Zone'))
+                        //First(Distinct('Sales Territory', 'Zones'))
+                        
+                        //First(Zones).zx_territoryname
+                        If(Checkbox2_1.Value, TextInput3_92.Text)
+                        //Last(FirstN(Zones,2)).zx_territoryname
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =44
+                    HintText: =" "
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    PaddingLeft: =0
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =18
+                    Width: =250
+                    X: =25
+                    Y: =2013
+                    ZIndex: =67
+
+                TextInput3_97 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: |-
+                        =//First(Distinct('Sales Territory', 'Parent Zone'))
+                        //First(Distinct('Sales Territory', 'Zones'))
+                        
+                        //First(Zones).zx_territoryname
+                        //Last(FirstN(Zones,2)).zx_territoryname
+                        If(Checkbox2_1.Value, TextInput3_93.Text)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =45
+                    HintText: =" "
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    PaddingLeft: =0
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =18
+                    Width: =250
+                    X: =310
+                    Y: =2014
+                    ZIndex: =68
+
+                TextInput3_98 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: |-
+                        =//First(Distinct('Sales Territory', 'Parent Zone'))
+                        //First(Distinct('Sales Territory', 'Zones'))
+                        
+                        //First(Zones).zx_territoryname
+                        //Last(FirstN(Zones,2)).zx_territoryname
+                        
+                        If(Checkbox2_1.Value, TextInput3_94.Text)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: =" "
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    PaddingLeft: =0
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =18
+                    Width: =250
+                    X: =24
+                    Y: =2129
+                    ZIndex: =69
+
+                TextInput3_99 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: |-
+                        =//First(Distinct('Sales Territory', 'Parent Zone'))
+                        //First(Distinct('Sales Territory', 'Zones'))
+                        
+                        //First(Zones).zx_territoryname
+                        //Last(FirstN(Zones,2)).zx_territoryname
+                        
+                        If(Checkbox2_1.Value, TextInput3_95.Text)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: =" "
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    PaddingLeft: =0
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =18
+                    Width: =250
+                    X: =313
+                    Y: =2129
+                    ZIndex: =70
+
+                Dropdown5 As dropdown:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    ChevronBackground: =RGBA(31, 31, 31, 1)
+                    ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                    ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                    ChevronFill: =RGBA(218, 218, 218, 1)
+                    ChevronHoverBackground: =RGBA(79, 79, 79, 1)
+                    ChevronHoverFill: =RGBA(218, 218, 218, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(79, 79, 79, 1)
+                    Items: =If(Checkbox2_1.Value, Dropdown3_1.SelectedText)
+                    PaddingBottom: =5
+                    PaddingLeft: =12
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    PressedColor: =RGBA(31, 31, 31, 1)
+                    PressedFill: =RGBA(255, 200, 61, 1)
+                    SelectionColor: =RGBA(31, 31, 31, 1)
+                    SelectionFill: =RGBA(255, 200, 61, 1)
+                    Size: =21
+                    Width: =250
+                    X: =313
+                    Y: =2248
+                    ZIndex: =71
+
+                Dropdown5_1 As dropdown:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    ChevronBackground: =RGBA(31, 31, 31, 1)
+                    ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                    ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                    ChevronFill: =RGBA(218, 218, 218, 1)
+                    ChevronHoverBackground: =RGBA(79, 79, 79, 1)
+                    ChevronHoverFill: =RGBA(218, 218, 218, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(79, 79, 79, 1)
+                    Items: =If(Checkbox2_1.Value, Dropdown3.SelectedText)
+                    PaddingBottom: =5
+                    PaddingLeft: =12
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    PressedColor: =RGBA(31, 31, 31, 1)
+                    PressedFill: =RGBA(255, 200, 61, 1)
+                    SelectionColor: =RGBA(31, 31, 31, 1)
+                    SelectionFill: =RGBA(255, 200, 61, 1)
+                    Size: =18
+                    Width: =250
+                    X: =24
+                    Y: =2248
+                    ZIndex: =72
+
+                Radio1_2 As radio:
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'Constitution of the firm'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =121
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Items: =['Constitution of the firm (Distributor Onboardings)'.Private, 'Constitution of the firm (Distributor Onboardings)'.Partner, 'Constitution of the firm (Distributor Onboardings)'.Proprietor, 'Constitution of the firm (Distributor Onboardings)'.Public, 'Constitution of the firm (Distributor Onboardings)'.Others]
+                    Layout: =Layout.Horizontal
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PaddingBottom: =ClearFieldsForDO
+                    PaddingTop: =5
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    RadioBackgroundFill: =RGBA(31, 31, 31, 1)
+                    RadioBorderColor: =RGBA(107, 86, 25, 1)
+                    RadioSelectionFill: =RGBA(255, 255, 255, 1)
+                    RadioSize: =42
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =500
+                    X: =14
+                    Y: =196
+                    ZIndex: =73
+
+                Label12 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =56
+                    Size: =19
+                    Text: ="GST Proof Image"
+                    Width: =560
+                    X: =21
+                    Y: =2341
+                    ZIndex: =74
+
+                AddMediaWithImage3 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =40
+                    ZIndex: =75
+
+                    UploadedImage3 As image:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderThickness: =2
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Height: =201
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Image: =If(IsBlank(AddMediaButton3.Media), SampleImage, AddMediaButton3.Media)
+                        ImagePosition: =ImagePosition.Fill
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Width: =294
+                        X: =38
+                        Y: =2409
+                        ZIndex: =76
+
+                    AddMediaButton3 As addMedia:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        ChangePictureText: ="Edit"
+                        Color: =RGBA(31, 31, 31, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        Fill: =RGBA(255, 200, 61, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =54
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(31, 31, 31, 1)
+                        HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+                        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+                        PressedColor: =RGBA(31, 31, 31, 1)
+                        PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                        Size: =20
+                        Text: ="Edit"
+                        Width: =91
+                        X: =249
+                        Y: =2556
+                        ZIndex: =77
+
+                Label12_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =56
+                    Size: =19
+                    Text: ="Shop ID Proof"
+                    Width: =560
+                    X: =16
+                    Y: =2629
+                    ZIndex: =78
+
+                AddMediaWithImage3_1 As group:
+                    Height: =5
+                    Width: =5
+                    X: =2
+                    Y: =-2369
+                    ZIndex: =79
+
+                    UploadedImage3_1 As image:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderThickness: =2
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Height: =201
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Image: =If(IsBlank(AddMediaButton3_1.Media), SampleImage, AddMediaButton3_1.Media)
+                        ImagePosition: =ImagePosition.Fill
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Width: =294
+                        X: =40
+                        Y: =2702
+                        ZIndex: =80
+
+                    AddMediaButton3_1 As addMedia:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        ChangePictureText: ="Edit"
+                        Color: =RGBA(31, 31, 31, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        Fill: =RGBA(255, 200, 61, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =54
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(31, 31, 31, 1)
+                        HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+                        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+                        PressedColor: =RGBA(31, 31, 31, 1)
+                        PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                        Size: =20
+                        Text: ="Edit"
+                        Width: =91
+                        X: =251
+                        Y: =2849
+                        ZIndex: =81
+
+            FinancialContainer As groupContainer.manualLayoutContainer:
+                Height: =4067
+                Visible: =If(Gallery15.Selected.Title = "Financial", true, false)
+                Width: =572
+                X: =40
+                Y: =30
+                ZIndex: =2
+
+                Label52_20 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="Gross Turnover(Per Annum)"
+                    Width: =515
+                    X: =18
+                    ZIndex: =1
+
+                Label52_26 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="Cibil Score"
+                    Width: =515
+                    X: =18
+                    Y: =158
+                    ZIndex: =3
+
+                TextInput3_30 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'Cibil score'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter Cibil Score"
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =515
+                    X: =18
+                    Y: =232
+                    ZIndex: =4
+
+                Label52_38 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="Remarks"
+                    Width: =515
+                    X: =18
+                    Y: =327
+                    ZIndex: =5
+
+                TextInput3_33 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.Remarks
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter Remarks"
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =515
+                    X: =18
+                    Y: =402
+                    ZIndex: =6
+
+                Container6_2 As groupContainer.verticalAutoLayoutContainer:
+                    Height: =(165+(If(CountRows(totalsalerenders)>0, 115*CountRows(totalsalerenders))))  
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMode: =LayoutMode.Auto
+                    Width: =572
+                    Y: =452
+                    ZIndex: =112
+
+                    Container13 As groupContainer.manualLayoutContainer:
+                        FillPortions: =0
+                        Height: =165+(If(CountRows(totalsalerenders)>0, 115*CountRows(totalsalerenders))) 
+                        LayoutMinHeight: =112
+                        LayoutMinWidth: =250
+                        Width: =550
+                        X: =22
+                        Y: =3175
+                        ZIndex: =1
+
+                        con1 As groupContainer.manualLayoutContainer:
+                            Height: =150
+                            Width: =544
+                            X: =6
+                            Y: =11
+                            ZIndex: =5
+
+                            Group16_1 As group:
+                                Height: =5
+                                Width: =5
+                                X: =60
+                                Y: =-320
+                                ZIndex: =4
+
+                                Label47_5 As label:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =50
+                                    Size: =18
+                                    Text: ="Total sale value of firm for last 3 years"
+                                    Width: =544
+                                    Y: =10
+                                    ZIndex: =1
+
+                                Circle2_15 As circle:
+                                    BorderColor: =RGBA(109, 109, 109, 1)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    DisabledFill: =RGBA(255, 200, 61, 1)
+                                    Fill: =RGBA(255, 216, 119, 1)
+                                    Height: =50
+                                    HoverFill: =RGBA(255, 200, 61, 1)
+                                    OnSelect: =
+                                    PressedFill: =RGBA(255, 200, 61, 1)
+                                    Width: =50
+                                    X: =494
+                                    Y: =10
+                                    ZIndex: =2
+
+                                Icon13_14 As icon.Add:
+                                    BorderColor: =RGBA(109, 109, 109, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(220, 220, 220, 1)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    FocusedBorderThickness: =4
+                                    Height: =31
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Icon: =Icon.Add
+                                    OnSelect: |-
+                                        =UpdateContext({Addvar: Addvar+1});
+                                        Collect(totalsalerenders, {})
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                                    PressedFill: =RGBA(0, 0, 0, 0)
+                                    Width: =31
+                                    X: =504
+                                    Y: =20
+                                    ZIndex: =3
+
+                            Group13_13 As group:
+                                Height: =5
+                                Width: =5
+                                X: =-16
+                                Y: =-1124
+                                ZIndex: =9
+
+                                Label48_1 As label:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    Fill: =RGBA(88, 103, 130, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    Height: =72
+                                    Size: =17
+                                    Text: ="Category"
+                                    Width: =184
+                                    X: =16
+                                    Y: =70
+                                    ZIndex: =4
+
+                                Rectangle21_1 As rectangle:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    DisabledFill: =RGBA(166, 166, 166, 1)
+                                    Fill: =RGBA(88, 103, 130, 1)
+                                    FocusedBorderThickness: =4
+                                    Height: =72
+                                    HoverFill: =RGBA(255, 200, 61, 1)
+                                    PressedFill: =RGBA(255, 200, 61, 1)
+                                    Width: =342
+                                    X: =202
+                                    Y: =70
+                                    ZIndex: =5
+
+                                Label49_1 As label:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(255, 255, 255, 1)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =1
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    Height: =30
+                                    Size: =16
+                                    Text: ="Sales(Rs. in Lacs)"
+                                    Width: =342
+                                    X: =202
+                                    Y: =70
+                                    ZIndex: =6
+
+                                Label50_3 As label:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    Height: =42
+                                    Size: =16
+                                    Text: ="LY"
+                                    Width: =103
+                                    X: =318
+                                    Y: =100
+                                    ZIndex: =7
+
+                                Label50_4 As label:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    Height: =42
+                                    Size: =16
+                                    Text: ="CY"
+                                    Width: =103
+                                    X: =431
+                                    Y: =96
+                                    ZIndex: =8
+
+                            Label50_5 As label:
+                                Align: =Align.Center
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =RGBA(255, 255, 255, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                Height: =35
+                                Size: =16
+                                Text: ="L2LY"
+                                Width: =103
+                                X: =208
+                                Y: =103
+                                ZIndex: =10
+
+                        Gallery17_1 As gallery.variableTemplateHeightGallery:
+                            BorderColor: =RGBA(109, 109, 109, 1)
+                            Height: =If(CountRows(totalsalerenders)>0,330+(90*(CountRows(totalsalerenders))),0)
+                            Items: =totalsalerenders
+                            Layout: =Layout.Vertical
+                            ShowScrollbar: =false
+                            TemplateSize: =123
+                            Width: =572
+                            Y: =150
+                            ZIndex: =6
+
+                            Icon22_27 As icon.Trash:
+                                BorderColor: =RGBA(109, 109, 109, 1)
+                                Color: =RGBA(255, 255, 255, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(220, 220, 220, 1)
+                                DisabledFill: =RGBA(0, 0, 0, 0)
+                                FocusedBorderThickness: =4
+                                Height: =22
+                                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                                HoverFill: =RGBA(0, 0, 0, 0)
+                                Icon: =Icon.Trash
+                                OnSelect: |-
+                                    =UpdateContext({Addvar: Addvar-1});
+                                    Remove(totalsalerenders, ThisItem)
+                                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                                PressedFill: =RGBA(0, 0, 0, 0)
+                                Width: =38
+                                X: =524
+                                Y: =5
+                                ZIndex: =6
+
+                            Group13_14 As group:
+                                Height: =5
+                                Width: =5
+                                X: =12
+                                Y: =-10
+                                ZIndex: =7
+
+                                Rectangle22_15 As rectangle:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    DisabledFill: =RGBA(166, 166, 166, 1)
+                                    Fill: =RGBA(204, 240, 235, 1)
+                                    FocusedBorderThickness: =4
+                                    Height: =88
+                                    HoverFill: =RGBA(255, 200, 61, 1)
+                                    PressedFill: =RGBA(255, 200, 61, 1)
+                                    Width: =526
+                                    X: =15
+                                    Y: =27
+                                    ZIndex: =1
+
+                                ComboBox4_24 As combobox:
+                                    BorderColor: =RGBA(109, 109, 109, 1)
+                                    ChevronBackground: =RGBA(31, 31, 31, 1)
+                                    ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                                    ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                                    ChevronHoverBackground: =RGBA(79, 79, 79, 1)
+                                    ChevronHoverFill: =RGBA(218, 218, 218, 1)
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    DisabledFill: =RGBA(244, 244, 244, 1)
+                                    DisplayFields: =["Value"]
+                                    Fill: =RGBA(31, 31, 31, 1)
+                                    Font: =Font.'Segoe UI'
+                                    Height: =51
+                                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                                    HoverColor: =RGBA(255, 255, 255, 1)
+                                    HoverFill: =RGBA(79, 79, 79, 1)
+                                    IsSearchable: =false
+                                    Items: |-
+                                        =[ "Agri Pipes", "Borewell Systems", "Compact Ball Vavles", "Cablefit Ball Vavles", "Burafit Manhole Covers"]
+                                        
+                                        //'Item Subcategory'
+                                    PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                                    PressedColor: =RGBA(31, 31, 31, 1)
+                                    PressedFill: =RGBA(255, 200, 61, 1)
+                                    SearchFields: =["Value"]
+                                    SearchItems: =[]
+                                    SelectionColor: =RGBA(31, 31, 31, 1)
+                                    SelectionFill: =RGBA(255, 200, 61, 1)
+                                    Size: =16
+                                    Width: =177
+                                    X: =36
+                                    Y: =48
+                                    ZIndex: =2
+
+                                TextInput6_43 As text:
+                                    BorderColor: =RGBA(109, 109, 109, 1)
+                                    BorderThickness: =0
+                                    Color: =RGBA(164, 164, 164, 1)
+                                    Default: =""
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    DisabledFill: =RGBA(244, 244, 244, 1)
+                                    Fill: =RGBA(31, 31, 31, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    Height: =51
+                                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                                    HoverColor: =RGBA(255, 255, 255, 1)
+                                    HoverFill: =RGBA(31, 31, 31, 1)
+                                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(31, 31, 31, 1)
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =16
+                                    Width: =86
+                                    X: =337
+                                    Y: =48
+                                    ZIndex: =3
+
+                                TextInput6_44 As text:
+                                    BorderColor: =RGBA(109, 109, 109, 1)
+                                    BorderThickness: =0
+                                    Color: =RGBA(164, 164, 164, 1)
+                                    Default: =""
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    DisabledFill: =RGBA(244, 244, 244, 1)
+                                    Fill: =RGBA(31, 31, 31, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    Height: =51
+                                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                                    HoverColor: =RGBA(255, 255, 255, 1)
+                                    HoverFill: =RGBA(31, 31, 31, 1)
+                                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(31, 31, 31, 1)
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =16
+                                    Width: =86
+                                    X: =438
+                                    Y: =46
+                                    ZIndex: =4
+
+                                TextInput6_45 As text:
+                                    BorderColor: =RGBA(109, 109, 109, 1)
+                                    BorderThickness: =0
+                                    Color: =RGBA(164, 164, 164, 1)
+                                    Default: =""
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    DisabledFill: =RGBA(244, 244, 244, 1)
+                                    Fill: =RGBA(31, 31, 31, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    Height: =51
+                                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                                    HoverColor: =RGBA(255, 255, 255, 1)
+                                    HoverFill: =RGBA(31, 31, 31, 1)
+                                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(31, 31, 31, 1)
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =16
+                                    Width: =86
+                                    X: =231
+                                    Y: =48
+                                    ZIndex: =5
+
+                Radio1_3 As radio:
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'Gross Turnover (Per Annum)'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =106
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Items: =['Gross Turnover (Per Annum) (Distributor Onboardings)'.'<2 CR', 'Gross Turnover (Per Annum) (Distributor Onboardings)'.'2-3 CR', 'Gross Turnover (Per Annum) (Distributor Onboardings)'.'3-5 CR','Gross Turnover (Per Annum) (Distributor Onboardings)'.'5-8 CR', 'Gross Turnover (Per Annum) (Distributor Onboardings)'.'>8 CR']
+                    Layout: =Layout.Horizontal
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PaddingBottom: =5
+                    PaddingTop: =5
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    RadioBackgroundFill: =RGBA(31, 31, 31, 1)
+                    RadioBorderColor: =RGBA(107, 86, 25, 1)
+                    RadioSelectionFill: =RGBA(255, 255, 255, 1)
+                    RadioSize: =40
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =515
+                    X: =27
+                    Y: =53
+                    ZIndex: =113
+
+            "'Tax/GSTContainer' As groupContainer.manualLayoutContainer":
+                Height: =807
+                Visible: =If(Gallery15.Selected.Title = "Tax/GST", true, false)
+                Width: =581
+                X: =31
+                Y: =40
+                ZIndex: =3
+
+                Label52_23 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="PAN No."
+                    Width: =515
+                    X: =27
+                    Y: =292
+                    ZIndex: =1
+
+                TextInput3_34 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'PAN No.'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter PAN No."
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =515
+                    X: =27
+                    Y: =363
+                    ZIndex: =2
+
+                Label52_24 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="AADHAR No."
+                    Width: =515
+                    X: =27
+                    Y: =427
+                    ZIndex: =3
+
+                TextInput3_50 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'AADHAR No.'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter Aadhar No."
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =515
+                    X: =27
+                    Y: =497
+                    ZIndex: =4
+
+                Label52_30 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="GST No."
+                    Width: =515
+                    X: =33
+                    Y: =150
+                    ZIndex: =6
+
+                TextInput3_51 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'GST No.'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter GST No."
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =515
+                    X: =27
+                    Y: =220
+                    ZIndex: =7
+
+                Label52_31 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="GST Registration Type"
+                    Width: =515
+                    X: =27
+                    Y: =7
+                    ZIndex: =8
+
+                Dropdown2 As dropdown:
+                    BorderColor: =RGBA(0, 18, 107, 1)
+                    BorderThickness: =1
+                    ChevronBackground: =RGBA(255, 255, 255, 1)
+                    ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                    ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                    ChevronFill: =RGBA(88, 103, 130, 1)
+                    ChevronHoverBackground: =RGBA(79, 79, 79, 1)
+                    ChevronHoverFill: =RGBA(218, 218, 218, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'GST Registration Type'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(79, 79, 79, 1)
+                    Items: =['GST Registration Type (Distributor Onboardings)'.Registered, 'GST Registration Type (Distributor Onboardings)'.'Not Registered']
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PaddingBottom: =5
+                    PaddingLeft: =12
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    PressedColor: =RGBA(31, 31, 31, 1)
+                    PressedFill: =RGBA(255, 200, 61, 1)
+                    Reset: =ClearFieldsForDO
+                    SelectionColor: =RGBA(31, 31, 31, 1)
+                    SelectionFill: =RGBA(39, 67, 125, 1)
+                    Size: =18
+                    Width: =515
+                    X: =27
+                    Y: =77
+                    ZIndex: =9
+
+            BankContainer As groupContainer.manualLayoutContainer:
+                Height: =1155
+                Visible: =If(Gallery15.Selected.Title = "Bank Details", true, false)
+                Width: =572
+                X: =40
+                Y: =40
+                ZIndex: =4
+
+                Label52_25 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="Account No."
+                    Width: =407
+                    X: =19
+                    Y: =122
+                    ZIndex: =1
+
+                TextInput3_52 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'Account No.'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter Account"
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =481
+                    X: =19
+                    Y: =170
+                    ZIndex: =2
+
+                Label52_27 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="IFSC Code"
+                    Width: =250
+                    X: =20
+                    Y: =243
+                    ZIndex: =3
+
+                TextInput3_53 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'IFSC Code'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter IFSC Code"
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =250
+                    X: =14
+                    Y: =306
+                    ZIndex: =4
+
+                Label52_28 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="Bank Name"
+                    Width: =250
+                    X: =10
+                    Y: =382
+                    ZIndex: =5
+
+                TextInput3_54 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'Bank Code'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter Name"
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =481
+                    X: =10
+                    Y: =444
+                    ZIndex: =6
+
+                Label52_29 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="Bank Address"
+                    Width: =250
+                    X: =10
+                    Y: =512
+                    ZIndex: =7
+
+                TextInput3_55 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'Bank Address'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter Address"
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =21
+                    Width: =481
+                    X: =9
+                    Y: =566
+                    ZIndex: =8
+
+                Label52_34 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="Bank Code"
+                    Width: =250
+                    X: =296
+                    Y: =244
+                    ZIndex: =9
+
+                TextInput3_56 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'Bank Code'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter Code"
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =250
+                    X: =299
+                    Y: =306
+                    ZIndex: =10
+
+                Label52_35 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="Name of nearest distributor with distance"
+                    Width: =539
+                    Y: =903
+                    ZIndex: =11
+
+                TextInput3_57 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'Name of the Distributor'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter Details"
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =515
+                    X: =10
+                    Y: =961
+                    ZIndex: =12
+
+                Label52_39 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="Deposit Amount"
+                    Width: =250
+                    X: =10
+                    Y: =621
+                    ZIndex: =14
+
+                TextInput3_58 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'Deposit Amount'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HintText: ="Enter Amount"
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =250
+                    X: =10
+                    Y: =679
+                    ZIndex: =15
+
+                Label52_40 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =18
+                    Text: ="Credit Term Pipes"
+                    Width: =250
+                    X: =300
+                    Y: =622
+                    ZIndex: =16
+
+                TextInput3_59 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'Credit Term Pipes'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Format: =TextFormat.Number
+                    Height: =50
+                    HintText: ="Enter Term Pipes"
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =250
+                    X: =289
+                    Y: =679
+                    ZIndex: =17
+
+                Label52_45 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="Credit Limit(In Rs.)"
+                    Width: =250
+                    X: =6
+                    Y: =762
+                    ZIndex: =18
+
+                TextInput3_60 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'Credit limit (In Rs.)'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Format: =TextFormat.Number
+                    Height: =50
+                    HintText: ="Enter Credit Limit(In Rs.)"
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =250
+                    X: =10
+                    Y: =818
+                    ZIndex: =19
+
+                Label52_46 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =56
+                    Size: =19
+                    Text: ="Declaration Type"
+                    Width: =471
+                    X: =19
+                    ZIndex: =20
+
+                ComboBox2 As combobox:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    BorderThickness: =1
+                    ChevronBackground: =RGBA(255, 255, 255, 1)
+                    ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                    ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                    ChevronFill: =RGBA(88, 103, 130, 1)
+                    ChevronHoverBackground: =RGBA(79, 79, 79, 1)
+                    ChevronHoverFill: =RGBA(218, 218, 218, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayFields: =["Value"]
+                    Fill: =RGBA(31, 31, 31, 1)
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HoverBorderColor: =
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(79, 79, 79, 1)
+                    InputTextPlaceholder: ="Select Declaration Type"
+                    IsSearchable: =false
+                    Items: =['Declaration Type (Distributor Onboardings)'.Yes, 'Declaration Type (Distributor Onboardings)'.No]
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    PressedColor: =RGBA(31, 31, 31, 1)
+                    PressedFill: =RGBA(255, 200, 61, 1)
+                    Reset: =ClearFieldsForDO
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectionColor: =RGBA(31, 31, 31, 1)
+                    SelectionFill: =RGBA(255, 200, 61, 1)
+                    Size: =21
+                    Width: =481
+                    X: =22
+                    Y: =56
+                    ZIndex: =21
+
+                Label52_47 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =50
+                    Size: =19
+                    Text: ="Credit Term Fittings"
+                    Width: =266
+                    X: =299
+                    Y: =762
+                    ZIndex: =22
+
+                TextInput3_61 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =datadis1.'Credit Term Fittings'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Format: =TextFormat.Number
+                    Height: =50
+                    HintText: ="Enter Credit Term"
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    OnSelect: =Set(ClearFieldsForDO, false)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Reset: =ClearFieldsForDO
+                    Size: =18
+                    Width: =250
+                    X: =296
+                    Y: =820
+                    ZIndex: =23
+
+    Gallery15 As gallery.galleryHorizontal:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Height: =55
+        Items: |-
+            =Table( 
+                {
+                    Title: "Communication",
+                    Active: true
+                },
+                {
+                    Title: "Financial",
+                    Active: false
+                },
+                {
+                    Title: "Tax/GST",
+                    Active: false
+                },
+                {
+                    Title: "Bank Details",
+                    Active: false
+                }
+            
+            )
+        ShowScrollbar: =false
+        TemplateSize: =226
+        Y: =77
+        ZIndex: =2
+
+        Button3_1 As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: |-
+                =If(ThisItem.IsSelected, ColorValue("#A00002"), RGBA(103, 204, 107, 0.1))
+            FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =41
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(31, 31, 31, 1)
+            HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+            OnSelect: =Select(Parent)
+            PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+            PressedColor: =RGBA(31, 31, 31, 1)
+            PressedFill: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =17
+            Text: =
+            Width: =217
+            X: =5
+            ZIndex: =1
+
+        Label44 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =45
+            OnSelect: =Select(Parent)
+            Size: =17
+            Text: =ThisItem.Title
+            Width: =217
+            ZIndex: =2
+
+    "'Header Component_20' As 'Header Component_11'":
+        Height: =87
+        ScreenName: ="KYC FORM"
+        ZIndex: =3
+
+    Button6_6 As button:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        BorderThickness: =0
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =32
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(31, 31, 31, 1)
+        HoverFill: =RGBA(88, 103, 130, 1)
+        OnSelect: |
+            =ClearCollect(
+                Mediaforimgdis,
+                AzureBlobStorage.CreateFile(
+                    "gstfordis",
+                    User().FullName,
+                    AddMediaButton3.Media
+                )
+            );
+            ClearCollect(
+                Mediaforimgdis1,
+                AzureBlobStorage.CreateFile(
+                    "shopidfordis",
+                    User().FullName,
+                    AddMediaButton3_1.Media
+                )
+            );
+            Set(
+                gstfordisurl,
+                AzureBlobStorage.CreateShareLinkByPath(First(Mediaforimgdis).Path));
+                Set(
+                shopidfordisurl,
+                AzureBlobStorage.CreateShareLinkByPath(First(Mediaforimgdis1).Path));
+            If(
+                variable1,
+                Patch(
+                    'Distributor Onboardings',
+                    Defaults('Distributor Onboardings'),
+                    {
+                        Name: TextInput3_2.Text,
+                        'Constitution of the firm': Radio1_2.Selected.Value,
+                        'First Name': Left(
+                            Label52_16.Text,
+                            Find(
+                                " ",
+                                Label52_16.Text
+                            )
+                        ),
+                        'Last Name': Right(
+                            Label52_16.Text,
+                            Find(
+                                " ",
+                                Label52_16.Text
+                            )
+                        ),
+                        'Date of Birth': DatePicker2.SelectedDate,
+                        'Year of Establishment': DatePicker2_1.SelectedDate,
+                        'Mobile No.': TextInput3_26.Text,
+                        'Telephone No.': TextInput3_29.Text,
+                        'Fax No.': TextInput3_62.Text,
+                        'Alt Mobile No.': TextInput3_63.Text,
+                        'Address 1': TextInput3_3.Text,
+                        'Address 2': TextInput3_64.Text,
+                        'Post Code': TextInput3_65.Text,
+                        'Gross Turnover (Per Annum)': Radio1_3.Selected.Value,
+                        'Cibil score': TextInput3_30.Text,
+                        Remarks: TextInput3_33.Text,
+                        'GST Registration Type': Dropdown2.Selected.Value,
+                        'GST No.': TextInput3_51.Text,
+                        'PAN No.': TextInput3_34.Text,
+                        'AADHAR No.': TextInput3_50.Text,
+                        'Declaration Type': ComboBox2.Selected.Value,
+                        'Account No.': TextInput3_52.Text,
+                        'IFSC Code': TextInput3_53.Text,
+                        'Bank Code': TextInput3_56.Text,
+                        'Bank Name': TextInput3_54.Text,
+                        'Bank Address': TextInput3_55.Text,
+                        'Credit Term Pipes': Value(TextInput3_59.Text),
+                        'Credit Term Fittings': TextInput3_61.Text,
+                        'Name of the Distributor': TextInput3_57.Text,
+                        'Credit limit (In Rs.)': Value(TextInput3_60.Text),
+                        'Deposit Amount': Value(TextInput3_58.Text),
+                        'GST Proof Img': gstfordisurl.WebUrl,
+                        'Shop Id Proof':shopidfordisurl.WebUrl,
+                        //'Sub State': TextInput3_94.Text,
+                        //statusmain: 'statusmain (Distributor Onboardings)'.Draft,
+            'Sub State': LookUp(
+                            'Sales Territories',
+                            'Sales Territory' = Last(
+                                FirstN(
+                                    SubStates,
+                                    2
+                                )
+                            ).cr431_salesterritoryid
+                        ),
+                        // District: TextInput3_95.Text,
+                        State: LookUp(
+                            'Sales Territories',
+                            'Sales Territory' = Last(
+                                FirstN(
+                                    States,
+                                    2
+                                )
+                            ).cr431_salesterritoryid
+                        ),
+                        City: LookUp(
+                            'Sales Territories',
+                            'Sales Territory' = Last(
+                                FirstN(
+                                    Cities,
+                                    2
+                                )
+                            ).cr431_salesterritoryid
+                        ),
+                        //  'Area': ComboBox3_5.Selected.Value
+                        Zone: LookUp(
+                            'Sales Territories',
+                            'Sales Territory' = Last(
+                                FirstN(
+                                    Zones,
+                                    2
+                                )
+                            ).cr431_salesterritoryid
+                        ),
+                        statusmain: 'statusmain (Distributor Onboardings)'.Draft
+                    }
+                );
+                Set(
+                    ClearFieldsForDO,
+                    true
+                );
+                Notify("Successfuly added!"),
+                Patch(
+                    'Distributor Onboardings',
+                    LookUp(
+                        'Distributor Onboardings',
+                        ' Record Id' = datadis1.' Record Id'
+                    ),
+                    {
+                        'Name of the Firm': TextInput3_2.Text,
+                        'Constitution of the firm': Radio1_2.Selected.Value,
+                        'First Name': Left(
+                            Label52_16.Text,
+                            Find(
+                                " ",
+                                Label52_16.Text
+                            )
+                        ),
+                        'Last Name': Right(
+                            Label52_16.Text,
+                            Find(
+                                " ",
+                                Label52_16.Text
+                            )
+                        ),
+                        'Date of Birth': DatePicker2.SelectedDate,
+                        'Year of Establishment': DatePicker2_1.SelectedDate,
+                        'Mobile No.': TextInput3_26.Text,
+                        'Telephone No.': TextInput3_29.Text,
+                        'Fax No.': TextInput3_62.Text,
+                        'Alt Mobile No.': TextInput3_63.Text,
+                        'Address 1': TextInput3_3.Text,
+                        'Address 2': TextInput3_64.Text,
+                        'Post Code': TextInput3_65.Text,
+                        'Gross Turnover (Per Annum)': Radio1_3.Selected.Value,
+                        'Cibil score': TextInput3_30.Text,
+                        Remarks: TextInput3_33.Text,
+                        'GST Registration Type': Dropdown2.Selected.Value,
+                        'GST No.': TextInput3_51.Text,
+                        'PAN No.': TextInput3_34.Text,
+                        'AADHAR No.': TextInput3_50.Text,
+                        'Declaration Type': ComboBox2.Selected.Value,
+                        'Account No.': TextInput3_52.Text,
+                        'IFSC Code': TextInput3_53.Text,
+                        'Bank Code': TextInput3_56.Text,
+                        'Bank Name': TextInput3_54.Text,
+                        'Bank Address': TextInput3_55.Text,
+                        'Credit Term Pipes': Value(TextInput3_59.Text),
+                        'Credit Term Fittings': TextInput3_61.Text,
+                        'Name of the Distributor': TextInput3_57.Text,
+                        'Credit limit (In Rs.)': Value(TextInput3_60.Text),
+                        'Deposit Amount': Value(TextInput3_58.Text),
+                            'GST Proof Img': gstfordisurl.WebUrl,
+                        'Shop Id Proof':shopidfordisurl.WebUrl,
+                        //statusmain: 'statusmain (Distributor Onboardings)'.Draft,
+            'Sub State': LookUp(
+                            'Sales Territories',
+                            'Sales Territory' = Last(
+                                FirstN(
+                                    SubStates,
+                                    2
+                                )
+                            ).cr431_salesterritoryid
+                        ),
+                        // District: TextInput3_95.Text,
+                        State: LookUp(
+                            'Sales Territories',
+                            'Sales Territory' = Last(
+                                FirstN(
+                                    States,
+                                    2
+                                )
+                            ).cr431_salesterritoryid
+                        ),
+                        City: LookUp(
+                            'Sales Territories',
+                            'Sales Territory' = Last(
+                                FirstN(
+                                    Cities,
+                                    2
+                                )
+                            ).cr431_salesterritoryid
+                        ),
+                        //  'Area': ComboBox3_5.Selected.Value
+                   // 'Billing State': ComboBox3_1.Selected.Value
+                    // Zone: ComboBox3.Selected.Value
+            Zone: LookUp(
+                            'Sales Territories',
+                            'Sales Territory' = Last(
+                                FirstN(
+                                    Zones,
+                                    2
+                                )
+                            ).cr431_salesterritoryid
+                        )
+                    }
+                );
+                Notify("Update successfully")
+            );
+            Navigate(DistributorOnboarding);
+        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+        PressedColor: =RGBA(31, 31, 31, 1)
+        PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        RadiusBottomLeft: =7
+        RadiusBottomRight: =7
+        RadiusTopLeft: =7
+        RadiusTopRight: =7
+        Size: =17
+        Text: ="SAVE"
+        Width: =140
+        X: =410
+        Y: =20
+        ZIndex: =4
+
+    Icon17_4 As icon.BackArrow:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =50
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        X: =8
+        Y: =10
+        ZIndex: =5
+
+    Image1_49 As image:
+        BorderColor: =RGBA(204, 204, 204, 1)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =1
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =45
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: =User().Image
+        ImagePosition: =ImagePosition.Fill
+        OnSelect: =Navigate(Profile)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Width: =45
+        X: =584
+        Y: =13
+        ZIndex: =7
+
+    "'Bottom Navigation_59' As 'Bottom Navigation'":
+        NavItems: |-
+            =Table(
+                {
+                    Title: If(
+                        varAttendance = "end",
+                        "End",
+                        varAttendance = "start",
+                        "Start",
+                        varAttendance = "done",
+                        "Ended"
+                    ),
+                    //Title: Start,
+                    Screen: If(
+                        varAttendance = "start",
+                        StartDay,
+                        varAttendance = "end",
+                        'End day',
+                        varAttendance = "done",
+                        'Day Ended'
+                    ),
+                    Icon: CalendarBlank,
+                    Active: false
+                },
+                {
+                    Title: "Visits",
+                    Screen: Visits,
+                    Icon: Waypoint,
+                    Active: false
+                },
+                {
+                    Title: "Dashboard",
+                    Screen: Home,
+                    Icon: Waffle,
+                    Active: false
+                },
+                {
+                    Title: "Parties",
+                    Screen: 'Customer (Dist)_1',
+                    Icon: People,
+                    Active: false
+                },
+                {
+                    Title: "Menu",
+                    Screen: 'Menu Screen',
+                    Icon: Hamburger,
+                    Active: false
+                }
+            )
+        Y: =1056
+        ZIndex: =8
+

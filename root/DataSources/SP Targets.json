@@ -1,0 +1,106 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_sptargetses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_sptargets",
+    "MaxGetRowsCount": 500,
+    "Name": "SP Targets",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_date": "Date",
+      "cr431_month": "Month",
+      "cr431_name": "ID",
+      "cr431_producttarget": "Product Target",
+      "cr431_promotedproductstarget": "Promoted Products Target",
+      "cr431_SalesPerson": "Sales Person",
+      "cr431_sptargets_AsyncOperations": "System Jobs",
+      "cr431_sptargets_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_sptargets_DuplicateBaseRecord": "Duplicate Records (cr431_sptargets_DuplicateBaseRecord)",
+      "cr431_sptargets_DuplicateMatchingRecord": "Duplicate Records (cr431_sptargets_DuplicateMatchingRecord)",
+      "cr431_sptargets_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_sptargets_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_sptargets_ProcessSession": "Process Sessions",
+      "cr431_sptargets_SyncErrors": "Sync Errors",
+      "cr431_sptargetsid": "SP Targets",
+      "cr431_target": "Target",
+      "cr431_target_base": "Target (Base)",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "SP Targets",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "SP Targets (Views)",
+    "Name": "_cr431_sptargets_views",
+    "RelatedEntityName": "SP Targets",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "41590bf5-1185-4dd6-8d2c-0473c29e4444": "SP Targets Associated View",
+      "4ad892de-07ed-4e35-8746-3fd32e03ce08": "SP Targets Advanced Find View",
+      "6fe26e12-1867-41ba-a058-c270352e8caf": "Inactive SP Targets",
+      "80b91ca1-ae7c-472c-97ec-87e0412efe8d": "SP Targets Lookup View",
+      "c1946d1f-a13b-41b6-8fa6-133dcbb324f5": "Active SP Targets"
+    }
+  },
+  {
+    "DisplayName": "Status (SP Targets)",
+    "Name": "cr431_sptargets_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "SP Targets"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "SP Targets",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (SP Targets)",
+    "Name": "cr431_sptargets_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "SP Targets"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "SP Targets",
+    "Type": "OptionSetInfo"
+  }
+]

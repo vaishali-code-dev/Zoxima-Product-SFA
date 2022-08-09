@@ -1,0 +1,126 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_expenseheaders",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_expenseheader",
+    "MaxGetRowsCount": 500,
+    "Name": "Expense Header",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_cr431_expenseheader_cr431_expenseline_ExpenseNumber": "Expense Line",
+      "cr431_ExpenseApprover": "Expense Approver",
+      "cr431_expensedate": "Expense Date",
+      "cr431_expenseheader_AsyncOperations": "System Jobs",
+      "cr431_expenseheader_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_expenseheader_DuplicateBaseRecord": "Duplicate Records (cr431_expenseheader_DuplicateBaseRecord)",
+      "cr431_expenseheader_DuplicateMatchingRecord": "Duplicate Records (cr431_expenseheader_DuplicateMatchingRecord)",
+      "cr431_expenseheader_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_expenseheader_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_expenseheader_ProcessSession": "Process Sessions",
+      "cr431_expenseheader_SyncErrors": "Sync Errors",
+      "cr431_expenseheaderid": "Expense Header",
+      "cr431_expenseid": "Expense ID",
+      "cr431_expensestatus": "Expense Status",
+      "cr431_name": "Name",
+      "cr431_remarks": "Remarks",
+      "cr431_TeamID": "Team ID",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Expense Header",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Expense Header (Views)",
+    "Name": "_cr431_expenseheader_views",
+    "RelatedEntityName": "Expense Header",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "01107ed5-2473-4760-97ad-72a1adf1092f": "Inactive Expense Header",
+      "2530a26a-c355-4cb1-8c52-ffed910ff463": "Expense Header Advanced Find View",
+      "9159c373-7ed5-4afb-a3c3-051dd01c3aae": "Active Expense Header",
+      "f6a38275-a927-47cd-8a44-b69831c2e23c": "Expense Header Associated View",
+      "fc62f7f6-0c8e-434f-b1b6-4977f83274d0": "Expense Header Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Expense Status (Expense Header)",
+    "Name": "cr431_expenseheader_cr431_expensestatus",
+    "OptionSetInfoNameMapping": {
+      "254460000": "pending",
+      "254460001": "approved",
+      "254460002": "draft",
+      "254460003": "Rejected"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_expensestatus",
+        "OptionSetReferenceEntityName": "Expense Header"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_expensestatus",
+    "RelatedEntityName": "Expense Header",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Expense Header)",
+    "Name": "cr431_expenseheader_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Expense Header"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Expense Header",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Expense Header)",
+    "Name": "cr431_expenseheader_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Expense Header"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Expense Header",
+    "Type": "OptionSetInfo"
+  }
+]

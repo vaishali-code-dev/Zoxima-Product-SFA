@@ -1,0 +1,165 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_orderlines",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_orderline",
+    "MaxGetRowsCount": 500,
+    "Name": "Order Line",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_beforetaxamount": "Before Tax Amount",
+      "cr431_beforetaxamount_base": "Before Tax Amount (Base)",
+      "cr431_billamoount": "Bill Amoount",
+      "cr431_billamoount_base": "Bill Amoount (Base)",
+      "cr431_cgst": "CGST %",
+      "cr431_cgstamount": "CGST Amount",
+      "cr431_cgstamount_base": "CGST Amount (Base)",
+      "cr431_igst": "IGST %",
+      "cr431_igstamount": "IGST Amount",
+      "cr431_igstamount_base": "IGST Amount (Base)",
+      "cr431_name": "Order Line ID",
+      "cr431_orderline_AsyncOperations": "System Jobs",
+      "cr431_orderline_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_orderline_DuplicateBaseRecord": "Duplicate Records (cr431_orderline_DuplicateBaseRecord)",
+      "cr431_orderline_DuplicateMatchingRecord": "Duplicate Records (cr431_orderline_DuplicateMatchingRecord)",
+      "cr431_orderline_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_orderline_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_orderline_ProcessSession": "Process Sessions",
+      "cr431_orderline_SyncErrors": "Sync Errors",
+      "cr431_orderlineid": "Order Line",
+      "cr431_pg1": "PG1",
+      "cr431_pg2": "PG2",
+      "cr431_pg3": "PG3",
+      "cr431_pg4": "PG4",
+      "cr431_ProductItem": "Product-Item",
+      "cr431_promotedproduct": "Promoted product",
+      "cr431_quantity": "Quantity",
+      "cr431_SalesOrderNo": "Sales Order No",
+      "cr431_sgst": "SGST %",
+      "cr431_sgstamount": "SGST Amount",
+      "cr431_sgstamount_base": "SGST Amount (Base)",
+      "cr431_taxamount": "Tax Amount",
+      "cr431_taxamount_base": "Tax Amount (Base)",
+      "cr431_tcs": "TCS",
+      "cr431_tcs_base": "TCS (Base)",
+      "cr431_uom": "UOM",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Order Line",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Order Line (Views)",
+    "Name": "_cr431_orderline_views",
+    "RelatedEntityName": "Order Line",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "4d2001b1-0d5c-452d-bb05-2e1046c016f1": "Order Line Advanced Find View",
+      "5073ecca-be5b-4813-9e4c-7ee4efe6e5b9": "Order Line Lookup View",
+      "af2f9adf-b788-4bef-9170-15521016fa7f": "Inactive Order Line",
+      "cc1bba1d-085c-48cc-8a45-bfb25c9e7d9f": "Order Line Associated View",
+      "e73d6c59-6135-4e36-bd30-d868bcb424f8": "Active Order Line"
+    }
+  },
+  {
+    "DisplayName": "Promoted product (Order Line)",
+    "Name": "cr431_orderline_cr431_promotedproduct",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_promotedproduct",
+        "OptionSetReferenceEntityName": "Order Line"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr431_promotedproduct",
+    "RelatedEntityName": "Order Line",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "UOM (Order Line)",
+    "Name": "cr431_orderline_cr431_uom",
+    "OptionSetInfoNameMapping": {
+      "254460000": "per kg",
+      "254460001": "Ml"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_uom",
+        "OptionSetReferenceEntityName": "Order Line"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_uom",
+    "RelatedEntityName": "Order Line",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Order Line)",
+    "Name": "cr431_orderline_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Order Line"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Order Line",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Order Line)",
+    "Name": "cr431_orderline_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Order Line"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Order Line",
+    "Type": "OptionSetInfo"
+  }
+]

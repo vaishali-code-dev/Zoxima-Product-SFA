@@ -1,0 +1,165 @@
+"'Side Bar' As CanvasComponent":
+    Fill: |-
+        =If(varOpen, ColorValue("#414C60"), Transparent)
+    Height: =If(varOpen, App.Height, 70)
+    NavItems: |-
+        =[
+            {
+                title: "Profile",
+                screen: Profile,
+                icon: Icon.Person
+            },
+            {
+                title: "Primary Orders",
+                screen: 'All Orders',
+                icon: ShoppingCart
+            },
+            {
+                title: "Secondary Orders",
+                screen: 'Secondary Orders',
+                icon: Tag
+            },
+            {
+                title: "Customers",
+                screen: 'Customer (Dist)_1',
+                icon: Icon.People
+            },
+            {
+                title: "Distributor Onboarding",
+                screen: DistributorOnboarding,
+                icon: Icon.AddUser
+            },
+            {
+                title: "Tickets",
+                screen: 'Complaints List',
+                icon: Icon.Warning
+            },
+            {
+                title: "Influencer",
+                icon: Icon.Currency,
+                screen: 'Influencer List'
+            },
+            {
+                title: "Events",
+                screen: 'Events List',
+                icon: Icon.Ribbon
+            },
+            {
+                title: "Sites",
+                screen: 'Site List',
+                icon: Icon.Manufacture
+            },
+            {
+                title: "Expense",
+                screen: 'Expenses Screen',
+                icon: Notebook
+            }
+        ]
+    Width: =If(varOpen, 320, 70)
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Rectangle1 As rectangle:
+        BorderColor: =RGBA(219, 219, 219, 1)
+        Fill: |-
+            =If(varOpen, ColorValue("#414C60"), Transparent)
+        Height: =1136
+        Width: =320
+        ZIndex: =1
+
+    Icon1 As icon.Hamburger:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =39
+        Icon: =Icon.Hamburger
+        OnSelect: =Set(varOpen, !varOpen)
+        Width: =33
+        X: =30
+        Y: =15
+        ZIndex: =2
+
+    Gallery1_1 As gallery.galleryVertical:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Fill: =RGBA(65, 76, 96, 1)
+        Height: =982
+        Items: ='Side Bar'.NavItems
+        Layout: =Layout.Vertical
+        TemplateSize: =61
+        Visible: =varOpen
+        Width: =320
+        Y: =154
+        ZIndex: =4
+
+        Label5 As label:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(237, 237, 237, 1)
+            Height: =57
+            OnSelect: =Navigate(ThisItem.Value.screen, ScreenTransition.Fade)
+            PaddingLeft: =50
+            PressedBorderColor: =Black
+            PressedColor: =Black
+            PressedFill: =RGBA(237,237,237,1)
+            Size: =17
+            Text: =ThisItem.Value.title
+            Width: =310
+            ZIndex: =1
+
+        Rectangle2 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 191, 0, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(73, 130, 5, 1)
+            OnSelect: =Select(Parent)
+            PressedFill: =RGBA(73, 130, 5, 1)
+            Width: =Gallery1_1.Width-10
+            Y: =57
+            ZIndex: =2
+
+        Icon16 As icon.Add:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =25
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =ThisItem.Value.icon
+            OnSelect: =Select(Parent)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =25
+            X: =19
+            Y: =16
+            ZIndex: =3
+
+    Image5 As image:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =79
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: ='logo zxsfa'
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Visible: =varOpen
+        Width: =265
+        X: =28
+        Y: =60
+        ZIndex: =5
+

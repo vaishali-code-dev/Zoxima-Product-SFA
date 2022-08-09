@@ -1,0 +1,372 @@
+visitScreen As screen:
+    Fill: =RGBA(31, 31, 31, 1)
+    LoadingSpinnerColor: =RGBA(255, 200, 61, 1)
+
+    "'Visit His_2' As groupContainer.manualLayoutContainer":
+        Height: =1051
+        Width: =637
+        X: =3
+        Y: =83
+        ZIndex: =1
+
+        Gallery1_7 As gallery.galleryVertical:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            Height: =951
+            Items: =Sort(Filter(Visits_1, Customer.Account = ClickedVisit.Customer.Account), 'Created On', Descending)
+            Layout: =Layout.Vertical
+            TemplateSize: =170
+            Width: =637
+            Y: =15
+            ZIndex: =1
+
+            Button14_2 As button:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderThickness: =1
+                Color: =RGBA(31, 31, 31, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(22, 22, 22, 1)
+                DisabledFill: =RGBA(88, 103, 130, 1)
+                DisplayMode: =DisplayMode.Disabled
+                Fill: =RGBA(255, 200, 61, 1)
+                FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =156
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(31, 31, 31, 1)
+                HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+                OnSelect: =Navigate('Visits Info')
+                PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+                PressedColor: =RGBA(31, 31, 31, 1)
+                PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                Size: =24
+                Text: =""
+                Width: =607
+                X: =8
+                ZIndex: =1
+
+            Rectangle7_15 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledFill: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =156
+                HoverFill: =RGBA(0, 0, 0, 0)
+                OnSelect: =Select(Parent)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =604
+                X: =3
+                ZIndex: =2
+
+            Label1_44 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 191, 0, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =51
+                OnSelect: =Navigate('Visits Info')
+                Size: =20
+                Text: =Text(ThisItem.'Visit Date', "dd mmm yyyy")
+                Width: =289
+                X: =30
+                Y: =10
+                ZIndex: =3
+
+            Group18_7 As group:
+                Height: =5
+                Width: =5
+                X: =4
+                Y: =23
+                ZIndex: =12
+
+                HtmlText1_173 As htmlViewer:
+                    Color: =RGBA(242, 242, 242, 1)
+                    Height: =52
+                    HtmlText: |-
+                        ="<div style='border-radius:10px 10px 10px 10px; background-color:#67CC6B; opacity:0.1; border:2px solid #D3D4D6; width:150px; height:35px'></div>"
+                    OnSelect: =Select(Parent)
+                    Width: =164
+                    X: =31
+                    Y: =62
+                    ZIndex: =4
+
+                Label2_244 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(237, 237, 237, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =23
+                    Text: ="Visit ID"
+                    Width: =116
+                    X: =52
+                    Y: =73
+                    ZIndex: =5
+
+                Label2_246 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =32
+                    Size: =15
+                    Text: =ThisItem.'Visit ID'
+                    Width: =136
+                    X: =42
+                    Y: =103
+                    ZIndex: =10
+
+            Group19_5 As group:
+                Height: =5
+                Width: =5
+                X: =4
+                Y: =23
+                ZIndex: =13
+
+                HtmlText1_174 As htmlViewer:
+                    Color: =RGBA(242, 242, 242, 1)
+                    Height: =52
+                    HtmlText: |-
+                        ="<div style='border-radius:10px 10px 10px 10px; background-color:#67CC6B; opacity:0.1; border:2px solid #D3D4D6; width:150px; height:35px'></div>"
+                    OnSelect: =Select(Parent)
+                    Width: =164
+                    X: =222
+                    Y: =62
+                    ZIndex: =6
+
+                Label2_245 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(237, 237, 237, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =23
+                    Text: ="Type"
+                    Width: =116
+                    X: =243
+                    Y: =73
+                    ZIndex: =7
+
+                Label2_247 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =32
+                    Size: =15
+                    Text: =ThisItem.'Visit Type'
+                    Width: =140
+                    X: =233
+                    Y: =103
+                    ZIndex: =11
+
+            Group20_6 As group:
+                Height: =5
+                Width: =5
+                X: =4
+                Y: =23
+                ZIndex: =14
+
+                HtmlText1_172 As htmlViewer:
+                    Color: =RGBA(242, 242, 242, 1)
+                    Height: =52
+                    HtmlText: |-
+                        ="<div style='border-radius:10px 10px 10px 10px; background-color:#67CC6B; opacity:0.1; border:2px solid #D3D4D6; width:150px; height:35px'></div>"
+                    OnSelect: =Select(Parent)
+                    Width: =164
+                    X: =411
+                    Y: =61
+                    ZIndex: =8
+
+                Label2_61 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(237, 237, 237, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =23
+                    Text: ="Visit Status"
+                    Width: =116
+                    X: =432
+                    Y: =72
+                    ZIndex: =9
+
+                Label2_248 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =32
+                    Size: =15
+                    Text: =ThisItem.status
+                    Width: =140
+                    X: =422
+                    Y: =103
+                    ZIndex: =12
+
+    HtmlText1_36 As htmlViewer:
+        Color: =RGBA(103, 204, 107, 1)
+        Height: =97
+        HtmlText: |-
+            ="<div style='border-radius:0; background-color:#A00002; width:640px; height:70px'></div>"
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =640
+        ZIndex: =2
+
+    Label11_5 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =61
+        Size: =21
+        Text: ="Visit History"
+        Width: =358
+        X: =80
+        ZIndex: =3
+
+    Image1_79 As image:
+        BorderColor: =RGBA(204, 204, 204, 1)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =1
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =50
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: =User().Image
+        ImagePosition: =ImagePosition.Fill
+        OnSelect: =Navigate(Profile)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Width: =50
+        X: =580
+        Y: =11
+        ZIndex: =4
+
+    Icon14_52 As icon.BackArrow:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =43
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =43
+        X: =18
+        Y: =14
+        ZIndex: =5
+
+    "'Bottom Navigation_78' As 'Bottom Navigation'":
+        NavItems: |-
+            =Table(
+                {
+                    Title: If(
+                        varAttendance = "end",
+                        "End",
+                        varAttendance = "start",
+                        "Start",
+                        varAttendance = "done",
+                        "Ended"
+                    ),
+                    //Title: Start,
+                    Screen: If(
+                        varAttendance = "start",
+                        StartDay,
+                        varAttendance = "end",
+                        'End day',
+                        varAttendance = "done",
+                        'Day Ended'
+                    ),
+                    Icon: CalendarBlank,
+                    Active: false
+                },
+                {
+                    Title: "Visits",
+                    Screen: Visits,
+                    Icon: Waypoint,
+                    Active: true
+                },
+                {
+                    Title: "Dashboard",
+                    Screen: Home,
+                    Icon: Waffle,
+                    Active: false
+                },
+                {
+                    Title: "Parties",
+                    Screen: 'Customer (Dist)_1',
+                    Icon: People,
+                    Active: false
+                },
+                {
+                    Title: "Menu",
+                    Screen: 'Menu Screen',
+                    Icon: Hamburger,
+                    Active: false
+                }
+            )
+        Y: =1056
+        ZIndex: =6
+

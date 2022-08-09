@@ -1,0 +1,204 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_attendences",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_attendence",
+    "MaxGetRowsCount": 500,
+    "Name": "Attendences",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "User",
+      "cr431_absentreason": "Absent Reason",
+      "cr431_attendancedate": "Attendance Date",
+      "cr431_attendanceid": "Attendance Id",
+      "cr431_attendence_AsyncOperations": "System Jobs",
+      "cr431_attendence_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_attendence_DuplicateBaseRecord": "Duplicate Records (cr431_attendence_DuplicateBaseRecord)",
+      "cr431_attendence_DuplicateMatchingRecord": "Duplicate Records (cr431_attendence_DuplicateMatchingRecord)",
+      "cr431_attendence_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_attendence_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_attendence_ProcessSession": "Process Sessions",
+      "cr431_attendence_SyncErrors": "Sync Errors",
+      "cr431_attendenceid": "Attendence",
+      "cr431_checkinaddress": "CheckIn Address",
+      "cr431_checkinlocation": "CheckIn Location",
+      "cr431_checkoutaddress": "Checkout Address",
+      "cr431_checkoutlocation": "CheckOut Location",
+      "cr431_day1": " Day1",
+      "cr431_DayTypePlan": "Day Type Plan",
+      "cr431_EmpID": "Emp ID",
+      "cr431_endday": "End Day",
+      "cr431_endtime": "End Time",
+      "cr431_markin": "Mark In",
+      "cr431_markout": "Mark Out",
+      "cr431_name": "Attendance ID",
+      "cr431_p": "P",
+      "cr431_pauseend": "Pause End",
+      "cr431_pauseendaddress": "Pause End Address",
+      "cr431_pauseendlocation": "Pause End Location",
+      "cr431_pausestart": "Pause Start",
+      "cr431_pausestartaddress": "Pause Start Address",
+      "cr431_pausestartlocation": "Pause Start Location",
+      "cr431_pgid": "PG ID",
+      "cr431_start": "Start ",
+      "cr431_startday": "Start Day",
+      "cr431_starttime": "Start Time",
+      "cr431_type": "Type",
+      "cr431_workinghourinmin": "Working Hour(In Min)",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Attendences",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Attendences (Views)",
+    "Name": "_cr431_attendence_views",
+    "RelatedEntityName": "Attendences",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1e79b411-c655-4a26-8260-8a6041a34603": "Inactive Attendences",
+      "1ef30545-e6a1-4017-995b-a47761559b3d": "Attendence Associated View",
+      "63ad9a09-1388-44ab-af03-f95c6adb353e": "Attendence Advanced Find View",
+      "d22dd167-67f2-4c4c-9027-1f34abfbd3ad": "Active Attendences",
+      "f5fa95ea-bd25-4fc4-92d2-f0eeb8b8e1cd": "Attendence Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Type (Attendences)",
+    "Name": "cr431_attendence_cr431_type",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Absent",
+      "254460001": "Present"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_type",
+        "OptionSetReferenceEntityName": "Attendences"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_type",
+    "RelatedEntityName": "Attendences",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Attendences)",
+    "Name": "cr431_attendence_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Attendences"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Attendences",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Attendences)",
+    "Name": "cr431_attendence_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Attendences"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Attendences",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "End Day (Attendences)",
+    "Name": "cr431_endday_cr431_attendence",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_endday",
+        "OptionSetReferenceEntityName": "Attendences"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr431_endday",
+    "RelatedEntityName": "Attendences",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Start  (Attendences)",
+    "Name": "cr431_start_cr431_attendence",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_start",
+        "OptionSetReferenceEntityName": "Attendences"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr431_start",
+    "RelatedEntityName": "Attendences",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Start Day (Attendences)",
+    "Name": "cr431_startday_cr431_attendence",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_startday",
+        "OptionSetReferenceEntityName": "Attendences"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr431_startday",
+    "RelatedEntityName": "Attendences",
+    "Type": "OptionSetInfo"
+  }
+]

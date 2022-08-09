@@ -1,0 +1,188 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_expenselines",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_expenseline",
+    "MaxGetRowsCount": 500,
+    "Name": "Expense Line",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_attachedfoodbill": "Attached Food Bill",
+      "cr431_attachedfoodbillid": "cr431_AttachedFoodBillId",
+      "cr431_attachhotelbill": "Attach Hotel Bill",
+      "cr431_attachhotelbillid": "cr431_AttachHotelBillId",
+      "cr431_attachotherbill": "Attach Other Bill",
+      "cr431_attachotherbillid": "cr431_AttachOtherBillId",
+      "cr431_attachtollbill": "Attach Toll Bill",
+      "cr431_attachtollbillid": "cr431_AttachTollBillId",
+      "cr431_attachtravellingbill": "Attach Travelling Bill",
+      "cr431_attachtravellingbillid": "cr431_AttachTravellingBillId",
+      "cr431_expenseallowedasperpolicy": "Expense Allowed as Per Policy",
+      "cr431_expenseallowedasperpolicy_base": "Expense Allowed as Per Policy (Base)",
+      "cr431_expenseapproved": "Expense Approved",
+      "cr431_expenseapproved_base": "Expense Approved (Base)",
+      "cr431_expensedone": "Expense Done",
+      "cr431_expensedone_base": "Expense Done (Base)",
+      "cr431_expenseline": "Expense Line (cr431_expenseline)",
+      "cr431_expenseline_AsyncOperations": "System Jobs",
+      "cr431_expenseline_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_expenseline_DuplicateBaseRecord": "Duplicate Records (cr431_expenseline_DuplicateBaseRecord)",
+      "cr431_expenseline_DuplicateMatchingRecord": "Duplicate Records (cr431_expenseline_DuplicateMatchingRecord)",
+      "cr431_expenseline_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_expenseline_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_expenseline_ProcessSession": "Process Sessions",
+      "cr431_expenseline_SyncErrors": "Sync Errors",
+      "cr431_expenselineid": "Expense Line (cr431_expenselineid)",
+      "cr431_ExpenseNumber": "Expense Number",
+      "cr431_expnsetype": "Expense Type",
+      "cr431_foodcharges": "Food Charges",
+      "cr431_foodcharges_base": "Food Charges (Base)",
+      "cr431_hotelcharges": "Hotel Charges",
+      "cr431_hotelcharges_base": "Hotel Charges (Base)",
+      "cr431_kilometertravelled": "Kilometer Travelled",
+      "cr431_modeoftransportation": "Mode of Transportation",
+      "cr431_name": "Name",
+      "cr431_othercharges": "Other Charges",
+      "cr431_othercharges_base": "Other Charges (Base)",
+      "cr431_req": "4req",
+      "cr431_req_base": "4req (Base)",
+      "cr431_test": "test",
+      "cr431_test1": "Test 1",
+      "cr431_test1_base": "Test 1 (Base)",
+      "cr431_test2": "Test2",
+      "cr431_test2_base": "Test2 (Base)",
+      "cr431_test3": "Test3",
+      "cr431_test3_base": "Test3 (Base)",
+      "cr431_test4": "Test4",
+      "cr431_test4_base": "Test4 (Base)",
+      "cr431_testid": "cr431_testId",
+      "cr431_tollcharges": "Toll Charges",
+      "cr431_tollcharges_base": "Toll Charges (Base)",
+      "cr431_totalexpenses": "Total Expenses",
+      "cr431_totalexpenses_base": "Total Expenses (Base)",
+      "cr431_travellingcharges": "Travelling Charges",
+      "cr431_travellingcharges_base": "Travelling Charges (Base)",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Expense Line",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Expense Line (Views)",
+    "Name": "_cr431_expenseline_views",
+    "RelatedEntityName": "Expense Line",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0af43e6f-4afa-416f-9032-55886dc5dc23": "Inactive Expense Line",
+      "2a564c08-bcf1-4d27-bc80-e07f6a955dca": "Expense Line Associated View",
+      "3dbaa15d-062d-41fe-b850-7925740715e0": "Expense Line Lookup View",
+      "5c8b2738-8aa0-4ceb-9b09-fcd52f9c34cf": "Active Expense Line",
+      "bef75475-b810-4949-bbaa-e60594f39802": "Expense Line Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Expense Type (Expense Line)",
+    "Name": "cr431_expenseline_cr431_expnsetype",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Travelling",
+      "254460001": "Toll",
+      "254460002": "Hotel",
+      "254460003": "Others",
+      "254460004": "Food"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_expnsetype",
+        "OptionSetReferenceEntityName": "Expense Line"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_expnsetype",
+    "RelatedEntityName": "Expense Line",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Mode of Transportation (Expense Line)",
+    "Name": "cr431_expenseline_cr431_modeoftransportation",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Two Wheeler",
+      "254460001": "Three Wheeler",
+      "254460002": "Four Wheeler"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_modeoftransportation",
+        "OptionSetReferenceEntityName": "Expense Line"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_modeoftransportation",
+    "RelatedEntityName": "Expense Line",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Expense Line)",
+    "Name": "cr431_expenseline_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Expense Line"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Expense Line",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Expense Line)",
+    "Name": "cr431_expenseline_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Expense Line"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Expense Line",
+    "Type": "OptionSetInfo"
+  }
+]

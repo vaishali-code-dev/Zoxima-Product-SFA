@@ -1,0 +1,43 @@
+"'Header Component' As CanvasComponent":
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =640
+    ScreenName: =App.ActiveScreen.Name
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    HtmlText4_1 As htmlViewer:
+        AutoHeight: =true
+        Height: =150
+        HtmlText: |-
+            ="<div style='border-radius:0 0 50px 50px; background-color:#67CC6B; width:630px; height:150px'></div>"
+        Width: =640
+        ZIndex: =1
+
+    Label6 As label:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =64
+        Size: =21
+        Text: ='Header Component'.ScreenName
+        Width: =549
+        X: =64
+        Y: =21
+        ZIndex: =2
+
+    Icon4 As icon.ArrowLeft:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =34
+        Icon: =Icon.ArrowLeft
+        OnSelect: =Back(ScreenTransition.Cover)
+        Width: =30
+        X: =21
+        Y: =36
+        ZIndex: =3
+

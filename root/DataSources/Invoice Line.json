@@ -1,0 +1,126 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_invoicelines",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_invoiceline",
+    "MaxGetRowsCount": 500,
+    "Name": "Invoice Line",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_beforetaxamount": "Before Tax Amount",
+      "cr431_beforetaxamount_base": "Before Tax Amount (Base)",
+      "cr431_billamoount": "Bill Amoount",
+      "cr431_billamoount_base": "Bill Amoount (Base)",
+      "cr431_cgst": "CGST %",
+      "cr431_cgstamount": "CGST Amount",
+      "cr431_cgstamount_base": "CGST Amount (Base)",
+      "cr431_igst": "IGST %",
+      "cr431_igstamount": "IGST Amount",
+      "cr431_igstamount_base": "IGST Amount (Base)",
+      "cr431_invoiceline_AsyncOperations": "System Jobs",
+      "cr431_invoiceline_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_invoiceline_DuplicateBaseRecord": "Duplicate Records (cr431_invoiceline_DuplicateBaseRecord)",
+      "cr431_invoiceline_DuplicateMatchingRecord": "Duplicate Records (cr431_invoiceline_DuplicateMatchingRecord)",
+      "cr431_invoiceline_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_invoiceline_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_invoiceline_ProcessSession": "Process Sessions",
+      "cr431_invoiceline_SyncErrors": "Sync Errors",
+      "cr431_invoicelineid": "Invoice Line",
+      "cr431_InvoiceNumber": "Invoice Number",
+      "cr431_Item": "Item",
+      "cr431_lineitemno": "Lineitem No",
+      "cr431_name": "Invoice Line ID",
+      "cr431_pg1": "PG1",
+      "cr431_pg2": "PG2",
+      "cr431_pg3": "PG3",
+      "cr431_pg4": "PG4",
+      "cr431_quantityordered": "Quantity Ordered",
+      "cr431_quantityshipped": "Quantity Shipped",
+      "cr431_sgst": "SGST %",
+      "cr431_sgstamount": "SGST Amount",
+      "cr431_sgstamount_base": "SGST Amount (Base)",
+      "cr431_taxamount": "Tax Amount",
+      "cr431_taxamount_base": "Tax Amount (Base)",
+      "cr431_tcs": "TCS",
+      "cr431_tcs_base": "TCS (Base)",
+      "cr431_uom": "UOM",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Invoice Line",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Invoice Line (Views)",
+    "Name": "_cr431_invoiceline_views",
+    "RelatedEntityName": "Invoice Line",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "50d478f9-4ce3-4d72-98c9-31322db72645": "Invoice Line Lookup View",
+      "5553dad8-8906-447c-8cfa-cd98356cfe98": "Active Invoice Line",
+      "7ead7c3b-3008-4983-8aac-1d90120586d0": "Invoice Line Associated View",
+      "987f4fd6-d933-4fb9-ae6a-2136d2a8ad57": "Inactive Invoice Line",
+      "e83b50e6-97a9-48b5-bfa9-c0df5a9c0646": "Invoice Line Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Status (Invoice Line)",
+    "Name": "cr431_invoiceline_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Invoice Line"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Invoice Line",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Invoice Line)",
+    "Name": "cr431_invoiceline_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Invoice Line"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Invoice Line",
+    "Type": "OptionSetInfo"
+  }
+]

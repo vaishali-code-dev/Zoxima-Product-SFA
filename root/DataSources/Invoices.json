@@ -1,0 +1,174 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_invoices",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_invoice",
+    "MaxGetRowsCount": 500,
+    "Name": "Invoices",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_address": "Address",
+      "cr431_amount": "Amount",
+      "cr431_amount_base": "Amount (Base)",
+      "cr431_beforetaxamount": "Before Tax Amount",
+      "cr431_beforetaxamount_base": "Before Tax Amount (Base)",
+      "cr431_billamoount": "Bill Amoount",
+      "cr431_billamoount_base": "Bill Amoount (Base)",
+      "cr431_BillToParty": "Bill To Party",
+      "cr431_cancelledinvoice": "Cancelled Invoice",
+      "cr431_cgst": "CGST %",
+      "cr431_cgstamount": "CGST Amount",
+      "cr431_cgstamount_base": "CGST Amount (Base)",
+      "cr431_city": "City",
+      "cr431_cr431_complaints_Invoice_cr431_invoice": "Complaints",
+      "cr431_cr431_invoice_cr431_payment_Invoice": "Payments (cr431_cr431_invoice_cr431_payment_Invoice)",
+      "cr431_cr431_invoiceline_InvoiceNumber_cr431_inv": "Invoice Line",
+      "cr431_cr431_payment_RelatedInvoice_cr431_invoic": "Payments (cr431_cr431_payment_RelatedInvoice_cr431_invoic)",
+      "cr431_Division": "Division",
+      "cr431_igst": "IGST %",
+      "cr431_igstamount": "IGST Amount",
+      "cr431_igstamount_base": "IGST Amount (Base)",
+      "cr431_invoice_AsyncOperations": "System Jobs",
+      "cr431_invoice_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_invoice_DuplicateBaseRecord": "Duplicate Records (cr431_invoice_DuplicateBaseRecord)",
+      "cr431_invoice_DuplicateMatchingRecord": "Duplicate Records (cr431_invoice_DuplicateMatchingRecord)",
+      "cr431_invoice_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_invoice_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_invoice_ProcessSession": "Process Sessions",
+      "cr431_invoice_SyncErrors": "Sync Errors",
+      "cr431_invoicedate": "Invoice Date",
+      "cr431_invoiceid": "Invoice",
+      "cr431_LOB": "LOB",
+      "cr431_name": "Invoice ID",
+      "cr431_retailer": "Retailer",
+      "cr431_SalesOrderNumber": "Sales Order Number",
+      "cr431_sgst": "SGST %",
+      "cr431_sgstamount": "SGST Amount",
+      "cr431_sgstamount_base": "SGST Amount (Base)",
+      "cr431_ShiptoAddress": "Ship to Address",
+      "cr431_ShipToParty": "Ship To Party",
+      "cr431_taxamount": "Tax Amount",
+      "cr431_taxamount_base": "Tax Amount (Base)",
+      "cr431_tcs": "TCS",
+      "cr431_tcs_base": "TCS (Base)",
+      "cr431_type": "Type",
+      "cr431_vehicleno": "VehicleNo",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Invoices",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Invoices (Views)",
+    "Name": "_cr431_invoice_views",
+    "RelatedEntityName": "Invoices",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "34330352-a042-48cd-9aef-61f83cf1d874": "Invoice Lookup View",
+      "54a133e4-237a-4511-9df4-e212ae54c70d": "Invoice Associated View",
+      "7764b19d-6ce7-4255-8d7e-5974c845b9a0": "Invoice Advanced Find View",
+      "c795fcb5-c124-4427-b651-76093b03b86f": "Inactive Invoice",
+      "f877a38b-34f5-4c6e-bc2a-dabc97c39a29": "Active Invoice"
+    }
+  },
+  {
+    "DisplayName": "Cancelled Invoice (Invoices)",
+    "Name": "cr431_invoice_cr431_cancelledinvoice",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_cancelledinvoice",
+        "OptionSetReferenceEntityName": "Invoices"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr431_cancelledinvoice",
+    "RelatedEntityName": "Invoices",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Type (Invoices)",
+    "Name": "cr431_invoice_cr431_type",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Sale Invoice"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_type",
+        "OptionSetReferenceEntityName": "Invoices"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_type",
+    "RelatedEntityName": "Invoices",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Invoices)",
+    "Name": "cr431_invoice_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Invoices"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Invoices",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Invoices)",
+    "Name": "cr431_invoice_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Invoices"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Invoices",
+    "Type": "OptionSetInfo"
+  }
+]

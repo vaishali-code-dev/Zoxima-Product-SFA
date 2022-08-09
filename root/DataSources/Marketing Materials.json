@@ -1,0 +1,150 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_marketingmaterials",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_marketingmaterial",
+    "MaxGetRowsCount": 500,
+    "Name": "Marketing Materials",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_delivereddate": "Delivered Date",
+      "cr431_description": "Description",
+      "cr431_marketingmaterial_AsyncOperations": "System Jobs",
+      "cr431_marketingmaterial_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_marketingmaterial_DuplicateBaseRecord": "Duplicate Records (cr431_marketingmaterial_DuplicateBaseRecord)",
+      "cr431_marketingmaterial_DuplicateMatchingRecord": "Duplicate Records (cr431_marketingmaterial_DuplicateMatchingRecord)",
+      "cr431_marketingmaterial_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_marketingmaterial_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_marketingmaterial_ProcessSession": "Process Sessions",
+      "cr431_marketingmaterial_SyncErrors": "Sync Errors",
+      "cr431_marketingmaterialid": "Marketing Material",
+      "cr431_materialtype": "Material Type",
+      "cr431_name": "Market Material ID",
+      "cr431_quantity": "Quantity",
+      "cr431_RequestedBy": "Requested By",
+      "cr431_requesteddate": "Requested Date",
+      "cr431_SalesPerson": "Sales Person",
+      "cr431_status": "Status (cr431_status)",
+      "cr431_uploadimage": "Upload Image",
+      "cr431_Visit": "Visit",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status (statecode)",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Marketing Materials",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Marketing Materials (Views)",
+    "Name": "_cr431_marketingmaterial_views",
+    "RelatedEntityName": "Marketing Materials",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "38be6428-c328-4d95-b2b2-b26e57711307": "Marketing Material Advanced Find View",
+      "71dad706-fc21-42a4-b120-48892b39d8b9": "Inactive Marketing Materials",
+      "93e8cba3-f80f-44f9-84ef-3f24b8f8f7cc": "Active Marketing Materials",
+      "ad35ec23-2917-4ffb-aea4-ae16a03c0bad": "Marketing Material Associated View",
+      "fa8a113d-7d42-4f00-917d-edeab88faa50": "Marketing Material Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Material Type (Marketing Materials)",
+    "Name": "cr431_marketingmaterial_cr431_materialtype",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Gift- Notebook or Pen",
+      "254460001": "Brochure",
+      "254460002": "Banners",
+      "254460003": "Free Samples",
+      "254460004": "Standies"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_materialtype",
+        "OptionSetReferenceEntityName": "Marketing Materials"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_materialtype",
+    "RelatedEntityName": "Marketing Materials",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Marketing Materials)",
+    "Name": "cr431_marketingmaterial_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Marketing Materials"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Marketing Materials",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Marketing Materials)",
+    "Name": "cr431_marketingmaterial_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Marketing Materials"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Marketing Materials",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "MM choice",
+    "Name": "cr431_mmchoice",
+    "OptionSetInfoNameMapping": {
+      "254460000": "pending",
+      "254460001": "approved"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_status",
+        "OptionSetReferenceEntityName": "Marketing Materials"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_status",
+    "RelatedEntityName": "Marketing Materials",
+    "Type": "OptionSetInfo"
+  }
+]

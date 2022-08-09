@@ -1,0 +1,148 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_productpricelists",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_productpricelist",
+    "MaxGetRowsCount": 500,
+    "Name": "Product Price List",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_effectivefrom": "Effective From",
+      "cr431_effectiveto": "Effective To",
+      "cr431_name": "Name",
+      "cr431_price": "Price",
+      "cr431_pricetype": "Price Type",
+      "cr431_pricingcomponent": "Pricing Component",
+      "cr431_Product": "Product",
+      "cr431_productpriceid": "Product-Price ID",
+      "cr431_productpricelist_AsyncOperations": "System Jobs",
+      "cr431_productpricelist_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_productpricelist_DuplicateBaseRecord": "Duplicate Records (cr431_productpricelist_DuplicateBaseRecord)",
+      "cr431_productpricelist_DuplicateMatchingRecord": "Duplicate Records (cr431_productpricelist_DuplicateMatchingRecord)",
+      "cr431_productpricelist_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_productpricelist_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_productpricelist_ProcessSession": "Process Sessions",
+      "cr431_productpricelist_SyncErrors": "Sync Errors",
+      "cr431_productpricelistid": "Product Price List",
+      "cr431_Status": "Status (cr431_Status)",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status (statecode)",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Product Price List",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Product Price List (Views)",
+    "Name": "_cr431_productpricelist_views",
+    "RelatedEntityName": "Product Price List",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "197bf145-07e5-422a-ad43-d881141579b4": "Product Price List Associated View",
+      "2af6f299-3c0c-4e16-a5ce-aba9365feaca": "Product Price List Advanced Find View",
+      "44d2df4c-1b37-493a-9f8e-e4d65b5730c9": "Product Price List Lookup View",
+      "98e040db-d12e-4ea7-a616-ab081b0b8c45": "Inactive Product Price List",
+      "aef9d3be-cf57-4402-bf43-1540f007d2c8": "Active Product Price List"
+    }
+  },
+  {
+    "DisplayName": "Price Type (Product Price List)",
+    "Name": "cr431_productpricelist_cr431_pricetype",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Percentage",
+      "254460001": "Amount",
+      "254460002": "Rate"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_pricetype",
+        "OptionSetReferenceEntityName": "Product Price List"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_pricetype",
+    "RelatedEntityName": "Product Price List",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Pricing Component (Product Price List)",
+    "Name": "cr431_productpricelist_cr431_pricingcomponent",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Product Price",
+      "254460001": "GST",
+      "254460002": "Discount",
+      "254460003": "TDS"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_pricingcomponent",
+        "OptionSetReferenceEntityName": "Product Price List"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_pricingcomponent",
+    "RelatedEntityName": "Product Price List",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Product Price List)",
+    "Name": "cr431_productpricelist_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Product Price List"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Product Price List",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Product Price List)",
+    "Name": "cr431_productpricelist_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Product Price List"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Product Price List",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,617 @@
+"'Complaints Create_1' As screen":
+    Fill: =RGBA(31, 31, 31, 1)
+    LoadingSpinnerColor: =RGBA(255, 200, 61, 1)
+
+    "'Header Component_31' As 'Header Component_11'":
+        Height: =83
+        ScreenName: ="Create Complaint"
+        ZIndex: =12
+
+    Icon14_61 As icon.BackArrow:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =43
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =43
+        X: =18
+        Y: =15
+        ZIndex: =17
+
+    Circle1_7 As circle:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledFill: =RGBA(70, 74, 103, 1)
+        Fill: =RGBA(160, 0, 2, 1)
+        Height: =70
+        HoverFill: =RGBA(70, 74, 103, 1)
+        OnSelect: =
+        PressedFill: =RGBA(70, 74, 103, 1)
+        Visible: =If(customerinfo.Selected.Title = "Sites/Leads" ,true,false)
+        Width: =70
+        X: =526
+        Y: =946
+        ZIndex: =21
+
+    Icon17_14 As icon.Add:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =50
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =White
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Add
+        OnSelect: |-
+            =Set(varLeads, true);
+            Navigate('Create Site', Fade, {siteData: data2})
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(70,74,103, 1), 30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Visible: =If(customerinfo.Selected.Title = "Sites/Leads" ,true,false)
+        Width: =50
+        X: =536
+        Y: =956
+        ZIndex: =22
+
+    Button1_17 As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =26
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(31, 31, 31, 1)
+        HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+        OnSelect: |-
+            =ClearCollect(
+                Mediaforimgcom,
+                AzureBlobStorage.CreateFile(
+                    "complaints",
+                    User().FullName,
+                    AddMediaButton4_1.Media
+                )
+            );
+            Set(
+                gstforcomurl,
+                AzureBlobStorage.CreateShareLinkByPath(First(Mediaforimgcom).Path));
+            If(
+                IsBlank(ComboBox3_3.Selected) || IsBlank(TextInput8_6.Text) || IsBlank(Dropdown6_1.Selected) || IsBlank(ComboBox3_10.Selected) || IsBlank(ComboBox3_11.Selected) || IsBlank(ComboBox3_12.Selected) || IsBlank(AddMediaWithImage4_1),
+                Notify(
+                    "Please fill the required field",
+                    NotificationType.Error,
+                    2000
+                ),
+                Patch(
+                    Complaints,
+                    Defaults(Complaints),
+                    {
+                        Nature: ComboBox3_3.Selected.Value,
+                        Description: TextInput8_6.Text,
+                          Customer: Dropdown6_1.Selected,
+                          Department: ComboBox3_12.Selected.Value,
+                      'Account Type': ComboBox3_10.Selected.Value,
+                      Invoice: LookUp(Invoices, 'Invoice ID' = ComboBox3_11.Selected.'Invoice ID'),
+                        status: 'status (Complaints)'.Pending,
+                        ComplaintDate: Today(),
+                        Image: gstforcomurl.WebUrl
+                    }
+                );
+                Notify(
+                    "Ticket has been Added.",
+                    NotificationType.Success,
+                    2000
+                );
+                Navigate(
+                    'Complaints List',
+                    ScreenTransition.Fade
+                )
+            )
+        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+        PressedColor: =RGBA(31, 31, 31, 1)
+        PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        Size: =14
+        Text: ="ADD"
+        Width: =119
+        X: =447
+        Y: =22
+        ZIndex: =23
+
+    Image1_86 As image:
+        BorderColor: =RGBA(204, 204, 204, 1)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =1
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =45
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: =User().Image
+        ImagePosition: =ImagePosition.Fill
+        OnSelect: =Navigate(Profile)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Width: =45
+        X: =584
+        Y: =13
+        ZIndex: =28
+
+    Group21_3 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =28
+
+        Label20_52 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            FontWeight: =FontWeight.Semibold
+            Height: =52
+            Size: =19
+            Text: ="Complaint Nature *"
+            Width: =560
+            X: =34
+            Y: =75
+            ZIndex: =24
+
+        ComboBox3_3 As combobox:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            ChevronBackground: =RGBA(31, 31, 31, 1)
+            ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+            ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+            ChevronFill: =RGBA(218, 218, 218, 1)
+            ChevronHoverBackground: =RGBA(79, 79, 79, 1)
+            ChevronHoverFill: =RGBA(218, 218, 218, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            DisplayFields: =["Value"]
+            Fill: =RGBA(31, 31, 31, 1)
+            Font: =Font.'Segoe UI'
+            Height: =50
+            HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(79, 79, 79, 1)
+            InputTextPlaceholder: ="Nature"
+            Items: =Choices('Nature (Complaints)')
+            PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            PressedColor: =RGBA(31, 31, 31, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            SearchFields: =["Value"]
+            SearchItems: =Choices('Nature (Complaints)',ComboBox3_3.SearchText)
+            SelectionColor: =RGBA(31, 31, 31, 1)
+            SelectionFill: =RGBA(255, 200, 61, 1)
+            SelectMultiple: =false
+            Size: =19
+            Width: =575
+            X: =34
+            Y: =127
+            ZIndex: =25
+
+    Label20_55 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =19
+        Text: ="Customer *"
+        Width: =560
+        X: =34
+        Y: =435
+        ZIndex: =29
+
+    Group23_3 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =29
+
+        Label20_53 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            Size: =19
+            Text: ="Description *"
+            Width: =575
+            X: =34
+            Y: =177
+            ZIndex: =26
+
+        TextInput8_6 As text:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =""
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(31, 31, 31, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =55
+            HintText: ="Enter Descrition"
+            HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(31, 31, 31, 1)
+            PressedBorderColor: =RGBA(255, 200, 61, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(31, 31, 31, 1)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =19
+            Width: =575
+            X: =34
+            Y: =250
+            ZIndex: =27
+
+    Label20_56 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =19
+        Text: ="Invoice No. *"
+        Width: =575
+        X: =34
+        Y: =565
+        ZIndex: =34
+
+    Group21_6 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =34
+
+        Label20_54 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            FontWeight: =FontWeight.Semibold
+            Height: =52
+            Size: =19
+            Text: ="Account Type *"
+            Width: =560
+            X: =34
+            Y: =320
+            ZIndex: =32
+
+        ComboBox3_10 As combobox:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            ChevronBackground: =RGBA(31, 31, 31, 1)
+            ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+            ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+            ChevronFill: =RGBA(218, 218, 218, 1)
+            ChevronHoverBackground: =RGBA(79, 79, 79, 1)
+            ChevronHoverFill: =RGBA(218, 218, 218, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            DisplayFields: =["Value"]
+            Fill: =RGBA(31, 31, 31, 1)
+            Font: =Font.'Segoe UI'
+            Height: =55
+            HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(79, 79, 79, 1)
+            InputTextPlaceholder: ="Select Account Type"
+            Items: =Choices(Complaints.'Account Type')
+            PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            PressedColor: =RGBA(31, 31, 31, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            SearchFields: =["Value"]
+            SearchItems: =Choices(Complaints.'Account Type',ComboBox3_10.SearchText)
+            SelectionColor: =RGBA(31, 31, 31, 1)
+            SelectionFill: =RGBA(255, 200, 61, 1)
+            SelectMultiple: =false
+            Size: =19
+            Width: =575
+            X: =34
+            Y: =381
+            ZIndex: =33
+
+    ComboBox3_11 As combobox:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        ChevronBackground: =RGBA(31, 31, 31, 1)
+        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+        ChevronFill: =RGBA(218, 218, 218, 1)
+        ChevronHoverBackground: =RGBA(79, 79, 79, 1)
+        ChevronHoverFill: =RGBA(218, 218, 218, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayFields: =["cr431_name"]
+        Fill: =RGBA(31, 31, 31, 1)
+        Font: =Font.'Segoe UI'
+        Height: =55
+        HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(79, 79, 79, 1)
+        InputTextPlaceholder: ="Select Customer"
+        IsSearchable: =false
+        Items: =Filter(Invoices, 'Bill To Party'.'Account Name (name)' = First(DealerData).'Account Name (name)')
+        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedColor: =RGBA(31, 31, 31, 1)
+        PressedFill: =RGBA(255, 200, 61, 1)
+        SearchFields: =["cr431_name"]
+        SearchItems: =[]
+        SelectionColor: =RGBA(31, 31, 31, 1)
+        SelectionFill: =RGBA(255, 200, 61, 1)
+        SelectMultiple: =false
+        Size: =19
+        Width: =575
+        X: =34
+        Y: =628
+        ZIndex: =35
+
+    Dropdown6_1 As dropdown:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        ChevronBackground: =RGBA(31, 31, 31, 1)
+        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+        ChevronFill: =RGBA(218, 218, 218, 1)
+        ChevronHoverBackground: =RGBA(79, 79, 79, 1)
+        ChevronHoverFill: =RGBA(218, 218, 218, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(31, 31, 31, 1)
+        Font: =Font.'Segoe UI'
+        Height: =55
+        HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(79, 79, 79, 1)
+        Items: =Filter(Accounts,'Account Name (name)'=First(DealerData).'Account Name (name)')
+        PaddingBottom: =5
+        PaddingLeft: =12
+        PaddingRight: =5
+        PaddingTop: =5
+        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedColor: =RGBA(31, 31, 31, 1)
+        PressedFill: =RGBA(255, 200, 61, 1)
+        SelectionColor: =RGBA(31, 31, 31, 1)
+        SelectionFill: =RGBA(255, 200, 61, 1)
+        Size: =21
+        Width: =575
+        X: =34
+        Y: =498
+        ZIndex: =37
+
+    "'Bottom Navigation_85' As 'Bottom Navigation'":
+        NavItems: |-
+            =Table(
+                {
+                    Title: If(
+                        varAttendance = "end",
+                        "End",
+                        varAttendance = "start",
+                        "Start",
+                        varAttendance = "done",
+                        "Ended"
+                    ),
+                    //Title: Start,
+                    Screen: If(
+                        varAttendance = "start",
+                        StartDay,
+                        varAttendance = "end",
+                        'End day',
+                        varAttendance = "done",
+                        'Day Ended'
+                    ),
+                    Icon: CalendarBlank,
+                    Active: false
+                },
+                {
+                    Title: "Visits",
+                    Screen: Visits,
+                    Icon: Waypoint,
+                    Active: false
+                },
+                {
+                    Title: "Dashboard",
+                    Screen: Home,
+                    Icon: Waffle,
+                    Active: false
+                },
+                {
+                    Title: "Parties",
+                    Screen: 'Customer (Dist)_1',
+                    Icon: People,
+                    Active: false
+                },
+                {
+                    Title: "Menu",
+                    Screen: 'Menu Screen',
+                    Icon: Hamburger,
+                    Active: true
+                }
+            )
+        Y: =1056
+        ZIndex: =38
+
+    Label20_58 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        Size: =19
+        Text: ="Add Image *"
+        Width: =560
+        X: =36
+        Y: =816
+        ZIndex: =41
+
+    Group21_7 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =41
+
+        Label20_57 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            FontWeight: =FontWeight.Semibold
+            Height: =52
+            Size: =19
+            Text: ="Department *"
+            Width: =575
+            X: =34
+            Y: =700
+            ZIndex: =39
+
+        ComboBox3_12 As combobox:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            ChevronBackground: =RGBA(31, 31, 31, 1)
+            ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+            ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+            ChevronFill: =RGBA(218, 218, 218, 1)
+            ChevronHoverBackground: =RGBA(79, 79, 79, 1)
+            ChevronHoverFill: =RGBA(218, 218, 218, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            DisplayFields: =["Value"]
+            Fill: =RGBA(31, 31, 31, 1)
+            Font: =Font.'Segoe UI'
+            Height: =55
+            HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(79, 79, 79, 1)
+            InputTextPlaceholder: ="Select Account Type"
+            IsSearchable: =false
+            Items: =Choices('Department (Complaints)')
+            PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            PressedColor: =RGBA(31, 31, 31, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            SearchFields: =["Value"]
+            SearchItems: =[]
+            SelectionColor: =RGBA(31, 31, 31, 1)
+            SelectionFill: =RGBA(255, 200, 61, 1)
+            SelectMultiple: =false
+            Size: =19
+            Width: =575
+            X: =34
+            Y: =748
+            ZIndex: =40
+
+    AddMediaWithImage4_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =42
+
+        UploadedImage4_1 As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =158
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =If(IsBlank(AddMediaButton4_1.Media), SampleImage, AddMediaButton4_1.Media)
+            ImagePosition: =ImagePosition.Fill
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =253
+            X: =47
+            Y: =872
+            ZIndex: =43
+
+        AddMediaButton4_1 As addMedia:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            ChangePictureText: =""
+            Color: =RGBA(31, 31, 31, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =56
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(31, 31, 31, 1)
+            HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+            PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+            PressedColor: =RGBA(31, 31, 31, 1)
+            PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            Size: =14
+            Text: ="Add"
+            Width: =157
+            X: =95
+            Y: =923
+            ZIndex: =44
+

@@ -1,0 +1,1372 @@
+"'Order Info' As screen":
+    Fill: =RGBA(59, 59, 59, 1)
+    LoadingSpinnerColor: =RGBA(255, 200, 61, 1)
+    OnVisible: =Set(varOpen, false)
+
+    "'Header Component_17' As 'Header Component_11'":
+        Height: =108
+        ScreenName: ="Order Info"
+        ZIndex: =2
+
+    Icon14_5 As icon.BackArrow:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =43
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =43
+        X: =18
+        Y: =14
+        ZIndex: =3
+
+    Gallery5_4 As gallery.galleryVertical:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Height: =955
+        Items: =Filter('Order Line', 'Sales Order No'.'Sales Order'= order.'Sales Order')
+        Layout: =Layout.Vertical
+        TemplateSize: =204
+        Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+        Y: =71
+        ZIndex: =4
+
+        Label19_53 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(103, 204, 107, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =25
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: ="Quantity"
+            Width: =104
+            X: =129
+            Y: =100
+            ZIndex: =3
+
+        Label19_54 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =25
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =ThisItem.Quantity
+            Width: =72
+            X: =233
+            Y: =100
+            ZIndex: =4
+
+        Label19_55 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(103, 204, 107, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =25
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: ="Price"
+            Width: =68
+            X: =335
+            Y: =100
+            ZIndex: =5
+
+        Label19_56 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =25
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =Concatenate("₹", ThisItem.'Bill Amoount')
+            Width: =100
+            X: =400
+            Y: =100
+            ZIndex: =6
+
+    Rectangle12_10 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.Dashed
+        BorderThickness: =2
+        DisabledFill: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(255, 200, 61, 1)
+        FocusedBorderThickness: =4
+        Height: =1
+        HoverFill: =RGBA(255, 200, 61, 1)
+        PressedFill: =RGBA(255, 200, 61, 1)
+        Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+        Width: =625
+        X: =Rectangle5.X
+        Y: =71
+        ZIndex: =38
+
+    Gallery4 As gallery.galleryVertical:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Height: =849
+        Items: =Filter('Order Line', 'Sales Order No'.'Sales Order' = order.'Sales Order')
+        Layout: =Layout.Vertical
+        ShowScrollbar: =false
+        TemplateSize: =269
+        Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Lines", true, false )
+        Y: =196
+        ZIndex: =39
+
+        Rectangle13 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(88, 103, 130, 1)
+            FocusedBorderThickness: =4
+            Height: =261
+            HoverFill: =
+            OnSelect: =Select(Parent)
+            PressedFill: =
+            Width: =630
+            Y: =3
+            ZIndex: =1
+
+        Rectangle16 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(128, 135, 176, 1)
+            FocusedBorderThickness: =4
+            Height: =55
+            HoverFill: =
+            OnSelect: |-
+                =
+                Navigate(orderlineinfo, ScreenTransition.Cover, {orderinformation: ThisItem});
+            PressedFill: =
+            Width: =630
+            ZIndex: =2
+
+        Rectangle17 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =49
+            HoverFill: =
+            OnSelect: =Select(Parent)
+            PressedFill: =
+            Width: =630
+            Y: =215
+            ZIndex: =3
+
+        Group13 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =6
+
+            Label2 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(184, 0, 0, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                FontWeight: =FontWeight.Bold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =15
+                Text: |-
+                    ="Total Quantity:"
+                Width: =180
+                X: =22
+                Y: =215
+                ZIndex: =4
+
+            Label2_2 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(184, 0, 0, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                FontWeight: =FontWeight.Bold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =18
+                Text: =ThisItem.Quantity
+                Width: =62
+                X: =188
+                Y: =215
+                ZIndex: =5
+
+        Group13_3 As group:
+            Height: =5
+            Width: =5
+            X: =19
+            Y: =-179
+            ZIndex: =8
+
+            Label2_3 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(184, 0, 0, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                FontWeight: =FontWeight.Bold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =15
+                Text: |-
+                    ="Total Payable Amount:"
+                Width: =265
+                X: =275
+                Y: =215
+                ZIndex: =6
+
+            Label2_4 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(184, 0, 0, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                FontWeight: =FontWeight.Bold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =18
+                Text: =Concatenate("₹", ThisItem.'Bill Amoount' + ThisItem.'CGST Amount' + ThisItem.'SGST Amount')
+                Width: =117
+                X: =513
+                Y: =215
+                ZIndex: =7
+
+        Group13_7 As group:
+            Height: =5
+            Width: =5
+            X: =4
+            Y: =-179
+            ZIndex: =10
+
+            Label2_5 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                FontWeight: =FontWeight.Bold
+                Height: =49
+                OnSelect: |-
+                    =
+                    Navigate(orderlineinfo, ScreenTransition.Cover, {orderinformation: ThisItem});
+                Size: =16
+                Text: |-
+                    ="Order Line ID:"
+                Width: =176
+                X: =25
+                Y: =3
+                ZIndex: =8
+
+            Label2_13 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                FontWeight: =FontWeight.Bold
+                Height: =49
+                OnSelect: |-
+                    =
+                    Navigate(orderlineinfo, ScreenTransition.Cover, {orderinformation: ThisItem});
+                Size: =18
+                Text: =ThisItem.'Order Line ID'
+                Width: =123
+                X: =191
+                Y: =3
+                ZIndex: =9
+
+        Group13_8 As group:
+            Height: =5
+            Width: =5
+            X: =-256
+            Y: =-179
+            ZIndex: =12
+
+            Label2_62 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(219, 219, 219, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: |-
+                    ="Price Per Unit:"
+                Width: =228
+                X: =15
+                Y: =132
+                ZIndex: =10
+
+            Label2_63 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 191, 0, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                FontWeight: =FontWeight.Semibold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =Concatenate("₹", LookUp('Product Price List', Product.'Product Item' = ThisItem.'Product-Item'.'Product Item').Price)
+                Width: =130
+                X: =190
+                Y: =132
+                ZIndex: =11
+
+        Group13_9 As group:
+            Height: =5
+            Width: =5
+            X: =28
+            Y: =-24
+            ZIndex: =14
+
+            Label2_65 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(219, 219, 219, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: |-
+                    ="Product Name:"
+                Width: =157
+                X: =15
+                Y: =83
+                ZIndex: =12
+
+            Label2_66 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 191, 0, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                FontWeight: =FontWeight.Semibold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =ThisItem.'Product-Item'.'Product Name'
+                Width: =221
+                X: =170
+                Y: =83
+                ZIndex: =13
+
+        Group13_10 As group:
+            Height: =5
+            Width: =5
+            X: =28
+            Y: =-93
+            ZIndex: =16
+
+            Label2_68 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(219, 219, 219, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: |-
+                    ="Product Group:"
+                Width: =177
+                X: =376
+                Y: =83
+                ZIndex: =14
+
+            Label2_72 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 191, 0, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                FontWeight: =FontWeight.Semibold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =ThisItem.'Product-Item'.Name
+                Width: =90
+                X: =540
+                Y: =83
+                ZIndex: =15
+
+        Group13_11 As group:
+            Height: =5
+            Width: =5
+            X: =-323
+            Y: =-43
+            ZIndex: =18
+
+            Label2_129 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(219, 219, 219, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: |-
+                    ="HSN Code:"
+                Width: =177
+                X: =376
+                Y: =132
+                ZIndex: =16
+
+            Label2_198 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 191, 0, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                FontWeight: =FontWeight.Semibold
+                Height: =49
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =If(!IsBlank(ThisItem.'Product-Item'.'HSN Code'), ThisItem.'Product-Item'.'HSN Code', "-")
+                Width: =90
+                X: =540
+                Y: =132
+                ZIndex: =17
+
+    Image1_35 As image:
+        BorderColor: =RGBA(204, 204, 204, 1)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =1
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =45
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: =User().Image
+        ImagePosition: =ImagePosition.Fill
+        OnSelect: =Navigate(Profile)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Width: =45
+        X: =584
+        Y: =13
+        ZIndex: =40
+
+    "'Dashboard Toptab_1' As gallery.galleryHorizontal":
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Height: =56
+        Items: |-
+            =Table(
+                {
+                    Title: "Order Header"
+                },
+                {
+                    Title: "Order Lines"
+                }
+            )
+        OnSelect: =
+        ShowScrollbar: =false
+        TemplateSize: =195
+        Width: =405
+        X: =117
+        Y: =98
+        ZIndex: =41
+
+        Rectangle3_3 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: |-
+                =If(ThisItem.IsSelected, ColorValue("#A00002"), RGBA(103, 204, 107, 0.1))
+            FocusedBorderThickness: =4
+            Height: =46
+            HoverFill: =RGBA(103, 204, 107, 0.28)
+            OnSelect: =Select(Parent)
+            PressedFill: =RGBA(103, 204, 107, 0.25)
+            Width: =195
+            ZIndex: =1
+
+        Label2_49 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: |-
+                =If(ThisItem.IsSelected, ColorValue("#A00002"), RGBA(103, 204, 107, 0))
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =46
+            OnSelect: =
+            Size: =18
+            Text: =ThisItem.Title
+            Width: =195
+            ZIndex: =3
+
+    Rectangle12_44 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.Dashed
+        BorderThickness: =2
+        DisabledFill: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(255, 200, 61, 1)
+        FocusedBorderThickness: =4
+        Height: =1
+        HoverFill: =RGBA(255, 200, 61, 1)
+        PressedFill: =RGBA(255, 200, 61, 1)
+        Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+        Width: =625
+        X: =7
+        Y: =985
+        ZIndex: =45
+
+    Label5_208 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =60
+        Size: =17
+        Text: ="Shiping Address"
+        Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+        Width: =344
+        X: =24
+        Y: =985
+        ZIndex: =46
+
+    Label5_209 As label:
+        Align: =Align.Right
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 191, 0, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =60
+        Size: =18
+        Text: =order.'Order From'.'Shipping Address'
+        Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+        Width: =368
+        X: =239
+        Y: =985
+        ZIndex: =47
+
+    "'Bottom Navigation_69' As 'Bottom Navigation'":
+        NavItems: |-
+            =Table(
+                {
+                    Title: If(
+                        varAttendance = "end",
+                        "End",
+                        varAttendance = "start",
+                        "Start",
+                        varAttendance = "done",
+                        "Ended"
+                    ),
+                    //Title: Start,
+                    Screen: If(
+                        varAttendance = "start",
+                        StartDay,
+                        varAttendance = "end",
+                        'End day',
+                        varAttendance = "done",
+                        'Day Ended'
+                    ),
+                    Icon: CalendarBlank,
+                    Active: false
+                },
+                {
+                    Title: "Visits",
+                    Screen: Visits,
+                    Icon: Waypoint,
+                    Active: false
+                },
+                {
+                    Title: "Dashboard",
+                    Screen: Home,
+                    Icon: Waffle,
+                    Active: false
+                },
+                {
+                    Title: "Parties",
+                    Screen: 'Customer (Dist)_1',
+                    Icon: People,
+                    Active: true
+                },
+                {
+                    Title: "Menu",
+                    Screen: 'Menu Screen',
+                    Icon: Hamburger,
+                    Active: false
+                }
+            )
+        Y: =1056
+        ZIndex: =48
+
+    Group17 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =48
+
+        Rectangle5 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(88, 103, 130, 1)
+            FocusedBorderThickness: =4
+            Height: =878
+            HoverFill: =
+            PressedFill: =
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =625
+            X: =7
+            Y: =167
+            ZIndex: =5
+
+        Label5_35 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =17
+            Text: ="Order No."
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =252
+            X: =27
+            Y: =182
+            ZIndex: =6
+
+        Label5_36 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =19
+            Text: =order.'Order ID'
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =368
+            X: =247
+            Y: =182
+            ZIndex: =7
+
+        Rectangle12 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =625
+            X: =Rectangle5.X
+            Y: =249
+            ZIndex: =8
+
+        Label5_52 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =17
+            Text: ="Order Type"
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =252
+            X: =25
+            Y: =252
+            ZIndex: =9
+
+        Label5_54 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =19
+            Text: =order.'Order Type'
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =368
+            X: =245
+            Y: =252
+            ZIndex: =10
+
+        Rectangle12_1 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =625
+            ZIndex: =11
+
+        Label5_56 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =17
+            Text: ="Order Date"
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =252
+            X: =26
+            Y: =318
+            ZIndex: =12
+
+        Label5_129 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =60
+            Size: =19
+            Text: =Text(order.'Order Date', "dd mmm yyyy")
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =368
+            X: =246
+            Y: =318
+            ZIndex: =13
+
+        Rectangle12_2 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =625
+            X: =Rectangle5.X
+            Y: =386
+            ZIndex: =14
+
+        Label5_130 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =17
+            Text: ="Status"
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =252
+            X: =25
+            Y: =386
+            ZIndex: =15
+
+        Label5_131 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =19
+            Text: =order.'Order Status'
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =368
+            X: =245
+            Y: =386
+            ZIndex: =16
+
+        Rectangle12_3 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =625
+            X: =Rectangle5.X
+            Y: =453
+            ZIndex: =17
+
+        Label5_132 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =17
+            Text: ="Order From"
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =252
+            X: =23
+            Y: =454
+            ZIndex: =18
+
+        Label5_133 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =19
+            Text: =order.'Order From'.'Account Name (name)'
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =368
+            X: =243
+            Y: =454
+            ZIndex: =19
+
+        Rectangle12_4 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =625
+            X: =Rectangle5.X
+            Y: =521
+            ZIndex: =20
+
+        Label5_134 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =17
+            Text: ="Order To"
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =252
+            X: =24
+            Y: =522
+            ZIndex: =21
+
+        Label5_135 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =19
+            Text: =order.'Order To'.'Account Name (name)'
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =368
+            X: =244
+            Y: =522
+            ZIndex: =22
+
+        Rectangle12_5 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =625
+            X: =Rectangle5.X
+            Y: =589
+            ZIndex: =23
+
+        Label5_136 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =17
+            Text: ="Order Amount (Without Tax)"
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =325
+            X: =26
+            Y: =590
+            ZIndex: =24
+
+        Label5_137 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =19
+            Text: =Concatenate("₹ ", order.'To Order Amount')
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =368
+            X: =243
+            Y: =590
+            ZIndex: =25
+
+        Rectangle12_6 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =625
+            X: =Rectangle5.X
+            Y: =658
+            ZIndex: =26
+
+        Label5_138 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =17
+            Text: ="CGST"
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =252
+            X: =27
+            Y: =659
+            ZIndex: =27
+
+        Label5_139 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =19
+            Text: =Concatenate("₹ ", order.'CGST Amount')
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =368
+            X: =247
+            Y: =659
+            ZIndex: =28
+
+        Rectangle12_7 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =625
+            X: =Rectangle5.X
+            Y: =726
+            ZIndex: =29
+
+        Label5_140 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =17
+            Text: ="SGST"
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =252
+            X: =26
+            Y: =727
+            ZIndex: =30
+
+        Label5_141 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =19
+            Text: =Concatenate("₹ ", order.'SGST Amount')
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =368
+            X: =246
+            Y: =727
+            ZIndex: =31
+
+        Rectangle12_8 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =625
+            X: =Rectangle5.X
+            Y: =794
+            ZIndex: =32
+
+        Label5_142 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =17
+            Text: ="IGST"
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =252
+            X: =25
+            Y: =795
+            ZIndex: =33
+
+        Label5_143 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =19
+            Text: =If(IsBlank(order.'IGST Amount'), "-", order.'IGST Amount')
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =368
+            X: =245
+            Y: =795
+            ZIndex: =34
+
+        Rectangle12_9 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =625
+            X: =Rectangle5.X
+            Y: =864
+            ZIndex: =35
+
+        Label5_144 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =17
+            Text: ="Total Payable Amount"
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =344
+            X: =25
+            Y: =864
+            ZIndex: =36
+
+        Label5_145 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =18
+            Text: =Concatenate("₹ ", order.'To Order Amount' + order.'SGST Amount' + order.'CGST Amount')
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =368
+            X: =246
+            Y: =864
+            ZIndex: =37
+
+        Rectangle12_32 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =625
+            X: =8
+            Y: =925
+            ZIndex: =42
+
+        Label5_180 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =17
+            Text: ="Shiping Address"
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =344
+            X: =25
+            Y: =925
+            ZIndex: =43
+
+        Label5_181 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =60
+            Size: =18
+            Text: =order.'Order From'.'Shipping Address'
+            Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+            Width: =368
+            X: =240
+            Y: =925
+            ZIndex: =44
+
+    Rectangle12_84 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.Dashed
+        BorderThickness: =2
+        DisabledFill: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(255, 200, 61, 1)
+        FocusedBorderThickness: =4
+        Height: =1
+        HoverFill: =RGBA(255, 200, 61, 1)
+        PressedFill: =RGBA(255, 200, 61, 1)
+        Visible: =If('Dashboard Toptab_1'.Selected.Title = "Order Header", true, false )
+        Width: =625
+        X: =Rectangle5.X
+        Y: =315
+        ZIndex: =49
+

@@ -1,0 +1,265 @@
+Filter As screen:
+    Fill: =RGBA(31, 31, 31, 1)
+    LoadingSpinnerColor: =RGBA(255, 200, 61, 1)
+    OnVisible: |-
+        =ClearCollect(
+            subItems,
+            Filter(
+                Categories,
+                'Parent Category'.Category = Last('Items Gallery'.AllItems).Category && Level = 2
+            )
+        )
+
+    Rectangle9 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledFill: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(152, 208, 70, 0.04)
+        FocusedBorderThickness: =4
+        Height: =79
+        HoverFill: =
+        PressedFill: =RGBA(255, 200, 61, 1)
+        Width: =640
+        ZIndex: =2
+
+    Label1_6 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        Size: =20
+        Text: ="Filter By"
+        Width: =293
+        X: =34
+        Y: =13
+        ZIndex: =3
+
+    Icon3_2 As icon.Cancel:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Color: =RGBA(237, 237, 237, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =42
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Cancel
+        OnSelect: =Back()
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =54
+        X: =580
+        Y: =13
+        ZIndex: =4
+
+    Button5_2 As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderThickness: =0
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(82, 82, 82, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =56
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(31, 31, 31, 1)
+        HoverFill: =
+        OnSelect: =Clear(FilterList)
+        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+        PressedColor: =RGBA(31, 31, 31, 1)
+        PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        RadiusBottomLeft: =2
+        RadiusBottomRight: =2
+        RadiusTopLeft: =2
+        RadiusTopRight: =2
+        Size: =16
+        Text: ="Clear"
+        Width: =303
+        Y: =1080
+        ZIndex: =5
+
+    Button5_3 As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderThickness: =0
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(160, 0, 2, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =56
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(31, 31, 31, 1)
+        HoverFill: =
+        OnSelect: |-
+            =ClearCollect(
+                AllProducts,
+                Filter(
+                    'Product Items',
+                    PG2.Category in FilterList.Category
+                ),
+                {
+                    productName: 'Product Items'.'Product Name',
+                    imageurl: 'Product Items'.'Image URL'
+                }
+            );
+            //Set(SelectedPlanVisitTopTab, "Book Order");
+            Back()
+        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+        PressedColor: =RGBA(31, 31, 31, 1)
+        PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        RadiusBottomLeft: =2
+        RadiusBottomRight: =2
+        RadiusTopLeft: =2
+        RadiusTopRight: =2
+        Size: =16
+        Text: ="Apply"
+        Width: =303
+        X: =324
+        Y: =1080
+        ZIndex: =6
+
+    "'SubItems Gallery' As gallery.galleryVertical":
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Fill: =RGBA(66, 66, 66, 1)
+        Height: =1001
+        Items: =subItems
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =62
+        Width: =382
+        X: =258
+        Y: =66
+        ZIndex: =7
+
+        Rectangle11_1 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(202, 202, 202, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            OnSelect: =Select(Parent)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Width: ='SubItems Gallery'.Width-20
+            X: =5
+            Y: =61
+            ZIndex: =1
+
+        Label4_43 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            Height: =62
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Size: =16
+            Text: =ThisItem.'Category Name'
+            Width: =332
+            X: =50
+            ZIndex: =2
+
+        Checkbox2 As checkbox:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            CheckboxBackgroundFill: =RGBA(31, 31, 31, 1)
+            CheckboxBorderColor: =RGBA(128, 128, 128, 1)
+            CheckboxSize: =35
+            CheckmarkFill: =RGBA(255, 200, 61, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =If(ThisItem.Category in FilterList.Category, true, false)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderColor: =
+            FocusedBorderThickness: =
+            Font: =Font.'Segoe UI'
+            Height: =62
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            OnCheck: =Collect(FilterList, ThisItem);
+            OnSelect: =Select(Parent)
+            OnUncheck: =Remove(FilterList, ThisItem)
+            PressedBorderColor: =
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Size: =21
+            Text: =""
+            Width: =342
+            X: =13
+            ZIndex: =3
+
+    "'Items Gallery' As gallery.galleryVertical":
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Default: =Last(Categories)
+        Fill: =RGBA(103, 204, 107, 0.05)
+        Height: =1001
+        Items: =Filter(Categories, Level= 1)
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =52
+        Width: =258
+        Y: =79
+        ZIndex: =8
+
+        Rectangle11 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(202, 202, 202, 1)
+            FocusedBorderThickness: =4
+            Height: =1
+            HoverFill: =RGBA(255, 200, 61, 1)
+            OnSelect: =Select(Parent)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Width: =258
+            Y: =51
+            ZIndex: =1
+
+        Label4_37 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: |-
+                =If(ThisItem.IsSelected, ColorValue("#FFBF00"),White)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            Height: =52
+            OnSelect: |-
+                =ClearCollect(
+                    subItems,
+                    Filter(
+                        Categories,
+                        Level = 2 && 'Parent Category'.Category = ThisItem.Category
+                    )
+                )
+            PaddingLeft: =15
+            Size: =If(ThisItem.IsSelected, 18, 16)
+            Text: =ThisItem.'Category Name'
+            Width: =258
+            ZIndex: =2
+

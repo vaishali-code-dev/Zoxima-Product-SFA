@@ -1,0 +1,137 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_productitems",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_productitem",
+    "MaxGetRowsCount": 500,
+    "Name": "Product Items",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_availablequantity": "Available Quantity",
+      "cr431_cr431_productimages_Product_cr431_product": "Product Images",
+      "cr431_cr431_productitem_cr431_invoiceline_Item": "Invoice Line",
+      "cr431_cr431_productitem_cr431_orderline_ProductItem": "Order Line",
+      "cr431_cr431_productitem_cr431_productpricelist_Product": "Product Price List",
+      "cr431_cr431_siteproducts_Product_cr431_producti": "Site Products",
+      "cr431_cr431_stock_Product_cr431_productitem": "Stocks",
+      "cr431_discount": "Discount",
+      "cr431_Division": "Division (cr431_Division)",
+      "cr431_hsncode": "HSN Code",
+      "cr431_imageurl": "Image URL",
+      "cr431_LOB": "LOB",
+      "cr431_name": "Name",
+      "cr431_PG1": "PG1",
+      "cr431_PG2": "PG2",
+      "cr431_PG3": "PG3",
+      "cr431_PG4": "PG4",
+      "cr431_productitem_AsyncOperations": "System Jobs",
+      "cr431_productitem_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_productitem_DuplicateBaseRecord": "Duplicate Records (cr431_productitem_DuplicateBaseRecord)",
+      "cr431_productitem_DuplicateMatchingRecord": "Duplicate Records (cr431_productitem_DuplicateMatchingRecord)",
+      "cr431_productitem_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_productitem_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_productitem_ProcessSession": "Process Sessions",
+      "cr431_productitem_SyncErrors": "Sync Errors",
+      "cr431_ProductItemDivision": "Division (cr431_ProductItemDivision)",
+      "cr431_productitemid": "Product Item",
+      "cr431_productname": "Product Name",
+      "cr431_promotedproduct": "Promoted Product",
+      "cr431_quantity": "Quantity",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Product Items",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Product Items (Views)",
+    "Name": "_cr431_productitem_views",
+    "RelatedEntityName": "Product Items",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "08b30361-00d1-406f-9215-248daa4fa4c4": "Product Item Advanced Find View",
+      "3245bf90-5769-4827-945d-1e09e931150c": "Active Product Items",
+      "55b481be-565a-4037-8188-bdc45bf8f443": "Product Item Associated View",
+      "55c90d41-46b0-459c-bac8-6ed0530dabb3": "Product Item Lookup View",
+      "6240dd1d-ccd9-4e25-8293-f1ff53437258": "Inactive Product Items"
+    }
+  },
+  {
+    "DisplayName": "Promoted Product (Product Items)",
+    "Name": "cr431_productitem_cr431_promotedproduct",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_promotedproduct",
+        "OptionSetReferenceEntityName": "Product Items"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr431_promotedproduct",
+    "RelatedEntityName": "Product Items",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Product Items)",
+    "Name": "cr431_productitem_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Product Items"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Product Items",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Product Items)",
+    "Name": "cr431_productitem_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Product Items"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Product Items",
+    "Type": "OptionSetInfo"
+  }
+]

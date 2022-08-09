@@ -1,0 +1,74 @@
+"'Bottom Navigation_7' As CanvasComponent":
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =80
+    NavItems: |-
+        =Table( {
+                Title: "Start",
+                Screen:App.ActiveScreen,
+                Icon: CalendarBlank
+            },
+            {
+                Title: "Visits",
+                Screen: App.ActiveScreen,
+                Icon: Waypoint
+            },
+            {
+                Title: "Dashboard",
+                Screen: App.ActiveScreen,
+                Icon: Waffle
+            },
+            {
+                Title: "Customer",
+                Screen: App.ActiveScreen,
+                Icon: People
+            },
+            {
+                Title: "Menu",
+                Screen: App.ActiveScreen,
+                Icon: Hamburger
+            }
+            )
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Gallery2 As gallery.galleryHorizontal:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =80
+        Items: ='Bottom Navigation_7'.NavItems
+        TemplateSize: =121
+        ZIndex: =1
+
+        Icon1_1 As icon.Add:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =If(ThisItem.IsSelected, RGBA(250,250,250,1),  RGBA(219,219,219, 100))
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =35
+            Icon: =ThisItem.Icon
+            OnSelect: |
+                =Navigate(ThisItem.Screen,ScreenTransition.Cover);
+            Visible: |
+                =
+            Width: =39
+            X: =41
+            Y: =5
+            ZIndex: =1
+
+        Label2_6 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =If(ThisItem.IsSelected, RGBA(250,250,250,1),  RGBA(219,219,219, 100))
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =26
+            OnSelect: |
+                =Navigate(ThisItem.Screen,ScreenTransition.Cover);
+            Size: =10
+            Text: =ThisItem.Title
+            Width: =121
+            Y: =40
+            ZIndex: =2
+

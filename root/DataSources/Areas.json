@@ -1,0 +1,210 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_areas",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_area",
+    "MaxGetRowsCount": 500,
+    "Name": "Areas",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_area_AsyncOperations": "System Jobs",
+      "cr431_area_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_area_DuplicateBaseRecord": "Duplicate Records (cr431_area_DuplicateBaseRecord)",
+      "cr431_area_DuplicateMatchingRecord": "Duplicate Records (cr431_area_DuplicateMatchingRecord)",
+      "cr431_area_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_area_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_area_ProcessSession": "Process Sessions",
+      "cr431_area_SyncErrors": "Sync Errors",
+      "cr431_areaid": "Area",
+      "cr431_areaname": "Area Name",
+      "cr431_branchtype": "Branch Type",
+      "cr431_contact_Area_cr431_area": "Contacts",
+      "cr431_cr431_area_account_beat": "Accounts (cr431_cr431_area_account_beat)",
+      "cr431_cr431_area_account_branchcode": "Accounts (cr431_cr431_area_account_branchcode)",
+      "cr431_cr431_area_account_nation": "Accounts (cr431_cr431_area_account_nation)",
+      "cr431_cr431_area_account_territory": "Accounts (cr431_cr431_area_account_territory)",
+      "cr431_cr431_area_account_town": "Accounts (cr431_cr431_area_account_town)",
+      "cr431_cr431_area_account_zone": "Accounts (cr431_cr431_area_account_zone)",
+      "cr431_cr431_area_cr431_lead_Townname": "Lead",
+      "cr431_cr431_area_cr431_pjp_Territory": "PJPS",
+      "cr431_cr431_area_cr431_visit_BeatGrid": "Visits (cr431_cr431_area_cr431_visit_BeatGrid)",
+      "cr431_cr431_area_cr431_visit_Town": "Visits (cr431_cr431_area_cr431_visit_Town)",
+      "cr431_cr431_geotownareamapping_cr431_Terr": "Geo Town Area Mappings",
+      "cr431_cr431_sites_sitearea_cr431_area": "Sites",
+      "cr431_cr431_teamtownmapping_cr431_TOWNCod": "Team Town Mappings",
+      "cr431_influencer_Territory_cr431_area": "Influencer (cr431_influencer_Territory_cr431_area)",
+      "cr431_influencer_Town_cr431_area": "Influencer (cr431_influencer_Town_cr431_area)",
+      "cr431_level": "Level",
+      "cr431_name": "Code",
+      "cr431_pjptown_Towncode_cr431_area": "PJP Towns",
+      "cr431_Team_Branch_cr431_area": "Teams (cr431_Team_Branch_cr431_area)",
+      "cr431_Team_HQTownName_cr431_area": "Teams (cr431_Team_HQTownName_cr431_area)",
+      "cr431_territorytype": "Territory Type",
+      "cr431_type": "Type",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "new_cr431_area_systemuser_LocationAreas": "Users",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Areas",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Areas (Views)",
+    "Name": "_cr431_area_views",
+    "RelatedEntityName": "Areas",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "66e42836-bb3f-4af8-80e2-314dde32be56": "Area Associated View",
+      "940511ac-ba61-4916-8600-48fc924d2005": "Inactive Areas",
+      "bfbc72dd-ac13-4e8b-918e-c8a6deb8bfe1": "Area Lookup View",
+      "d8536900-4998-476a-adf7-294823c9477c": "Active Areas",
+      "ff259dbf-d61e-43e9-adca-e4fa3dbdf634": "Area Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Branch Type (Areas)",
+    "Name": "cr431_area_cr431_branchtype",
+    "OptionSetInfoNameMapping": {
+      "254460000": "PV Branch",
+      "254460001": "NON PV Branch"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_branchtype",
+        "OptionSetReferenceEntityName": "Areas"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_branchtype",
+    "RelatedEntityName": "Areas",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Level (Areas)",
+    "Name": "cr431_area_cr431_level",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Level1",
+      "254460001": "Level2",
+      "254460002": "Level3",
+      "254460003": "Level4",
+      "254460004": "Level5",
+      "254460005": "Level6"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_level",
+        "OptionSetReferenceEntityName": "Areas"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_level",
+    "RelatedEntityName": "Areas",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Territory Type (Areas)",
+    "Name": "cr431_area_cr431_territorytype",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Primary",
+      "254460001": "Secondary"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_territorytype",
+        "OptionSetReferenceEntityName": "Areas"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_territorytype",
+    "RelatedEntityName": "Areas",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Type (Areas)",
+    "Name": "cr431_area_cr431_type",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Nation",
+      "254460001": "Zone",
+      "254460002": "Region",
+      "254460003": "Branch",
+      "254460004": "Territory",
+      "254460005": "ASM"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_type",
+        "OptionSetReferenceEntityName": "Areas"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_type",
+    "RelatedEntityName": "Areas",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Areas)",
+    "Name": "cr431_area_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Areas"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Areas",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Areas)",
+    "Name": "cr431_area_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Areas"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Areas",
+    "Type": "OptionSetInfo"
+  }
+]

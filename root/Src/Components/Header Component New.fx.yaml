@@ -1,0 +1,32 @@
+"'Header Component New' As CanvasComponent":
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =120
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    HtmlText1_9 As htmlViewer:
+        Height: =170
+        HtmlText: |-
+            ="<div style='border-radius:0 0 50px 50px; background-color:#67CC6B; width:640px; height:120px'></div>"
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =640
+        ZIndex: =1
+
+    Icon7 As icon.ArrowLeft:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =29
+        Icon: =Icon.ArrowLeft
+        OnSelect: =Back()
+        Width: =28
+        X: =13
+        Y: =15
+        ZIndex: =2
+

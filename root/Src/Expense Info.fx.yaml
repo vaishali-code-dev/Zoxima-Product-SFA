@@ -1,0 +1,1089 @@
+"'Expense Info' As screen":
+    Fill: =RGBA(31, 31, 31, 1)
+    LoadingSpinnerColor: =RGBA(255, 200, 61, 1)
+
+    Canvas3_2 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =765
+        Width: =Parent.Width
+        Y: =291
+        ZIndex: =1
+
+        DataCard3_2 As dataCard:
+            BorderColor: =RGBA(210, 210, 210, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =766
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Container7_2 As groupContainer.manualLayoutContainer:
+                Height: =619
+                Visible: =If(customerinfo_5.Selected.Title = "Info" ,true , false)
+                Width: =640
+                Y: =92
+                ZIndex: =1
+
+                Label5_146 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =32
+                    Size: =16
+                    Text: ="Name"
+                    Width: =130
+                    X: =25
+                    Y: =1
+                    ZIndex: =1
+
+                TextInput2_107 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =ExpenseData.Name
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(128, 128, 128, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    HintText: =ExpenseData.Name
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =582
+                    X: =25
+                    Y: =41
+                    ZIndex: =2
+
+                Label5_147 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =32
+                    Size: =16
+                    Text: ="Expense ID"
+                    Width: =130
+                    X: =25
+                    Y: =101
+                    ZIndex: =3
+
+                TextInput2_108 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =ExpenseData.'Expense ID'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(128, 128, 128, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =582
+                    X: =25
+                    Y: =141
+                    ZIndex: =4
+
+                Label5_148 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =32
+                    Size: =16
+                    Text: ="Team ID"
+                    Width: =130
+                    X: =25
+                    Y: =201
+                    ZIndex: =5
+
+                TextInput2_109 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =ExpenseData.'Team ID'.'Team Member Name'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(128, 128, 128, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    HintText: =""
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =582
+                    X: =25
+                    Y: =241
+                    ZIndex: =6
+
+                Label5_149 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =32
+                    Size: =16
+                    Text: ="Expense Approver"
+                    Width: =200
+                    X: =25
+                    Y: =301
+                    ZIndex: =7
+
+                TextInput2_110 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =ExpenseData.'Expense Approver'.'Team Member Name'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(128, 128, 128, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    HintText: =""
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =582
+                    X: =25
+                    Y: =341
+                    ZIndex: =8
+
+                Label5_150 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =32
+                    Size: =16
+                    Text: ="Expense Status"
+                    Width: =200
+                    X: =25
+                    Y: =401
+                    ZIndex: =9
+
+                TextInput2_111 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =ExpenseData.'Expense Status'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(128, 128, 128, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    HintText: =""
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =582
+                    X: =25
+                    Y: =441
+                    ZIndex: =10
+
+                Label5_151 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =32
+                    Size: =16
+                    Text: |-
+                        ="Expense Date:"
+                    Width: =200
+                    X: =25
+                    Y: =497
+                    ZIndex: =11
+
+                TextInput2_112 As text:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    Default: =ExpenseData.'Expense Date'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(128, 128, 128, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Fill: =RGBA(31, 31, 31, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    HintText: =ExpenseData.Name
+                    HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(31, 31, 31, 1)
+                    PressedBorderColor: =RGBA(255, 200, 61, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(31, 31, 31, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =582
+                    X: =25
+                    Y: =542
+                    ZIndex: =12
+
+            Container8 As groupContainer.manualLayoutContainer:
+                Height: =659
+                Visible: =If(customerinfo_5.Selected.Title = "Expense Lines" ,true ,false)
+                Width: =640
+                Y: =92
+                ZIndex: =2
+
+                "Gallery10 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Height: =630
+                    Items: =Filter('Expense Line','Expense Number'.'Expense Header'=ExpenseData.'Expense Header')
+                    Layout: =Layout.Vertical
+                    TemplatePadding: =0
+                    TemplateSize: =279
+                    Y: =4
+                    ZIndex: =1
+
+                    HtmlText2 As htmlViewer:
+                        Height: =270
+                        HtmlText: |-
+                            ="<div style='border-radius:15px 15px 15px 15px; background-color:#FFFFFF;opacity:0.1; border:1px solid #D3D4D6; width:570px; height:250px'></div>"
+                        OnSelect: =Select(Parent)
+                        Width: =583
+                        X: =20
+                        ZIndex: =1
+
+                    Title1 As label:
+                        Color: =RGBA(255, 200, 61, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Bold
+                        OnSelect: |-
+                            =Set(ExpenseLineData,ThisItem);
+                            Navigate('Expense Line Details',ScreenTransition.Cover);
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =20
+                        Text: =ThisItem.Name
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =396
+                        X: =45
+                        Y: =16
+                        ZIndex: =2
+
+                    Subtitle1 As label:
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =Font.'Segoe UI'
+                        Height: =27
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =18
+                        Text: =ThisItem.'Expense Type'
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =251
+                        X: =45
+                        Y: =58
+                        ZIndex: =3
+
+                    Button11_1 As button:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        Color: =RGBA(31, 31, 31, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        Fill: =RGBA(255, 200, 61, 1)
+                        FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =37
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(31, 31, 31, 1)
+                        HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+                        OnSelect: |
+                            =//Set(ExpenseLineData,ThisItem);
+                            //Navigate('Expense Line Details',ScreenTransition.Cover);
+                        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+                        PressedColor: =RGBA(31, 31, 31, 1)
+                        PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                        Size: =14
+                        Text: =Concatenate("EX-", ThisItem.'Expense Line (cr431_expenseline)')
+                        Width: =112
+                        X: =465
+                        Y: =19
+                        ZIndex: =4
+
+                    Group13_36 As group:
+                        Height: =5
+                        Width: =5
+                        X: =-34
+                        Y: =-62
+                        ZIndex: =9
+
+                        HtmlText1_158 As htmlViewer:
+                            Color: =RGBA(242, 242, 242, 1)
+                            Height: =51
+                            HtmlText: |-
+                                ="<div style='border-radius:10px 10px 10px 10px; background-color:#67CC6B; opacity:0.1; border:2px solid #D3D4D6; width:130px; height:30px'></div>"
+                            OnSelect: =
+                            Width: =150
+                            X: =55
+                            Y: =99
+                            ZIndex: =6
+
+                        Label2_221 As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(237, 237, 237, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Lato
+                            FontWeight: =FontWeight.Semibold
+                            Height: =23
+                            OnSelect: =
+                            Size: =12
+                            Text: ="Food Charges"
+                            Width: =116
+                            X: =66
+                            Y: =107
+                            ZIndex: =7
+
+                        Label2_227 As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(255, 255, 255, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Lato
+                            FontWeight: =FontWeight.Semibold
+                            Height: =24
+                            OnSelect: =
+                            Size: =13
+                            Text: ="₹ "&ThisItem.'Food Charges'
+                            Width: =116
+                            X: =66
+                            Y: =143
+                            ZIndex: =8
+
+                    Group13_37 As group:
+                        Height: =5
+                        Width: =5
+                        X: =-5
+                        Y: =-59
+                        ZIndex: =12
+
+                        HtmlText1_159 As htmlViewer:
+                            Color: =RGBA(242, 242, 242, 1)
+                            Height: =51
+                            HtmlText: |-
+                                ="<div style='border-radius:10px 10px 10px 10px; background-color:#67CC6B; opacity:0.1; border:2px solid #D3D4D6; width:165px; height:30px'></div>"
+                            OnSelect: =
+                            Width: =176
+                            X: =207
+                            Y: =99
+                            ZIndex: =9
+
+                        Label2_228 As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(237, 237, 237, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Lato
+                            FontWeight: =FontWeight.Semibold
+                            Height: =23
+                            OnSelect: =
+                            Size: =12
+                            Text: ="Hotel Charges"
+                            Width: =136
+                            X: =227
+                            Y: =107
+                            ZIndex: =10
+
+                        Label2_229 As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(255, 255, 255, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Lato
+                            FontWeight: =FontWeight.Semibold
+                            Height: =24
+                            OnSelect: =
+                            Size: =13
+                            Text: ="₹ "&ThisItem.'Hotel Charges'
+                            Width: =136
+                            X: =220
+                            Y: =143
+                            ZIndex: =11
+
+                    Group13_38 As group:
+                        Height: =5
+                        Width: =5
+                        X: =-177
+                        Y: =-59
+                        ZIndex: =15
+
+                        HtmlText1_160 As htmlViewer:
+                            Color: =RGBA(242, 242, 242, 1)
+                            Height: =44
+                            HtmlText: |-
+                                ="<div style='border-radius:10px 10px 10px 10px; background-color:#67CC6B; opacity:0.1; border:2px solid #D3D4D6; width:170px; height:30px'></div>"
+                            OnSelect: =
+                            Width: =186
+                            X: =391
+                            Y: =99
+                            ZIndex: =12
+
+                        Label2_230 As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(237, 237, 237, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Lato
+                            FontWeight: =FontWeight.Semibold
+                            Height: =23
+                            OnSelect: =
+                            Size: =12
+                            Text: ="Toll Charges"
+                            Width: =148
+                            X: =408
+                            Y: =107
+                            ZIndex: =13
+
+                        Label2_231 As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(255, 255, 255, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Lato
+                            FontWeight: =FontWeight.Semibold
+                            Height: =24
+                            OnSelect: =
+                            Size: =13
+                            Text: ="₹ "&ThisItem.'Toll Charges'
+                            Width: =136
+                            X: =404
+                            Y: =143
+                            ZIndex: =14
+
+                    Group13_39 As group:
+                        Height: =5
+                        Width: =5
+                        X: =-15
+                        Y: =-59
+                        ZIndex: =18
+
+                        HtmlText1_161 As htmlViewer:
+                            Color: =RGBA(242, 242, 242, 1)
+                            Height: =51
+                            HtmlText: |-
+                                ="<div style='border-radius:10px 10px 10px 10px; background-color:#67CC6B; opacity:0.1; border:2px solid #D3D4D6; width:130px; height:40px'></div>"
+                            OnSelect: =
+                            Width: =150
+                            X: =53
+                            Y: =170
+                            ZIndex: =15
+
+                        Label2_232 As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(237, 237, 237, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Lato
+                            FontWeight: =FontWeight.Semibold
+                            Height: =36
+                            OnSelect: =
+                            Size: =12
+                            Text: ="Travelling Charges"
+                            Width: =127
+                            X: =55
+                            Y: =178
+                            ZIndex: =16
+
+                        Label2_233 As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(255, 255, 255, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Lato
+                            FontWeight: =FontWeight.Semibold
+                            Height: =24
+                            OnSelect: =
+                            Size: =13
+                            Text: ="₹ "&ThisItem.'Travelling Charges'
+                            Width: =116
+                            X: =64
+                            Y: =227
+                            ZIndex: =17
+
+                    Group13_40 As group:
+                        Height: =5
+                        Width: =5
+                        X: =-15
+                        Y: =-59
+                        ZIndex: =22
+
+                        HtmlText1_162 As htmlViewer:
+                            Color: =RGBA(242, 242, 242, 1)
+                            Height: =51
+                            HtmlText: |-
+                                ="<div style='border-radius:10px 10px 10px 10px; background-color:#67CC6B; opacity:0.1; border:2px solid #D3D4D6; width:165px; height:30px'></div>"
+                            OnSelect: =
+                            Width: =176
+                            X: =205
+                            Y: =170
+                            ZIndex: =19
+
+                        Label2_234 As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(237, 237, 237, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Lato
+                            FontWeight: =FontWeight.Semibold
+                            Height: =23
+                            OnSelect: =
+                            Size: =12
+                            Text: ="Others Charges"
+                            Width: =136
+                            X: =225
+                            Y: =178
+                            ZIndex: =20
+
+                        Label2_235 As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(255, 255, 255, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Lato
+                            FontWeight: =FontWeight.Semibold
+                            Height: =24
+                            OnSelect: =
+                            Size: =13
+                            Text: ="₹ "&ThisItem.'Other Charges'
+                            Width: =136
+                            X: =218
+                            Y: =227
+                            ZIndex: =21
+
+                    Group13_41 As group:
+                        Height: =5
+                        Width: =5
+                        X: =-15
+                        Y: =-59
+                        ZIndex: =26
+
+                        HtmlText1_163 As htmlViewer:
+                            Color: =RGBA(242, 242, 242, 1)
+                            Height: =44
+                            HtmlText: |-
+                                ="<div style='border-radius:10px 10px 10px 10px; background-color:#67CC6B; opacity:0.1; border:2px solid #D3D4D6; width:170px; height:30px'></div>"
+                            OnSelect: =
+                            Width: =186
+                            X: =389
+                            Y: =170
+                            ZIndex: =23
+
+                        Label2_236 As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(237, 237, 237, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Lato
+                            FontWeight: =FontWeight.Semibold
+                            Height: =23
+                            OnSelect: =
+                            Size: =12
+                            Text: ="Total Expenses"
+                            Width: =148
+                            X: =406
+                            Y: =178
+                            ZIndex: =24
+
+                        Label2_237 As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(255, 255, 255, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Lato
+                            FontWeight: =FontWeight.Semibold
+                            Height: =24
+                            OnSelect: =
+                            Size: =13
+                            Text: ="₹ "&(ThisItem.'Food Charges' + ThisItem.'Hotel Charges' + ThisItem.'Toll Charges' + ThisItem.'Travelling Charges' + ThisItem.'Other Charges')
+                            Width: =136
+                            X: =402
+                            Y: =227
+                            ZIndex: =25
+
+    Label63_6 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(128, 128, 128, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =62
+        Size: =21
+        Text: |-
+            ="Expense ID:"
+        Width: =190
+        X: =29
+        Y: =167
+        ZIndex: =2
+
+    Button9_12 As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(31, 31, 31, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(255, 255, 255, 0.78)
+        FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =49
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(31, 31, 31, 1)
+        HoverFill: =RGBA(103, 204, 107, 1)
+        OnSelect: |-
+            =Patch('Expense Header',LookUp('Expense Header',Name=ExpenseData.Name),
+            { 'Expense Status':'Expense Status (Expense Header)'.pending});
+            
+            Refresh('Expense Header');
+            Navigate('Expenses Screen');
+            
+            
+            
+            
+            
+            //Patch(Leaves,LookUp(Leaves,ID=ThisItem.ID),{'Leave Status':{Value:"Rejected"}})
+        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(103, 204, 107, 1)
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =18
+        Text: ="Submit For Approval"
+        Visible: =If(Text(ExpenseData.'Expense Status')="draft",true,false)
+        Width: =327
+        X: =29
+        Y: =237
+        ZIndex: =3
+
+    Label15_4 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 200, 61, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =30
+        Text: =ExpenseData.Name
+        Width: =560
+        X: =29
+        Y: =97
+        ZIndex: =4
+
+    Label66_8 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 200, 61, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =69
+        Size: =21
+        Text: =ExpenseData.'Expense ID'
+        Width: =186
+        X: =193
+        Y: =163
+        ZIndex: =5
+
+    HtmlText1_140 As htmlViewer:
+        Color: =RGBA(103, 204, 107, 1)
+        Height: =82
+        HtmlText: |-
+            ="<div style='border-radius:0; background-color:#A00002; width:640px; height:70px'></div>"
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =640
+        ZIndex: =6
+
+    Label17_5 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =20
+        Text: ="Expense Details"
+        Width: =560
+        X: =80
+        ZIndex: =7
+
+    Icon14_15 As icon.BackArrow:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =70
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =43
+        X: =18
+        ZIndex: =8
+
+    customerinfo_5 As gallery.galleryHorizontal:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Height: =74
+        Items: |-
+            =Table( 
+                {
+                    Title: "Info"
+                   // Active : true
+                 //   Screen: 'Customer Info'
+                },
+              
+                {
+                    Title: "Expense Lines"
+                  //  Active : false
+                  
+                 
+                }
+            )
+        OnSelect: =
+        ShowScrollbar: =false
+        TemplateSize: =280
+        Width: =561
+        X: =35
+        Y: =303
+        ZIndex: =9
+
+        Button4_21 As button:
+            BorderColor: =RGBA(210, 210, 210, 1)
+            Color: =If(ThisItem.IsSelected, RGBA(255, 255, 255, 1), Black)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: |-
+                =If(ThisItem.IsSelected, ColorValue("#A00002"), White)
+            FocusedBorderColor: =
+            FocusedBorderThickness: =2
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =46
+            HoverBorderColor: =RGBA(210, 210, 210, 1)
+            HoverColor: =RGBA(31, 31, 31, 1)
+            HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+            OnSelect: =Select(Parent)
+            PressedBorderColor: =
+            PressedColor: =If(ThisItem.IsSelected, RGBA(255, 255, 255, 1), RGBA(53, 166,57,1))
+            PressedFill: =
+            Size: =16
+            Text: =ThisItem.Title
+            Width: =243
+            Y: =6
+            ZIndex: =1
+
+    Button12_2 As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(31, 31, 31, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(255, 255, 255, 0.79)
+        FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =30
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(31, 31, 31, 1)
+        HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+        OnSelect: |-
+            =Patch('Expense Header',LookUp('Expense Header',Name=ExpenseData.Name),
+            { 'Expense Status':'Expense Status (Expense Header)'.approved});
+            Navigate('Expenses Screen');
+        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+        PressedColor: =RGBA(31, 31, 31, 1)
+        PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Size: =14
+        Text: ="Approve"
+        Visible: =If(Text(ExpenseData.'Expense Status')="pending",true,false)
+        Width: =200
+        X: =389
+        Y: =192
+        ZIndex: =11
+
+    Button12_3 As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(31, 31, 31, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(255, 255, 255, 0.81)
+        FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =30
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(31, 31, 31, 1)
+        HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+        OnSelect: |-
+            =Patch('Expense Header',LookUp('Expense Header',Name=ExpenseData.Name),
+            { 'Expense Status':'Expense Status (Expense Header)'.Rejected});
+            Navigate('Expenses Screen');
+        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+        PressedColor: =RGBA(31, 31, 31, 1)
+        PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Size: =14
+        Text: ="Reject"
+        Visible: =If(Text(ExpenseData.'Expense Status')="pending",true,false)
+        Width: =200
+        X: =389
+        Y: =251
+        ZIndex: =12
+
+    Image1_47 As image:
+        BorderColor: =RGBA(204, 204, 204, 1)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =1
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =45
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: =User().Image
+        ImagePosition: =ImagePosition.Fill
+        OnSelect: =Navigate(Profile)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Width: =45
+        X: =584
+        Y: =13
+        ZIndex: =13
+
+    "'Bottom Navigation_45' As 'Bottom Navigation'":
+        NavItems: |-
+            =Table(
+                {
+                    Title: If(
+                        varAttendance = "end",
+                        "End",
+                        varAttendance = "start",
+                        "Start",
+                        varAttendance = "done",
+                        "Ended"
+                    ),
+                    //Title: Start,
+                    Screen: If(
+                        varAttendance = "start",
+                        StartDay,
+                        varAttendance = "end",
+                        'End day',
+                        varAttendance = "done",
+                        'Day Ended'
+                    ),
+                    Icon: CalendarBlank,
+                    Active: false
+                },
+                {
+                    Title: "Visits",
+                    Screen: Visits,
+                    Icon: Waypoint,
+                    Active: false
+                },
+                {
+                    Title: "Dashboard",
+                    Screen: Home,
+                    Icon: Waffle,
+                    Active: false
+                },
+                {
+                    Title: "Parties",
+                    Screen: 'Customer (Dist)_1',
+                    Icon: People,
+                    Active: false
+                },
+                {
+                    Title: "Menu",
+                    Screen: 'Menu Screen',
+                    Icon: Hamburger,
+                    Active: true
+                }
+            )
+        Y: =1056
+        ZIndex: =14
+

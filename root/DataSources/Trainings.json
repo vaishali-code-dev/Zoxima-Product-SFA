@@ -1,0 +1,121 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_trainings",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_training",
+    "MaxGetRowsCount": 500,
+    "Name": "Trainings",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_meetlink": "Meet Link",
+      "cr431_name": "Name",
+      "cr431_purpose": "Purpose",
+      "cr431_training_AsyncOperations": "System Jobs",
+      "cr431_training_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_training_DuplicateBaseRecord": "Duplicate Records (cr431_training_DuplicateBaseRecord)",
+      "cr431_training_DuplicateMatchingRecord": "Duplicate Records (cr431_training_DuplicateMatchingRecord)",
+      "cr431_training_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_training_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_training_ProcessSession": "Process Sessions",
+      "cr431_training_SyncErrors": "Sync Errors",
+      "cr431_trainingid": "Training",
+      "cr431_trainingsite": "Training Site",
+      "cr431_Visit": "Visit",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Trainings",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Trainings (Views)",
+    "Name": "_cr431_training_views",
+    "RelatedEntityName": "Trainings",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "32290276-0706-479d-aff1-04dabb01978f": "Training Lookup View",
+      "46170e1b-6bc5-423e-a835-114117ca0c45": "Inactive Trainings",
+      "79fe3f65-bba2-4cc5-b838-1c4948a0821d": "Training Advanced Find View",
+      "9f80e0fb-e2d5-471f-a6f7-4bb4a1e128b7": "Active Trainings",
+      "bb675c8e-f377-462d-a032-8a4345aaf632": "Training Associated View"
+    }
+  },
+  {
+    "DisplayName": "Training Site (Trainings)",
+    "Name": "cr431_training_cr431_trainingsite",
+    "OptionSetInfoNameMapping": {
+      "254460000": "New Product",
+      "254460001": "Existing Product Details"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_trainingsite",
+        "OptionSetReferenceEntityName": "Trainings"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_trainingsite",
+    "RelatedEntityName": "Trainings",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Trainings)",
+    "Name": "cr431_training_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Trainings"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Trainings",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Trainings)",
+    "Name": "cr431_training_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Trainings"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Trainings",
+    "Type": "OptionSetInfo"
+  }
+]

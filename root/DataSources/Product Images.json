@@ -1,0 +1,99 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_productimageses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_productimages",
+    "MaxGetRowsCount": 500,
+    "Name": "Product Images",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_imagelink": "Image Link",
+      "cr431_name": "Name",
+      "cr431_Product": "Product",
+      "cr431_productimages_AsyncOperations": "System Jobs",
+      "cr431_productimages_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_productimages_DuplicateBaseRecord": "Duplicate Records (cr431_productimages_DuplicateBaseRecord)",
+      "cr431_productimages_DuplicateMatchingRecord": "Duplicate Records (cr431_productimages_DuplicateMatchingRecord)",
+      "cr431_productimages_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_productimages_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_productimages_ProcessSession": "Process Sessions",
+      "cr431_productimages_SyncErrors": "Sync Errors",
+      "cr431_productimagesid": "Product Images",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Product Images",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Product Images (Views)",
+    "Name": "_cr431_productimages_views",
+    "RelatedEntityName": "Product Images",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "5a752290-9f71-49ab-bc3e-48e1c8e6a8ee": "Product Images Lookup View",
+      "5bbe249b-de9c-4e8d-9d74-da4b12ed17ce": "Active Product Images",
+      "9b38bc77-dbf6-4bd0-9cc3-4ca542737704": "Product Images Associated View",
+      "a0bf1a4b-d020-44d7-a260-e0f26932462d": "Product Images Advanced Find View",
+      "cd2ba8cb-2bfe-486b-aa8a-61dde32d6e16": "Inactive Product Images"
+    }
+  },
+  {
+    "DisplayName": "Status (Product Images)",
+    "Name": "cr431_productimages_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Product Images"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Product Images",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Product Images)",
+    "Name": "cr431_productimages_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Product Images"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Product Images",
+    "Type": "OptionSetInfo"
+  }
+]

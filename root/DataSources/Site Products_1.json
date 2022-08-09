@@ -1,0 +1,100 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_siteproductses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_siteproducts",
+    "MaxGetRowsCount": 500,
+    "Name": "Site Products_1",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_name": "Site Product ID",
+      "cr431_Product": "Product",
+      "cr431_quantity": "Quantity",
+      "cr431_Site": "Site",
+      "cr431_siteproducts_AsyncOperations": "System Jobs",
+      "cr431_siteproducts_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_siteproducts_DuplicateBaseRecord": "Duplicate Records (cr431_siteproducts_DuplicateBaseRecord)",
+      "cr431_siteproducts_DuplicateMatchingRecord": "Duplicate Records (cr431_siteproducts_DuplicateMatchingRecord)",
+      "cr431_siteproducts_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_siteproducts_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_siteproducts_ProcessSession": "Process Sessions",
+      "cr431_siteproducts_SyncErrors": "Sync Errors",
+      "cr431_siteproductsid": "Site Products",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Site Products_1",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Site Products_1 (Views)",
+    "Name": "_cr431_siteproducts_views",
+    "RelatedEntityName": "Site Products_1",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "5a996fc5-689b-48de-8daa-df1198dab6f1": "Active Site Products",
+      "6211ac5b-0218-40f0-bf1f-998464d926a1": "Site Products Associated View",
+      "bc0a3632-3b85-442c-aecf-6a21dc535045": "Inactive Site Products",
+      "f160ee9a-9898-46a8-b3f5-3b629ccc3a24": "Site Products Lookup View",
+      "fc177f4b-00b6-4652-95e3-acda7ad06ba5": "Site Products Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Status (Site Products_1)",
+    "Name": "cr431_siteproducts_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Site Products_1"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Site Products_1",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Site Products_1)",
+    "Name": "cr431_siteproducts_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Site Products_1"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Site Products_1",
+    "Type": "OptionSetInfo"
+  }
+]

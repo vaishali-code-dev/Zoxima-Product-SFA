@@ -1,0 +1,88 @@
+App As appinfo:
+    BackEnabled: =true
+    ConfirmExit: =true
+    ConfirmExitMessage: ="Do you want to exit?"
+    OnStart: |
+        =//For Attendance Marking, Setting Variable (Start for "Not start day", end for "Started day but not ended", done for "started and ended your day"
+        ClearCollect(DealerData, LookUp(Accounts, Email = User().Email));
+        If(
+            IsBlank(
+                LookUp(
+                    Attendences,
+                    IsToday('Attendance Date') && 'Created By'.User = LookUp(
+                        Users,
+                        'Primary Email' = User().Email
+                    ).User
+                )
+            ),
+            Set(
+                varAttendance,
+                "start"
+            ),
+            IsBlank(
+                LookUp(
+                    Attendences,
+                    IsToday('Attendance Date') && 'Created By'.User = LookUp(
+                        Users,
+                        'Primary Email' = User().Email
+                    ).User
+                ).'End Time'
+            ),
+            Set(
+                varAttendance,
+                "end"
+            ),
+            Set(
+                varAttendance,
+                "done"
+            )
+        );
+        Set(
+            CurrentUserEmail,
+            User().Email
+        );
+        ClearCollect(PrimaryCart,[]);
+        ClearCollect(
+            SalesTerritoryAndUserMappingRecord,
+            LookUp(
+                'Sales Territory and User Mappings',
+                'Sales User'.'Primary Email' = CurrentUserEmail
+            ).'Sales Territory'
+        );
+        ClearCollect(
+            AreaAccounts,
+            Filter(
+                Accounts,
+                Area.'Sales Territory' = First(SalesTerritoryAndUserMappingRecord).'Sales Territory'
+            )
+        );
+        ClearCollect(
+            Subordinates,
+            ShowColumns(
+                Filter(
+                    Users,
+                    Manager.'Primary Email' = CurrentUserEmail
+                ),
+                "fullname",
+                "systemuserid",
+                "internalemailaddress"
+            )
+        );
+        ClearCollect(
+            CustomBrandVisitInfo,
+            {
+                index: 1,
+                brand: "",
+                perc: "",
+                value: ""
+            }
+        );
+        Set(
+            glbEnvURL,
+            LookUp(
+                'Environment Variable Values',
+                'Environment Variable Definition'.'Schema Name' = "cr431_EnviormentUrl"
+            ).Value
+        );
+    StartScreen: ='Start Screen'
+

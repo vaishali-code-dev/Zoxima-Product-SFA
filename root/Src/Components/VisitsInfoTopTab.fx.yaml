@@ -1,0 +1,100 @@
+VisitsInfoTopTab As CanvasComponent:
+    Fill: =RGBA(65, 76, 96, 1)
+    Height: =61
+    TabItems: |-
+        =Table(
+            {
+                Title: "Visit Info",
+               Screen: 'Start visit',
+                Active: true
+            },
+            {
+                Title: "Book Order",
+                Screen: 'Visit Products',
+                Active: false
+            },
+            {
+                Title: Concatenate(
+                    "Cart ",
+                    "(",
+                    CountRows(PrimaryCart),
+                    ")"
+                ),
+             Screen: 'Visit Cart',
+                Active: false
+            },
+             {
+                Title: "Marketing Material",
+               Screen: 'Visit Marketing',
+                Active: false
+            },
+             {
+                Title: "Training",
+               Screen: 'Visit Training',
+                Active: false
+            },
+            {
+                Title: "Stock",
+               Screen: Inventory,
+                Active: false
+            },
+        
+            {
+                Title: "Tickets",
+                Screen: 'Create Complaint',
+                Active: false
+            },
+             {
+                Title: "Sites",
+                Screen: 'Create Site',
+                Active: false
+            },
+            {
+                Title: "Visit History",
+                Screen: 'Visit History',
+                Active: false
+            }
+        )
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Gallery1_10 As gallery.galleryHorizontal:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Height: =61
+        Items: =VisitsInfoTopTab.TabItems
+        ShowScrollbar: =false
+        TemplateSize: =163
+        ZIndex: =1
+
+        Rectangle6 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: |-
+                =If(ThisItem.Active, ColorValue("#A00002"), RGBA(103, 204, 107, 0.1))
+            FocusedBorderThickness: =4
+            Height: =51
+            HoverFill: =RGBA(73, 130, 5, 1)
+            OnSelect: =Select(Parent)
+            PressedFill: =RGBA(73, 130, 5, 1)
+            Width: =163
+            X: =9
+            ZIndex: =1
+
+        Label8_10 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =If(ThisItem.Active, White, White)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            OnSelect: =Navigate(ThisItem.Screen)
+            Size: =15
+            Text: =ThisItem.Title
+            Width: =172
+            Y: =1
+            ZIndex: =2
+

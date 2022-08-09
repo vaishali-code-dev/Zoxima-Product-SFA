@@ -1,0 +1,3093 @@
+"Home As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    Fill: =RGBA(31, 31, 31, 1)
+    LoadingSpinnerColor: =RGBA(255, 200, 61, 1)
+    OnVisible: |
+        =Set(
+            varOpen,
+            false
+        );
+        Set(
+            DashboardDate,
+            Today()
+        );
+        Set(
+            DashboardWeek,
+            WeekNum(Today())
+        );
+        Set(
+            DashboardMonth,
+            Month(Today())
+        );
+        Set(
+            totalDistance,
+            0
+        );
+        ClearCollect(
+            saynotowalk,
+            ForAll(
+                Filter(
+                    Visits_1,
+                    'Created By'.'Primary Email' = User().Email && 'Visit Date' = DashboardDate && status = 'status (Visits_1)'.Completed
+                ),
+                totalDistance = totalDistance + With(
+                    {
+                        r: 6371,
+                        p: (Pi() / 180),
+                        latA: ThisRecord.'Check-in Latitude',
+                        lonA: ThisRecord.'Check- In Longitude',
+                        latB: ThisRecord.'Check-out Latitude',
+                        lonB: ThisRecord.'Check-out Longitude'
+                    },
+                    Round(
+                        (2 * r) * Asin(Sqrt(0.5 - Cos((latA - latB) * p)/2 + Cos(latB * p) * Cos(latA * p) * (1 - Cos((lonA - lonB) * p)) / 2)),
+                        2
+                    )
+                )
+            )
+        );
+        //FOR PRIMARY SALES DATA IN DASHBOARDS
+        Set(
+            PrimarySalesAchieve,
+            Filter(
+                SalesOrders,
+                'Created By'.'Primary Email' = User().Email && 'Order Date' = DateTimeValue(daySelected.Text)
+            ).'To Order Amount'
+        );
+        Set(
+            PrimarySalesDataForDashboardWeekly,
+            Filter(
+                SalesOrders,
+                'Created By'.'Primary Email' = User().Email && 'Order Date' > Today() - 7
+            ).'To Order Amount'
+        );
+        Set(
+            PrimarySalesDataForDashboardMonthly,
+            Filter(
+                SalesOrders,
+                'Created By'.'Primary Email' = User().Email && 'Order Type' = [@'Order Type1'].'Primary Order' && If(
+                    And(
+                        Year(DateValue('Order Date')) = Year(Now()),
+                        Month(DateValue('Order Date')) = Month(Now())
+                    ),
+                    1,
+                    0
+                )
+            ).'To Order Amount'
+        );
+        //FOR SECONDARY SALES DATA IN DASHBOARDS
+        Set(
+            SecondarySalesDataForDashboardToday,
+            Filter(
+                SalesOrders,
+                'Created By'.'Primary Email' = User().Email && 'Order Type' = [@'Order Type1'].'Secondary Order' && IsToday('Order Date')
+            ).'To Order Amount'
+        );
+        Set(
+            SecondarySalesDataForDashboardWeekly,
+            Filter(
+                SalesOrders,
+                'Created By'.'Primary Email' = User().Email && 'Order Type' = [@'Order Type1'].'Secondary Order' && 'Order Date' > Today() - 7
+            ).'To Order Amount'
+        );
+        Set(
+            SecondarySalesDataForDashboardMonthly,
+            Filter(
+                SalesOrders,
+                'Created By'.'Primary Email' = User().Email && 'Order Type' = [@'Order Type1'].'Secondary Order' && If(
+                    And(
+                        Year(DateValue('Order Date')) = Year(Now()),
+                        Month(DateValue('Order Date')) = Month(Now())
+                    ),
+                    1,
+                    0
+                )
+            ).'To Order Amount'
+        );
+        //FOR VISITS DATA IN DASHBOARDS
+        Set(
+            TotalVisitsForDashboard,
+            Filter(
+                Visits_1,
+                IsToday('Visit Date') && 'Created By'.User = LookUp(
+                    Users,
+                    'Primary Email' = User().Email
+                ).User
+            )
+        );
+        Set(
+            TotalVisitsForDashboardPlanned,
+            Filter(
+                Visits_1,
+                'Created By'.User = LookUp(
+                    Users,
+                    'Primary Email' = User().Email
+                ).User && IsToday('Visit Date') && 'Visit Type' = 'Visit Type (Visits_1)'.Planned
+            )
+        );
+        Set(
+            TotalVisitsForDashboardUnplanned,
+            Filter(
+                Visits_1,
+                'Created By'.User = LookUp(
+                    Users,
+                    'Primary Email' = User().Email
+                ).User && IsToday('Visit Date') && 'Visit Type' = 'Visit Type (Visits_1)'.Unplanned
+            )
+        );
+
+    Canvas1 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =1041
+        Width: =Parent.Width
+        Y: =
+        ZIndex: =2
+
+        DataCard1 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =1542
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            HtmlText1_16 As htmlViewer:
+                Color: =RGBA(103, 204, 107, 1)
+                Height: =334
+                HtmlText: |-
+                    ="<div style='border-radius:0; background-color:#414C60; width:640px; height:330px'></div>"
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Width: =640
+                ZIndex: =7
+
+            Group9 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =51
+
+                HtmlText1_17 As htmlViewer:
+                    BorderThickness: =1
+                    Height: =343
+                    HtmlText: |-
+                        ="<div style='border-radius:10px; background-color:#FFF; width:500px; height:300px; box-shadow:rgba(0, 0, 0, 0.24) 0px 3px 8px;'></div>"
+                    PaddingBottom: =0
+                    PaddingLeft: =10
+                    PaddingRight: =0
+                    PaddingTop: =10
+                    Width: =514
+                    X: =57
+                    Y: =71
+                    ZIndex: =22
+
+                Image1_1 As image:
+                    BorderColor: =RGBA(204, 204, 204, 1)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =85
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Image: =User().Image
+                    ImagePosition: =ImagePosition.Fill
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    RadiusBottomLeft: =50
+                    RadiusBottomRight: =50
+                    RadiusTopLeft: =50
+                    RadiusTopRight: =50
+                    Width: =85
+                    X: =92
+                    Y: =104
+                    ZIndex: =23
+
+                Label3_2 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(116, 116, 116, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    FontWeight: =FontWeight.Semibold
+                    Height: =81
+                    OnSelect: =
+                    Size: =19
+                    Text: =User().FullName
+                    Width: =226
+                    X: =189
+                    Y: =91
+                    ZIndex: =24
+
+                Label4_8 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(121, 121, 121, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    Height: =36
+                    Size: =13
+                    Text: ="Attendance Type"
+                    X: =98
+                    Y: =197
+                    ZIndex: =26
+
+                Label4_10 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(121, 121, 121, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    Height: =36
+                    Size: =13
+                    Text: ="Total Hours Worked"
+                    Width: =180
+                    X: =369
+                    Y: =197
+                    ZIndex: =27
+
+                "'total hours' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(65, 76, 96, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    Size: =17
+                    Text: |-
+                        =If(
+                            IsBlank(
+                                LookUp(
+                                    Attendences,
+                                    IsToday('Attendance Date') && 'Created By'.User = LookUp(
+                                        Users,
+                                        'Primary Email' = User().Email
+                                    ).User
+                                ).'End Time'),
+                                 DateDiff(
+                                LookUp(
+                                    Attendences,
+                                    IsToday('Attendance Date') && 'Created By'.User = LookUp(
+                                        Users,
+                                        'Primary Email' = User().Email
+                                    ).User
+                                ).'Start Time',
+                                Now(), Hours
+                            )  ,DateDiff(
+                                LookUp(
+                                    Attendences,
+                                    IsToday('Attendance Date') && 'Created By'.User = LookUp(
+                                        Users,
+                                        'Primary Email' = User().Email
+                                    ).User
+                                ).'Start Time',
+                                LookUp(
+                                    Attendences,
+                                    IsToday('Attendance Date') && 'Created By'.User = LookUp(
+                                        Users,
+                                        'Primary Email' = User().Email
+                                    ).User
+                                ).'End Time',
+                                Hours
+                            )
+                            
+                        )
+                    Width: =180
+                    X: =369
+                    Y: =226
+                    ZIndex: =28
+
+                Label4_12 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(121, 121, 121, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    Height: =36
+                    Size: =13
+                    Text: ="Day Started At"
+                    X: =98
+                    Y: =281
+                    ZIndex: =29
+
+                "'day started' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(65, 76, 96, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    Size: =17
+                    Text: |-
+                        =If(
+                            !IsBlank(
+                                LookUp(
+                                    Attendences,
+                                    IsToday('Attendance Date') && 'Created By'.User = LookUp(
+                                        Users,
+                                        'Primary Email' = User().Email
+                                    ).User
+                                ).'Start Time'
+                            ),
+                            Text(
+                                LookUp(
+                                    Attendences,
+                                    IsToday('Attendance Date') && 'Created By'.User = LookUp(
+                                        Users,
+                                        'Primary Email' = User().Email
+                                    ).User
+                                ).'Start Time',
+                                "hh:mm AM/PM"
+                            ),
+                            "No Record"
+                        )
+                    Width: =126
+                    X: =98
+                    Y: =314
+                    ZIndex: =30
+
+                Label4_14 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(121, 121, 121, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    Height: =36
+                    Size: =13
+                    Text: ="Day Ended At"
+                    X: =369
+                    Y: =281
+                    ZIndex: =31
+
+                "'day ended' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(65, 76, 96, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =32
+                    OnSelect: =Navigate(Screen1)
+                    Size: =17
+                    Text: |-
+                        =If(!IsBlank(LookUp(
+                                Attendences,
+                                IsToday('Attendance Date') && 'Created By'.User = LookUp(
+                                    Users,
+                                    'Primary Email' = User().Email
+                                ).User
+                            ).'End Time'),
+                        
+                        Text(
+                            LookUp(
+                                Attendences,
+                                IsToday('Attendance Date') && 'Created By'.User = LookUp(
+                                    Users,
+                                    'Primary Email' = User().Email
+                                ).User
+                            ).'End Time',
+                            "hh:mm AM/PM"
+                        ), "No Record")
+                    Width: =124
+                    X: =369
+                    Y: =317
+                    ZIndex: =32
+
+                Label3_4 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(242, 123, 68, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =25
+                    Size: =13
+                    Text: =Text(Today(), "dd mmm yyyy")
+                    Width: =143
+                    X: =408
+                    Y: =129
+                    ZIndex: =45
+
+                HtmlText1_23 As htmlViewer:
+                    DisplayMode: =DisplayMode.View
+                    Height: =51
+                    HtmlText: |-
+                        ="<div style='border-radius:10px; background-color:#F27B44; opacity: 0.2; width:140px; height:35px; box-shadow:rgba(0, 0, 0, 0.24) 0px 3px 8px;'></div>"
+                    Width: =155
+                    X: =403
+                    Y: =119
+                    ZIndex: =46
+
+                Type As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(65, 76, 96, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    Size: =17
+                    Text: ="Present"
+                    Width: =126
+                    X: =98
+                    Y: =230
+                    ZIndex: =47
+
+            "'Dashboard Toptab' As gallery.galleryHorizontal":
+                BorderColor: =RGBA(109, 109, 109, 1)
+                Height: =61
+                Items: |-
+                    =Table(
+                        {Title: "DAY"},
+                        {Title: "WEEK"},
+                        {Title: "MONTH"}
+                    )
+                OnSelect: =
+                ShowScrollbar: =false
+                TemplateSize: =194
+                Width: =605
+                X: =8
+                Y: =469
+                ZIndex: =54
+
+                Rectangle3_2 As rectangle:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    DisabledFill: =RGBA(166, 166, 166, 1)
+                    Fill: |-
+                        =If(ThisItem.IsSelected, ColorValue("#A00002"), RGBA(103, 204, 107, 0.1))
+                    FocusedBorderThickness: =4
+                    Height: =46
+                    HoverFill: =RGBA(103, 204, 107, 0.28)
+                    OnSelect: =Select(Parent)
+                    PressedFill: =RGBA(103, 204, 107, 0.25)
+                    Width: =185
+                    X: =8
+                    ZIndex: =1
+
+                Label2_48 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =If(ThisItem.IsSelected, White, RGBA(237,237,237, 1))
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =46
+                    OnSelect: =
+                    Size: =18
+                    Text: =ThisItem.Title
+                    Width: =185
+                    X: =8
+                    ZIndex: =3
+
+            Image1_2 As image:
+                BorderColor: =RGBA(204, 204, 204, 1)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =50
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: =User().Image
+                ImagePosition: =ImagePosition.Fill
+                OnSelect: =Navigate(Profile)
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                RadiusBottomLeft: =50
+                RadiusBottomRight: =50
+                RadiusTopLeft: =50
+                RadiusTopRight: =50
+                Width: =50
+                X: =570
+                Y: =14
+                ZIndex: =56
+
+            Image1 As image:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =57
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: ='logo zxsfa'
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =131
+                X: =255
+                Y: =11
+                ZIndex: =57
+
+            Label4_9 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(121, 121, 121, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.Lato
+                Height: =36
+                PaddingLeft: =0
+                Size: =13
+                Text: =If(IsBlank(LookUp(Users, 'Primary Email' = User().Email).Manager), "Manager", "Salesperson")
+                X: =198
+                Y: =149
+                ZIndex: =58
+
+            Button31 As button:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =RGBA(184, 0, 0, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =50
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(31, 31, 31, 1)
+                HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+                PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+                PressedColor: =RGBA(31, 31, 31, 1)
+                PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =22
+                Text: ="SALES REPORT"
+                Width: =640
+                Y: =407
+                ZIndex: =59
+
+            Rectangle18 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledFill: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(149, 212, 224, 0.3)
+                FocusedBorderThickness: =4
+                Height: =62
+                HoverFill: =RGBA(65, 76, 96, 1)
+                PressedFill: =RGBA(65, 76, 96, 1)
+                Width: =640
+                Y: =538
+                ZIndex: =60
+
+            Button31_1 As button:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =RGBA(65, 76, 96, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Fill: =RGBA(255, 200, 61, 1)
+                FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =52
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(31, 31, 31, 1)
+                HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+                PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+                PressedColor: =RGBA(31, 31, 31, 1)
+                PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                Size: =20
+                Text: ="ORDER INFORMATION"
+                Width: =572
+                X: =24
+                Y: =623
+                ZIndex: =66
+
+            Group1 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =66
+
+                Button32_2 As button:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(65, 76, 96, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Bold
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(31, 31, 31, 1)
+                    HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+                    OnSelect: =Set(DashboardDate, DashboardDate+1)
+                    PaddingBottom: =10
+                    PaddingLeft: =1
+                    PaddingRight: =3
+                    PaddingTop: =0
+                    PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+                    PressedColor: =RGBA(31, 31, 31, 1)
+                    PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    RadiusBottomLeft: =100
+                    RadiusBottomRight: =100
+                    RadiusTopLeft: =100
+                    RadiusTopRight: =100
+                    Size: =30
+                    Text: =">"
+                    Visible: =If('Dashboard Toptab'.Selected.Title="DAY", true, false)
+                    Width: =40
+                    X: =504
+                    Y: =549
+                    ZIndex: =63
+
+                Button32_3 As button:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(65, 76, 96, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Bold
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(31, 31, 31, 1)
+                    HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+                    OnSelect: |-
+                        =Set(
+                            DashboardDate,
+                            DashboardDate - 1
+                        )
+                    PaddingBottom: =10
+                    PaddingLeft: =1
+                    PaddingRight: =3
+                    PaddingTop: =0
+                    PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+                    PressedColor: =RGBA(31, 31, 31, 1)
+                    PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    RadiusBottomLeft: =100
+                    RadiusBottomRight: =100
+                    RadiusTopLeft: =100
+                    RadiusTopRight: =100
+                    Size: =30
+                    Text: ="<"
+                    Visible: =If('Dashboard Toptab'.Selected.Title="DAY", true, false)
+                    Width: =40
+                    X: =96
+                    Y: =548
+                    ZIndex: =64
+
+                daySelected As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =62
+                    Size: =21
+                    Text: =Text(DashboardDate, "dd mmm yyyy")
+                    Visible: =If('Dashboard Toptab'.Selected.Title="DAY", true, false)
+                    Width: =314
+                    X: =164
+                    Y: =538
+                    ZIndex: =65
+
+            Button31_2 As button:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =RGBA(65, 76, 96, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Fill: =RGBA(255, 200, 61, 1)
+                FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =52
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(31, 31, 31, 1)
+                HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+                PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+                PressedColor: =RGBA(31, 31, 31, 1)
+                PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                Size: =20
+                Text: ="VISIT INFORMATION"
+                Width: =572
+                X: =28
+                Y: =879
+                ZIndex: =79
+
+            Group8 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =79
+
+                HtmlText1_187 As htmlViewer:
+                    DisplayMode: =DisplayMode.View
+                    Height: =162
+                    HtmlText: |-
+                        ="<div style='border-radius:10px; background-color:#95D4E0; width:190px;opacity: 0.3; height:150px;'></div>"
+                    Width: =204
+                    X: =416
+                    Y: =697
+                    ZIndex: =69
+
+                Label2_285 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 200, 61, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =44
+                    Size: =18
+                    Text: |-
+                        =If(
+                            'Dashboard Toptab'.Selected.Title = "DAY",
+                            CountRows(
+                                Filter(
+                                    'Order Line',
+                                    'Created By'.'Primary Email' = User().Email && DateValue('Created On') = DashboardDate && 'Promoted product' = 'Promoted product (Order Line)'.Yes
+                                )
+                            ) & "/" & Round(
+                                ((LookUp(
+                                    'SP Targets',
+                                    'Sales Person'.'Primary Email' = User().Email && Text(
+                                        Today(),
+                                        "mm"
+                                    ) = 0 & Month
+                                ) ).'Promoted Products Target') / 30,
+                                0
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "WEEK",
+                            CountRows(
+                                Filter(
+                                    'Order Line',
+                                    'Created By'.'Primary Email' = User().Email && WeekNum('Created On') = DashboardWeek && 'Promoted product' = 'Promoted product (Order Line)'.Yes
+                                )
+                            ) & "/" & Round(
+                                ((LookUp(
+                                    'SP Targets',
+                                    'Sales Person'.'Primary Email' = User().Email && Text(
+                                        Today(),
+                                        "mm"
+                                    ) = 0 & Month
+                                ) ).'Promoted Products Target') / 4,
+                                0
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "MONTH",
+                            CountRows(
+                                Filter(
+                                    'Order Line',
+                                    'Created By'.'Primary Email' = User().Email && Month('Created On') = DashboardMonth && 'Promoted product' = 'Promoted product (Order Line)'.Yes
+                                )
+                            ) & "/" & Round(
+                                ((LookUp(
+                                    'SP Targets',
+                                    'Sales Person'.'Primary Email' = User().Email && Text(
+                                        Today(),
+                                        "mm"
+                                    ) = 0 & Month
+                                ) ).'Promoted Products Target'),
+                                0
+                            )
+                        )
+                    Width: =133
+                    X: =453
+                    Y: =748
+                    ZIndex: =74
+
+                Label2_286 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =44
+                    Size: =11
+                    Text: ="Promoted Products"
+                    Width: =173
+                    X: =428
+                    Y: =704
+                    ZIndex: =75
+
+            Button31_3 As button:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =RGBA(65, 76, 96, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Fill: =RGBA(255, 200, 61, 1)
+                FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =52
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(31, 31, 31, 1)
+                HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+                PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+                PressedColor: =RGBA(31, 31, 31, 1)
+                PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                Size: =20
+                Text: ="MARKETING / MISCELLENEOUS"
+                Width: =572
+                X: =27
+                Y: =1075
+                ZIndex: =92
+
+            Group2_1 As group:
+                Height: =5
+                Width: =5
+                X: =20
+                Y: =-583
+                ZIndex: =92
+
+                HtmlText1_188 As htmlViewer:
+                    DisplayMode: =DisplayMode.View
+                    Height: =163
+                    HtmlText: |-
+                        ="<div style='border-radius:10px; background-color:#95D4E0; opacity: 0.3; width:170px; height:100px; '></div>"
+                    Width: =181
+                    X: =24
+                    Y: =944
+                    ZIndex: =80
+
+                Label2_290 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 200, 61, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =44
+                    Size: =18
+                    Text: |-
+                        =If(
+                            'Dashboard Toptab'.Selected.Title = "DAY",
+                            CountRows(
+                                Filter(
+                                    Visits_1,
+                                    'Created By'.'Primary Email' = User().Email && 'Visit Date' = DashboardDate && status = 'status (Visits_1)'.Completed
+                                )
+                            ) & "/" & CountRows(
+                                Filter(
+                                    Visits_1,
+                                    'Created By'.'Primary Email' = User().Email && 'Visit Date' = DashboardDate
+                                )
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "WEEK",
+                            CountRows(
+                                Filter(
+                                    Visits_1,
+                                    'Created By'.'Primary Email' = User().Email && WeekNum('Visit Date') = DashboardWeek && status = 'status (Visits_1)'.Completed
+                                )
+                            ) & "/" & CountRows(
+                                Filter(
+                                    Visits_1,
+                                    'Created By'.'Primary Email' = User().Email && WeekNum('Visit Date') = DashboardWeek
+                                )
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "MONTH",
+                            CountRows(
+                                Filter(
+                                    Visits_1,
+                                    'Created By'.'Primary Email' = User().Email && Month('Visit Date') = DashboardMonth && status = 'status (Visits_1)'.Completed
+                                )
+                            ) & "/" & CountRows(
+                                Filter(
+                                    Visits_1,
+                                    'Created By'.'Primary Email' = User().Email && Month('Visit Date') = DashboardMonth
+                                )
+                            )
+                        )
+                    Width: =121
+                    X: =54
+                    Y: =991
+                    ZIndex: =83
+
+                Label2_291 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =44
+                    Size: =11
+                    Text: ="No. of Visits"
+                    Width: =158
+                    X: =36
+                    Y: =951
+                    ZIndex: =84
+
+            Group3_1 As group:
+                Height: =5
+                Width: =5
+                X: =20
+                Y: =-583
+                ZIndex: =93
+
+                HtmlText1_189 As htmlViewer:
+                    DisplayMode: =DisplayMode.View
+                    Height: =162
+                    HtmlText: |-
+                        ="<div style='border-radius:10px; background-color:#95D4E0; opacity: 0.3; width:170px; height:100px;'></div>"
+                    Width: =185
+                    X: =223
+                    Y: =945
+                    ZIndex: =81
+
+                Label2_293 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 200, 61, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =44
+                    Size: =18
+                    Text: |-
+                        =If(
+                            'Dashboard Toptab'.Selected.Title = "DAY",
+                           Round( Sum(
+                                Filter(
+                                    Visits_1,
+                                    'Created By'.'Primary Email' = User().Email && 'Visit Date' = DashboardDate && status = 'status (Visits_1)'.Completed
+                                ).'Visit Duration',
+                                'Visit Duration'
+                            ) / (CountRows(
+                                Filter(
+                                    Visits_1,
+                                    'Created By'.'Primary Email' = User().Email && 'Visit Date' = DashboardDate && status = 'status (Visits_1)'.Completed
+                                )
+                            ) * 60), 2),
+                            'Dashboard Toptab'.Selected.Title = "WEEK",
+                           Round( Sum(
+                                Filter(
+                                    Visits_1,
+                                    'Created By'.'Primary Email' = User().Email && WeekNum('Visit Date') = DashboardWeek && status = 'status (Visits_1)'.Completed
+                                ).'Visit Duration',
+                                'Visit Duration'
+                            ) / (CountRows(
+                                Filter(
+                                    Visits_1,
+                                    'Created By'.'Primary Email' = User().Email && WeekNum('Visit Date') = DashboardWeek && status = 'status (Visits_1)'.Completed
+                                )
+                            ) * 60), 2),
+                            'Dashboard Toptab'.Selected.Title = "MONTH",
+                            Round(Sum(
+                                Filter(
+                                    Visits_1,
+                                    'Created By'.'Primary Email' = User().Email && Month('Visit Date') = DashboardMonth && status = 'status (Visits_1)'.Completed
+                                ).'Visit Duration',
+                                'Visit Duration'
+                            ) / (CountRows(
+                                Filter(
+                                    Visits_1,
+                                    'Created By'.'Primary Email' = User().Email && Month('Visit Date') = DashboardMonth && status = 'status (Visits_1)'.Completed
+                                )
+                            ) * 60), 2)
+                        )
+                    Width: =121
+                    X: =254
+                    Y: =991
+                    ZIndex: =85
+
+                Label2_294 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =44
+                    Size: =11
+                    Text: ="Avg. Time (In Hrs)"
+                    Width: =170
+                    X: =230
+                    Y: =952
+                    ZIndex: =86
+
+            Group8_1 As group:
+                Height: =5
+                Width: =5
+                X: =20
+                Y: =-583
+                ZIndex: =94
+
+                HtmlText1_190 As htmlViewer:
+                    DisplayMode: =DisplayMode.View
+                    Height: =162
+                    HtmlText: |-
+                        ="<div style='border-radius:10px; background-color:#95D4E0; width:170px;opacity: 0.3; height:100px;'></div>"
+                    Width: =186
+                    X: =420
+                    Y: =945
+                    ZIndex: =82
+
+                Label2_296 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 200, 61, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =44
+                    Size: =18
+                    Text: |-
+                        =If(
+                            'Dashboard Toptab'.Selected.Title = "DAY",
+                            RandBetween(5,10),
+                            'Dashboard Toptab'.Selected.Title = "WEEK",
+                            RandBetween(20,30),
+                            'Dashboard Toptab'.Selected.Title = "MONTH",
+                         RandBetween(100,230)   
+                        )
+                    Width: =121
+                    X: =454
+                    Y: =991
+                    ZIndex: =87
+
+                Label2_297 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =44
+                    Size: =11
+                    Text: ="Km Travelled"
+                    Width: =158
+                    X: =431
+                    Y: =952
+                    ZIndex: =88
+
+            Button31_4 As button:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =RGBA(65, 76, 96, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Fill: =RGBA(255, 200, 61, 1)
+                FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =52
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(31, 31, 31, 1)
+                HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+                PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+                PressedColor: =RGBA(31, 31, 31, 1)
+                PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                Size: =20
+                Text: ="TICKETS"
+                Width: =572
+                X: =22
+                Y: =1269
+                ZIndex: =105
+
+            Group2_5 As group:
+                Height: =5
+                Width: =5
+                X: =16
+                Y: =-839
+                ZIndex: =105
+
+                HtmlText1_191 As htmlViewer:
+                    DisplayMode: =DisplayMode.View
+                    Height: =113
+                    HtmlText: |-
+                        ="<div style='border-radius:10px; background-color:#95D4E0; opacity: 0.3; width:170px; height:100px; '></div>"
+                    Width: =181
+                    X: =23
+                    Y: =1140
+                    ZIndex: =93
+
+                Label2_299 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 200, 61, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =44
+                    Size: =18
+                    Text: |-
+                        =If(
+                            'Dashboard Toptab'.Selected.Title = "DAY",
+                            CountRows(
+                                Filter(
+                                    'Marketing Materials',
+                                    'Created By'.'Primary Email' = User().Email && DateValue('Created On') = DashboardDate
+                                )
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "WEEK",
+                            CountRows(
+                                Filter(
+                                    'Marketing Materials',
+                                    'Created By'.'Primary Email' = User().Email && WeekNum('Created On') = DashboardWeek
+                                )
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "MONTH",
+                            CountRows(
+                                Filter(
+                                    'Marketing Materials',
+                                    'Created By'.'Primary Email' = User().Email && Month('Created On') = DashboardMonth
+                                )
+                            )
+                        )
+                    Width: =121
+                    X: =53
+                    Y: =1187
+                    ZIndex: =96
+
+                Label2_300 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =44
+                    Size: =11
+                    Text: ="Total Requests"
+                    Width: =158
+                    X: =35
+                    Y: =1147
+                    ZIndex: =97
+
+            Group3_5 As group:
+                Height: =5
+                Width: =5
+                X: =16
+                Y: =-839
+                ZIndex: =106
+
+                HtmlText1_192 As htmlViewer:
+                    DisplayMode: =DisplayMode.View
+                    Height: =112
+                    HtmlText: |-
+                        ="<div style='border-radius:10px; background-color:#95D4E0; opacity: 0.3; width:170px; height:100px;'></div>"
+                    Width: =185
+                    X: =222
+                    Y: =1141
+                    ZIndex: =94
+
+                Label2_303 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 200, 61, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =44
+                    Size: =18
+                    Text: |-
+                        =If(
+                            'Dashboard Toptab'.Selected.Title = "DAY",
+                            CountRows(
+                                Filter(
+                                    'Marketing Materials',
+                                    'Created By'.'Primary Email' = User().Email && 'Created On' = DashboardDate && 'Status (cr431_status)' = 'MM choice'.pending
+                                )
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "WEEK",
+                            CountRows(
+                                Filter(
+                                    'Marketing Materials',
+                                    'Created By'.'Primary Email' = User().Email && WeekNum('Created On') = DashboardWeek && 'Status (cr431_status)' = 'MM choice'.pending
+                                )
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "MONTH",
+                            CountRows(
+                                Filter(
+                                    'Marketing Materials',
+                                    'Created By'.'Primary Email' = User().Email && Month('Created On') = DashboardMonth && 'Status (cr431_status)' = 'MM choice'.pending
+                                )
+                            )
+                        )
+                    Width: =121
+                    X: =253
+                    Y: =1187
+                    ZIndex: =98
+
+                Label2_304 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =44
+                    Size: =11
+                    Text: ="Pending"
+                    Width: =170
+                    X: =229
+                    Y: =1148
+                    ZIndex: =99
+
+            Group8_2 As group:
+                Height: =5
+                Width: =5
+                X: =16
+                Y: =-839
+                ZIndex: =107
+
+                HtmlText1_193 As htmlViewer:
+                    DisplayMode: =DisplayMode.View
+                    Height: =112
+                    HtmlText: |-
+                        ="<div style='border-radius:10px; background-color:#95D4E0; width:170px;opacity: 0.3; height:100px;'></div>"
+                    Width: =186
+                    X: =419
+                    Y: =1141
+                    ZIndex: =95
+
+                Label2_306 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 200, 61, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =44
+                    Size: =18
+                    Text: |-
+                        =If(
+                            'Dashboard Toptab'.Selected.Title = "DAY",
+                            CountRows(
+                                Filter(
+                                    'Marketing Materials',
+                                    'Created By'.'Primary Email' = User().Email && 'Created On' = DashboardDate && 'Status (cr431_status)' = 'MM choice'.approved
+                                )
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "WEEK",
+                            CountRows(
+                                Filter(
+                                    'Marketing Materials',
+                                    'Created By'.'Primary Email' = User().Email && WeekNum('Created On') = DashboardWeek && 'Status (cr431_status)' = 'MM choice'.approved
+                                )
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "MONTH",
+                            CountRows(
+                                Filter(
+                                    'Marketing Materials',
+                                    'Created By'.'Primary Email' = User().Email && Month('Created On') = DashboardMonth && 'Status (cr431_status)' = 'MM choice'.approved
+                                )
+                            )
+                        )
+                    Width: =121
+                    X: =453
+                    Y: =1187
+                    ZIndex: =100
+
+                Label2_307 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =44
+                    Size: =11
+                    Text: ="Approved"
+                    Width: =158
+                    X: =430
+                    Y: =1148
+                    ZIndex: =101
+
+            Group2_6 As group:
+                Height: =5
+                Width: =5
+                X: =17
+                Y: =-1099
+                ZIndex: =118
+
+                HtmlText1_194 As htmlViewer:
+                    DisplayMode: =DisplayMode.View
+                    Height: =120
+                    HtmlText: |-
+                        ="<div style='border-radius:10px; background-color:#95D4E0; opacity: 0.3; width:170px; height:100px; '></div>"
+                    Width: =181
+                    X: =18
+                    Y: =1334
+                    ZIndex: =106
+
+                Label2_309 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 200, 61, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =44
+                    Size: =18
+                    Text: |-
+                        =If(
+                            'Dashboard Toptab'.Selected.Title = "DAY",
+                            CountRows(
+                                Filter(
+                                    Complaints,
+                                    'Created By'.'Primary Email' = User().Email && 'Created On' = DashboardDate
+                                )
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "WEEK",
+                            CountRows(
+                                Filter(
+                                    Complaints,
+                                    'Created By'.'Primary Email' = User().Email && WeekNum('Created On') = DashboardWeek
+                                )
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "MONTH",
+                            CountRows(
+                                Filter(
+                                    Complaints,
+                                    'Created By'.'Primary Email' = User().Email && Month('Created On') = DashboardMonth
+                                )
+                            )
+                        )
+                    Width: =121
+                    X: =48
+                    Y: =1381
+                    ZIndex: =109
+
+                Label2_310 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =44
+                    Size: =11
+                    Text: ="Total Complaints"
+                    Width: =158
+                    X: =30
+                    Y: =1341
+                    ZIndex: =110
+
+            Group3_6 As group:
+                Height: =5
+                Width: =5
+                X: =17
+                Y: =-1099
+                ZIndex: =119
+
+                HtmlText1_195 As htmlViewer:
+                    DisplayMode: =DisplayMode.View
+                    Height: =119
+                    HtmlText: |-
+                        ="<div style='border-radius:10px; background-color:#95D4E0; opacity: 0.3; width:170px; height:100px;'></div>"
+                    Width: =185
+                    X: =217
+                    Y: =1335
+                    ZIndex: =107
+
+                Label2_312 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 200, 61, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =44
+                    Size: =18
+                    Text: |-
+                        =If(
+                            'Dashboard Toptab'.Selected.Title = "DAY",
+                            CountRows(
+                                Filter(
+                                    Complaints,
+                                    'Created By'.'Primary Email' = User().Email && 'Created On' = DashboardDate && status = 'status (Complaints)'.Pending
+                                )
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "WEEK",
+                            CountRows(
+                                Filter(
+                                    Complaints,
+                                    'Created By'.'Primary Email' = User().Email && WeekNum('Created On') = DashboardWeek && status = 'status (Complaints)'.Pending
+                                )
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "MONTH",
+                            CountRows(
+                                Filter(
+                                    Complaints,
+                                    'Created By'.'Primary Email' = User().Email && Month('Created On') = DashboardMonth && status = 'status (Complaints)'.Pending
+                                )
+                            )
+                        )
+                    Width: =121
+                    X: =248
+                    Y: =1381
+                    ZIndex: =111
+
+                Label2_313 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =44
+                    Size: =11
+                    Text: ="Pending"
+                    Width: =170
+                    X: =224
+                    Y: =1342
+                    ZIndex: =112
+
+            Group8_3 As group:
+                Height: =5
+                Width: =5
+                X: =17
+                Y: =-1099
+                ZIndex: =120
+
+                HtmlText1_196 As htmlViewer:
+                    DisplayMode: =DisplayMode.View
+                    Height: =119
+                    HtmlText: |-
+                        ="<div style='border-radius:10px; background-color:#95D4E0; width:170px;opacity: 0.3; height:100px;'></div>"
+                    Width: =186
+                    X: =414
+                    Y: =1335
+                    ZIndex: =108
+
+                Label2_315 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 200, 61, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =44
+                    Size: =18
+                    Text: |-
+                        =If(
+                            'Dashboard Toptab'.Selected.Title = "DAY",
+                            CountRows(
+                                Filter(
+                                    Complaints,
+                                    'Created By'.'Primary Email' = User().Email && 'Created On' = DashboardDate && status = 'status (Complaints)'.Resolved
+                                )
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "WEEK",
+                            CountRows(
+                                Filter(
+                                    Complaints,
+                                    'Created By'.'Primary Email' = User().Email && WeekNum('Created On') = DashboardWeek && status = 'status (Complaints)'.Resolved
+                                )
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "MONTH",
+                            CountRows(
+                                Filter(
+                                    Complaints,
+                                    'Created By'.'Primary Email' = User().Email && Month('Created On') = DashboardMonth && status = 'status (Complaints)'.Resolved
+                                )
+                            )
+                        )
+                    Width: =121
+                    X: =448
+                    Y: =1381
+                    ZIndex: =113
+
+                Label2_316 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =44
+                    Size: =11
+                    Text: ="Completed"
+                    Width: =158
+                    X: =425
+                    Y: =1342
+                    ZIndex: =114
+
+            Group1_1 As group:
+                Height: =5
+                Width: =5
+                X: =-56
+                Y: =-498
+                ZIndex: =121
+
+                Button32_5 As button:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(65, 76, 96, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Bold
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(31, 31, 31, 1)
+                    HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+                    OnSelect: |-
+                        =Set(
+                            DashboardWeek,
+                            DashboardWeek + 1
+                        )
+                    PaddingBottom: =10
+                    PaddingLeft: =1
+                    PaddingRight: =3
+                    PaddingTop: =0
+                    PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+                    PressedColor: =RGBA(31, 31, 31, 1)
+                    PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    RadiusBottomLeft: =100
+                    RadiusBottomRight: =100
+                    RadiusTopLeft: =100
+                    RadiusTopRight: =100
+                    Size: =30
+                    Text: =">"
+                    Visible: =If('Dashboard Toptab'.Selected.Title="WEEK", true, false)
+                    Width: =40
+                    X: =506
+                    Y: =549
+                    ZIndex: =118
+
+                Button32_4 As button:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(65, 76, 96, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Bold
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(31, 31, 31, 1)
+                    HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+                    OnSelect: |-
+                        =Set(
+                            DashboardWeek,
+                            DashboardWeek - 1
+                        )
+                    PaddingBottom: =10
+                    PaddingLeft: =1
+                    PaddingRight: =3
+                    PaddingTop: =0
+                    PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+                    PressedColor: =RGBA(31, 31, 31, 1)
+                    PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    RadiusBottomLeft: =100
+                    RadiusBottomRight: =100
+                    RadiusTopLeft: =100
+                    RadiusTopRight: =100
+                    Size: =30
+                    Text: ="<"
+                    Visible: =If('Dashboard Toptab'.Selected.Title="WEEK", true, false)
+                    Width: =40
+                    X: =98
+                    Y: =548
+                    ZIndex: =119
+
+                weekSelected As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =62
+                    Size: =21
+                    Text: ="Week " &DashboardWeek
+                    Visible: =If('Dashboard Toptab'.Selected.Title="WEEK", true, false)
+                    Width: =314
+                    X: =166
+                    Y: =538
+                    ZIndex: =120
+
+            Group1_4 As group:
+                Height: =5
+                Width: =5
+                X: =-58
+                Y: =-498
+                ZIndex: =124
+
+                Button32_7 As button:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(65, 76, 96, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Bold
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(31, 31, 31, 1)
+                    HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+                    OnSelect: =Set(DashboardMonth, DashboardMonth+1)
+                    PaddingBottom: =10
+                    PaddingLeft: =1
+                    PaddingRight: =3
+                    PaddingTop: =0
+                    PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+                    PressedColor: =RGBA(31, 31, 31, 1)
+                    PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    RadiusBottomLeft: =100
+                    RadiusBottomRight: =100
+                    RadiusTopLeft: =100
+                    RadiusTopRight: =100
+                    Size: =30
+                    Text: =">"
+                    Visible: =If('Dashboard Toptab'.Selected.Title="MONTH", true, false)
+                    Width: =40
+                    X: =504
+                    Y: =548
+                    ZIndex: =121
+
+                Button32_6 As button:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(65, 76, 96, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Bold
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(31, 31, 31, 1)
+                    HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+                    OnSelect: |-
+                        =Set(
+                            DashboardMonth,
+                            DashboardMonth - 1
+                        )
+                    PaddingBottom: =10
+                    PaddingLeft: =1
+                    PaddingRight: =3
+                    PaddingTop: =0
+                    PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+                    PressedColor: =RGBA(31, 31, 31, 1)
+                    PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    RadiusBottomLeft: =100
+                    RadiusBottomRight: =100
+                    RadiusTopLeft: =100
+                    RadiusTopRight: =100
+                    Size: =30
+                    Text: ="<"
+                    Visible: =If('Dashboard Toptab'.Selected.Title="MONTH", true, false)
+                    Width: =40
+                    X: =96
+                    Y: =547
+                    ZIndex: =122
+
+                monthSelected As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =62
+                    Size: =21
+                    Text: =Text(DateValue(DashboardMonth), "mmmm")
+                    Visible: =If('Dashboard Toptab'.Selected.Title="MONTH", true, false)
+                    Width: =314
+                    X: =164
+                    Y: =537
+                    ZIndex: =123
+
+            Group2 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =125
+
+                HtmlText1_130 As htmlViewer:
+                    DisplayMode: =DisplayMode.View
+                    Height: =163
+                    HtmlText: |-
+                        ="<div style='border-radius:10px; background-color:#95D4E0; opacity: 0.3; width:190px; height:150px; '></div>"
+                    Width: =204
+                    X: =6
+                    Y: =696
+                    ZIndex: =67
+
+                Label2_281 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 200, 61, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =36
+                    Size: =18
+                    Text: |-
+                        =If(
+                            'Dashboard Toptab'.Selected.Title = "DAY",
+                            If(
+                                Sum(
+                                    Filter(
+                                        SalesOrders,
+                                        'Created By'.'Primary Email' = User().Email && 'Order Date' = DashboardDate
+                                    ).'To Order Amount',
+                                    'To Order Amount'
+                                ) > 0,
+                                (Sum(
+                                    Filter(
+                                        SalesOrders,
+                                        'Created By'.'Primary Email' = User().Email && 'Order Date' = DateTimeValue(daySelected.Text)
+                                    ).'To Order Amount',
+                                    'To Order Amount'
+                                )/100000) & "/" & ((LookUp(
+                                    'SP Targets',
+                                    'Sales Person'.'Primary Email' = User().Email && Text(
+                                        Today(),
+                                        "mm"
+                                    ) = 0 & Month
+                                ) ).Target) / 3000000,
+                                0
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "WEEK",
+                            If(
+                                Sum(
+                                    Filter(
+                                        SalesOrders,
+                                        'Created By'.'Primary Email' = User().Email && WeekNum('Order Date') = DashboardWeek
+                                    ).'To Order Amount',
+                                    'To Order Amount'
+                                ) > 0,
+                                (Sum(
+                                    Filter(
+                                        SalesOrders,
+                                        'Created By'.'Primary Email' = User().Email && WeekNum('Order Date') = DashboardWeek
+                                    ).'To Order Amount',
+                                    'To Order Amount'
+                                )/100000) & "/" & ((LookUp(
+                                    'SP Targets',
+                                    'Sales Person'.'Primary Email' = User().Email && Text(
+                                        Today(),
+                                        "mm"
+                                    ) = 0 & Month
+                                ) ).Target) / 400000,
+                                0
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "MONTH",
+                            If(
+                                Sum(
+                                    Filter(
+                                        SalesOrders,
+                                        'Created By'.'Primary Email' = User().Email && Month('Order Date') = DashboardMonth
+                                    ).'To Order Amount',
+                                    'To Order Amount'
+                                ) > 0,
+                               ( Sum(
+                                    Filter(
+                                        SalesOrders,
+                                        'Created By'.'Primary Email' = User().Email && Month('Order Date') = DashboardMonth
+                                    ).'To Order Amount',
+                                    'To Order Amount'
+                                )/100000) & "/" & ((LookUp(
+                                    'SP Targets',
+                                    'Sales Person'.'Primary Email' = User().Email && Text(
+                                        Today(),
+                                        "mm"
+                                    ) = 0 & Month
+                                ) ).Target) /100000,
+                                0
+                            )
+                        )
+                    Width: =190
+                    X: =9
+                    Y: =748
+                    ZIndex: =70
+
+                Label2_282 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =44
+                    Size: =11
+                    Text: ="Order Value (In Lacs)"
+                    Width: =158
+                    X: =25
+                    Y: =703
+                    ZIndex: =71
+
+                Label2_287 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =44
+                    Size: =15
+                    Text: |-
+                        =If(
+                            'Dashboard Toptab'.Selected.Title = "DAY",
+                            Round(
+                                ((( Sum(
+                                    Filter(
+                                        SalesOrders,
+                                        'Created By'.'Primary Email' = User().Email && 'Order Date' = DashboardDate
+                                    ).'To Order Amount',
+                                    'To Order Amount'
+                                )) - ( ((LookUp(
+                                    'SP Targets',
+                                    'Sales Person'.'Primary Email' = User().Email && Text(
+                                        Today(),
+                                        "mm"
+                                    ) = 0 & Month
+                                ) ).Target)/30 )) / (((LookUp(
+                                    'SP Targets',
+                                    'Sales Person'.'Primary Email' = User().Email && Text(
+                                        Today(),
+                                        "mm"
+                                    ) = 0 & Month
+                                ) ).Target) / 30)) * 100,
+                                2
+                            ) & "%",
+                            'Dashboard Toptab'.Selected.Title = "WEEK",
+                            Round(
+                                ((( Sum(
+                                    Filter(
+                                        SalesOrders,
+                                        'Created By'.'Primary Email' = User().Email && WeekNum('Order Date') = DashboardWeek
+                                    ).'To Order Amount',
+                                    'To Order Amount'
+                                )) - ( ((LookUp(
+                                    'SP Targets',
+                                    'Sales Person'.'Primary Email' = User().Email && Text(
+                                        Today(),
+                                        "mm"
+                                    ) = 0 & Month
+                                ) ).Target) / 4 )) / (((LookUp(
+                                    'SP Targets',
+                                    'Sales Person'.'Primary Email' = User().Email && Text(
+                                        Today(),
+                                        "mm"
+                                    ) = 0 & Month
+                                ) ).Target) / 4)) * 100,
+                                2
+                            ) & "%",
+                             'Dashboard Toptab'.Selected.Title = "MONTH",
+                            Round(
+                                ((( Sum(
+                                    Filter(
+                                        SalesOrders,
+                                        'Created By'.'Primary Email' = User().Email && Month('Order Date') = DashboardMonth
+                                    ).'To Order Amount',
+                                    'To Order Amount'
+                                )) - ( ((LookUp(
+                                    'SP Targets',
+                                    'Sales Person'.'Primary Email' = User().Email && Text(
+                                        Today(),
+                                        "mm"
+                                    ) = 0 & Month
+                                ) ).Target) )) / (((LookUp(
+                                    'SP Targets',
+                                    'Sales Person'.'Primary Email' = User().Email && Text(
+                                        Today(),
+                                        "mm"
+                                    ) = 0 & Month
+                                ) ).Target))) * 100,
+                                2
+                            ) & "%"
+                        )
+                    Width: =151
+                    X: =22
+                    Y: =791
+                    ZIndex: =76
+
+                Icon26 As icon.ArrowUp:
+                    BorderColor: =RGBA(109, 109, 109, 1)
+                    Color: |-
+                        =If(
+                            'Dashboard Toptab'.Selected.Title = "DAY",
+                            If(
+                                Round(
+                                    ((( Sum(
+                                        Filter(
+                                            SalesOrders,
+                                            'Created By'.'Primary Email' = User().Email && 'Order Date' = DashboardDate
+                                        ).'To Order Amount',
+                                        'To Order Amount'
+                                    )) - ( ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).Target)/30 )) / (((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).Target) / 30)) * 100,
+                                    2
+                                ) > 0,
+                                ColorValue("#09FF00"),
+                                Red
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "WEEK",
+                            If(
+                                Round(
+                                    ((( Sum(
+                                        Filter(
+                                            SalesOrders,
+                                            'Created By'.'Primary Email' = User().Email && WeekNum('Order Date') = DashboardWeek
+                                        ).'To Order Amount',
+                                        'To Order Amount'
+                                    )) - ( ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).Target) / 4 )) / (((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).Target) / 4)) * 100,
+                                    2
+                                ) > 0,
+                                ColorValue("#09FF00"),
+                                Red
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "MONTH",
+                            If(
+                                Round(
+                                    ((( Sum(
+                                        Filter(
+                                            SalesOrders,
+                                            'Created By'.'Primary Email' = User().Email && Month('Order Date') = DashboardMonth
+                                        ).'To Order Amount',
+                                        'To Order Amount'
+                                    )) - ( ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).Target))) / (((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).Target) )) * 100,
+                                    2
+                                ) > 0,
+                                ColorValue("#09FF00"),
+                                Red
+                            )
+                        )
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(220, 220, 220, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =27
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: |-
+                        =If(
+                            'Dashboard Toptab'.Selected.Title = "DAY",
+                            If(
+                                Round(
+                                    ((( Sum(
+                                        Filter(
+                                            SalesOrders,
+                                            'Created By'.'Primary Email' = User().Email && 'Order Date' = DashboardDate
+                                        ).'To Order Amount',
+                                        'To Order Amount'
+                                    )) - ( ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).Target)/30 )) / (((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).Target) / 30)) * 100,
+                                    2
+                                ) > 0,
+                                Icon.ArrowUp,
+                                Icon.ArrowDown
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "WEEK",
+                            If(
+                                Round(
+                                    ((( Sum(
+                                        Filter(
+                                            SalesOrders,
+                                            'Created By'.'Primary Email' = User().Email && WeekNum('Order Date') = DashboardWeek
+                                        ).'To Order Amount',
+                                        'To Order Amount'
+                                    )) - ( ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).Target) / 4 )) / (((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).Target) / 4)) * 100,
+                                    2
+                                ) > 0,
+                                Icon.ArrowUp,
+                                Icon.ArrowDown
+                            ),
+                              'Dashboard Toptab'.Selected.Title = "MONTH",
+                            If(
+                                Round(
+                                    ((( Sum(
+                                        Filter(
+                                            SalesOrders,
+                                            'Created By'.'Primary Email' = User().Email && Month('Order Date') = DashboardMonth
+                                        ).'To Order Amount',
+                                        'To Order Amount'
+                                    )) - ( ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).Target))) / (((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).Target))) * 100,
+                                    2
+                                ) > 0,
+                                Icon.ArrowUp,
+                                Icon.ArrowDown
+                            )
+                        )
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =29
+                    X: =133
+                    Y: =798
+                    ZIndex: =124
+
+            Icon26_1 As icon.ArrowUp:
+                BorderColor: =RGBA(109, 109, 109, 1)
+                Color: |-
+                    =If(
+                        'Dashboard Toptab'.Selected.Title = "DAY",
+                        If(
+                            Round(
+                                (((CountRows(
+                                    Filter(
+                                        'Order Line',
+                                        'Created By'.'Primary Email' = User().Email && DateValue('Created On') = DashboardDate
+                                    )
+                                )) - (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Product Target') / 30,
+                                    0
+                                ))) / (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Product Target') / 30,
+                                    0
+                                ))) * 100,
+                                2
+                            ) > 0,
+                            ColorValue("#09FF00"),
+                            Red
+                        ),
+                        'Dashboard Toptab'.Selected.Title = "WEEK",
+                        If(
+                            Round(
+                                (((CountRows(
+                                    Filter(
+                                        'Order Line',
+                                        'Created By'.'Primary Email' = User().Email && WeekNum('Created On') = DashboardWeek
+                                    )
+                                )) - (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Product Target') / 4,
+                                    0
+                                ))) / (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Product Target') / 4,
+                                    0
+                                ))) * 100,
+                                2
+                            ) > 0,
+                            ColorValue("#09FF00"),
+                            Red
+                        ),
+                        'Dashboard Toptab'.Selected.Title = "MONTH",
+                        If(
+                            Round(
+                                (((CountRows(
+                                    Filter(
+                                        'Order Line',
+                                        'Created By'.'Primary Email' = User().Email && Month('Created On') = DashboardMonth
+                                    )
+                                )) - (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Product Target'),
+                                    0
+                                ))) / (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Product Target'),
+                                    0
+                                ))) * 100,
+                                2
+                            ) > 0,
+                            ColorValue("#09FF00"),
+                            Red
+                        )
+                    )
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(220, 220, 220, 1)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =27
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Icon: |-
+                    =If(
+                        'Dashboard Toptab'.Selected.Title = "DAY",
+                        If(
+                            Round(
+                                (((CountRows(
+                                    Filter(
+                                        'Order Line',
+                                        'Created By'.'Primary Email' = User().Email && DateValue('Created On') = DashboardDate
+                                    )
+                                )) - (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Product Target') / 30,
+                                    0
+                                ))) / (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Product Target') / 30,
+                                    0
+                                ))) * 100,
+                                2
+                            ) > 0,
+                            Icon.ArrowUp,
+                            Icon.ArrowDown
+                        ),
+                        'Dashboard Toptab'.Selected.Title = "WEEK",
+                        If(
+                            Round(
+                                (((CountRows(
+                                    Filter(
+                                        'Order Line',
+                                        'Created By'.'Primary Email' = User().Email && WeekNum('Created On') = DashboardWeek
+                                    )
+                                )) - (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Product Target') / 4,
+                                    0
+                                ))) / (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Product Target') / 4,
+                                    0
+                                ))) * 100,
+                                2
+                            ) > 0,
+                            Icon.ArrowUp,
+                            Icon.ArrowDown
+                        ),
+                        'Dashboard Toptab'.Selected.Title = "MONTH",
+                        If(
+                            Round(
+                                (((CountRows(
+                                    Filter(
+                                        'Order Line',
+                                        'Created By'.'Primary Email' = User().Email && Month('Created On') = DashboardMonth
+                                    )
+                                )) - (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Product Target'),
+                                    0
+                                ))) / (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Product Target'),
+                                    0
+                                ))) * 100,
+                                2
+                            ) > 0,
+                            Icon.ArrowUp,
+                            Icon.ArrowDown
+                        )
+                    )
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =29
+                X: =346
+                Y: =798
+                ZIndex: =126
+
+            Label2_289 As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =DisplayMode.View
+                FocusedBorderThickness: =4
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =44
+                Size: =15
+                Text: |-
+                    =If(
+                        'Dashboard Toptab'.Selected.Title = "DAY",
+                        Round(
+                            (((CountRows(
+                                Filter(
+                                    'Order Line',
+                                    'Created By'.'Primary Email' = User().Email && DateValue('Created On') = DashboardDate  && 'Promoted product' = 'Promoted product (Order Line)'.Yes
+                                )
+                            )) - (Round(
+                                ((LookUp(
+                                    'SP Targets',
+                                    'Sales Person'.'Primary Email' = User().Email && Text(
+                                        Today(),
+                                        "mm"
+                                    ) = 0 & Month
+                                ) ).'Promoted Products Target') / 30,
+                                0
+                            ))) / (Round(
+                                ((LookUp(
+                                    'SP Targets',
+                                    'Sales Person'.'Primary Email' = User().Email && Text(
+                                        Today(),
+                                        "mm"
+                                    ) = 0 & Month
+                                ) ).'Promoted Products Target') / 30,
+                                0
+                            ))) * 100,
+                            2
+                        ) & "%",
+                        'Dashboard Toptab'.Selected.Title = "WEEK",
+                        Round(
+                            (((CountRows(
+                                Filter(
+                                    'Order Line',
+                                    'Created By'.'Primary Email' = User().Email && WeekNum('Created On') = DashboardWeek  && 'Promoted product' = 'Promoted product (Order Line)'.Yes
+                                )
+                            )) - (Round(
+                                ((LookUp(
+                                    'SP Targets',
+                                    'Sales Person'.'Primary Email' = User().Email && Text(
+                                        Today(),
+                                        "mm"
+                                    ) = 0 & Month
+                                ) ).'Promoted Products Target') / 4,
+                                0
+                            ))) / (Round(
+                                ((LookUp(
+                                    'SP Targets',
+                                    'Sales Person'.'Primary Email' = User().Email && Text(
+                                        Today(),
+                                        "mm"
+                                    ) = 0 & Month
+                                ) ).'Promoted Products Target') / 4,
+                                0
+                            ))) * 100,
+                            2
+                        ) & "%",
+                         'Dashboard Toptab'.Selected.Title = "MONTH",
+                        Round(
+                            (((CountRows(
+                                Filter(
+                                    'Order Line',
+                                    'Created By'.'Primary Email' = User().Email && Month('Created On') = DashboardMonth  && 'Promoted product' = 'Promoted product (Order Line)'.Yes
+                                )
+                            )) - (Round(
+                                ((LookUp(
+                                    'SP Targets',
+                                    'Sales Person'.'Primary Email' = User().Email && Text(
+                                        Today(),
+                                        "mm"
+                                    ) = 0 & Month
+                                ) ).'Promoted Products Target'),
+                                0
+                            ))) / (Round(
+                                ((LookUp(
+                                    'SP Targets',
+                                    'Sales Person'.'Primary Email' = User().Email && Text(
+                                        Today(),
+                                        "mm"
+                                    ) = 0 & Month
+                                ) ).'Promoted Products Target'),
+                                0
+                            ))) * 100,
+                            2
+                        ) & "%"
+                    )
+                Width: =151
+                X: =430
+                Y: =791
+                ZIndex: =127
+
+            Icon26_2 As icon.ArrowUp:
+                BorderColor: =RGBA(109, 109, 109, 1)
+                Color: |-
+                    =If(
+                        'Dashboard Toptab'.Selected.Title = "DAY",
+                        If(
+                            Round(
+                                (((CountRows(
+                                    Filter(
+                                        'Order Line',
+                                        'Created By'.'Primary Email' = User().Email && DateValue('Created On') = DashboardDate && 'Promoted product' = 'Promoted product (Order Line)'.Yes
+                                    )
+                                )) - (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Promoted Products Target') / 30,
+                                    0
+                                ))) / (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Promoted Products Target') / 30,
+                                    0
+                                ))) * 100,
+                                2
+                            ) > 0,
+                            ColorValue("#09FF00"),
+                            Red
+                        ),
+                        'Dashboard Toptab'.Selected.Title = "WEEK",
+                        If(
+                            Round(
+                                (((CountRows(
+                                    Filter(
+                                        'Order Line',
+                                        'Created By'.'Primary Email' = User().Email && WeekNum('Created On') = DashboardWeek && 'Promoted product' = 'Promoted product (Order Line)'.Yes
+                                    )
+                                )) - (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Promoted Products Target') / 4,
+                                    0
+                                ))) / (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Promoted Products Target') / 4,
+                                    0
+                                ))) * 100,
+                                2
+                            ) > 0,
+                            ColorValue("#09FF00"),
+                            Red
+                        ),
+                        'Dashboard Toptab'.Selected.Title = "MONTH",
+                        If(
+                            Round(
+                                (((CountRows(
+                                    Filter(
+                                        'Order Line',
+                                        'Created By'.'Primary Email' = User().Email && Month('Created On') = DashboardMonth && 'Promoted product' = 'Promoted product (Order Line)'.Yes
+                                    )
+                                )) - (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Promoted Products Target'),
+                                    0
+                                ))) / (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Promoted Products Target'),
+                                    0
+                                ))) * 100,
+                                2
+                            ) > 0,
+                            ColorValue("#09FF00"),
+                            Red
+                        )
+                    )
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(220, 220, 220, 1)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =27
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Icon: |-
+                    =If(
+                        'Dashboard Toptab'.Selected.Title = "DAY",
+                        If(
+                            Round(
+                                (((CountRows(
+                                    Filter(
+                                        'Order Line',
+                                        'Created By'.'Primary Email' = User().Email && DateValue('Created On') = DashboardDate && 'Promoted product' = 'Promoted product (Order Line)'.Yes
+                                    )
+                                )) - (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Promoted Products Target') / 30,
+                                    0
+                                ))) / (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Promoted Products Target') / 30,
+                                    0
+                                ))) * 100,
+                                2
+                            ) > 0,
+                            Icon.ArrowUp,
+                            Icon.ArrowDown
+                        ),
+                        'Dashboard Toptab'.Selected.Title = "WEEK",
+                        If(
+                            Round(
+                                (((CountRows(
+                                    Filter(
+                                        'Order Line',
+                                        'Created By'.'Primary Email' = User().Email && WeekNum('Created On') = DashboardWeek && 'Promoted product' = 'Promoted product (Order Line)'.Yes
+                                    )
+                                )) - (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Promoted Products Target') / 4,
+                                    0
+                                ))) / (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Promoted Products Target') / 4,
+                                    0
+                                ))) * 100,
+                                2
+                            ) > 0,
+                            Icon.ArrowUp,
+                            Icon.ArrowDown
+                        ),
+                        'Dashboard Toptab'.Selected.Title = "MONTH",
+                        If(
+                            Round(
+                                (((CountRows(
+                                    Filter(
+                                        'Order Line',
+                                        'Created By'.'Primary Email' = User().Email && Month('Created On') = DashboardMonth && 'Promoted product' = 'Promoted product (Order Line)'.Yes
+                                    )
+                                )) - (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Promoted Products Target'),
+                                    0
+                                ))) / (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Promoted Products Target'),
+                                    0
+                                ))) * 100,
+                                2
+                            ) > 0,
+                            Icon.ArrowUp,
+                            Icon.ArrowDown
+                        )
+                    )
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =29
+                X: =546
+                Y: =798
+                ZIndex: =128
+
+            Group3 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =129
+
+                HtmlText1_131 As htmlViewer:
+                    DisplayMode: =DisplayMode.View
+                    Height: =162
+                    HtmlText: |-
+                        ="<div style='border-radius:10px; background-color:#95D4E0; opacity: 0.3; width:190px; height:150px;'></div>"
+                    Width: =212
+                    X: =212
+                    Y: =697
+                    ZIndex: =68
+
+                Label2_283 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 200, 61, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =44
+                    Size: =18
+                    Text: |-
+                        =If(
+                            'Dashboard Toptab'.Selected.Title = "DAY",
+                            CountRows(
+                                Filter(
+                                    'Order Line',
+                                    'Created By'.'Primary Email' = User().Email && DateValue('Created On') = DashboardDate
+                                )
+                            ) & "/" & Round(
+                                ((LookUp(
+                                    'SP Targets',
+                                    'Sales Person'.'Primary Email' = User().Email && Text(
+                                        Today(),
+                                        "mm"
+                                    ) = 0 & Month
+                                ) ).'Product Target') / 30,
+                                0
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "WEEK",
+                            CountRows(
+                                Filter(
+                                    'Order Line',
+                                    'Created By'.'Primary Email' = User().Email && WeekNum('Created On') = DashboardWeek
+                                )
+                            ) & "/" & Round(
+                                ((LookUp(
+                                    'SP Targets',
+                                    'Sales Person'.'Primary Email' = User().Email && Text(
+                                        Today(),
+                                        "mm"
+                                    ) = 0 & Month
+                                ) ).'Product Target') / 4,
+                                0
+                            ),
+                            'Dashboard Toptab'.Selected.Title = "MONTH",
+                            CountRows(
+                                Filter(
+                                    'Order Line',
+                                    'Created By'.'Primary Email' = User().Email && Month('Created On') = DashboardMonth
+                                )
+                            ) & "/" & Round(
+                                ((LookUp(
+                                    'SP Targets',
+                                    'Sales Person'.'Primary Email' = User().Email && Text(
+                                        Today(),
+                                        "mm"
+                                    ) = 0 & Month
+                                ) ).'Product Target'),
+                                0
+                            )
+                        )
+                    Width: =121
+                    X: =244
+                    Y: =748
+                    ZIndex: =72
+
+                Label2_284 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =44
+                    Size: =11
+                    Text: ="Products"
+                    Width: =170
+                    X: =219
+                    Y: =704
+                    ZIndex: =73
+
+                Label2_288 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisplayMode: =DisplayMode.View
+                    FocusedBorderThickness: =4
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Semibold
+                    Height: =44
+                    Size: =15
+                    Text: |-
+                        =If(
+                            'Dashboard Toptab'.Selected.Title = "DAY",
+                            Round(
+                                (((CountRows(
+                                    Filter(
+                                        'Order Line',
+                                        'Created By'.'Primary Email' = User().Email && DateValue('Created On') = DashboardDate
+                                    )
+                                )) - (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Product Target') / 30,
+                                    0
+                                ))) / (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Product Target') / 30,
+                                    0
+                                ))) * 100,
+                                2
+                            ) & "%",
+                            'Dashboard Toptab'.Selected.Title = "WEEK",
+                            Round(
+                                (((CountRows(
+                                    Filter(
+                                        'Order Line',
+                                        'Created By'.'Primary Email' = User().Email && WeekNum('Created On') = DashboardWeek
+                                    )
+                                )) - (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Product Target') / 4,
+                                    0
+                                ))) / (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Product Target') / 4,
+                                    0
+                                ))) * 100,
+                                2
+                            ) & "%",
+                             'Dashboard Toptab'.Selected.Title = "MONTH",
+                            Round(
+                                (((CountRows(
+                                    Filter(
+                                        'Order Line',
+                                        'Created By'.'Primary Email' = User().Email && Month('Created On') = DashboardMonth
+                                    )
+                                )) - (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Product Target'),
+                                    0
+                                ))) / (Round(
+                                    ((LookUp(
+                                        'SP Targets',
+                                        'Sales Person'.'Primary Email' = User().Email && Text(
+                                            Today(),
+                                            "mm"
+                                        ) = 0 & Month
+                                    ) ).'Product Target'),
+                                    0
+                                ))) * 100,
+                                2
+                            ) & "%"
+                        )
+                    Width: =151
+                    X: =229
+                    Y: =791
+                    ZIndex: =125
+
+    "'Bottom Navigation_1' As 'Bottom Navigation'":
+        NavItems: |-
+            =Table(
+                {
+                    Title: If(
+                        varAttendance = "end",
+                        "End",
+                        varAttendance = "start",
+                        "Start",
+                        varAttendance = "done",
+                        "Ended"
+                    ),
+                    //Title: Start,
+                    Screen: If(
+                        varAttendance = "start",
+                        StartDay,
+                        varAttendance = "end",
+                        'End day',
+                        varAttendance = "done",
+                        'Day Ended'
+                    ),
+                    Icon: CalendarBlank,
+                    Active: false
+                },
+                {
+                    Title: "Visits",
+                    Screen: Visits,
+                    Icon: Waypoint,
+                    Active: false
+                },
+                {
+                    Title: "Dashboard",
+                    Screen: Home,
+                    Icon: Waffle,
+                    Active: true
+                },
+                {
+                    Title: "Parties",
+                    Screen: 'Customer (Dist)_1',
+                    Icon: People,
+                    Active: false
+                },
+                {
+                    Title: "Menu",
+                    Screen: 'Menu Screen',
+                    Icon: Hamburger,
+                    Active: false
+                }
+            )
+        Y: =1056
+        ZIndex: =4
+
+    Icon14_35 As icon.BackArrow:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =43
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =43
+        X: =18
+        Y: =14
+        ZIndex: =5
+

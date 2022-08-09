@@ -1,0 +1,205 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_complaintses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_complaints",
+    "MaxGetRowsCount": 500,
+    "Name": "Complaints",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_accounttype": "Account Type",
+      "cr431_addsupportingimage": "Add Supporting Image",
+      "cr431_addsupportingimageid": "cr431_AddSupportingImageId",
+      "cr431_complaintdate": "ComplaintDate",
+      "cr431_complaintno": "ComplaintNo",
+      "cr431_complaints_AsyncOperations": "System Jobs",
+      "cr431_complaints_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_complaints_DuplicateBaseRecord": "Duplicate Records (cr431_complaints_DuplicateBaseRecord)",
+      "cr431_complaints_DuplicateMatchingRecord": "Duplicate Records (cr431_complaints_DuplicateMatchingRecord)",
+      "cr431_complaints_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_complaints_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_complaints_ProcessSession": "Process Sessions",
+      "cr431_complaints_SyncErrors": "Sync Errors",
+      "cr431_complaintsid": "Complaints",
+      "cr431_Customer": "Customer",
+      "cr431_department": "Department",
+      "cr431_description": "Description",
+      "cr431_image": "Image",
+      "cr431_Invoice": "Invoice",
+      "cr431_name": "Name",
+      "cr431_nature": "Nature",
+      "cr431_newaccounttype": "New Account Type",
+      "cr431_retailer": "Retailer",
+      "cr431_source": "Source",
+      "cr431_status": "status",
+      "cr431_Visit": "Visit",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Complaints",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Complaints (Views)",
+    "Name": "_cr431_complaints_views",
+    "RelatedEntityName": "Complaints",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0fe0af66-f2b0-4400-8b9a-7f5ff28f501d": "Active Complaints",
+      "29e786c3-d568-4de3-a71c-59d864e38603": "Inactive Complaints",
+      "53073214-5161-4120-a48e-cc2633583d3b": "Complaints Lookup View",
+      "e2b0b749-a0d9-4e92-b612-a248ba2e6236": "Complaints Associated View",
+      "e9606183-662c-49a6-b83d-2b3f03e5f7e7": "Complaints Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Department (Complaints)",
+    "Name": "cr431_complaints_cr431_department",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Quality",
+      "254460001": "Dispatch",
+      "254460002": "Sales & Marketing",
+      "254460003": "Accounts & Finance",
+      "254460004": "Other"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_department",
+        "OptionSetReferenceEntityName": "Complaints"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_department",
+    "RelatedEntityName": "Complaints",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Nature (Complaints)",
+    "Name": "cr431_complaints_cr431_nature",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Shortage of Product",
+      "254460001": "Packaging",
+      "254460002": "Expiry Products",
+      "254460003": "Shipment Delayed"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_nature",
+        "OptionSetReferenceEntityName": "Complaints"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_nature",
+    "RelatedEntityName": "Complaints",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "New Account Type (Complaints)",
+    "Name": "cr431_complaints_cr431_newaccounttype",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Plumber",
+      "254460001": "Retailer",
+      "254460002": "Influencer",
+      "254460003": "Distributor",
+      "254460004": "Wholesaler",
+      "254460005": "Constructor",
+      "254460006": "Other",
+      "254460007": "Sites"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_newaccounttype",
+        "OptionSetReferenceEntityName": "Complaints"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_newaccounttype",
+    "RelatedEntityName": "Complaints",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "status (Complaints)",
+    "Name": "cr431_complaints_cr431_status",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Pending",
+      "254460001": "Resolved",
+      "254460002": "In Progress"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_status",
+        "OptionSetReferenceEntityName": "Complaints"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_status",
+    "RelatedEntityName": "Complaints",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Complaints)",
+    "Name": "cr431_complaints_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Complaints"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Complaints",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Complaints)",
+    "Name": "cr431_complaints_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Complaints"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Complaints",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,128 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_competitors",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_competitor",
+    "MaxGetRowsCount": 500,
+    "Name": "Competitors",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_competitor_AsyncOperations": "System Jobs",
+      "cr431_competitor_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_competitor_DuplicateBaseRecord": "Duplicate Records (cr431_competitor_DuplicateBaseRecord)",
+      "cr431_competitor_DuplicateMatchingRecord": "Duplicate Records (cr431_competitor_DuplicateMatchingRecord)",
+      "cr431_competitor_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_competitor_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_competitor_ProcessSession": "Process Sessions",
+      "cr431_competitor_SyncErrors": "Sync Errors",
+      "cr431_competitorid": "Competitor",
+      "cr431_competitorname": "Competitor Name (cr431_competitorname)",
+      "cr431_competitorprice": "Competitor Price",
+      "cr431_competitorprice_base": "Competitor Price (Base)",
+      "cr431_name": "Competitor Info ID",
+      "cr431_productname": "Product Name",
+      "cr431_Visit": "Visit",
+      "cr431_VisitInfo": "Visit Info",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "new_competitorname": "Competitor Name (new_competitorname)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Competitors",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Competitors (Views)",
+    "Name": "_cr431_competitor_views",
+    "RelatedEntityName": "Competitors",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "51b4cfb9-99d9-4349-a68c-01636def22a4": "Competitor Advanced Find View",
+      "7ba45d5d-ff5f-49b2-9e8d-f101bfb9d4ad": "Inactive Competitors",
+      "cefb625a-d6ba-464c-ab44-20277f1da330": "Active Competitors",
+      "e47f3732-168a-4cd6-bbab-54491aa1d301": "Competitor Lookup View",
+      "f1fccd95-a824-4e28-a2d4-491d96c69281": "Competitor Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Competitors)",
+    "Name": "cr431_competitor_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Competitors"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Competitors",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Competitors)",
+    "Name": "cr431_competitor_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Competitors"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Competitors",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Competitor Name (Competitors)",
+    "Name": "new_cr431_competitor_new_competitorname",
+    "OptionSetInfoNameMapping": {
+      "100000000": "Sanghi",
+      "100000001": "Hathi",
+      "100000002": "Shree",
+      "100000003": "JK"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "new_competitorname",
+        "OptionSetReferenceEntityName": "Competitors"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "new_competitorname",
+    "RelatedEntityName": "Competitors",
+    "Type": "OptionSetInfo"
+  }
+]

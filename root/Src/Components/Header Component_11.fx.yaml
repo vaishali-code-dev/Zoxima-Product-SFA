@@ -1,0 +1,43 @@
+"'Header Component_11' As CanvasComponent":
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =640
+    ScreenName: =App.ActiveScreen.Name
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Rectangle10 As rectangle:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Fill: =RGBA(160, 0, 2, 1)
+        Height: =70
+        Width: =640
+        ZIndex: =1
+
+    Label6_1 As label:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =64
+        Size: =18
+        Text: ='Header Component_11'.ScreenName
+        Width: =549
+        X: =72
+        Y: =2
+        ZIndex: =2
+
+    Rectangle8 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledFill: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(31, 31, 31, 1)
+        FocusedBorderThickness: =4
+        Height: =2
+        HoverFill: =RGBA(255, 200, 61, 1)
+        PressedFill: =RGBA(255, 200, 61, 1)
+        Width: =640
+        Y: =70
+        ZIndex: =3
+

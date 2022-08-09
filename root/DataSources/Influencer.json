@@ -1,0 +1,184 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_influencers",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_influencer",
+    "MaxGetRowsCount": 500,
+    "Name": "Influencer",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_aadhar": "Aadhar",
+      "cr431_address": "Address",
+      "cr431_asondatebalance": "As on Date Balance",
+      "cr431_cr431_imageurl_cr431_Influencer_cr4": "Image Url",
+      "cr431_cr431_influencer_cr431_lead_DMIArchitectName": "Lead",
+      "cr431_cr431_influencer_cr431_servicerequest_Influnecer": "Service Requests",
+      "cr431_emailid": "Email ID",
+      "cr431_firmname": "Firm Name",
+      "cr431_focusdmi": "Focus DMI",
+      "cr431_googleaddress": "Google Address",
+      "cr431_influencer_AsyncOperations": "System Jobs",
+      "cr431_influencer_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_influencer_DuplicateBaseRecord": "Duplicate Records (cr431_influencer_DuplicateBaseRecord)",
+      "cr431_influencer_DuplicateMatchingRecord": "Duplicate Records (cr431_influencer_DuplicateMatchingRecord)",
+      "cr431_influencer_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_influencer_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_influencer_ProcessSession": "Process Sessions",
+      "cr431_influencer_SyncErrors": "Sync Errors",
+      "cr431_influencergrade": "Influencer Grade",
+      "cr431_influencerid": "Influencer",
+      "cr431_influencername": "Influencer Name",
+      "cr431_influencertype": "Influencer Type",
+      "cr431_membershipid": "Membership ID",
+      "cr431_name": "Name",
+      "cr431_nickname": "Nick Name",
+      "cr431_officegeolocation": "Office Geolocation",
+      "cr431_pancard": "Pancard",
+      "cr431_pointsbanked": "Points Banked",
+      "cr431_pointsredeemed": "Points Redeemed",
+      "cr431_primaryphoneno": "Primary Phone No.",
+      "cr431_secondaryphoneno": "Secondary Phone No.",
+      "cr431_Territory": "Territory",
+      "cr431_Town": "Town",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Influencer",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Influencer (Views)",
+    "Name": "_cr431_influencer_views",
+    "RelatedEntityName": "Influencer",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "275428f9-fda4-43e8-8ebc-f189c2d84ef4": "Influencer Advanced Find View",
+      "41d29215-9749-49b6-b7a7-5d342ac1a73a": "Active Influencer",
+      "98fc1229-b66b-4918-bfe3-e05689e1f155": "Influencer Lookup View",
+      "c55f768c-dfb4-486b-a638-35b791a554a0": "Inactive Influencer",
+      "edde77fc-2fd3-4741-a96b-9c409d13a720": "Influencer Associated View"
+    }
+  },
+  {
+    "DisplayName": "Focus DMI (Influencer)",
+    "Name": "cr431_cr431_influencer_focusdmi",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_focusdmi",
+        "OptionSetReferenceEntityName": "Influencer"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr431_focusdmi",
+    "RelatedEntityName": "Influencer",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Influencer Grade (Influencer)",
+    "Name": "cr431_influencer_cr431_influencergrade",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Bronze",
+      "254460001": "Grade",
+      "254460002": "Silver"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_influencergrade",
+        "OptionSetReferenceEntityName": "Influencer"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_influencergrade",
+    "RelatedEntityName": "Influencer",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Influencer Type (Influencer)",
+    "Name": "cr431_influencer_cr431_influencertype",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Architect",
+      "254460001": "ID",
+      "254460002": "Engineer",
+      "254460003": "contractor",
+      "254460004": "Carpenter"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_influencertype",
+        "OptionSetReferenceEntityName": "Influencer"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_influencertype",
+    "RelatedEntityName": "Influencer",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Influencer)",
+    "Name": "cr431_influencer_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Influencer"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Influencer",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Influencer)",
+    "Name": "cr431_influencer_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Influencer"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Influencer",
+    "Type": "OptionSetInfo"
+  }
+]

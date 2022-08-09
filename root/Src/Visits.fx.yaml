@@ -1,0 +1,1477 @@
+"Visits As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    Fill: =RGBA(59, 59, 59, 1)
+    LoadingSpinnerColor: =RGBA(255, 200, 61, 1)
+    OnHidden: =Set(VarDialogOpen, false);
+    OnVisible: |-
+        =Clear(PrimaryCart);
+        Set(varIconSelected, false);
+        Set(
+            varOpen,
+            false
+        );
+        Refresh(Visits_1);
+        If(
+            Connection.Connected,
+            ClearCollect(
+                OfflineVisits,
+                Visits_1
+            );
+        );
+        Set(
+            VarVisit,
+            false
+        );
+        Set(
+            VarDialogOpen,
+            false
+        );
+        ClearCollect(
+            SelectedVisitForEdit,
+            First(Visits_1)
+        );
+
+    "'Header Component_30' As 'Header Component_11'":
+        Height: =74
+
+    ComboBox1 As combobox:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        ChevronBackground: =RGBA(255, 255, 255, 1)
+        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+        ChevronFill: =RGBA(31, 31, 31, 1)
+        ChevronHoverBackground: =RGBA(79, 79, 79, 1)
+        ChevronHoverFill: =RGBA(218, 218, 218, 1)
+        Color: =RGBA(22, 22, 22, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayFields: =["fullname"]
+        Font: =Font.'Segoe UI'
+        Height: =48
+        HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(79, 79, 79, 1)
+        InputTextPlaceholder: ="Self"
+        IsSearchable: =false
+        Items: =Subordinates
+        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedColor: =RGBA(31, 31, 31, 1)
+        PressedFill: =RGBA(255, 200, 61, 1)
+        SearchFields: =["fullname"]
+        SearchItems: =[]
+        SelectionColor: =RGBA(31, 31, 31, 1)
+        SelectionFill: =RGBA(255, 200, 61, 1)
+        SelectMultiple: =false
+        Size: =21
+        Width: =580
+        X: =29
+        Y: =199
+        ZIndex: =4
+
+    Image1_27 As image:
+        BorderColor: =RGBA(204, 204, 204, 1)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =1
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =45
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: =User().Image
+        ImagePosition: =ImagePosition.Fill
+        OnSelect: =Navigate(Profile)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Width: =45
+        X: =584
+        Y: =13
+        ZIndex: =5
+
+    Gallery5 As gallery.galleryVertical:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Height: =792
+        Items: |-
+            =Filter(
+                If(
+                    IsBlank(SelectedVisitDate),
+                    If(
+                        IsBlank(ComboBox1.Selected),
+                        Sort(
+                            Filter(
+                                Visits_1,
+                                'Created By'.User = LookUp(
+                                    Users,
+                                    'Primary Email' = User().Email
+                                ).User && IsToday('Visit Date')
+                            ),
+                            'Created On',
+                            Descending
+                        ),
+                        Sort(
+                            Filter(
+                                Visits_1,
+                                'Created By'.User = LookUp(
+                            //Subordinates,
+                                    Users,
+                                    'Primary Email' = ComboBox1.Selected.internalemailaddress
+                                ).User && IsToday('Visit Date')
+                            ),
+                            'Created On',
+                            Descending
+                        )
+                    ),
+                    If(
+                        IsBlank(ComboBox1.Selected),
+                        Sort(
+                            Filter(
+                                Visits_1,
+                                'Created By'.User = LookUp(
+                                    Users,
+                                    'Primary Email' = User().Email
+                                ).User && 'Visit Date' = SelectedVisitDate
+                            ),
+                            'Created On',
+                            Descending
+                        ),
+                        Sort(
+                            Filter(
+                                Visits_1,
+                                'Created By'.User = LookUp(
+                            //Subordinates,
+                                    Users,
+                                    'Primary Email' = ComboBox1.Selected.internalemailaddress
+                                ).User && 'Visit Date' = SelectedVisitDate
+                            ),
+                            'Created On',
+                            Descending
+                        )
+                    )
+                ),
+                'Visit Search'.Text in Customer.'Account Name (name)' || 'Visit Search'.Text in Customer.'Address 1: Street 1' || 'Visit Search'.Text in Customer.'Main Phone' || 'Visit Search'.Text in Customer.'Account ID'
+            )
+        Layout: =Layout.Vertical
+        OnSelect: |-
+            =If(
+                ThisItem.status = 'status (Visits_1)'.Started || ThisItem.status = 'status (Visits_1)'.Completed,
+                Navigate(
+                    'Visits Info',
+                    ScreenTransition.Fade,
+                    {clickedVisit: ThisItem}
+                );
+                Set(
+                    orderInfo,
+                    LookUp(
+                        SalesOrders,
+                        Visits.'Visit ID' = ThisItem.'Visit ID'
+                    )
+                );
+                Set(
+                    MarketingMat,
+                    LookUp(
+                        'Marketing Materials',
+                        Visit.'Visit ID' = ThisItem.'Visit ID'
+                    )
+                );
+                ClearCollect(
+                    StockData,
+                    Filter(
+                        Stocks,
+                        Account.Account = ThisItem.Customer.Account && 'Last Updated Date' = ThisItem.'Visit Date'
+                    )
+                );
+                ClearCollect(
+                    CustTickets,
+                    Filter(
+                        Complaints,
+                        'Created By'.'Primary Email' = User().Email && Visit.'Visit ID' = ThisItem.'Visit ID'
+                    )
+                );
+                Reset(Gallery6),
+                Notify(
+                    "Please start your visit to view visit info",
+                    Error,
+                    2000
+                )
+            )
+        ShowScrollbar: =false
+        TemplateSize: =277
+        Y: =263
+        ZIndex: =6
+
+        Rectangle4 As rectangle:
+            BorderColor: |-
+                =If(ThisItem.status= 'status (Visits_1)'.Started && IsToday(ThisItem.'Visit Date'), ColorValue("#A00002"), RGBA(230, 230, 230, 0.3))
+            BorderThickness: =If(ThisItem.status= 'status (Visits_1)'.Started && IsToday(ThisItem.'Visit Date'), 3, 1)
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(88, 103, 130, 1)
+            FocusedBorderThickness: =4
+            Height: =262
+            HoverFill: =
+            OnSelect: =Select(Parent)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =630
+            ZIndex: =1
+
+        name As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =19
+            Text: = ThisItem.Customer.'Account Name (name)'
+            Width: =309
+            X: =76
+            ZIndex: =2
+
+        Label15_3 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            Height: =38
+            OnSelect: =Select(Parent)
+            Text: |-
+                =ThisItem.Customer.'Address 1: Street 1'
+            Width: =311
+            X: =78
+            Y: =42
+            ZIndex: =3
+
+        Button7_4 As button:
+            BorderColor: =RGBA(227, 100, 41, 1)
+            BorderThickness: =1
+            Color: =RGBA(227, 100, 41, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0,0,0, 0.7)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+            Font: =Font.Lato
+            Height: =30
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 0), -20%)
+            PaddingTop: =3
+            PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+            PressedColor: =RGBA(31, 31, 31, 1)
+            PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            RadiusBottomLeft: =9
+            RadiusBottomRight: =9
+            RadiusTopLeft: =9
+            RadiusTopRight: =9
+            Size: =15
+            Text: =ThisItem.status
+            Width: =135
+            X: =369
+            Y: =17
+            ZIndex: =4
+
+        Label19_33 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(217, 217, 217, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            Height: =25
+            OnSelect: =Select(Parent)
+            Text: ="Type"
+            Width: =72
+            X: =58
+            Y: =89
+            ZIndex: =5
+
+        Label19_34 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =25
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.'Visit Type'
+            Width: =200
+            X: =109
+            Y: =89
+            ZIndex: =6
+
+        Label19_37 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(217, 217, 217, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            Height: =25
+            OnSelect: =Select(Parent)
+            Text: ="Visit ID"
+            Width: =147
+            X: =58
+            Y: =124
+            ZIndex: =7
+
+        Label19_38 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =25
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.'Visit ID'
+            Width: =200
+            X: =109
+            Y: =128
+            ZIndex: =8
+
+        Label19_43 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(217, 217, 217, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            Height: =23
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: ="Last Order Date"
+            Width: =157
+            X: =389
+            Y: =97
+            ZIndex: =9
+
+        Label19_41 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =25
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =Text(First(Sort(Filter(SalesOrders, 'Order From'.Account = ThisItem.Customer.Account && !('Order Date' = ThisItem.'Visit Date')), 'Order Date', Descending)).'Order Date', "dd mmm yyyy")
+            Width: =157
+            X: =389
+            Y: =72
+            ZIndex: =10
+
+        Label19_44 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(217, 217, 217, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            Height: =23
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: ="Last Order Value"
+            Width: =157
+            X: =389
+            Y: =162
+            ZIndex: =11
+
+        Label19_42 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =25
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: |-
+                =//Concatenate("₹", RandBetween(11000, 36000))
+                "₹ " & First(Sort(Filter(SalesOrders, 'Order From'.Account = ThisItem.Customer.Account && !('Order Date' = ThisItem.'Visit Date')), 'Order Date', Descending)).'Bill Amoount (Base)'
+            Width: =157
+            X: =389
+            Y: =137
+            ZIndex: =12
+
+        Rectangle9_1 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(219, 219, 219, 1)
+            FocusedBorderThickness: =4
+            Height: =3
+            HoverFill: =RGBA(255, 200, 61, 1)
+            OnSelect: =Select(Parent)
+            PressedFill: =RGBA(255, 200, 61, 1)
+            Width: =558
+            X: =38
+            Y: =194
+            ZIndex: =13
+
+        Label19_39 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(217, 217, 217, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            Height: =25
+            OnSelect: =Select(Parent)
+            Text: ="Account Type"
+            Width: =147
+            X: =58
+            Y: =160
+            ZIndex: =16
+
+        Label19_40 As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =25
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Customer.'Account Type'
+            Width: =200
+            X: =109
+            Y: =160
+            ZIndex: =17
+
+        Button8 As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            DisplayMode: |-
+                =If(
+                    ThisItem.status = 'status (Visits_1)'.Completed || !IsToday(ThisItem.'Visit Date') || varAttendance = "done" || Not(IsBlank(ComboBox1.Selected)),
+                    DisplayMode.Disabled,
+                    DisplayMode.Edit
+                )
+            Fill: =RGBA(160, 0, 2, 1)
+            FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =31
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+            OnSelect: |-
+                =If(
+                    !IsBlank(
+                        LookUp(
+                            Visits_1,
+                            IsToday('Visit Date') && status = 'status (Visits_1)'.Started && 'Created By'.'Primary Email' = User().Email
+                        )
+                    ) && ThisItem.status = 'status (Visits_1)'.Open || ThisItem.status = 'status (Visits_1)'.Completed,
+                    Notify(
+                        "One Visit is already started. Please end that visit first!",
+                        NotificationType.Error,
+                        2000
+                    ),
+                    Set(
+                        VarDialogOpen,
+                        !VarDialogOpen
+                    );
+                    Set(
+                        ClickedVisit,
+                        ThisItem
+                    );
+                    Set(
+                        VisitStarted,
+                        true
+                    );   
+                );
+                //Set(Redirectvisitinfo, true)
+            PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+            PressedColor: =RGBA(31, 31, 31, 1)
+            PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =16
+            Text: =If(ThisItem.status = 'status (Visits_1)'.Started , "RESUME" , "START")
+            Width: =131
+            X: =154
+            Y: =211
+            ZIndex: =18
+
+        Button8_1 As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            DisplayMode: |-
+                =If(
+                    ThisItem.status = 'status (Visits_1)'.Completed || !IsToday(ThisItem.'Visit Date') || varAttendance="done"  || Not(IsBlank(ComboBox1.Selected)),
+                    DisplayMode.Disabled,
+                    DisplayMode.Edit
+                )
+            Fill: =RGBA(160, 0, 2, 1)
+            FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =31
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =
+            OnSelect: |-
+                =If(
+                    ThisItem.status = 'status (Visits_1)'.Started,
+                    Patch(
+                        Visits_1,
+                        LookUp(
+                            Visits_1,
+                            'Visit ID' = ThisItem.'Visit ID'
+                        ),
+                        {
+                            status: 'status (Visits_1)'.Completed,
+                            'Check-out Longitude': Location.Longitude,
+                            'Check-out Latitude': Location.Latitude,
+                            'Check-out Time': Now()
+                        }
+                    );
+                    Notify(
+                        "Your visit has been successfully ended.",
+                        NotificationType.Success,
+                        2500
+                    );
+                    ,
+                    Notify(
+                        "Your Visit hasn't been started yet",
+                        NotificationType.Warning,
+                        1000
+                    )
+                )
+            PressedBorderColor: =
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =16
+            Text: ="END"
+            Width: =131
+            X: =317
+            Y: =211
+            ZIndex: =19
+
+        Icon1_12 As icon.Edit:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            Color: =RGBA(255, 191, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            DisplayMode: =If(ThisItem.status = 'status (Visits_1)'.Started || ThisItem.status = 'status (Visits_1)'.Completed ,DisplayMode.Disabled, DisplayMode.Edit)
+            FocusedBorderThickness: =4
+            Height: =44
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Edit
+            OnSelect: |-
+                =Set(VarEditDialogOpen, true);
+                ClearCollect(SelectedVisitForEdit, ThisItem);
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =32
+            X: =575
+            Y: =11
+            ZIndex: =20
+
+        Icon1_13 As icon.Edit:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            Color: =RGBA(152, 208, 70, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =33
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Phone
+            OnSelect: |-
+                =Launch("tel://"&ThisItem.Customer.'Main Phone')
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =33
+            X: =526
+            Y: =17
+            ZIndex: =21
+
+        Group25 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =24
+
+            Circle4 As circle:
+                BorderColor: =RGBA(109, 109, 109, 1)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledFill: =RGBA(255, 200, 61, 1)
+                Fill: =RGBA(256*Rand(), 256*Rand(), 256*Rand(), 0.3)
+                Height: =50
+                HoverFill: =RGBA(256*Rand(), 256*Rand(), 256*Rand(), 1)
+                OnSelect: =Select(Parent)
+                PressedFill: =RGBA(255, 200, 61, 1)
+                Width: =50
+                X: =16
+                Y: =10
+                ZIndex: =14
+
+            Label36 As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =29
+                OnSelect: =Select(Parent)
+                Size: =20
+                Text: =Left(ThisItem.Customer.'Account Name (name)',1)
+                Width: =39
+                X: =21
+                Y: =20
+                ZIndex: =15
+
+    Circle_1 As circle:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledFill: =RGBA(255, 200, 61, 1)
+        Fill: =RGBA(160, 0, 2, 1)
+        Height: =80
+        HoverFill: =
+        OnSelect: =Set(varIconSelected, !varIconSelected)
+        PressedFill: =
+        Width: =80
+        X: =526
+        Y: =959
+        ZIndex: =7
+
+    add_1 As icon.Add:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =54
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =If(varIconSelected, Icon.HorizontalLine, Icon.Add)
+        OnSelect: =Set(varIconSelected, !varIconSelected)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =39
+        X: =546
+        Y: =972
+        ZIndex: =8
+
+    Planned_1 As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderThickness: =0
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(160, 0, 2, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =66
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =
+        OnSelect: =Navigate('Customer (Dist)', ScreenTransition.Fade)
+        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+        PressedColor: =RGBA(31, 31, 31, 1)
+        PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =21
+        Text: ="UNPLANNED VISIT"
+        Visible: =varIconSelected
+        Width: =310
+        X: =290
+        Y: =882
+        ZIndex: =10
+
+    Unplanned_1 As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderThickness: =0
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(160, 0, 2, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =66
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =
+        OnSelect: |-
+            =Clear(SingleNewVisit);
+            Navigate('Customer (Dist) Plan Visit', ScreenTransition.Fade)
+        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+        PressedColor: =RGBA(31, 31, 31, 1)
+        PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =21
+        Text: ="PLAN VISIT"
+        Visible: =varIconSelected
+        Width: =310
+        X: =290
+        Y: =806
+        ZIndex: =11
+
+    "'Edit backdrop' As rectangle":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledFill: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(230, 230, 230, 0.5)
+        FocusedBorderThickness: =4
+        Height: =1136
+        HoverFill: =
+        PressedFill: =RGBA(255, 200, 61, 1)
+        Visible: =VarEditDialogOpen
+        Width: =640
+        ZIndex: =13
+
+    EditBackdrop As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledFill: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(224, 220, 220, 0.7)
+        FocusedBorderThickness: =4
+        Height: =1136
+        HoverFill: =
+        PressedFill: =RGBA(255, 200, 61, 1)
+        Visible: =VarDialogOpen
+        Width: =640
+        ZIndex: =14
+
+    Icon14_31 As icon.BackArrow:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =43
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =43
+        X: =18
+        Y: =14
+        ZIndex: =19
+
+    "'Bottom Navigation_30' As 'Bottom Navigation'":
+        NavItems: |-
+            =Table(
+                {
+                    Title: If(
+                        varAttendance = "end",
+                        "End",
+                        varAttendance = "start",
+                        "Start",
+                        varAttendance = "done",
+                        "Ended"
+                    ),
+                    //Title: Start,
+                    Screen: If(
+                        varAttendance = "start",
+                        StartDay,
+                        varAttendance = "end",
+                        'End day',
+                        varAttendance = "done",
+                        'Day Ended'
+                    ),
+                    Icon: CalendarBlank,
+                    Active: false
+                },
+                {
+                    Title: "Visits",
+                    Screen: Visits,
+                    Icon: Waypoint,
+                    Active: true
+                },
+                {
+                    Title: "Dashboard",
+                    Screen: Home,
+                    Icon: Waffle,
+                    Active: false
+                },
+                {
+                    Title: "Parties",
+                    Screen: 'Customer (Dist)_1',
+                    Icon: People,
+                    Active: false
+                },
+                {
+                    Title: "Menu",
+                    Screen: 'Menu Screen',
+                    Icon: Hamburger,
+                    Active: false
+                }
+            )
+        Y: =1056
+        ZIndex: =28
+
+    EditModal As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =30
+
+        Rectangle7_1 As rectangle:
+            BorderColor: =RGBA(204, 204, 204, 1)
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            FocusedBorderThickness: =4
+            Height: =335
+            HoverFill: =RGBA(237, 237, 237, 1)
+            OnSelect: |-
+                =If(VarDialogOpen, Patch(
+                    Visits_1,
+                    Defaults(Visits_1),
+                    {'Visit Type':'Visit Type (Visits_1)'.Unplanned,
+                    Customer: LookUp(Accounts, )}
+                );
+                )
+            PressedFill: =RGBA(237, 237, 237, 1)
+            Visible: =VarDialogOpen
+            Width: =550
+            X: =45
+            Y: =350
+            ZIndex: =15
+
+        Icon10_1 As icon.Cancel:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            Color: =RGBA(128, 128, 128, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =37
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Cancel
+            OnSelect: =Set(VarDialogOpen, false)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Visible: =VarDialogOpen
+            Width: =37
+            X: =543
+            Y: =363
+            ZIndex: =16
+
+        Label7_1 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(31, 31, 31, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =113
+            OnSelect: |
+                =Switch(
+                    varAttendance,
+                    "start",
+                    Notify(
+                        "Please start your day first",
+                        NotificationType.Warning,
+                        1000
+                    ),
+                    "end",
+                    Patch(
+                        Visits_1,
+                        LookUp(
+                            Visits_1,
+                            'Visit ID' = ClickedVisit.'Visit ID'
+                        ),
+                        {status: 'status (Visits_1)'.Started}
+                    );
+                    Navigate(
+                        'Start visit',
+                        ScreenTransition.Cover
+                    ),
+                    "done",
+                    Notify(
+                        "Your day has ended",
+                        NotificationType.Warning,
+                        1000
+                    )
+                );
+            Size: =21
+            Text: |-
+                =If(
+                    ClickedVisit.status = 'status (Visits_1)'.Open,
+                    Concatenate(
+                        "Do you want to start the visit for ",
+                        ClickedVisit.Customer.'Account Name (name)',
+                        " ?"
+                    ),
+                    Concatenate(
+                        "Do you want to resume the visit for ",
+                        ClickedVisit.Customer.'Account Name (name)',
+                        " ?"
+                    )
+                )
+            Visible: =VarDialogOpen
+            Width: =488
+            X: =75
+            Y: =442
+            ZIndex: =17
+
+        Button2_2 As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(31, 31, 31, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =45
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(31, 31, 31, 1)
+            HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+            OnSelect: |
+                =Switch(
+                    varAttendance,
+                    "start",
+                    Notify(
+                        "Please start your day first",
+                        NotificationType.Warning,
+                        1000
+                    );
+                    Navigate(
+                        StartDay,
+                        ScreenTransition.Fade
+                    );
+                    ,
+                    "end",
+                    Patch(
+                        Visits_1,
+                        LookUp(
+                            Visits_1,
+                            'Visit ID' = ClickedVisit.'Visit ID'
+                        ),
+                        {
+                            status: 'status (Visits_1)'.Started,
+                            'Check- In Longitude': Location.Longitude,
+                            'Check-in Latitude': Location.Latitude,
+                            'Checkin Time': Now()
+                        }
+                    );
+                    Patch(
+                        Accounts,
+                        LookUp(
+                            Accounts,
+                            Account = ClickedVisit.Customer.Account
+                        ),
+                        {
+                            'Last Vist Date': Today(),
+                            'Last Order Date': Today()
+                        }
+                    );
+                    Set(
+                        VarBags,
+                        Blank()
+                    );
+                    //Set(SelectedPlanVisitTopTab, "Visit Info");
+                Navigate(
+                        'Start visit',
+                        ScreenTransition.Cover
+                    );
+                    Reset(VisitTopTab),
+                    "done",
+                    Notify(
+                        "Your day has ended",
+                        NotificationType.Warning,
+                        1000
+                    )
+                );
+            PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+            PressedColor: =RGBA(31, 31, 31, 1)
+            PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            Size: =14
+            Text: ="CONFIRM"
+            Visible: =VarDialogOpen
+            Width: =137
+            X: =252
+            Y: =597
+            ZIndex: =18
+
+    Group4 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =30
+
+        "'Visit DatePicker' As datepicker":
+            BorderColor: =RGBA(65, 76, 96, 1)
+            BorderThickness: =1
+            CalendarHeaderFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(103, 204, 107, 0.02)
+            FocusedBorderThickness: =2
+            Font: =Font.Lato
+            Height: =41
+            HoverDateFill: =RGBA(144, 144, 144, 1)
+            IconBackground: |-
+                =ColorValue("#414C60")
+            IconFill: =RGBA(255,255,255,1)
+            OnChange: =Set(SelectedVisitDate, 'Visit DatePicker'.SelectedDate)
+            PaddingTop: =5
+            SelectedDateFill: =RGBA(255, 200, 61, 1)
+            Width: =274
+            X: =349
+            Y: =142
+            ZIndex: =9
+
+        Gallery4_1 As gallery.galleryHorizontal:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            Height: =64
+            Items: |-
+                =[
+                    {
+                        title: "Today",
+                        date: Today()
+                    },
+                     {
+                        title: "Tomorrow",
+                        date: Today()+1
+                    }
+                    
+                ]
+            OnSelect: =Set(SelectedVisitDate, ThisItem.Value.date)
+            ShowScrollbar: =false
+            TemplateSize: =157
+            Width: =334
+            X: =3
+            Y: =134
+            ZIndex: =12
+
+            Button4_1 As button:
+                BorderColor: =RGBA(65, 76, 96, 1)
+                Color: =White
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Fill: |-
+                    =If(ThisItem.IsSelected, ColorValue("#A00002"),ColorValue("#414C60") )
+                FocusedBorderColor: =
+                FocusedBorderThickness: =2
+                Font: =Font.Lato
+                FontWeight: =FontWeight.Semibold
+                Height: =36
+                HoverBorderColor: =RGBA(210, 210, 210, 1)
+                HoverColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                OnSelect: =Select(Parent)
+                PressedBorderColor: =
+                PressedColor: =RGBA(31, 31, 31, 1)
+                PressedFill: =
+                Size: =14
+                Text: =ThisItem.Value.title
+                Width: =130
+                X: =15
+                Y: =6
+                ZIndex: =1
+
+    Group15 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =31
+
+        "'Visit Search' As text":
+            BorderColor: =RGBA(109, 109, 109, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =""
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            FocusedBorderThickness: =2
+            Font: =Font.Lato
+            Height: =39
+            HintText: ="Search Visits"
+            HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(255, 255, 255, 1)
+            PaddingLeft: =45
+            PressedBorderColor: =RGBA(255, 200, 61, 1)
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Size: =15
+            Width: =571
+            X: =29
+            Y: =88
+            ZIndex: =2
+
+        Icon12 As icon.Search:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =4
+            Height: =34
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Search
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =20
+            X: =40
+            Y: =92
+            ZIndex: =3
+
+    Group36 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =32
+
+        Rectangle7_4 As rectangle:
+            BorderColor: =RGBA(204, 204, 204, 1)
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            FocusedBorderThickness: =4
+            Height: =335
+            HoverFill: =RGBA(237, 237, 237, 1)
+            OnSelect: |-
+                =If(VarDialogOpen, Patch(
+                    Visits_1,
+                    Defaults(Visits_1),
+                    {'Visit Type':'Visit Type (Visits_1)'.Unplanned}
+                );
+                )
+            PressedFill: =RGBA(237, 237, 237, 1)
+            Visible: =VarEditDialogOpen
+            Width: =550
+            X: =45
+            Y: =340
+            ZIndex: =20
+
+        Label8 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            Height: =51
+            Size: =18
+            Text: ="Customer"
+            Visible: =VarEditDialogOpen
+            Width: =210
+            X: =72
+            Y: =362
+            ZIndex: =21
+
+        Label8_1 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =51
+            Size: =18
+            Text: =First(SelectedVisitForEdit).Customer.'Account Name (name)'
+            Visible: =VarEditDialogOpen
+            Width: =289
+            X: =284
+            Y: =362
+            ZIndex: =22
+
+        Label8_2 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            Height: =51
+            Size: =18
+            Text: ="Rescheduled Date"
+            Visible: =VarEditDialogOpen
+            Width: =210
+            X: =72
+            Y: =418
+            ZIndex: =23
+
+        DatePicker1 As datepicker:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            BorderThickness: =1
+            CalendarHeaderFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            Color: =RGBA(255, 255, 255, 1)
+            DefaultDate: =First(SelectedVisitForEdit).'Visit Date'
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(31, 31, 31, 1)
+            Font: =Font.Lato
+            Height: =39
+            HoverDateFill: =RGBA(144, 144, 144, 1)
+            IconBackground: =RGBA(255, 200, 61, 1)
+            IconFill: =RGBA(31, 31, 31, 1)
+            PaddingTop: =5
+            SelectedDateFill: =RGBA(255, 200, 61, 1)
+            Size: =16
+            Visible: =VarEditDialogOpen
+            Width: =198
+            X: =286
+            Y: =430
+            ZIndex: =24
+
+        Label8_4 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 0, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =28
+            Size: =12
+            Text: ="Visit Date can not be less than today"
+            Visible: =If(VarEditDialogOpen && DatePicker1.SelectedDate < Today(), true)
+            Width: =295
+            X: =268
+            Y: =533
+            ZIndex: =25
+
+        Icon10_4 As icon.Cancel:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            Color: =RGBA(128, 128, 128, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =37
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Cancel
+            OnSelect: =Set(VarEditDialogOpen, false)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Visible: =VarEditDialogOpen
+            Width: =37
+            X: =543
+            Y: =353
+            ZIndex: =26
+
+        Button2_7 As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(31, 31, 31, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            DisplayMode: =If(DatePicker1.SelectedDate < Today(), Disabled, DisplayMode.Edit)
+            Fill: =RGBA(255, 200, 61, 1)
+            FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =45
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(31, 31, 31, 1)
+            HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+            OnSelect: |-
+                =Patch(
+                    Visits_1,
+                    LookUp(
+                        Visits_1,
+                        'Visit ID' = First(SelectedVisitForEdit).'Visit ID'
+                    ),
+                    {'Visit Date': DatePicker1.SelectedDate,
+                    Remarks: TextInput6.Text}
+                );
+                Set(VarEditDialogOpen, false);
+                Notify("Visit has been updated", NotificationType.Success, 2000);
+            PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+            PressedColor: =RGBA(31, 31, 31, 1)
+            PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            Size: =14
+            Text: ="CONFIRM"
+            Visible: =VarEditDialogOpen
+            Width: =137
+            X: =252
+            Y: =615
+            ZIndex: =27
+
+        Label8_8 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            Height: =51
+            Size: =18
+            Text: ="Remarks"
+            Visible: =VarEditDialogOpen
+            Width: =210
+            X: =72
+            Y: =479
+            ZIndex: =29
+
+        Label8_9 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =51
+            Size: =18
+            Text: =
+            Visible: =VarEditDialogOpen
+            Width: =289
+            X: =274
+            Y: =509
+            ZIndex: =30
+
+        TextInput6 As text:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =""
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(31, 31, 31, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =112
+            HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(31, 31, 31, 1)
+            PressedBorderColor: =RGBA(255, 200, 61, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(31, 31, 31, 1)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =21
+            Visible: =VarEditDialogOpen
+            Width: =289
+            X: =284
+            Y: =485
+            ZIndex: =31
+

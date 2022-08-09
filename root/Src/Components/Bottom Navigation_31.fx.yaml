@@ -1,0 +1,101 @@
+"'Bottom Navigation_31' As CanvasComponent":
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =80
+    NavItems: |-
+        =Table(
+            {
+                Title: If(
+                    varAttendance = "end",
+                    "End",
+                    varAttendance = "start",
+                    "Start",
+                    varAttendance = "done",
+                    "Ended"
+                ),
+                //Title: Start,
+                Screen: If(
+                    varAttendance = "start",
+                    StartDay,
+                    varAttendance = "end",
+                    'End day',
+                    varAttendance = "done",
+                    'Day Ended'
+                ),
+                Icon: CalendarBlank,
+                Active: false
+            },
+            {
+                Title: "Visits",
+                Screen: Visits,
+                Icon: Waypoint,
+                Active: false
+            },
+            {
+                Title: "Dashboard",
+                Screen: Home,
+                Icon: Waffle,
+                Active: true
+            },
+            {
+                Title: "Orders",
+                Screen: 'All Orders',
+                Icon: ShoppingCart,
+                Active: false
+            }
+        )
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Gallery2_2 As gallery.galleryHorizontal:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Height: =80
+        Items: ='Bottom Navigation_31'.NavItems
+        OnSelect: =Navigate(ThisItem.Screen)
+        ShowScrollbar: =false
+        TemplateSize: =151
+        ZIndex: =1
+
+        Rectangle3_1 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =If(ThisItem.Active, RGBA(0,0,0,0.6), Transparent)
+            FocusedBorderThickness: =4
+            Height: =70
+            HoverFill: =RGBA(103, 204, 107, 0.28)
+            OnSelect: =Select(Parent)
+            PressedFill: =RGBA(103, 204, 107, 0.25)
+            Width: =101
+            X: =20
+            ZIndex: =1
+
+        Icon1_3 As icon.Add:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =If(ThisItem.Active, White, RGBA(154, 154, 154, 1))
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =35
+            Icon: =ThisItem.Icon
+            OnSelect: =Navigate(ThisItem.Screen)
+            Width: =39
+            X: =51
+            Y: =10
+            ZIndex: =2
+
+        Label2_131 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =If(ThisItem.Active, White, RGBA(154, 154, 154, 1))
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =26
+            OnSelect: =Navigate(ThisItem.Screen)
+            Size: =10
+            Text: =ThisItem.Title
+            Width: =121
+            X: =10
+            Y: =44
+            ZIndex: =3
+

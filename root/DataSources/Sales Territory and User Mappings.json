@@ -1,0 +1,99 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_salesterritoryandusermappings",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_salesterritoryandusermapping",
+    "MaxGetRowsCount": 500,
+    "Name": "Sales Territory and User Mappings",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_name": "Mapping ID",
+      "cr431_SalesTerritory": "Sales Territory",
+      "cr431_salesterritoryandusermapping_AsyncOperations": "System Jobs",
+      "cr431_salesterritoryandusermapping_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_salesterritoryandusermapping_DuplicateBaseRecord": "Duplicate Records (cr431_salesterritoryandusermapping_DuplicateBaseRecord)",
+      "cr431_salesterritoryandusermapping_DuplicateMatchingRecord": "Duplicate Records (cr431_salesterritoryandusermapping_DuplicateMatchingRecord)",
+      "cr431_salesterritoryandusermapping_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_salesterritoryandusermapping_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_salesterritoryandusermapping_ProcessSession": "Process Sessions",
+      "cr431_salesterritoryandusermapping_SyncErrors": "Sync Errors",
+      "cr431_salesterritoryandusermappingid": "Sales Territory and User Mapping",
+      "cr431_SalesUser": "Sales User",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Sales Territory and User Mappings",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Sales Territory and User Mappings (Views)",
+    "Name": "_cr431_salesterritoryandusermapping_views",
+    "RelatedEntityName": "Sales Territory and User Mappings",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "690320d8-6d34-4f75-9447-bcae92ff0aed": "Active Sales Territory and User Mappings",
+      "8cb20994-8ec5-4933-a187-2bf5b329b72b": "Sales Territory and User Mapping Advanced Find View",
+      "94bcad0c-6989-4e0d-963b-0345e274057b": "Sales Territory and User Mapping Lookup View",
+      "b3b05db6-d76d-44fc-9dfb-c0777cdb099e": "Sales Territory and User Mapping Associated View",
+      "c680d2db-f7e4-412f-874a-ab9b964feeef": "Inactive Sales Territory and User Mappings"
+    }
+  },
+  {
+    "DisplayName": "Status (Sales Territory and User Mappings)",
+    "Name": "cr431_salesterritoryandusermapping_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Sales Territory and User Mappings"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Sales Territory and User Mappings",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Sales Territory and User Mappings)",
+    "Name": "cr431_salesterritoryandusermapping_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Sales Territory and User Mappings"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Sales Territory and User Mappings",
+    "Type": "OptionSetInfo"
+  }
+]

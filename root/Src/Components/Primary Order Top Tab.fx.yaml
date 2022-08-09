@@ -1,0 +1,71 @@
+"'Primary Order Top Tab' As CanvasComponent":
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =45
+    TabItems: |-
+        =Table( 
+            {
+                Title: "Open",
+                Screen: App.ActiveScreen,
+                Active: true
+            },
+            {
+                Title: "Released",
+                Screen: App.ActiveScreen,
+                Active: false
+            },
+            {
+                Title: "Cancelled",
+                Screen: App.ActiveScreen,
+                Active: false
+            },
+             {
+                Title: "Partially Shipped",
+                Screen: App.ActiveScreen,
+                Active: false
+            },
+             {
+                Title: "Shipped",
+                Screen: App.ActiveScreen,
+                Active: false
+            }
+            
+        )
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Gallery1_18 As gallery.galleryHorizontal:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =45
+        Items: ='Primary Order Top Tab'.TabItems
+        ShowScrollbar: =false
+        TemplateSize: =125
+        ZIndex: =1
+
+        Label8_18 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =30
+            OnSelect: =Navigate(ThisItem.Screen)
+            Size: =10
+            Text: =ThisItem.Title
+            Width: =120
+            ZIndex: =4
+
+        Icon6_16 As icon.HorizontalLine:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =If(ThisItem.Active ,RGBA(227,100,41,1), RGBA(255, 255, 255, 1))
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =4
+            Icon: =HorizontalLine
+            OnSelect: =Select(Parent)
+            Width: =125
+            Y: =31
+            ZIndex: =5
+

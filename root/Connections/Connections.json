@@ -1,0 +1,353 @@
+{
+  "51014554-e924-4657-a5cd-f2c65c35534e": {
+    "connectionParameters": {},
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1534/1.0.1534.2605/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "8a4a2ae6-6476-4be3-b8ba-b4b9e6587b7f": {
+          "value": "shared_onedriveforbusiness_1"
+        },
+        "e4497bdb-40f7-4932-a955-34eec43fa607": {
+          "value": "shared_cognitiveservicescomputervision"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "ac518223-9473-46df-8195-2a6c3d895cd9"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_cognitiveservicescomputervision": {
+          "value": "e4497bdb-40f7-4932-a955-34eec43fa607"
+        },
+        "shared_onedriveforbusiness_1": {
+          "value": "8a4a2ae6-6476-4be3-b8ba-b4b9e6587b7f"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "ac518223-9473-46df-8195-2a6c3d895cd9"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "hii"
+    ],
+    "dependencies": {
+      "shared_cognitiveservicescomputervision": "e4497bdb-40f7-4932-a955-34eec43fa607",
+      "shared_onedriveforbusiness_1": "8a4a2ae6-6476-4be3-b8ba-b4b9e6587b7f"
+    },
+    "dependents": [],
+    "id": "51014554-e924-4657-a5cd-f2c65c35534e"
+  },
+  "615640c0-01cb-4586-b1c6-c8e83932699c": {
+    "connectionParameters": {},
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1534/1.0.1534.2605/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "8a4a2ae6-6476-4be3-b8ba-b4b9e6587b7f": {
+          "value": "shared_onedriveforbusiness"
+        },
+        "f2c5fbbe-4bbc-4052-ac82-dd49ee213a34": {
+          "value": "shared_cognitiveservicescomputervision_1"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "78318852-c74a-4a67-a2a7-32a8341630fb"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_cognitiveservicescomputervision_1": {
+          "value": "f2c5fbbe-4bbc-4052-ac82-dd49ee213a34"
+        },
+        "shared_onedriveforbusiness": {
+          "value": "8a4a2ae6-6476-4be3-b8ba-b4b9e6587b7f"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "78318852-c74a-4a67-a2a7-32a8341630fb"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "ImagetoTextOriginal"
+    ],
+    "dependencies": {
+      "shared_cognitiveservicescomputervision_1": "f2c5fbbe-4bbc-4052-ac82-dd49ee213a34",
+      "shared_onedriveforbusiness": "8a4a2ae6-6476-4be3-b8ba-b4b9e6587b7f"
+    },
+    "dependents": [],
+    "id": "615640c0-01cb-4586-b1c6-c8e83932699c"
+  },
+  "7f672e88-f8ed-4abb-a791-91ffd76e65d0": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Whatsapp",
+      "iconUri": "https://az787822.vo.msecnd.net/defaulticons/api-dedicated.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_whatsapp-5ff7e120497f2f7876-5f3dc547195d1299c5",
+      "isCustomApiConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "SendWhatsapp"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "7f672e88-f8ed-4abb-a791-91ffd76e65d0"
+  },
+  "8a4a2ae6-6476-4be3-b8ba-b4b9e6587b7f": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "OneDrive for Business",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1546/1.0.1546.2665/onedriveforbusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_onedriveforbusiness",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "f1588cc7-e005-42fb-a4a9-c42ff7e1e5fa",
+      "51014554-e924-4657-a5cd-f2c65c35534e",
+      "615640c0-01cb-4586-b1c6-c8e83932699c"
+    ],
+    "id": "8a4a2ae6-6476-4be3-b8ba-b4b9e6587b7f"
+  },
+  "aa2090b6-f870-4784-add5-fc1b2d2fea43": {
+    "connectionParameters": {},
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1534/1.0.1534.2605/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "d7517760-40c6-44b0-b2d3-50d0d90a8c07"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "d7517760-40c6-44b0-b2d3-50d0d90a8c07"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "SpeechtoText"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "aa2090b6-f870-4784-add5-fc1b2d2fea43"
+  },
+  "c9c4816a-4020-432d-9280-92907bb120b2": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Users",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1587/1.0.1587.2924/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "c9c4816a-4020-432d-9280-92907bb120b2"
+  },
+  "caf34565-a7b4-4390-bbbd-a395522d34b0": {
+    "connectionParameters": {
+      "accountName": "princepipes"
+    },
+    "connectionRef": {
+      "apiTier": "Premium",
+      "authenticationType": "keyBasedAuth",
+      "displayName": "Azure Blob Storage",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1591/1.0.1591.2961/azureblob/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_azureblob",
+      "parameterHints": {},
+      "parameterHintsV2": {},
+      "sharedConnectionId": "/providers/microsoft.powerapps/apis/shared_azureblob/connections/d12450cc6b9846f4a5d48c285eddf81a"
+    },
+    "datasets": {},
+    "dataSources": [
+      "AzureBlobStorage"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "caf34565-a7b4-4390-bbbd-a395522d34b0"
+  },
+  "e4497bdb-40f7-4932-a955-34eec43fa607": {
+    "connectionParameters": {
+      "siteUrl": "https://zoximacv.cognitiveservices.azure.com/"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "authenticationType": "keyBasedAuth",
+      "displayName": "Computer Vision API",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1549/1.0.1549.2680/cognitiveservicescomputervision/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_cognitiveservicescomputervision",
+      "parameterHints": {},
+      "parameterHintsV2": {},
+      "sharedConnectionId": "/providers/microsoft.powerapps/apis/shared_cognitiveservicescomputervision/connections/shared-cognitiveserv-fb381787-bfd2-474d-b937-44f4cf5220b5"
+    },
+    "datasets": {},
+    "dataSources": [
+      "ComputerVisionAPI"
+    ],
+    "dependencies": {},
+    "dependents": [
+      "f1588cc7-e005-42fb-a4a9-c42ff7e1e5fa",
+      "51014554-e924-4657-a5cd-f2c65c35534e"
+    ],
+    "id": "e4497bdb-40f7-4932-a955-34eec43fa607"
+  },
+  "e850a52d-a735-44b2-a5e2-5c1f3b65adcf": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1591/1.0.1591.2961/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "e850a52d-a735-44b2-a5e2-5c1f3b65adcf"
+  },
+  "f1588cc7-e005-42fb-a4a9-c42ff7e1e5fa": {
+    "connectionParameters": {},
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1534/1.0.1534.2605/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "8a4a2ae6-6476-4be3-b8ba-b4b9e6587b7f": {
+          "value": "shared_onedriveforbusiness"
+        },
+        "e4497bdb-40f7-4932-a955-34eec43fa607": {
+          "value": "shared_cognitiveservicescomputervision_1"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "919b3ae9-770e-4811-8f16-ef0e83a55c4e"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_cognitiveservicescomputervision_1": {
+          "value": "e4497bdb-40f7-4932-a955-34eec43fa607"
+        },
+        "shared_onedriveforbusiness": {
+          "value": "8a4a2ae6-6476-4be3-b8ba-b4b9e6587b7f"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "919b3ae9-770e-4811-8f16-ef0e83a55c4e"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "ImageToText"
+    ],
+    "dependencies": {
+      "shared_cognitiveservicescomputervision_1": "e4497bdb-40f7-4932-a955-34eec43fa607",
+      "shared_onedriveforbusiness": "8a4a2ae6-6476-4be3-b8ba-b4b9e6587b7f"
+    },
+    "dependents": [],
+    "id": "f1588cc7-e005-42fb-a4a9-c42ff7e1e5fa"
+  },
+  "f2c5fbbe-4bbc-4052-ac82-dd49ee213a34": {
+    "connectionParameters": {
+      "siteUrl": "https://harkamalcv.cognitiveservices.azure.com/"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "authenticationType": "keyBasedAuth",
+      "displayName": "Computer Vision API",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1549/1.0.1549.2680/cognitiveservicescomputervision/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_cognitiveservicescomputervision",
+      "parameterHints": {},
+      "parameterHintsV2": {},
+      "sharedConnectionId": "/providers/microsoft.powerapps/apis/shared_cognitiveservicescomputervision/connections/shared-cognitiveserv-85f18f87-640c-4da1-b89d-84a839766320"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "615640c0-01cb-4586-b1c6-c8e83932699c"
+    ],
+    "id": "f2c5fbbe-4bbc-4052-ac82-dd49ee213a34"
+  },
+  "fb3e11e5-ccd3-4ac3-8bb7-635b344d8f0e": {
+    "connectionParameters": {
+      "applicationId": "5a9caf3d-0560-482a-9e0e-9bc19f44e930",
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Power Apps Notification",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1539/1.0.1539.2620/powerappsnotification/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_powerappsnotification",
+      "parameterHints": {},
+      "parameterHintsV2": {},
+      "sharedConnectionId": "/providers/microsoft.powerapps/apis/shared_powerappsnotification/connections/581114cd34ab4005b8188c66a9ec966e"
+    },
+    "datasets": {},
+    "dataSources": [
+      "PowerAppsNotification"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "fb3e11e5-ccd3-4ac3-8bb7-635b344d8f0e"
+  },
+  "fc454483-706f-47d8-80d7-7169d4b89b63": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Microsoft Teams",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1591/1.0.1591.2961/teams/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_teams",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "MicrosoftTeams"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "fc454483-706f-47d8-80d7-7169d4b89b63"
+  }
+}

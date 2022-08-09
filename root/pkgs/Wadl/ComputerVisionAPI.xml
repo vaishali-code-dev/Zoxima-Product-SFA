@@ -1,0 +1,693 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://india-001.azure-apim.net/apim/cognitiveservicescomputervision" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="ComputerVisionAPI" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Computer Vision API">Extract rich information from images to categorize and process visual data—and protect your users from unwanted content with this Azure Cognitive Service.</doc>
+  <grammars>
+    <jsonTypes targetNamespace="https://india-001.azure-apim.net/apim/cognitiveservicescomputervision" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <array typeRef="Subdomain" name="SubdomainList_value_def" />
+      <object name="SubdomainList">
+        <property name="value" typeRef="SubdomainList_value_def" />
+      </object>
+      <string name="Subdomain_Name_def" />
+      <string name="Subdomain_DisplayName_def" />
+      <object name="Subdomain">
+        <property name="Name" type="string" />
+        <property name="DisplayName" type="string" />
+      </object>
+      <array typeRef="ModelResponse" name="ListModelsResponse_models_def" />
+      <object name="ListModelsResponse">
+        <property name="models" typeRef="ListModelsResponse_models_def" />
+      </object>
+      <string name="ImageContentObject_url_def" />
+      <object name="ImageContentObject">
+        <property name="url" type="string" />
+      </object>
+      <string name="ModelResponse_name_def" />
+      <string name="ModelResponse_categories_def_items_def" />
+      <array type="string" name="ModelResponse_categories_def" />
+      <object name="ModelResponse">
+        <property name="name" type="string" />
+        <property name="categories" typeRef="ModelResponse_categories_def" />
+      </object>
+      <number name="DomainModelResponse_result_def_celebrities_def_items_def_confidence_def" />
+      <string name="DomainModelResponse_result_def_celebrities_def_items_def_name_def" />
+      <object name="DomainModelResponse_result_def_celebrities_def_items_def">
+        <property name="confidence" type="number" />
+        <property name="name" type="string" />
+      </object>
+      <array typeRef="DomainModelResponse_result_def_celebrities_def_items_def" name="DomainModelResponse_result_def_celebrities_def" />
+      <number name="DomainModelResponse_result_def_landmarks_def_items_def_confidence_def" />
+      <string name="DomainModelResponse_result_def_landmarks_def_items_def_name_def" />
+      <object name="DomainModelResponse_result_def_landmarks_def_items_def">
+        <property name="confidence" type="number" />
+        <property name="name" type="string" />
+      </object>
+      <array typeRef="DomainModelResponse_result_def_landmarks_def_items_def" name="DomainModelResponse_result_def_landmarks_def" />
+      <object name="DomainModelResponse_result_def">
+        <property name="celebrities" typeRef="DomainModelResponse_result_def_celebrities_def" />
+        <property name="landmarks" typeRef="DomainModelResponse_result_def_landmarks_def" />
+      </object>
+      <object name="DomainModelResponse">
+        <property name="result" typeRef="DomainModelResponse_result_def" />
+      </object>
+      <number name="TagResponse_tags_def_items_def_confidence_def" />
+      <string name="TagResponse_tags_def_items_def_name_def" />
+      <object name="TagResponse_tags_def_items_def">
+        <property name="confidence" type="number" />
+        <property name="name" type="string" />
+      </object>
+      <array typeRef="TagResponse_tags_def_items_def" name="TagResponse_tags_def" />
+      <object name="TagResponse">
+        <property name="tags" typeRef="TagResponse_tags_def" />
+      </object>
+      <object name="DetectResponse_objects_def_items_def_rectangle_def" />
+      <number name="DetectResponse_objects_def_items_def_confidence_def" />
+      <string name="DetectResponse_objects_def_items_def_object_def" />
+      <object name="DetectResponse_objects_def_items_def">
+        <property name="rectangle" typeRef="DetectResponse_objects_def_items_def_rectangle_def" />
+        <property name="confidence" type="number" />
+        <property name="object" type="string" />
+      </object>
+      <array typeRef="DetectResponse_objects_def_items_def" name="DetectResponse_objects_def" />
+      <object name="DetectResponse">
+        <property name="objects" typeRef="DetectResponse_objects_def" />
+      </object>
+      <object name="AreaOfInterestResponse_areaOfInterest_def" />
+      <object name="AreaOfInterestResponse">
+        <property name="areaOfInterest" typeRef="AreaOfInterestResponse_areaOfInterest_def" />
+      </object>
+      <string name="OCRJsonResponse_language_def" />
+      <object name="OCRJsonResponse_regions_def_items_def" />
+      <array typeRef="OCRJsonResponse_regions_def_items_def" name="OCRJsonResponse_regions_def" />
+      <object name="OCRJsonResponse">
+        <property name="language" type="string" />
+        <property name="regions" typeRef="OCRJsonResponse_regions_def" />
+      </object>
+      <string name="OCRTextResponse_text_def" />
+      <object name="OCRTextResponse">
+        <property name="text" type="string" />
+      </object>
+      <string name="AnalyzeResponse_categories_def_items_def_name_def" />
+      <number name="AnalyzeResponse_categories_def_items_def_score_def" />
+      <object name="AnalyzeResponse_categories_def_items_def">
+        <property name="name" type="string" />
+        <property name="score" type="number" />
+      </object>
+      <array typeRef="AnalyzeResponse_categories_def_items_def" name="AnalyzeResponse_categories_def" />
+      <number name="AnalyzeResponse_description_def_captions_def_items_def_confidence_def" />
+      <string name="AnalyzeResponse_description_def_captions_def_items_def_text_def" />
+      <object name="AnalyzeResponse_description_def_captions_def_items_def">
+        <property name="confidence" type="number" />
+        <property name="text" type="string" />
+      </object>
+      <array typeRef="AnalyzeResponse_description_def_captions_def_items_def" name="AnalyzeResponse_description_def_captions_def" />
+      <string name="AnalyzeResponse_description_def_tags_def_items_def" />
+      <array type="string" name="AnalyzeResponse_description_def_tags_def" />
+      <object name="AnalyzeResponse_description_def">
+        <property name="captions" typeRef="AnalyzeResponse_description_def_captions_def" />
+        <property name="tags" typeRef="AnalyzeResponse_description_def_tags_def" />
+      </object>
+      <number name="AnalyzeResponse_tags_def_items_def_confidence_def" />
+      <string name="AnalyzeResponse_tags_def_items_def_name_def" />
+      <object name="AnalyzeResponse_tags_def_items_def">
+        <property name="confidence" type="number" />
+        <property name="name" type="string" />
+      </object>
+      <array typeRef="AnalyzeResponse_tags_def_items_def" name="AnalyzeResponse_tags_def" />
+      <object name="AnalyzeResponse">
+        <property name="categories" typeRef="AnalyzeResponse_categories_def" />
+        <property name="description" typeRef="AnalyzeResponse_description_def" />
+        <property name="tags" typeRef="AnalyzeResponse_tags_def" />
+      </object>
+      <number name="DescribeResponse_description_def_captions_def_items_def_confidence_def" />
+      <string name="DescribeResponse_description_def_captions_def_items_def_text_def" />
+      <object name="DescribeResponse_description_def_captions_def_items_def">
+        <property name="confidence" type="number" />
+        <property name="text" type="string" />
+      </object>
+      <array typeRef="DescribeResponse_description_def_captions_def_items_def" name="DescribeResponse_description_def_captions_def" />
+      <string name="DescribeResponse_description_def_tags_def_items_def" />
+      <array type="string" name="DescribeResponse_description_def_tags_def" />
+      <object name="DescribeResponse_description_def">
+        <property name="captions" typeRef="DescribeResponse_description_def_captions_def" />
+        <property name="tags" typeRef="DescribeResponse_description_def_tags_def" />
+      </object>
+      <object name="DescribeResponse">
+        <property name="description" typeRef="DescribeResponse_description_def" />
+      </object>
+      <object isDynamicSchema="true" name="RecognizeDomainSpecificContentV3_param_Image_def" />
+      <object isDynamicSchema="true" name="RecognizeDomainSpecificContentV2_param_Image_def" />
+      <object isDynamicSchema="true" name="TagImageV2_param_Image_def" />
+      <object isDynamicSchema="true" name="TagImageV3_param_Image_def" />
+      <object isDynamicSchema="true" name="OCRV2_param_Image_def" />
+      <object isDynamicSchema="true" name="OCRV3_param_Image_def" />
+      <object isDynamicSchema="true" name="OCRTextV2_param_Image_def" />
+      <object isDynamicSchema="true" name="OCRTextV3_param_Image_def" />
+      <object isDynamicSchema="true" name="AnalyzeImageV2_param_Image_def" />
+      <object isDynamicSchema="true" name="AnalyzeImageV3_param_Image_def" />
+      <object isDynamicSchema="true" name="GetThumbnailV2_param_Image_def" />
+      <string name="GetThumbnailV2_responses_200_def" />
+      <object isDynamicSchema="true" name="GetThumbnailV3_param_Image_def" />
+      <string name="GetThumbnailV3_responses_200_def" />
+      <object isDynamicSchema="true" name="DescribeImageV2_param_Image_def" />
+      <object isDynamicSchema="true" name="DescribeImageV3_param_Image_def" />
+      <string name="DescribeImageContentV2_param_Image_def" />
+      <string name="DescribeImageContentV3_param_Image_def" />
+      <object isDynamicSchema="true" name="DetectObjects_param_Image_def" />
+      <object isDynamicSchema="true" name="DetectObjectsV3_param_Image_def" />
+      <object isDynamicSchema="true" name="GetAreaOfInterest_param_Image_def" />
+      <object isDynamicSchema="true" name="GetAreaOfInterestV3_param_Image_def" />
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://india-001.azure-apim.net/apim/cognitiveservicescomputervision">
+    <resource path="/{connectionId}/v3/subdomain/{subdomainName}/vision/v2.0/models/{model}/analyze">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="subdomainName" type="xs:string" required="true">
+        <doc title="Azure subdomain or geographic region (e.g. westus)" />
+      </param>
+      <param style="template" name="model" type="xs:string" required="true">
+        <doc title="Supported domain-specific model to recognize in image." />
+        <option value="celebrities" />
+        <option value="landmarks" />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="RecognizeDomainSpecificContentV3" actionName="RecognizeDomainSpecificContentV3" visibility="advanced" siena:isDeprecated="false" siena:family="RecognizeDomainSpecificContent" siena:revision="3" siena:status="Preview">
+        <doc title="Recognize Domain Specific Content (V3)&#xA;Recognize celebrities or landmarks in an image." />
+        <request>
+          <param style="query" name="format" type="xs:string" required="true">
+            <doc title="Source of the image - either included or by reference url." />
+            <option value="Image Content" />
+            <option value="Image URL" />
+          </param>
+          <representation mediaType="application/json" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:DomainModelResponse" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/vision/v2.0/models/{model}/analyze">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="model" type="xs:string" required="true">
+        <doc title="Supported domain-specific model to recognize in image." />
+        <option value="celebrities" />
+        <option value="landmarks" />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="RecognizeDomainSpecificContentV2" actionName="RecognizeDomainSpecificContentV2" visibility="advanced" siena:isDeprecated="false" siena:family="RecognizeDomainSpecificContent" siena:revision="2" siena:status="Production">
+        <doc title="Recognize Domain Specific Content&#xA;Recognize celebrities or landmarks in an image." />
+        <request>
+          <param style="query" name="format" type="xs:string" required="true">
+            <doc title="Source of the image - either included or by reference url." />
+            <option value="Image Content" />
+            <option value="Image URL" />
+          </param>
+          <representation mediaType="application/json" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:DomainModelResponse" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/vision/v2.0/tag">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="TagImageV2" actionName="TagImageV2" visibility="advanced" siena:isDeprecated="false" siena:family="TagImage" siena:revision="2" siena:status="Production">
+        <doc title="Tag Image&#xA;Generates a list of words, or tags, that are relevant to the content of the supplied image." />
+        <request>
+          <param style="query" name="format" type="xs:string" required="true">
+            <doc title="Source of the image - either included or by reference url." />
+            <option value="Image Content" />
+            <option value="Image URL" />
+          </param>
+          <representation mediaType="application/json" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:TagResponse" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v3/subdomain/{subdomainName}/vision/v2.0/tag">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="subdomainName" type="xs:string" required="true">
+        <doc title="Azure subdomain or geographic region (e.g. westus)" />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="TagImageV3" actionName="TagImageV3" visibility="advanced" siena:isDeprecated="false" siena:family="TagImage" siena:revision="3" siena:status="Preview">
+        <doc title="Tag Image (V3)&#xA;Generates a list of words, or tags, that are relevant to the content of the supplied image." />
+        <request>
+          <param style="query" name="format" type="xs:string" required="true">
+            <doc title="Source of the image - either included or by reference url." />
+            <option value="Image Content" />
+            <option value="Image URL" />
+          </param>
+          <representation mediaType="application/json" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:TagResponse" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/vision/v2.0/ocr">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="OCRV2" actionName="OCRV2" visibility="advanced" siena:isDeprecated="false" siena:family="OCR" siena:revision="2" siena:status="Production">
+        <doc title="Optical Character Recognition (OCR) to JSON&#xA;Optical Character Recognition (OCR) detects text in an image and extracts the recognized characters into a machine-usable JSON stream." />
+        <request>
+          <param style="query" name="language" type="xs:string" default="unk">
+            <doc title="The language code of the text to be detected in the image." />
+          </param>
+          <param style="query" name="detectOrientation" type="xs:boolean" default="true">
+            <doc title="he BCP-47 language code of the text to be detected in the image." />
+          </param>
+          <param style="query" name="format" type="xs:string" required="true">
+            <doc title="Source of the image - either included or by reference url." />
+            <option value="Image Content" />
+            <option value="Image URL" />
+          </param>
+          <representation mediaType="application/json" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:OCRJsonResponse" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v3/subdomain/{subdomainName}/vision/v2.0/ocr">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="subdomainName" type="xs:string" required="true">
+        <doc title="Azure subdomain or geographic region (e.g. westus)" />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="OCRV3" actionName="OCRV3" visibility="advanced" siena:isDeprecated="false" siena:family="OCR" siena:revision="3" siena:status="Preview">
+        <doc title="Optical Character Recognition (OCR) to JSON (V3)&#xA;Optical Character Recognition (OCR) detects text in an image and extracts the recognized characters into a machine-usable JSON stream." />
+        <request>
+          <param style="query" name="language" type="xs:string" default="unk">
+            <doc title="The language code of the text to be detected in the image." />
+          </param>
+          <param style="query" name="detectOrientation" type="xs:boolean" default="true">
+            <doc title="he BCP-47 language code of the text to be detected in the image." />
+          </param>
+          <param style="query" name="format" type="xs:string" required="true">
+            <doc title="Source of the image - either included or by reference url." />
+            <option value="Image Content" />
+            <option value="Image URL" />
+          </param>
+          <representation mediaType="application/json" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:OCRJsonResponse" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/vision/v2.0/ocrtext">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="OCRTextV2" actionName="OCRTextV2" visibility="advanced" siena:isDeprecated="false" siena:family="OCRText" siena:revision="2" siena:status="Production">
+        <doc title="Optical Character Recognition (OCR) to Text&#xA;Optical Character Recognition (OCR) detects text in an image and extracts the recognized characters into a text file." />
+        <request>
+          <param style="query" name="language" type="xs:string" default="unk">
+            <doc title="The language code of the text to be detected in the image." />
+          </param>
+          <param style="query" name="detectOrientation" type="xs:boolean" default="true">
+            <doc title="he BCP-47 language code of the text to be detected in the image." />
+          </param>
+          <param style="query" name="format" type="xs:string" required="true">
+            <doc title="Source of the image - either included or by reference url." />
+            <option value="Image Content" />
+            <option value="Image URL" />
+          </param>
+          <representation mediaType="application/json" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:OCRTextResponse" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v3/subdomain/{subdomainName}/vision/v2.0/ocrtext">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="subdomainName" type="xs:string" required="true">
+        <doc title="Azure subdomain or geographic region (e.g. westus)" />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="OCRTextV3" actionName="OCRTextV3" visibility="advanced" siena:isDeprecated="false" siena:family="OCRText" siena:revision="3" siena:status="Preview">
+        <doc title="Optical Character Recognition (OCR) to Text (V3)&#xA;Optical Character Recognition (OCR) detects text in an image and extracts the recognized characters into a text file." />
+        <request>
+          <param style="query" name="language" type="xs:string" default="unk">
+            <doc title="The language code of the text to be detected in the image." />
+          </param>
+          <param style="query" name="detectOrientation" type="xs:boolean" default="true">
+            <doc title="he BCP-47 language code of the text to be detected in the image." />
+          </param>
+          <param style="query" name="format" type="xs:string" required="true">
+            <doc title="Source of the image - either included or by reference url." />
+            <option value="Image Content" />
+            <option value="Image URL" />
+          </param>
+          <representation mediaType="application/json" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:OCRTextResponse" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/vision/v2.0/analyze">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="AnalyzeImageV2" actionName="AnalyzeImageV2" visibility="important" siena:isDeprecated="false" siena:family="AnalyzeImage" siena:revision="2" siena:status="Production">
+        <doc title="Analyze Image&#xA;This operation extracts a rich set of visual features based on the image content." />
+        <request>
+          <param style="query" name="language" type="xs:string">
+            <doc title="The service will return recognition results in specified language." />
+            <option value="en" />
+            <option value="ja" />
+            <option value="pt" />
+            <option value="zh" />
+          </param>
+          <param style="query" name="visualFeatures" type="xs:string" default="Tags,Description,Categories">
+            <doc title="A string indicating what visual feature types to return. Multiple values should be comma-separated." />
+          </param>
+          <param style="query" name="format" type="xs:string" required="true">
+            <doc title="Source of the image - either included or by reference url." />
+            <option value="Image Content" />
+            <option value="Image URL" />
+          </param>
+          <representation mediaType="application/json" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:AnalyzeResponse" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v3/subdomain/{subdomainName}/vision/v2.0/analyze">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="subdomainName" type="xs:string" required="true">
+        <doc title="Azure subdomain or geographic region (e.g. westus)" />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="AnalyzeImageV3" actionName="AnalyzeImageV3" visibility="important" siena:isDeprecated="false" siena:family="AnalyzeImage" siena:revision="3" siena:status="Preview">
+        <doc title="Analyze Image (V3)&#xA;This operation extracts a rich set of visual features based on the image content." />
+        <request>
+          <param style="query" name="language" type="xs:string">
+            <doc title="The service will return recognition results in specified language." />
+            <option value="en" />
+            <option value="ja" />
+            <option value="pt" />
+            <option value="zh" />
+          </param>
+          <param style="query" name="visualFeatures" type="xs:string" default="Tags,Description,Categories">
+            <doc title="A string indicating what visual feature types to return. Multiple values should be comma-separated." />
+          </param>
+          <param style="query" name="format" type="xs:string" required="true">
+            <doc title="Source of the image - either included or by reference url." />
+            <option value="Image Content" />
+            <option value="Image URL" />
+          </param>
+          <representation mediaType="application/json" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:AnalyzeResponse" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/vision/v2.0/generateThumbnail">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="GetThumbnailV2" actionName="GetThumbnailV2" visibility="advanced" siena:isDeprecated="false" siena:family="GetThumbnail" siena:revision="2" siena:status="Production">
+        <doc title="Generate Thumbnail&#xA;This operation generates a thumbnail image with the user-specified width and height." />
+        <request>
+          <param style="query" name="width" type="xs:double" required="true" default="50">
+            <doc title="Width of the generated thumbnail - recommended is 50" />
+          </param>
+          <param style="query" name="height" type="xs:double" required="true" default="50">
+            <doc title="Height of the generated thumbnail - recommended is 50" />
+          </param>
+          <param style="query" name="smartCropping" type="xs:boolean" default="true">
+            <doc title="Boolean flag for enabling smart cropping" />
+          </param>
+          <param style="query" name="format" type="xs:string" required="true">
+            <doc title="Source of the image - either included or by reference url." />
+            <option value="Image Content" />
+            <option value="Image URL" />
+          </param>
+          <representation mediaType="application/json" />
+        </request>
+        <response>
+          <representation mediaType="application/octet-stream" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v3/subdomain/{subdomainName}/vision/v2.0/generateThumbnail">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="subdomainName" type="xs:string" required="true">
+        <doc title="Azure subdomain or geographic region (e.g. westus)" />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="GetThumbnailV3" actionName="GetThumbnailV3" visibility="advanced" siena:isDeprecated="false" siena:family="GetThumbnail" siena:revision="3" siena:status="Preview">
+        <doc title="Generate Thumbnail (V3)&#xA;This operation generates a thumbnail image with the user-specified width and height." />
+        <request>
+          <param style="query" name="width" type="xs:double" required="true" default="50">
+            <doc title="Width of the generated thumbnail - recommended is 50" />
+          </param>
+          <param style="query" name="height" type="xs:double" required="true" default="50">
+            <doc title="Height of the generated thumbnail - recommended is 50" />
+          </param>
+          <param style="query" name="smartCropping" type="xs:boolean" default="true">
+            <doc title="Boolean flag for enabling smart cropping" />
+          </param>
+          <param style="query" name="format" type="xs:string" required="true">
+            <doc title="Source of the image - either included or by reference url." />
+            <option value="Image Content" />
+            <option value="Image URL" />
+          </param>
+          <representation mediaType="application/json" />
+        </request>
+        <response>
+          <representation mediaType="application/octet-stream" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/vision/v2.0/describe">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="DescribeImageV2" actionName="DescribeImageV2" visibility="advanced" siena:isDeprecated="false" siena:family="DescribeImage" siena:revision="2" siena:status="Production">
+        <doc title="Describe Image&#xA;This operation generates a description of an image in human readable language with complete sentences." />
+        <request>
+          <param style="query" name="maxCandidates" type="xs:double">
+            <doc title="Maximum number of candidate descriptions to be returned." />
+          </param>
+          <param style="query" name="language" type="xs:string">
+            <doc title="The service will return recognition results in specified language." />
+            <option value="en" />
+            <option value="ja" />
+            <option value="pt" />
+            <option value="zh" />
+          </param>
+          <param style="query" name="format" type="xs:string" required="true">
+            <doc title="Source of the image - either included or by reference url." />
+            <option value="Image Content" />
+            <option value="Image URL" />
+          </param>
+          <representation mediaType="application/json" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:DescribeResponse" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v3/subdomain/{subdomainName}/vision/v2.0/describe">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="subdomainName" type="xs:string" required="true">
+        <doc title="Azure subdomain or geographic region (e.g. westus)" />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="DescribeImageV3" actionName="DescribeImageV3" visibility="advanced" siena:isDeprecated="false" siena:family="DescribeImage" siena:revision="3" siena:status="Preview">
+        <doc title="Describe Image (V3)&#xA;This operation generates a description of an image in human readable language with complete sentences." />
+        <request>
+          <param style="query" name="maxCandidates" type="xs:double">
+            <doc title="Maximum number of candidate descriptions to be returned." />
+          </param>
+          <param style="query" name="language" type="xs:string">
+            <doc title="The service will return recognition results in specified language." />
+            <option value="en" />
+            <option value="ja" />
+            <option value="pt" />
+            <option value="zh" />
+          </param>
+          <param style="query" name="format" type="xs:string" required="true">
+            <doc title="Source of the image - either included or by reference url." />
+            <option value="Image Content" />
+            <option value="Image URL" />
+          </param>
+          <representation mediaType="application/json" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:DescribeResponse" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/vision/v2.0/describeImageContent">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="DescribeImageContentV2" actionName="DescribeImageContentV2" visibility="advanced" siena:isDeprecated="false" siena:family="DescribeImageContent" siena:revision="2" siena:status="Production">
+        <doc title="Describe Image Content&#xA;This operation generates a description of image content in human readable language with complete sentences." />
+        <request>
+          <param style="query" name="maxCandidates" type="xs:double">
+            <doc title="Maximum number of candidate descriptions to be returned." />
+          </param>
+          <param style="query" name="language" type="xs:string">
+            <doc title="The service will return recognition results in specified language." />
+            <option value="en" />
+            <option value="ja" />
+            <option value="pt" />
+            <option value="zh" />
+          </param>
+          <representation mediaType="application/octet-stream" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:DescribeResponse" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v3/subdomain/{subdomainName}/vision/v2.0/describeImageContent">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="subdomainName" type="xs:string" required="true">
+        <doc title="Azure subdomain or geographic region (e.g. westus)" />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="DescribeImageContentV3" actionName="DescribeImageContentV3" visibility="advanced" siena:isDeprecated="false" siena:family="DescribeImageContent" siena:revision="3" siena:status="Preview">
+        <doc title="Describe Image Content (V3)&#xA;This operation generates a description of image content in human readable language with complete sentences." />
+        <request>
+          <param style="query" name="maxCandidates" type="xs:double">
+            <doc title="Maximum number of candidate descriptions to be returned." />
+          </param>
+          <param style="query" name="language" type="xs:string">
+            <doc title="The service will return recognition results in specified language." />
+            <option value="en" />
+            <option value="ja" />
+            <option value="pt" />
+            <option value="zh" />
+          </param>
+          <representation mediaType="application/octet-stream" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:DescribeResponse" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/vision/v2.0/describeImageURL">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="DescribeImageURLV2" actionName="DescribeImageURLV2" visibility="advanced" siena:isDeprecated="false" siena:family="DescribeImageURL" siena:revision="2" siena:status="Production">
+        <doc title="Describe Image URL&#xA;This operation generates a description of an image URL in human readable language with complete sentences." />
+        <request>
+          <param style="query" name="maxCandidates" type="xs:double">
+            <doc title="Maximum number of candidate descriptions to be returned." />
+          </param>
+          <param style="query" name="language" type="xs:string">
+            <doc title="The service will return recognition results in specified language." />
+            <option value="en" />
+            <option value="ja" />
+            <option value="pt" />
+            <option value="zh" />
+          </param>
+          <representation mediaType="application/json">
+            <param style="plain" name="url" path="/url" type="xs:string" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:DescribeResponse" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v3/subdomain/{subdomainName}/vision/v2.0/describeImageURL">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="subdomainName" type="xs:string" required="true">
+        <doc title="Azure subdomain or geographic region (e.g. westus)" />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="DescribeImageURLV3" actionName="DescribeImageURLV3" visibility="advanced" siena:isDeprecated="false" siena:family="DescribeImageURL" siena:revision="3" siena:status="Preview">
+        <doc title="Describe Image URL (V3)&#xA;This operation generates a description of an image URL in human readable language with complete sentences." />
+        <request>
+          <param style="query" name="maxCandidates" type="xs:double">
+            <doc title="Maximum number of candidate descriptions to be returned." />
+          </param>
+          <param style="query" name="language" type="xs:string">
+            <doc title="The service will return recognition results in specified language." />
+            <option value="en" />
+            <option value="ja" />
+            <option value="pt" />
+            <option value="zh" />
+          </param>
+          <representation mediaType="application/json">
+            <param style="plain" name="url" path="/url" type="xs:string" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:DescribeResponse" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/vision/v2.0/detect">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="DetectObjects" actionName="DetectObjects" visibility="advanced" siena:isDeprecated="false" siena:status="Production">
+        <doc title="Detect Objects&#xA;Generates a list of deteced objects in the supplied image." />
+        <request>
+          <param style="query" name="format" type="xs:string" required="true">
+            <doc title="Source of the image - either included or by reference url." />
+            <option value="Image Content" />
+            <option value="Image URL" />
+          </param>
+          <representation mediaType="application/json" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:DetectResponse" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v3/subdomain/{subdomainName}/vision/v2.0/detect">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="subdomainName" type="xs:string" required="true">
+        <doc title="Azure subdomain or geographic region (e.g. westus)" />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="DetectObjectsV3" actionName="DetectObjectsV3" visibility="advanced" siena:isDeprecated="false" siena:status="Preview">
+        <doc title="Detect Objects (V3)&#xA;Generates a list of deteced objects in the supplied image." />
+        <request>
+          <param style="query" name="format" type="xs:string" required="true">
+            <doc title="Source of the image - either included or by reference url." />
+            <option value="Image Content" />
+            <option value="Image URL" />
+          </param>
+          <representation mediaType="application/json" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:DetectResponse" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/vision/v2.0/areaOfInterest">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="GetAreaOfInterest" actionName="GetAreaOfInterest" visibility="advanced" siena:isDeprecated="false" siena:status="Production">
+        <doc title="Get Area of Interest&#xA;Returns a bounding box around the most important area of the image." />
+        <request>
+          <param style="query" name="format" type="xs:string" required="true">
+            <doc title="Source of the image - either included or by reference url." />
+            <option value="Image Content" />
+            <option value="Image URL" />
+          </param>
+          <representation mediaType="application/json" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:AreaOfInterestResponse" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/v3/subdomain/{subdomainName}/vision/v2.0/areaOfInterest">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="subdomainName" type="xs:string" required="true">
+        <doc title="Azure subdomain or geographic region (e.g. westus)" />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="GetAreaOfInterestV3" actionName="GetAreaOfInterestV3" visibility="advanced" siena:isDeprecated="false" siena:status="Preview">
+        <doc title="Get Area of Interest (V3)&#xA;Returns a bounding box around the most important area of the image." />
+        <request>
+          <param style="query" name="format" type="xs:string" required="true">
+            <doc title="Source of the image - either included or by reference url." />
+            <option value="Image Content" />
+            <option value="Image URL" />
+          </param>
+          <representation mediaType="application/json" />
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:AreaOfInterestResponse" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_cognitiveservicescomputervision" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

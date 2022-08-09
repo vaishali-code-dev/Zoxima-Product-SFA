@@ -1,0 +1,269 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_distributoronboardings",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_distributoronboarding",
+    "MaxGetRowsCount": 500,
+    "Name": "Distributor Onboardings",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_aadharno": "AADHAR No.",
+      "cr431_accountno": "Account No.",
+      "cr431_address1": "Address 1",
+      "cr431_address2": "Address 2",
+      "cr431_altmobileno": "Alt Mobile No.",
+      "cr431_Area": "Area",
+      "cr431_bankaddress": "Bank Address",
+      "cr431_bankcode": "Bank Code",
+      "cr431_bankname": "Bank Name",
+      "cr431_cibilscore": "Cibil score",
+      "cr431_City": "City",
+      "cr431_constitutionofthefirm": "Constitution of the Firm",
+      "cr431_constitutionofthefirmas": "Constitution of the firm",
+      "cr431_creditlimitinrs": "Credit limit (In Rs.)",
+      "cr431_credittermfittings": "Credit Term Fittings",
+      "cr431_credittermpipes": "Credit Term Pipes",
+      "cr431_dateofbirth": "Date of Birth",
+      "cr431_declarationtype": "Declaration Type",
+      "cr431_depositamount": "Deposit Amount",
+      "cr431_distributoronboarding_AsyncOperations": "System Jobs",
+      "cr431_distributoronboarding_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_distributoronboarding_DuplicateBaseRecord": "Duplicate Records (cr431_distributoronboarding_DuplicateBaseRecord)",
+      "cr431_distributoronboarding_DuplicateMatchingRecord": "Duplicate Records (cr431_distributoronboarding_DuplicateMatchingRecord)",
+      "cr431_distributoronboarding_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_distributoronboarding_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_distributoronboarding_ProcessSession": "Process Sessions",
+      "cr431_distributoronboarding_SyncErrors": "Sync Errors",
+      "cr431_distributoronboardingid": "Distributor Onboarding",
+      "cr431_faxno": "Fax No.",
+      "cr431_firstname": "First Name",
+      "cr431_grossturnoverperannumd": "Gross Turnover (Per Annum)",
+      "cr431_gstno": "GST No.",
+      "cr431_gstproofimg": "GST Proof Img",
+      "cr431_gstregistrationtype": "GST Registration Type",
+      "cr431_ifsccode": "IFSC Code",
+      "cr431_lastname": "Last Name",
+      "cr431_mobileno": "Mobile No.",
+      "cr431_name": "Name",
+      "cr431_nameofthedistributor": "Name of the Distributor",
+      "cr431_nameofthefirm": "Name of the Firm",
+      "cr431_panno": "PAN No.",
+      "cr431_postcode": "Post Code",
+      "cr431_recordid": " Record Id",
+      "cr431_remarks": "Remarks",
+      "cr431_shopidproof": "Shop Id Proof",
+      "cr431_State": "State",
+      "cr431_statusmain": "statusmain",
+      "cr431_SubState": "Sub State",
+      "cr431_telephoneno": "Telephone No.",
+      "cr431_yearofestablishment": "Year of Establishment",
+      "cr431_Zone": "Zone",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Distributor Onboardings",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Distributor Onboardings (Views)",
+    "Name": "_cr431_distributoronboarding_views",
+    "RelatedEntityName": "Distributor Onboardings",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "69a811e9-30a2-48b2-bddd-d4382abb1ba2": "Distributor Onboarding Associated View",
+      "739ee6ed-db0e-4a1b-a62b-49c8175b793c": "Active Distributor Onboardings",
+      "96a7c9d7-ce94-4422-bcc2-671408926496": "Distributor Onboarding Advanced Find View",
+      "a43cf22f-0cd8-4999-a48b-1efe588f09dd": "Inactive Distributor Onboardings",
+      "c4df6d6a-f19f-48e7-a69d-c066c9d9c7cf": "Distributor Onboarding Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Constitution of the Firm (Distributor Onboardings)",
+    "Name": "cr431_distributoronboarding_cr431_constitutionofthefirm",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Proprietor",
+      "254460001": "Partner",
+      "254460002": "Private",
+      "254460003": "Public",
+      "254460004": "Others"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_constitutionofthefirm",
+        "OptionSetReferenceEntityName": "Distributor Onboardings"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_constitutionofthefirm",
+    "RelatedEntityName": "Distributor Onboardings",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Constitution of the firm (Distributor Onboardings)",
+    "Name": "cr431_distributoronboarding_cr431_constitutionofthefirmas",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Proprietor",
+      "254460001": "Partner",
+      "254460002": "Private",
+      "254460003": "Public",
+      "254460004": "Others"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_constitutionofthefirmas",
+        "OptionSetReferenceEntityName": "Distributor Onboardings"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_constitutionofthefirmas",
+    "RelatedEntityName": "Distributor Onboardings",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Declaration Type (Distributor Onboardings)",
+    "Name": "cr431_distributoronboarding_cr431_declarationtype",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_declarationtype",
+        "OptionSetReferenceEntityName": "Distributor Onboardings"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr431_declarationtype",
+    "RelatedEntityName": "Distributor Onboardings",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Gross Turnover (Per Annum) (Distributor Onboardings)",
+    "Name": "cr431_distributoronboarding_cr431_grossturnoverperannumd",
+    "OptionSetInfoNameMapping": {
+      "254460000": "<2 CR",
+      "254460001": "2-3 CR",
+      "254460002": "3-5 CR",
+      "254460003": "5-8 CR",
+      "254460004": ">8 CR"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_grossturnoverperannumd",
+        "OptionSetReferenceEntityName": "Distributor Onboardings"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_grossturnoverperannumd",
+    "RelatedEntityName": "Distributor Onboardings",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "GST Registration Type (Distributor Onboardings)",
+    "Name": "cr431_distributoronboarding_cr431_gstregistrationtype",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Registered",
+      "254460001": "Not Registered"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_gstregistrationtype",
+        "OptionSetReferenceEntityName": "Distributor Onboardings"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_gstregistrationtype",
+    "RelatedEntityName": "Distributor Onboardings",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "statusmain (Distributor Onboardings)",
+    "Name": "cr431_distributoronboarding_cr431_statusmain",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Draft",
+      "254460001": "Pending",
+      "254460002": "Approved",
+      "254460003": "Rejected"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_statusmain",
+        "OptionSetReferenceEntityName": "Distributor Onboardings"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_statusmain",
+    "RelatedEntityName": "Distributor Onboardings",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Distributor Onboardings)",
+    "Name": "cr431_distributoronboarding_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Distributor Onboardings"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Distributor Onboardings",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Distributor Onboardings)",
+    "Name": "cr431_distributoronboarding_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Distributor Onboardings"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Distributor Onboardings",
+    "Type": "OptionSetInfo"
+  }
+]

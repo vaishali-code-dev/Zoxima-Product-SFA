@@ -1,0 +1,660 @@
+"'Menu Screen' As screen":
+    Fill: =RGBA(31, 31, 31, 1)
+    LoadingSpinnerColor: =RGBA(255, 200, 61, 1)
+
+    HtmlText1_31 As htmlViewer:
+        Color: =RGBA(103, 204, 107, 1)
+        Height: =334
+        HtmlText: |-
+            ="<div style='border-radius:0; background-color:#414C60; width:640px; height:330px'></div>"
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =640
+        ZIndex: =1
+
+    Image1_15 As image:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =57
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: ='logo zxsfa'
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =131
+        X: =255
+        Y: =11
+        ZIndex: =15
+
+    Image3 As image:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =320
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: =
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =320
+        X: =40
+        Y: =40
+        ZIndex: =16
+
+    Group9_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =20
+        ZIndex: =16
+
+        HtmlText1_32 As htmlViewer:
+            BorderThickness: =1
+            Height: =343
+            HtmlText: |-
+                ="<div style='border-radius:10px; background-color:#FFF; width:500px; height:300px; box-shadow:rgba(0, 0, 0, 0.24) 0px 3px 8px;'></div>"
+            PaddingBottom: =0
+            PaddingLeft: =10
+            PaddingRight: =0
+            PaddingTop: =10
+            Width: =514
+            X: =57
+            Y: =71
+            ZIndex: =2
+
+        Image1_28 As image:
+            BorderColor: =RGBA(204, 204, 204, 1)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =1
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =85
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =User().Image
+            ImagePosition: =ImagePosition.Fill
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            RadiusBottomLeft: =50
+            RadiusBottomRight: =50
+            RadiusTopLeft: =50
+            RadiusTopRight: =50
+            Width: =85
+            X: =92
+            Y: =104
+            ZIndex: =3
+
+        Label3_6 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(116, 116, 116, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            FontWeight: =FontWeight.Semibold
+            Height: =81
+            Size: =19
+            Text: =User().FullName
+            Width: =226
+            X: =189
+            Y: =91
+            ZIndex: =4
+
+        Label4_21 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(121, 121, 121, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            Height: =36
+            Size: =13
+            Text: ="Attendance Type"
+            X: =98
+            Y: =197
+            ZIndex: =5
+
+        Label4_22 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(121, 121, 121, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            Height: =36
+            Size: =13
+            Text: ="Total Hours Worked"
+            Width: =180
+            X: =369
+            Y: =197
+            ZIndex: =6
+
+        "'total hours_1' As label":
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(65, 76, 96, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =36
+            Size: =17
+            Text: |-
+                =If(
+                    IsBlank(
+                        LookUp(
+                            Attendences,
+                            IsToday('Attendance Date') && 'Created By'.User = LookUp(
+                                Users,
+                                'Primary Email' = User().Email
+                            ).User
+                        ).'End Time'),
+                         DateDiff(
+                        LookUp(
+                            Attendences,
+                            IsToday('Attendance Date') && 'Created By'.User = LookUp(
+                                Users,
+                                'Primary Email' = User().Email
+                            ).User
+                        ).'Start Time',
+                        Now(), Hours
+                    )  ,DateDiff(
+                        LookUp(
+                            Attendences,
+                            IsToday('Attendance Date') && 'Created By'.User = LookUp(
+                                Users,
+                                'Primary Email' = User().Email
+                            ).User
+                        ).'Start Time',
+                        LookUp(
+                            Attendences,
+                            IsToday('Attendance Date') && 'Created By'.User = LookUp(
+                                Users,
+                                'Primary Email' = User().Email
+                            ).User
+                        ).'End Time',
+                        Hours
+                    )
+                    
+                )
+            Width: =180
+            X: =369
+            Y: =226
+            ZIndex: =7
+
+        Label4_23 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(121, 121, 121, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            Height: =36
+            Size: =13
+            Text: ="Day Started At"
+            X: =98
+            Y: =281
+            ZIndex: =8
+
+        "'day started_1' As label":
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(65, 76, 96, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =36
+            Size: =17
+            Text: |-
+                =If(
+                    !IsBlank(
+                        LookUp(
+                            Attendences,
+                            IsToday('Attendance Date') && 'Created By'.User = LookUp(
+                                Users,
+                                'Primary Email' = User().Email
+                            ).User
+                        ).'Start Time'
+                    ),
+                    Text(
+                        LookUp(
+                            Attendences,
+                            IsToday('Attendance Date') && 'Created By'.User = LookUp(
+                                Users,
+                                'Primary Email' = User().Email
+                            ).User
+                        ).'Start Time',
+                        "hh:mm AM/PM"
+                    ),
+                    "No Record"
+                )
+            Width: =126
+            X: =98
+            Y: =314
+            ZIndex: =9
+
+        Label4_24 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(121, 121, 121, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            Height: =36
+            Size: =13
+            Text: ="Day Ended At"
+            X: =369
+            Y: =281
+            ZIndex: =10
+
+        "'day ended_1' As label":
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(65, 76, 96, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =32
+            Size: =17
+            Text: |-
+                =If(!IsBlank(LookUp(
+                        Attendences,
+                        IsToday('Attendance Date') && 'Created By'.User = LookUp(
+                            Users,
+                            'Primary Email' = User().Email
+                        ).User
+                    ).'End Time'),
+                
+                Text(
+                    LookUp(
+                        Attendences,
+                        IsToday('Attendance Date') && 'Created By'.User = LookUp(
+                            Users,
+                            'Primary Email' = User().Email
+                        ).User
+                    ).'End Time',
+                    "hh:mm AM/PM"
+                ), "No Record")
+            Width: =124
+            X: =369
+            Y: =317
+            ZIndex: =11
+
+        Label3_7 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(242, 123, 68, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =25
+            Size: =13
+            Text: =Text(Today(), "dd mmm yyyy")
+            Width: =143
+            X: =408
+            Y: =129
+            ZIndex: =12
+
+        HtmlText1_33 As htmlViewer:
+            DisplayMode: =DisplayMode.View
+            Height: =51
+            HtmlText: |-
+                ="<div style='border-radius:10px; background-color:#F27B44; opacity: 0.2; width:140px; height:35px; box-shadow:rgba(0, 0, 0, 0.24) 0px 3px 8px;'></div>"
+            Width: =155
+            X: =403
+            Y: =119
+            ZIndex: =13
+
+        Type_1 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(65, 76, 96, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =36
+            Size: =17
+            Text: ="Present"
+            Width: =126
+            X: =98
+            Y: =230
+            ZIndex: =14
+
+    "'Bottom Navigation_32' As 'Bottom Navigation'":
+        NavItems: |-
+            =Table(
+                {
+                    Title: If(
+                        varAttendance = "end",
+                        "End",
+                        varAttendance = "start",
+                        "Start",
+                        varAttendance = "done",
+                        "Ended"
+                    ),
+                    //Title: Start,
+                    Screen: If(
+                        varAttendance = "start",
+                        StartDay,
+                        varAttendance = "end",
+                        'End day',
+                        varAttendance = "done",
+                        'Day Ended'
+                    ),
+                    Icon: CalendarBlank,
+                    Active: false
+                },
+                {
+                    Title: "Visits",
+                    Screen: Visits,
+                    Icon: Waypoint,
+                    Active: false
+                },
+                {
+                    Title: "Dashboard",
+                    Screen: Home,
+                    Icon: Waffle,
+                    Active: false
+                },
+                {
+                    Title: "Parties",
+                    Screen: 'Customer (Dist)_1',
+                    Icon: People,
+                    Active: false
+                },
+                {
+                    Title: "Menu",
+                    Screen: 'Menu Screen',
+                    Icon: Hamburger,
+                    Active: true
+                }
+            )
+        Y: =1056
+        ZIndex: =17
+
+    "Gallery5_9 As gallery.'BrowseLayout_Vertical_OneImageTwoColumnVariant_ver4.0'":
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Height: =641
+        Items: |-
+            =Table(
+                {
+                    Title: "Profile",
+                    Image1: 'icons8-hexagon-24',
+                    Image: 'icons8-user-32',
+                    Screen: Profile
+                },
+                {
+                    Title: "Primary Orders",
+                    Image1: 'icons8-hexagon-24',
+                    Image: 'icons8-tick-24',
+                    Screen: 'All Orders'
+                },
+                {
+                    Title: "Secondary Orders",
+                    Image1: 'icons8-hexagon-24',
+                    Image: trolley,
+                    Screen: 'Secondary Orders'
+                },
+                {
+                    Title: "Customers",
+                    Image1: 'icons8-hexagon-24',
+                    Image: 'customer-feedback',
+                    Screen: 'Customer (Dist)_1'
+                },
+                {
+                    Title: "Distributor Onboarding",
+                    Image1: 'icons8-hexagon-24',
+                    Image: 'icons8-complaint-50',
+                    Screen: DistributorOnboarding
+                },
+                {
+                    Title: "Tickets",
+                    Image1: 'icons8-hexagon-24',
+                    Image: ticket,
+                    Screen: 'Complaints List'
+                },
+                {
+                    Title: "Influencers",
+                    Image1: 'icons8-hexagon-24',
+                    Image: 'icons8-influencer-64',
+                    Screen: 'Influencer List'
+                },
+                {
+                    Title: "Events",
+                    Image1: 'icons8-hexagon-24',
+                    Image: 'icons8-events-58',
+                    Screen: 'Events List'
+                },
+                {
+                    Title: "Sites",
+                    Image1: 'icons8-hexagon-24',
+                    Image: 'icons8-globe-50',
+                    Screen: 'Site List'
+                },
+                {
+                    Title: "Expense",
+                    Image1: 'icons8-hexagon-24',
+                    Image: expenses,
+                    Screen: 'Expenses Screen'
+                },
+                {
+                    Title: "Team",
+                    Image1: 'icons8-hexagon-24',
+                    Image: 'icons8-team-24',
+                    Screen: teamscreen
+                }
+            )
+        Layout: =Layout.Vertical
+        ShowScrollbar: =false
+        TemplatePadding: =4
+        TemplateSize: =287
+        Width: =637
+        WrapCount: =2
+        X: =3
+        Y: =393
+        ZIndex: =18
+
+        Button3_13 As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(31, 31, 31, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(65, 76, 96, 1)
+            FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =272
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(31, 31, 31, 1)
+            HoverFill: =ColorFade(RGBA(255, 200, 61, 1), 10%)
+            OnSelect: =Navigate(ThisItem.Screen)
+            PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+            PressedColor: =RGBA(31, 31, 31, 1)
+            PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+            RadiusBottomLeft: =40
+            RadiusBottomRight: =40
+            RadiusTopLeft: =40
+            RadiusTopRight: =40
+            Size: =24
+            Text: =""
+            Width: =279
+            X: =16
+            ZIndex: =1
+
+        Label3_10 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =70
+            OnSelect: =Navigate(ThisItem.Screen)
+            Size: =21
+            Text: =ThisItem.Title
+            Width: =248
+            X: =32
+            Y: =177
+            ZIndex: =2
+
+        Circle2_2 As circle:
+            BorderColor: =RGBA(109, 109, 109, 1)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: |-
+                =If(
+                    ThisItem.Title = "Expense",
+                    RGBA(
+                        141, 
+                        50, 
+                        168,
+                        0.5
+                    ),
+                    ThisItem.Title = "Events",
+                    RGBA(
+                        50, 168, 162,
+                        0.8
+                    ),
+                    ThisItem.Title = "Secondary Orders",
+                    RGBA(
+                        122,
+                        184,
+                        255,
+                        0.8
+                    ),
+                    ThisItem.Title = "Distributor Onboarding",
+                    RGBA(
+                        254,
+                        94,
+                        95,
+                        0.8
+                    ),
+                    ThisItem.Title = "Tickets",
+                    RGBA(
+                        100,
+                        93,
+                        253,
+                        0.8
+                    ),
+                    ThisItem.Title = "Influencers",
+                    RGBA(
+                        151,
+                        19,
+                        73,
+                        0.8
+                    ),
+                    ThisItem.Title = "Team",
+                    RGBA(
+                        50, 168, 105,
+                        0.8
+                    ),
+                    ThisItem.Title = "Sites",
+                    RGBA(
+                        50, 131, 168,
+                        0.8
+                    ),
+                    ThisItem.Title = "Customers",
+                    RGBA(
+                        255,
+                        65,
+                        30,
+                        0.8
+                    ),
+                    ThisItem.Title = "Profile",
+                    RGBA(
+                        80,
+                        60,
+                        245,
+                        0.8
+                    ),
+                    ThisItem.Title = "Primary Orders",
+                    RGBA(
+                        39,
+                        78,
+                        156,
+                        0.8
+                    )
+                )
+            Height: =120
+            HoverFill: =RGBA(0, 0, 0, 0)
+            OnSelect: =Navigate(ThisItem.Screen)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =120
+            X: =91
+            Y: =49
+            ZIndex: =3
+
+        Image13_2 As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =55
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =ThisItem.Image
+            OnSelect: =Select(Parent)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =55
+            X: =123
+            Y: =82
+            ZIndex: =4
+
+        Hexagon2 As hexagon:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =6
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =82
+            HoverFill: =RGBA(0, 0, 0, 0)
+            OnSelect: =Navigate(ThisItem.Screen)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =89
+            X: =108
+            Y: =68
+            ZIndex: =6
+

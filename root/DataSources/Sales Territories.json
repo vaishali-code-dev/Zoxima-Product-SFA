@@ -1,0 +1,134 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_salesterritories",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_salesterritory",
+    "MaxGetRowsCount": 500,
+    "Name": "Sales Territories",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_account_accountpincode_cr431_salesterrito": "Accounts (cr431_account_accountpincode_cr431_salesterrito)",
+      "cr431_account_accountzone_cr431_salesterritory": "Accounts (cr431_account_accountzone_cr431_salesterritory)",
+      "cr431_account_Area_cr431_salesterritory": "Accounts (cr431_account_Area_cr431_salesterritory)",
+      "cr431_account_City_cr431_salesterritory": "Accounts (cr431_account_City_cr431_salesterritory)",
+      "cr431_account_District_cr431_salesterritory": "Accounts (cr431_account_District_cr431_salesterritory)",
+      "cr431_account_State_cr431_salesterritory": "Accounts (cr431_account_State_cr431_salesterritory)",
+      "cr431_account_SubState_cr431_salesterritory": "Accounts (cr431_account_SubState_cr431_salesterritory)",
+      "cr431_cr431_distributoronboarding_Area_cr431_sa": "Distributor Onboardings (cr431_cr431_distributoronboarding_Area_cr431_sa)",
+      "cr431_cr431_distributoronboarding_City_cr431_sa": "Distributor Onboardings (cr431_cr431_distributoronboarding_City_cr431_sa)",
+      "cr431_cr431_distributoronboarding_State_cr431_s": "Distributor Onboardings (cr431_cr431_distributoronboarding_State_cr431_s)",
+      "cr431_cr431_distributoronboarding_SubState_cr43": "Distributor Onboardings (cr431_cr431_distributoronboarding_SubState_cr43)",
+      "cr431_cr431_distributoronboarding_Zone_cr431_sa": "Distributor Onboardings (cr431_cr431_distributoronboarding_Zone_cr431_sa)",
+      "cr431_cr431_salesterritory_ParentCity_cr431_sal": "Sales Territories (cr431_cr431_salesterritory_ParentCity_cr431_sal)",
+      "cr431_cr431_salesterritory_ParentDistrict_cr431": "Sales Territories (cr431_cr431_salesterritory_ParentDistrict_cr431)",
+      "cr431_cr431_salesterritory_ParentPincode_cr431_": "Sales Territories (cr431_cr431_salesterritory_ParentPincode_cr431_)",
+      "cr431_cr431_salesterritory_ParentState_cr431_sa": "Sales Territories (cr431_cr431_salesterritory_ParentState_cr431_sa)",
+      "cr431_cr431_salesterritory_ParentSubstate_cr431": "Sales Territories (cr431_cr431_salesterritory_ParentSubstate_cr431)",
+      "cr431_cr431_salesterritory_ParentZone_cr431_sal": "Sales Territories (cr431_cr431_salesterritory_ParentZone_cr431_sal)",
+      "cr431_cr431_salesterritoryandusermapping_SalesT": "Sales Territory and User Mappings",
+      "cr431_cr431_sites_Area_cr431_salesterritory": "Sites",
+      "cr431_level": "Level",
+      "cr431_name": "Territory Name (cr431_name)",
+      "cr431_ParentCity": "Parent City",
+      "cr431_ParentDistrict": "Parent District",
+      "cr431_ParentPincode": "Parent Pincode",
+      "cr431_ParentState": "Parent State",
+      "cr431_ParentSubstate": "Parent Substate",
+      "cr431_ParentZone": "Parent Zone",
+      "cr431_salesterritory_AsyncOperations": "System Jobs",
+      "cr431_salesterritory_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_salesterritory_DuplicateBaseRecord": "Duplicate Records (cr431_salesterritory_DuplicateBaseRecord)",
+      "cr431_salesterritory_DuplicateMatchingRecord": "Duplicate Records (cr431_salesterritory_DuplicateMatchingRecord)",
+      "cr431_salesterritory_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_salesterritory_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_salesterritory_ProcessSession": "Process Sessions",
+      "cr431_salesterritory_SyncErrors": "Sync Errors",
+      "cr431_salesterritoryid": "Sales Territory",
+      "cr431_systemuser_Area_cr431_salesterritory": "Users",
+      "cr431_territorycode": "Territory Code",
+      "cr431_territoryname": "Territory Name (cr431_territoryname)",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Sales Territories",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Sales Territories (Views)",
+    "Name": "_cr431_salesterritory_views",
+    "RelatedEntityName": "Sales Territories",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0513bd90-85ba-4552-a030-d92426748b57": "Sales Territory Associated View",
+      "07292ffa-07f2-ec11-bb3c-000d3aca361c": "L2 Area",
+      "30934eb8-59bf-4ab6-9e7f-bdf742466512": "Sales Territory Lookup View",
+      "5ca5222b-08f2-ec11-bb3c-000d3aca361c": "L3 Area",
+      "5e3f1fb0-22f2-ec11-bb3c-000d3aca358f": "L7 Area",
+      "8766f4b7-4906-4301-9621-81e78ef37bc3": "Inactive Sales Territories",
+      "aeb296d0-6a74-4e5b-8f95-c25006d8d39d": "Sales Territory Advanced Find View",
+      "c4a71e56-08f2-ec11-bb3c-000d3aca358f": "L4 Area",
+      "cbffa7be-07f2-ec11-bb3c-000d3aca358f": "L1",
+      "cc6245c6-08f2-ec11-bb3c-000d3aca361c": "L5 AREA",
+      "edb297c8-948b-4b19-86da-84f7f280b354": "Active Sales Territories",
+      "f60367f2-08f2-ec11-bb3c-000d3aca358f": "L6 Area"
+    }
+  },
+  {
+    "DisplayName": "Status (Sales Territories)",
+    "Name": "cr431_salesterritory_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Sales Territories"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Sales Territories",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Sales Territories)",
+    "Name": "cr431_salesterritory_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Sales Territories"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Sales Territories",
+    "Type": "OptionSetInfo"
+  }
+]

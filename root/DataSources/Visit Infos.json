@@ -1,0 +1,130 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_visitinfos",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_visitinfo",
+    "MaxGetRowsCount": 500,
+    "Name": "Visit Infos",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_competitionpricingandschemeinfo": "not req",
+      "cr431_competitionpricingandschemeinfo_base": "notereq(base)",
+      "cr431_competitionpricingandschemeinfo1": "Competition Pricing and Scheme Info",
+      "cr431_cr431_competitor_VisitInfo_cr431_visitinf": "Competitors",
+      "cr431_image": "Image",
+      "cr431_name": "Visit ID",
+      "cr431_visibilitybrand": "Visibility Brand",
+      "cr431_visibilitylevel": "Visibility Level",
+      "cr431_Visit": "Visit",
+      "cr431_visitinfo_AsyncOperations": "System Jobs",
+      "cr431_visitinfo_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_visitinfo_DuplicateBaseRecord": "Duplicate Records (cr431_visitinfo_DuplicateBaseRecord)",
+      "cr431_visitinfo_DuplicateMatchingRecord": "Duplicate Records (cr431_visitinfo_DuplicateMatchingRecord)",
+      "cr431_visitinfo_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_visitinfo_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_visitinfo_ProcessSession": "Process Sessions",
+      "cr431_visitinfo_SyncErrors": "Sync Errors",
+      "cr431_visitinfoid": "Visit Info",
+      "cr431_visitinforemark": "Visit Info Remark",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Visit Infos",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Visit Infos (Views)",
+    "Name": "_cr431_visitinfo_views",
+    "RelatedEntityName": "Visit Infos",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1293d2a8-843c-44fb-8a25-81b5306b2960": "Active Visit Infos",
+      "6651f0fd-b7fd-4052-8857-29e60236b22c": "Visit Info Associated View",
+      "7faaa1e1-496d-467e-a63f-fa03355143b8": "Visit Info Lookup View",
+      "83877eac-8d6b-487d-b4ea-747a4782a898": "Inactive Visit Infos",
+      "ba301dda-cc8e-4a96-9e18-c4e24c24d938": "Visit Info Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "visibilitylevel",
+    "Name": "cr431_visibilitylevel",
+    "OptionSetInfoNameMapping": {
+      "254460000": "None",
+      "254460001": "Low",
+      "254460002": "Medium",
+      "254460003": "High"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_visibilitylevel",
+        "OptionSetReferenceEntityName": "Visit Infos"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_visibilitylevel",
+    "RelatedEntityName": "Visit Infos",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Visit Infos)",
+    "Name": "cr431_visitinfo_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Visit Infos"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Visit Infos",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Visit Infos)",
+    "Name": "cr431_visitinfo_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Visit Infos"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Visit Infos",
+    "Type": "OptionSetInfo"
+  }
+]

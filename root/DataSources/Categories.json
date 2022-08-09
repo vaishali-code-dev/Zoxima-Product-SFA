@@ -1,0 +1,120 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_categories",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_category",
+    "MaxGetRowsCount": 500,
+    "Name": "Categories",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_category_AsyncOperations": "System Jobs",
+      "cr431_category_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_category_DuplicateBaseRecord": "Duplicate Records (cr431_category_DuplicateBaseRecord)",
+      "cr431_category_DuplicateMatchingRecord": "Duplicate Records (cr431_category_DuplicateMatchingRecord)",
+      "cr431_category_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_category_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_category_ProcessSession": "Process Sessions",
+      "cr431_category_SyncErrors": "Sync Errors",
+      "cr431_categoryid": "Category",
+      "cr431_categoryname": "Category Name",
+      "cr431_categorytype": "Category Type",
+      "cr431_cr431_category_cr431_category_ParentCategory": "Categories",
+      "cr431_cr431_category_cr431_employeetype_Division": "Employee Type (cr431_cr431_category_cr431_employeetype_Division)",
+      "cr431_cr431_category_cr431_employeetype_LOB": "Employee Type (cr431_cr431_category_cr431_employeetype_LOB)",
+      "cr431_cr431_category_cr431_invoice_Division": "Invoices (cr431_cr431_category_cr431_invoice_Division)",
+      "cr431_cr431_category_cr431_invoice_LOB": "Invoices (cr431_cr431_category_cr431_invoice_LOB)",
+      "cr431_cr431_geotownareamapping_cr431_Divi": "Geo Town Area Mappings (cr431_cr431_geotownareamapping_cr431_Divi)",
+      "cr431_cr431_geotownareamapping_cr431_LOBC": "Geo Town Area Mappings (cr431_cr431_geotownareamapping_cr431_LOBC)",
+      "cr431_cr431_productitem_cr431_Division_cr": "Product Items (cr431_cr431_productitem_cr431_Division_cr)",
+      "cr431_cr431_productitem_cr431_LOB_cr431_c": "Product Items (cr431_cr431_productitem_cr431_LOB_cr431_c)",
+      "cr431_cr431_productitem_cr431_PG1_cr431_c": "Product Items (cr431_cr431_productitem_cr431_PG1_cr431_c)",
+      "cr431_cr431_productitem_cr431_PG2_cr431_c": "Product Items (cr431_cr431_productitem_cr431_PG2_cr431_c)",
+      "cr431_cr431_productitem_cr431_PG3_cr431_c": "Product Items (cr431_cr431_productitem_cr431_PG3_cr431_c)",
+      "cr431_cr431_productitem_cr431_PG4_cr431_c": "Product Items (cr431_cr431_productitem_cr431_PG4_cr431_c)",
+      "cr431_cr431_productitem_cr431_ProductItem": "Product Items (cr431_cr431_productitem_cr431_ProductItem)",
+      "cr431_cr431_stock_ProductGroup_cr431_category": "Stocks",
+      "cr431_details": "Details",
+      "cr431_image": "Image",
+      "cr431_level": "Level",
+      "cr431_name": "Category Code",
+      "cr431_ParentCategory": "Parent Category",
+      "cr431_pgid": "PG ID",
+      "cr431_Team_LoB_cr431_Category": "Teams",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Categories",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Categories (Views)",
+    "Name": "_cr431_category_views",
+    "RelatedEntityName": "Categories",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "01d28758-dc95-47fd-8ba6-731bef54b9dc": "Active Categories",
+      "180f87a0-9cd8-4a89-810a-78acd3230e48": "Category Advanced Find View",
+      "56d9c5a3-5478-4191-851e-e6d41e0556e8": "Inactive Categories",
+      "c3705b71-7933-43ab-a84d-05b31ab03c9b": "Category Lookup View",
+      "d2b3c3a3-21c0-455b-920c-c1ed4bf1a5a7": "Category Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Categories)",
+    "Name": "cr431_category_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Categories"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Categories",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Categories)",
+    "Name": "cr431_category_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Categories"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Categories",
+    "Type": "OptionSetInfo"
+  }
+]

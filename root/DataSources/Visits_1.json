@@ -1,0 +1,198 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr431_visits",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr431_visit",
+    "MaxGetRowsCount": 500,
+    "Name": "Visits_1",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr431_Assignedby": "Assigned by",
+      "cr431_BeatGrid": "Beat/ Grid",
+      "cr431_cancelledreason": "Cancelled Reason",
+      "cr431_checkinaddress": "Check-in Latitude",
+      "cr431_checkinlocation": "Check- In Longitude",
+      "cr431_checkintime": "Checkin Time",
+      "cr431_checkoutaddress": "Check-out Longitude",
+      "cr431_checkoutlocation": "Check-out Latitude",
+      "cr431_checkouttime": "Check-out Time",
+      "cr431_cr431_competitor_Visit_cr431_visit": "Competitors",
+      "cr431_cr431_complaints_Visit_cr431_visit": "Complaints",
+      "cr431_cr431_imageurl_cr431_Visit_cr431_vi": "Image Url",
+      "cr431_cr431_marketingmaterial_Visit_cr431_visit": "Marketing Materials",
+      "cr431_cr431_sites_Visit_cr431_visit": "Sites",
+      "cr431_cr431_training_Visit_cr431_visit": "Trainings",
+      "cr431_cr431_visit_cr431_sales_order_visits": "SalesOrders",
+      "cr431_cr431_visit_cr431_servicerequest_Visit": "Service Requests",
+      "cr431_cr431_visitinfo_Visit_cr431_visit": "Visit Infos",
+      "cr431_customer": "Customer",
+      "cr431_DealerRetailerInfluencerName": "Dealer/ Retailer/ Influencer Name",
+      "cr431_EmpId": "not req",
+      "cr431_EmployeeID": "Employee ID",
+      "cr431_Lead": "Lead",
+      "cr431_locationmatched": "Location Matched",
+      "cr431_name": "Visit ID",
+      "cr431_number": "Number",
+      "cr431_pgid": "PG Id",
+      "cr431_PJPHeader": "PJP Header",
+      "cr431_PJPTown": "PJP Town",
+      "cr431_remarks": "Remarks",
+      "cr431_status": "status",
+      "cr431_test1": "test1",
+      "cr431_test2": "test 2",
+      "cr431_test3": "test3",
+      "cr431_Town": "Town",
+      "cr431_url": "Url",
+      "cr431_visit_AsyncOperations": "System Jobs",
+      "cr431_visit_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr431_visit_DuplicateBaseRecord": "Duplicate Records (cr431_visit_DuplicateBaseRecord)",
+      "cr431_visit_DuplicateMatchingRecord": "Duplicate Records (cr431_visit_DuplicateMatchingRecord)",
+      "cr431_visit_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr431_visit_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr431_visit_ProcessSession": "Process Sessions",
+      "cr431_visit_SyncErrors": "Sync Errors",
+      "cr431_visitdate": "Visit Date",
+      "cr431_visitduration": "Visit Duration",
+      "cr431_visitid": "Visit",
+      "cr431_visitid1": "visitid",
+      "cr431_visittime": "Visit Time",
+      "cr431_visittype": "Visit Type",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Visits_1",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Visits_1 (Views)",
+    "Name": "_cr431_visit_views",
+    "RelatedEntityName": "Visits_1",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "76abc533-93b1-4aaa-adc4-fb807d56038e": "Visit Advanced Find View",
+      "79e4578d-94fb-4185-9462-6915753c2587": "Visit Lookup View",
+      "b2e89525-bc59-4e78-adc1-d9f11e859449": "Visit Associated View",
+      "de4d7473-4461-4036-9f08-66262773cc9e": "Inactive Visits",
+      "f2ec9abe-5ae1-4faf-949f-0cc4a1b1147c": "Active Visits"
+    }
+  },
+  {
+    "DisplayName": "Location Matched (Visits_1)",
+    "Name": "cr431_visit_cr431_locationmatched",
+    "OptionSetInfoNameMapping": {},
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_locationmatched",
+        "OptionSetReferenceEntityName": "Visits_1"
+      }
+    },
+    "OptionSetTypeKey": "MultiSelectPicklistType",
+    "RelatedColumnInvariantName": "cr431_locationmatched",
+    "RelatedEntityName": "Visits_1",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "status (Visits_1)",
+    "Name": "cr431_visit_cr431_status",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Completed",
+      "254460001": "Cancelled",
+      "254460002": "Open",
+      "254460003": "Started"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_status",
+        "OptionSetReferenceEntityName": "Visits_1"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_status",
+    "RelatedEntityName": "Visits_1",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Visit Type (Visits_1)",
+    "Name": "cr431_visit_cr431_visittype",
+    "OptionSetInfoNameMapping": {
+      "254460000": "Planned",
+      "254460001": "Unplanned"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr431_visittype",
+        "OptionSetReferenceEntityName": "Visits_1"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr431_visittype",
+    "RelatedEntityName": "Visits_1",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Visits_1)",
+    "Name": "cr431_visit_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Visits_1"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Visits_1",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Visits_1)",
+    "Name": "cr431_visit_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Visits_1"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Visits_1",
+    "Type": "OptionSetInfo"
+  }
+]

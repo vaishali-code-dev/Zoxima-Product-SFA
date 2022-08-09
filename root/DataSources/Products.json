@@ -1,0 +1,184 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "sample_products",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "sample_product",
+    "MaxGetRowsCount": 500,
+    "Name": "Products",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "{Attachments}": "Attachments",
+      "cr431_sample_product_cr431_expectedorder_Product": "Expected Order",
+      "cr431_sample_product_cr431_supply_Product": "Supply",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "entityimage": "Product Image",
+      "entityimageid": "EntityImageId",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "processid": "Process Id",
+      "sample_available": "Available",
+      "sample_category": "Category",
+      "sample_categoryid": "Category ID",
+      "sample_color": "Color",
+      "sample_inventorytotal": "Inventory Total",
+      "sample_modelnumber": "Model No.",
+      "sample_name": "Name",
+      "sample_price": "Price",
+      "sample_price_base": "Price (Base)",
+      "sample_product_ActivityPointers": "Activities",
+      "sample_product_Annotations": "Notes",
+      "sample_product_Appointments": "Appointments",
+      "sample_product_AsyncOperations": "System Jobs",
+      "sample_product_BulkDeleteFailures": "Bulk Delete Failures",
+      "sample_product_chats": "Teams chats",
+      "sample_product_connections1": "Connections (sample_product_connections1)",
+      "sample_product_connections2": "Connections (sample_product_connections2)",
+      "sample_product_DuplicateBaseRecord": "Duplicate Records (sample_product_DuplicateBaseRecord)",
+      "sample_product_DuplicateMatchingRecord": "Duplicate Records (sample_product_DuplicateMatchingRecord)",
+      "sample_product_Emails": "Email Messages",
+      "sample_product_Faxes": "Faxes",
+      "sample_product_Feedback": "Feedback",
+      "sample_product_Letters": "Letters",
+      "sample_product_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "sample_product_PhoneCalls": "Phone Calls",
+      "sample_product_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "sample_product_ProcessSession": "Process Sessions",
+      "sample_product_RecurringAppointmentMasters": "Recurring Appointments",
+      "sample_product_sample_donations": "Donations",
+      "sample_product_SharePointDocumentLocations": "Document Locations",
+      "sample_product_SyncErrors": "Sync Errors",
+      "sample_product_Tasks": "Tasks",
+      "sample_productdescription1": "Product Description 1",
+      "sample_productdescription2": "Product Description 2",
+      "sample_productid": "Product",
+      "sample_ratings": "Rating",
+      "sample_ratings_count": "Rating (CountAverage)",
+      "sample_ratings_date": "Rating (Last Updated On)",
+      "sample_ratings_state": "Rating (State)",
+      "sample_ratings_sum": "Rating (SumAverage)",
+      "sample_sample_product_sample_reservation": "Reservations",
+      "sample_sample_product_sample_review": "Reviews",
+      "sample_totalreserved": "Total Reserved",
+      "sample_totalreserved_date": "Total Reserved (Last Updated On)",
+      "sample_totalreserved_state": "Total Reserved (State)",
+      "stageid": "Stage Id",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "traversedpath": "Traversed Path",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Products",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Products (Views)",
+    "Name": "_sample_product_views",
+    "RelatedEntityName": "Products",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "4a6f4496-d103-4eeb-82c5-7615b01c7d15": "Inactive Products",
+      "8828352d-4bca-4dbb-bfab-d937e312c6be": "Product Lookup View",
+      "d49025c4-bf4a-4cfa-b747-40ed90d7a4be": "Active Products",
+      "dbf486df-aa8c-459f-a2d1-4604beab5e05": "Product Advanced Find View",
+      "dd962153-6901-46cb-8d8e-34e0d5843d8b": "Product Associated View"
+    }
+  },
+  {
+    "DisplayName": "Category (Products)",
+    "Name": "sample_product_sample_category",
+    "OptionSetInfoNameMapping": {
+      "727000000": "Laptops",
+      "727000001": "Keyboards",
+      "727000002": "Monitors",
+      "727000003": "Mice"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "sample_category",
+        "OptionSetReferenceEntityName": "Products"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "sample_category",
+    "RelatedEntityName": "Products",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Color (Products)",
+    "Name": "sample_product_sample_color",
+    "OptionSetInfoNameMapping": {
+      "727000000": "Black",
+      "727000001": "White"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "sample_color",
+        "OptionSetReferenceEntityName": "Products"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "sample_color",
+    "RelatedEntityName": "Products",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Products)",
+    "Name": "sample_product_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Products"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Products",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Products)",
+    "Name": "sample_product_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Products"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Products",
+    "Type": "OptionSetInfo"
+  }
+]

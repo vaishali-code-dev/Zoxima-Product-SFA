@@ -1,0 +1,743 @@
+"'Comp Info' As screen":
+    Fill: =RGBA(59, 59, 59, 1)
+    LoadingSpinnerColor: =RGBA(255, 200, 61, 1)
+    OnVisible: |-
+        =Set(CompInfoCounter, 1);
+        Set(varOpen, false);
+
+    "'Bottom Navigation_26' As 'Bottom Navigation'":
+        Y: =1056
+        ZIndex: =15
+
+    "'Header Component_13' As 'Header Component_11'":
+        Height: =108
+        ScreenName: ="Start Visit"
+        ZIndex: =16
+
+    Canvas2_2 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =856
+        Width: =Parent.Width
+        Y: =188
+        ZIndex: =17
+
+        DataCard2_2 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =1887
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Container1_2 As groupContainer.verticalAutoLayoutContainer:
+                Height: =1500
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMode: =LayoutMode.Auto
+                Width: =582
+                X: =28
+                ZIndex: =1
+
+                Container1 As groupContainer.manualLayoutContainer:
+                    FillPortions: =0
+                    Height: =70
+                    LayoutMinHeight: =0
+                    LayoutMinWidth: =250
+                    ZIndex: =1
+
+                    DistLabel_9 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(237, 237, 237, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Semibold
+                        Height: =70
+                        PaddingLeft: =20
+                        Size: =21
+                        Text: ="Competitor Info"
+                        Width: =424
+                        ZIndex: =1
+
+                    Group16 As group:
+                        Height: =5
+                        Width: =5
+                        X: =40
+                        Y: =40
+                        ZIndex: =4
+
+                        Button18_2 As button:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderThickness: =0
+                            Color: =RGBA(31, 31, 31, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            Fill: =RGBA(237, 237, 237, 1)
+                            FocusedBorderColor: =ColorFade(Self.Fill, 75%)
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            HoverBorderColor: =RGBA(0, 0, 0, 0)
+                            HoverColor: =RGBA(31, 31, 31, 1)
+                            HoverFill: =Self.Fill
+                            OnSelect: =Set(CompInfoCounter, CompInfoCounter+1);
+                            PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 50%)
+                            PressedColor: =RGBA(31, 31, 31, 1)
+                            PressedFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                            RadiusBottomLeft: =50
+                            RadiusBottomRight: =50
+                            RadiusTopLeft: =50
+                            RadiusTopRight: =50
+                            Size: =14
+                            Text: =""
+                            Width: =40
+                            X: =284
+                            Y: =15
+                            ZIndex: =2
+
+                        Icon22_2 As icon.Add:
+                            BorderColor: =RGBA(109, 109, 109, 1)
+                            Color: =RGBA(9, 33, 98, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(220, 220, 220, 1)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            FocusedBorderThickness: =4
+                            Height: =30
+                            HoverBorderColor: =RGBA(0, 0, 0, 0)
+                            HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            Icon: =Icon.Add
+                            OnSelect: =Set(CompInfoCounter, CompInfoCounter+1);
+                            PressedBorderColor: =RGBA(0, 0, 0, 0)
+                            PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                            PressedFill: =RGBA(0, 0, 0, 0)
+                            Width: =30
+                            X: =289
+                            Y: =19
+                            ZIndex: =3
+
+                "'Info 1' As groupContainer.manualLayoutContainer":
+                    BorderColor: =RGBA(31, 31, 31, 1)
+                    FillPortions: =0
+                    Height: =460
+                    LayoutMinHeight: =112
+                    LayoutMinWidth: =250
+                    PaddingLeft: =3
+                    Visible: =CompInfoCounter>=1
+                    ZIndex: =2
+
+                    Distributor_11 As combobox:
+                        BorderColor: =RGBA(9, 33, 98, 1)
+                        BorderThickness: =1
+                        ChevronBackground: =RGBA(255, 255, 255, 1)
+                        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                        ChevronFill: =RGBA(9, 33, 98, 1)
+                        ChevronHoverBackground: =
+                        ChevronHoverFill: =RGBA(218, 218, 218, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        DisplayFields: =["Value"]
+                        Font: =Font.'Segoe UI'
+                        Height: =70
+                        HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(79, 79, 79, 1)
+                        InputTextPlaceholder: ="Search"
+                        Items: =["Roshan Pipe","Himalaya Pipes","Ashirwad Pipes", "Pooja Pipes"]
+                        PaddingBottom: =10
+                        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                        PressedColor: =RGBA(31, 31, 31, 1)
+                        PressedFill: =RGBA(179, 179, 179, 1)
+                        SearchFields: =["Value"]
+                        SearchItems: =Search(["Roshan Pipe","Himalaya Pipes","Ashirwad Pipes", "Pooja Pipes"],Distributor_11.SearchText,"Value")
+                        SelectionFill: =RGBA(103, 204, 107, 1)
+                        SelectMultiple: =false
+                        Size: =21
+                        Width: =550
+                        X: =13
+                        Y: =69
+                        ZIndex: =1
+
+                    DistLabel_19 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(237, 237, 237, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =70
+                        Size: =21
+                        Text: ="Competitor Name"
+                        Width: =560
+                        X: =11
+                        Y: =7
+                        ZIndex: =2
+
+                    DistLabel_20 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(237, 237, 237, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =80
+                        PaddingTop: =20
+                        Size: =21
+                        Text: ="Product Name"
+                        Width: =560
+                        X: =5
+                        Y: =140
+                        ZIndex: =3
+
+                    TextInput7_4 As text:
+                        BorderColor: =RGBA(9, 33, 98, 1)
+                        BorderThickness: =2
+                        Color: =RGBA(255, 255, 255, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =70
+                        HintText: ="Enter Product Name"
+                        HoverBorderColor: =RGBA(103, 204, 107, 1)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        PressedBorderColor: =RGBA(255, 200, 61, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(31, 31, 31, 1)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =21
+                        Width: =550
+                        X: =13
+                        Y: =219
+                        ZIndex: =4
+
+                    DistLabel_21 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(237, 237, 237, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =80
+                        PaddingTop: =20
+                        Size: =21
+                        Text: ="Competitor Price"
+                        Width: =560
+                        X: =11
+                        Y: =289
+                        ZIndex: =5
+
+                    TextInput7_5 As text:
+                        BorderColor: =RGBA(9, 33, 98, 1)
+                        BorderThickness: =2
+                        Color: =RGBA(255, 255, 255, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =70
+                        HintText: ="Enter Competitor Price"
+                        HoverBorderColor: =RGBA(103, 204, 107, 1)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        PressedBorderColor: =RGBA(255, 200, 61, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(31, 31, 31, 1)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =21
+                        Width: =550
+                        X: =13
+                        Y: =369
+                        ZIndex: =6
+
+                    Icon8 As icon.Cancel:
+                        BorderColor: =RGBA(109, 109, 109, 1)
+                        Color: =RGBA(237, 237, 237, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(220, 220, 220, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Height: =32
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Icon: =Icon.Cancel
+                        OnSelect: =Set(CompInfoCounter, 0)
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Visible: =CompInfoCounter>=1
+                        Width: =34
+                        X: =537
+                        Y: =7
+                        ZIndex: =7
+
+                "'Info 2' As groupContainer.manualLayoutContainer":
+                    BorderColor: =RGBA(103, 204, 107, 1)
+                    BorderThickness: =2
+                    FillPortions: =0
+                    Height: =460
+                    LayoutMinHeight: =112
+                    LayoutMinWidth: =250
+                    Visible: =CompInfoCounter>=2
+                    ZIndex: =3
+
+                    Distributor_12 As combobox:
+                        BorderColor: =RGBA(103, 204, 107, 1)
+                        BorderThickness: =1
+                        ChevronBackground: =RGBA(255, 255, 255, 1)
+                        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                        ChevronFill: =RGBA(103, 204, 107, 1)
+                        ChevronHoverBackground: =
+                        ChevronHoverFill: =RGBA(218, 218, 218, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        DisplayFields: =["Value"]
+                        Font: =Font.'Segoe UI'
+                        Height: =70
+                        HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(79, 79, 79, 1)
+                        InputTextPlaceholder: ="Search"
+                        Items: =["Roshan Pipe","Himalaya Pipes","Ashirwad Pipes", "Pooja Pipes"]
+                        PaddingBottom: =10
+                        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                        PressedColor: =RGBA(31, 31, 31, 1)
+                        PressedFill: =RGBA(179, 179, 179, 1)
+                        SearchFields: =["Value"]
+                        SearchItems: =Search(["Roshan Pipe","Himalaya Pipes","Ashirwad Pipes", "Pooja Pipes"],Distributor_12.SearchText,"Value")
+                        SelectionFill: =RGBA(103, 204, 107, 1)
+                        SelectMultiple: =false
+                        Size: =21
+                        Width: =550
+                        X: =14
+                        Y: =80
+                        ZIndex: =1
+
+                    DistLabel_22 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(103, 204, 107, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =70
+                        Size: =21
+                        Text: ="Competitor Name"
+                        Width: =560
+                        X: =12
+                        Y: =18
+                        ZIndex: =2
+
+                    DistLabel_23 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(103, 204, 107, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =80
+                        PaddingTop: =20
+                        Size: =21
+                        Text: ="Product Name"
+                        Width: =560
+                        X: =6
+                        Y: =151
+                        ZIndex: =3
+
+                    TextInput7_6 As text:
+                        BorderColor: =RGBA(103, 204, 107, 1)
+                        BorderThickness: =2
+                        Color: =RGBA(255, 255, 255, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =70
+                        HintText: ="Enter Product Name"
+                        HoverBorderColor: =RGBA(103, 204, 107, 1)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        PressedBorderColor: =RGBA(255, 200, 61, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(31, 31, 31, 1)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =21
+                        Width: =550
+                        X: =14
+                        Y: =230
+                        ZIndex: =4
+
+                    DistLabel_24 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(103, 204, 107, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =80
+                        PaddingTop: =20
+                        Size: =21
+                        Text: ="Competitor Price"
+                        Width: =560
+                        X: =12
+                        Y: =300
+                        ZIndex: =5
+
+                    TextInput7_7 As text:
+                        BorderColor: =RGBA(103, 204, 107, 1)
+                        BorderThickness: =2
+                        Color: =RGBA(255, 255, 255, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =70
+                        HintText: ="Enter Competitor Price"
+                        HoverBorderColor: =RGBA(103, 204, 107, 1)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        PressedBorderColor: =RGBA(255, 200, 61, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(31, 31, 31, 1)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =21
+                        Width: =550
+                        X: =14
+                        Y: =380
+                        ZIndex: =6
+
+                    Icon8_1 As icon.Cancel:
+                        BorderColor: =RGBA(109, 109, 109, 1)
+                        Color: =RGBA(255, 200, 61, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(220, 220, 220, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Height: =32
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Icon: =Icon.Cancel
+                        OnSelect: =Set(CompInfoCounter, 1)
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Visible: =CompInfoCounter>=2
+                        Width: =34
+                        X: =538
+                        Y: =18
+                        ZIndex: =7
+
+                "'Info 3' As groupContainer.manualLayoutContainer":
+                    BorderColor: =RGBA(103, 204, 107, 1)
+                    BorderThickness: =2
+                    Height: =460
+                    LayoutMinHeight: =112
+                    LayoutMinWidth: =250
+                    Visible: =CompInfoCounter>=3
+                    ZIndex: =4
+
+                    Distributor_13 As combobox:
+                        BorderColor: =RGBA(103, 204, 107, 1)
+                        BorderThickness: =1
+                        ChevronBackground: =RGBA(255, 255, 255, 1)
+                        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                        ChevronFill: =RGBA(103, 204, 107, 1)
+                        ChevronHoverBackground: =
+                        ChevronHoverFill: =RGBA(218, 218, 218, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        DisplayFields: =["Value"]
+                        Font: =Font.'Segoe UI'
+                        Height: =70
+                        HoverBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(79, 79, 79, 1)
+                        InputTextPlaceholder: ="Search"
+                        Items: =["Roshan Pipe","Himalaya Pipes","Ashirwad Pipes", "Pooja Pipes"]
+                        PaddingBottom: =10
+                        PressedBorderColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                        PressedColor: =RGBA(31, 31, 31, 1)
+                        PressedFill: =RGBA(179, 179, 179, 1)
+                        SearchFields: =["Value"]
+                        SearchItems: =Search(["Roshan Pipe","Himalaya Pipes","Ashirwad Pipes", "Pooja Pipes"],Distributor_13.SearchText,"Value")
+                        SelectionFill: =RGBA(103, 204, 107, 1)
+                        SelectMultiple: =false
+                        Size: =21
+                        Width: =550
+                        X: =14
+                        Y: =80
+                        ZIndex: =1
+
+                    DistLabel_25 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(103, 204, 107, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =70
+                        Size: =21
+                        Text: ="Competitor Name"
+                        Width: =560
+                        X: =12
+                        Y: =18
+                        ZIndex: =2
+
+                    DistLabel_26 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(103, 204, 107, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =80
+                        PaddingTop: =20
+                        Size: =21
+                        Text: ="Product Name"
+                        Width: =560
+                        X: =6
+                        Y: =151
+                        ZIndex: =3
+
+                    TextInput7_8 As text:
+                        BorderColor: =RGBA(103, 204, 107, 1)
+                        BorderThickness: =2
+                        Color: =RGBA(255, 255, 255, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =70
+                        HintText: ="Enter Product Name"
+                        HoverBorderColor: =RGBA(103, 204, 107, 1)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        PressedBorderColor: =RGBA(255, 200, 61, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(31, 31, 31, 1)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =21
+                        Width: =550
+                        X: =14
+                        Y: =230
+                        ZIndex: =4
+
+                    DistLabel_27 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(103, 204, 107, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =80
+                        PaddingTop: =20
+                        Size: =21
+                        Text: ="Competitor Price"
+                        Width: =560
+                        X: =12
+                        Y: =300
+                        ZIndex: =5
+
+                    TextInput7_9 As text:
+                        BorderColor: =RGBA(103, 204, 107, 1)
+                        BorderThickness: =2
+                        Color: =RGBA(255, 255, 255, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =70
+                        HintText: ="Enter Competitor Price"
+                        HoverBorderColor: =RGBA(103, 204, 107, 1)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        PressedBorderColor: =RGBA(255, 200, 61, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(31, 31, 31, 1)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =21
+                        Width: =550
+                        X: =14
+                        Y: =380
+                        ZIndex: =6
+
+                    Icon8_2 As icon.Cancel:
+                        BorderColor: =RGBA(109, 109, 109, 1)
+                        Color: =RGBA(255, 200, 61, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(220, 220, 220, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Height: =32
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Icon: =Icon.Cancel
+                        OnSelect: =Set(CompInfoCounter, 2)
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Visible: =CompInfoCounter>=3
+                        Width: =34
+                        X: =538
+                        Y: =13
+                        ZIndex: =7
+
+    Camera2_1 As camera:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Camera: =cameraMode
+        Height: =474
+        OnSelect: |-
+            =ClearCollect(ImageCol, Camera2_1.Photo);
+            Set(varCam, !varCam)
+        Visible: =If(varCam, true)
+        Width: =560
+        X: =80
+        Y: =317
+        ZIndex: =18
+
+    Toggle1_1 As toggleSwitch:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        FalseFill: =RGBA(227, 100, 41, 1)
+        FalseHoverFill: =RGBA(218, 218, 218, 1)
+        FalseText: ="Front"
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        HandleFill: =RGBA(255, 255, 255, 1)
+        Height: =47
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        OnChange: |-
+            =UpdateContext({cameraMode: !cameraMode})
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        Size: =21
+        TrueFill: =RGBA(227, 100, 41, 1)
+        TrueHoverFill: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        TrueText: ="Back"
+        Visible: =If(varCam, true)
+        Width: =182
+        X: =430
+        Y: =215
+        ZIndex: =19
+
+    Icon14_4 As icon.BackArrow:
+        BorderColor: =RGBA(109, 109, 109, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =43
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(255, 200, 61, 1), 30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =43
+        X: =18
+        Y: =15
+        ZIndex: =20
+
+    Image1_31 As image:
+        BorderColor: =RGBA(204, 204, 204, 1)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =1
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =45
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: =User().Image
+        ImagePosition: =ImagePosition.Fill
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Width: =45
+        X: =584
+        Y: =13
+        ZIndex: =21
+

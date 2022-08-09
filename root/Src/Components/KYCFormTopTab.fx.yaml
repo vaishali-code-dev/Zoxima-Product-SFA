@@ -1,0 +1,61 @@
+KYCFormTopTab As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =65
+    TabItems: |-
+        =Table( 
+            {
+                Title: "Communication",
+                Screen: App.ActiveScreen
+            },
+            {
+                Title: "Financial",
+                Screen: App.ActiveScreen
+            },
+            {
+                Title: "Tax/GST",
+                Screen: App.ActiveScreen
+            },
+            {
+                Title: "Bank Details",
+                Screen: App.ActiveScreen
+            }
+        )
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Gallery1_3 As gallery.galleryHorizontal:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =65
+        Items: =KYCFormTopTab.TabItems
+        ShowScrollbar: =false
+        TemplateSize: =165
+        ZIndex: =1
+
+        Label8_3 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =55
+            OnSelect: =Navigate(ThisItem.Screen)
+            Size: =15
+            Text: =ThisItem.Title
+            Width: =165
+            ZIndex: =4
+
+        Icon6_3 As icon.HorizontalLine:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =If(ThisItem.IsSelected ,RGBA(164,10,10, 1), RGBA(255, 255, 255, 1))
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =4
+            Icon: =HorizontalLine
+            OnSelect: =Select(Parent)
+            Width: =165
+            Y: =51
+            ZIndex: =5
+
