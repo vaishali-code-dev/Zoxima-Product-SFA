@@ -129,7 +129,12 @@
     "id": "8a4a2ae6-6476-4be3-b8ba-b4b9e6587b7f"
   },
   "aa2090b6-f870-4784-add5-fc1b2d2fea43": {
-    "connectionParameters": {},
+    "connectionParameters": {
+      "workFlowCallbackUri": "https://prod-13.centralindia.logic.azure.com:443/workflows/8293a730b754412ebbfc624ce65e6821/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=muVTVXXjxSOEsY686fs4Urmt7DsatoaUHyFV99aoukQ",
+      "workflowEndpoint": "/subscriptions/9c6ca5c2-db3d-463a-9041-8fae10884f22/resourceGroups/923bb7ae3d8046c7b4b1dd832ab44683-5a7e7cf6b9c04a05bf8d99784d1e40bb/providers/Microsoft.Logic/workflows/d7517760-40c6-44b0-b2d3-50d0d90a8c07",
+      "workflowName": "d7517760-40c6-44b0-b2d3-50d0d90a8c07",
+      "workflowPath": "/subscriptions/9c6ca5c2-db3d-463a-9041-8fae10884f22/resourceGroups/923bb7ae3d8046c7b4b1dd832ab44683-5a7e7cf6b9c04a05bf8d99784d1e40bb/providers/Microsoft.Logic/workflows/d7517760-40c6-44b0-b2d3-50d0d90a8c07"
+    },
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "Logic flows",

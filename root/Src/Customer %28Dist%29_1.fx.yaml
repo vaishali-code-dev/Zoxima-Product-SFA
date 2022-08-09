@@ -23,7 +23,7 @@
             Color: =RGBA(242, 242, 242, 1)
             Height: =188
             HtmlText: |-
-                ="<div style='border-radius:15px 15px 15px 15px; background-color:#586782; width:590px; height:175px'></div>"
+                ="<div style='border-radius:15px 15px 15px 15px; background-color:#353535; width:590px; height:175px'></div>"
             OnSelect: =Select(Parent)
             Width: =610
             X: =15
