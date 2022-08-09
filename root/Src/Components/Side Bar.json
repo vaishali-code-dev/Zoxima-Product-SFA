@@ -58,7 +58,7 @@
         "Name": "Rectangle1",
         "Parent": "Side Bar",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 73,
+        "PublishOrderIndex": 4182,
         "Rules": [
           {
             "Category": "Design",
@@ -230,7 +230,7 @@
         "Name": "Icon1",
         "Parent": "Side Bar",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 74,
+        "PublishOrderIndex": 4183,
         "Rules": [
           {
             "Category": "Design",
@@ -448,7 +448,7 @@
         "Name": "Image5",
         "Parent": "Side Bar",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 75,
+        "PublishOrderIndex": 4184,
         "Rules": [
           {
             "Category": "Data",
@@ -669,7 +669,7 @@
             "Name": "galleryTemplate1_1",
             "Parent": "Gallery1_1",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 77,
+            "PublishOrderIndex": 4186,
             "Rules": [
               {
                 "Category": "Design",
@@ -836,7 +836,7 @@
             "Name": "Label5",
             "Parent": "Gallery1_1",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 78,
+            "PublishOrderIndex": 4187,
             "Rules": [
               {
                 "Category": "Data",
@@ -1172,7 +1172,7 @@
             "Name": "Icon16",
             "Parent": "Gallery1_1",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 79,
+            "PublishOrderIndex": 4188,
             "Rules": [
               {
                 "Category": "Design",
@@ -1383,7 +1383,7 @@
             "Name": "Rectangle2",
             "Parent": "Gallery1_1",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 80,
+            "PublishOrderIndex": 4189,
             "Rules": [
               {
                 "Category": "Design",
@@ -1567,7 +1567,7 @@
         "Name": "Gallery1_1",
         "Parent": "Side Bar",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 76,
+        "PublishOrderIndex": 4185,
         "Rules": [
           {
             "Category": "Data",
