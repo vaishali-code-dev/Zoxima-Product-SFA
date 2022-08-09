@@ -69,7 +69,7 @@
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayMode: =If(Custinfoedit, DisplayMode.Edit, View)
-                    Fill: =RGBA(99, 105, 139, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.Lato
                     FontWeight: =FontWeight.Semibold
@@ -88,7 +88,7 @@
                     Visible: =If(customerinfo.Selected.Title = "Info", true, false )
                     Width: =339
                     X: =234
-                    Y: =7
+                    Y: =11
                     ZIndex: =55
 
                 Button23_1 As button:
@@ -157,7 +157,7 @@
                         BorderStyle: =BorderStyle.None
                         BorderThickness: =2
                         DisabledFill: =RGBA(166, 166, 166, 1)
-                        Fill: =RGBA(99, 105, 139, 1)
+                        Fill: =RGBA(53, 53, 53, 1)
                         FocusedBorderThickness: =4
                         Height: =1240
                         HoverFill: =
@@ -991,7 +991,7 @@
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayMode: =If(Custinfoedit, DisplayMode.Edit, View)
-                    Fill: =RGBA(99, 105, 139, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.Lato
                     FontWeight: =FontWeight.Semibold
@@ -1024,7 +1024,7 @@
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayMode: =If(Custinfoedit, DisplayMode.Edit, View)
-                    Fill: =RGBA(99, 105, 139, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.Lato
                     FontWeight: =FontWeight.Semibold
@@ -1057,7 +1057,7 @@
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayMode: =If(Custinfoedit, DisplayMode.Edit, View)
-                    Fill: =RGBA(99, 105, 139, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.Lato
                     FontWeight: =FontWeight.Semibold
@@ -1090,7 +1090,7 @@
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayMode: =If(Custinfoedit, DisplayMode.Edit, View)
-                    Fill: =RGBA(99, 105, 139, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.Lato
                     FontWeight: =FontWeight.Semibold
@@ -1123,7 +1123,7 @@
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayMode: =If(Custinfoedit, DisplayMode.Edit, View)
-                    Fill: =RGBA(99, 105, 139, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.Lato
                     FontWeight: =FontWeight.Semibold
@@ -1156,7 +1156,7 @@
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayMode: =If(Custinfoedit, DisplayMode.Edit, View)
-                    Fill: =RGBA(99, 105, 139, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.Lato
                     FontWeight: =FontWeight.Semibold
@@ -1191,7 +1191,7 @@
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayMode: =If(Custinfoedit, DisplayMode.Edit, View)
-                    Fill: =RGBA(99, 105, 139, 1)
+                    Fill: =RGBA(53, 53, 53, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.Lato
                     FontWeight: =FontWeight.Semibold
