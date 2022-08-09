@@ -34,7 +34,7 @@
             "Name": "galleryTemplate2_6",
             "Parent": "Gallery2_4",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 15,
+            "PublishOrderIndex": 4136,
             "Rules": [
               {
                 "Category": "Design",
@@ -127,7 +127,7 @@
             "Name": "Rectangle3_5",
             "Parent": "Gallery2_4",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 16,
+            "PublishOrderIndex": 4137,
             "Rules": [
               {
                 "Category": "Design",
@@ -312,7 +312,7 @@
             "Name": "Icon1_6",
             "Parent": "Gallery2_4",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 17,
+            "PublishOrderIndex": 4138,
             "Rules": [
               {
                 "Category": "Design",
@@ -575,7 +575,7 @@
             "Name": "Label2_53",
             "Parent": "Gallery2_4",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 18,
+            "PublishOrderIndex": 4139,
             "Rules": [
               {
                 "Category": "Data",
@@ -896,7 +896,7 @@
         "Name": "Gallery2_4",
         "Parent": "Bottom Navigation_34",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 14,
+        "PublishOrderIndex": 4135,
         "Rules": [
           {
             "Category": "Data",
@@ -1089,7 +1089,7 @@
         "NameMapSourceSchema": "?"
       }
     ],
-    "LastModifiedTimestamp": "637956427201841871",
+    "LastModifiedTimestamp": "637956441353250035",
     "Name": "Bottom Navigation_34",
     "Rules": [
       {
@@ -1164,7 +1164,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "637956427201841871",
+  "LastModifiedTimestamp": "637956441353250035",
   "Name": "70f90d8d5bf14fb59020c208729ad443",
   "OverridableProperties": {},
   "TemplateOriginalName": "b84e901362bb426a9025d47db36cd790",

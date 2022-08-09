@@ -14468,7 +14468,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "CurrentStock",
-      "ParentIndex": 23,
+      "ParentIndex": 19,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -25023,7 +25023,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Invoice",
-      "ParentIndex": 22,
+      "ParentIndex": 17,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -59777,7 +59777,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label5_477",
-      "ParentIndex": 2,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -65674,7 +65674,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "MarketingMaterial",
-      "ParentIndex": 21,
+      "ParentIndex": 22,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -65794,7 +65794,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Order",
-      "ParentIndex": 19,
+      "ParentIndex": 16,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -72145,7 +72145,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Rectangle5_33",
-      "ParentIndex": 0,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -72280,7 +72280,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Site",
-      "ParentIndex": 18,
+      "ParentIndex": 23,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -72710,7 +72710,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Team",
-      "ParentIndex": 16,
+      "ParentIndex": 20,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -74485,7 +74485,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "TextInput1_49",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -79688,7 +79688,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Ticket",
-      "ParentIndex": 17,
+      "ParentIndex": 18,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -80449,7 +80449,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Visit",
-      "ParentIndex": 20,
+      "ParentIndex": 21,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

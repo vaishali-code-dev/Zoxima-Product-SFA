@@ -28,7 +28,7 @@ PlanVisitCustomers As screen:
             Color: =RGBA(242, 242, 242, 1)
             Height: =189
             HtmlText: |-
-                ="<div style='border-radius:15px 15px 15px 15px; background-color:#586782; border:2px solid #D3D4D6;  border:1px solid #D3D4D6; width:595px; height:175px'></div>" 
+                ="<div style='border-radius:15px 15px 15px 15px; background-color:#353535; border:2px solid #D3D4D6;  border:1px solid #D3D4D6; width:595px; height:175px'></div>" 
             OnSelect: |-
                 =Navigate('customer info');
                 Set(Customer_info,ThisItem)
@@ -152,7 +152,7 @@ PlanVisitCustomers As screen:
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =2
-                Color: =RGBA(255, 255, 255, 1)
+                Color: =RGBA(255, 191, 0, 1)
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 FocusedBorderThickness: =4
@@ -216,7 +216,7 @@ PlanVisitCustomers As screen:
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =2
-                Color: =RGBA(255, 255, 255, 1)
+                Color: =RGBA(255, 191, 0, 1)
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 FocusedBorderThickness: =4
